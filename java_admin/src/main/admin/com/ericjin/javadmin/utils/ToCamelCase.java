@@ -32,6 +32,7 @@ public class ToCamelCase {
             matcher.appendReplacement(sb, "_" + matcher.group(0).toLowerCase());
         }
         matcher.appendTail(sb);
-        return sb.toString();
+        String res = sb.toString();
+        return res.startsWith("_") ? res.replaceFirst("_", "") : res;
     }
 }

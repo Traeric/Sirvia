@@ -1,6 +1,8 @@
 package com.ericjin.javadmin;
 
 import com.ericjin.javadmin.beans.User;
+import com.test.hah.Article;
+import com.test.hah.Tags;
 import com.test.hah.Test;
 
 import java.util.ArrayList;
@@ -21,6 +23,8 @@ public class Register {
         List<Class> list = new ArrayList<>();
         // 此处添加用户表信息
         list.add(Test.class);
+        list.add(Article.class);
+        list.add(Tags.class);
         return list;
     }
 }

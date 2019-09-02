@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ericjin.javadmin.mapper.SuperMapper">
+    <!-- 获取所有数据 -->
+    <select id="getAll" resultType="map">
+        SELECT * FROM ${table_name}
+    </select>
+
+    <!-- 添加一条数据 -->
+    <insert id="addTable">
+        INSERT INTO ${table_name}
+        <foreach collection="data_map" index="key" separator="," open="(" close=")">
+            ${key}
+        </foreach>
+        VALUES
+        <foreach collection="data_map" item="val" separator="," open="(" close=")">
+            #{val}
+        </foreach>
+    </insert>
+
+    <!-- 查询一条数据 -->
+    <select id="getOneRecord" resultType="map">
+        SELECT * FROM ${table_name} WHERE id = #{id}
+    </select>
+
+    <!-- 更新一条数据 -->
+    <update id="updateTable">
+        UPDATE ${table_name} SET
+        <foreach collection="data_map" index="key" item="val" separator=",">
+            ${key} = #{val}
+        </foreach>
+        WHERE id = #{id}
+    </update>
+
+    <delete id="deleteTable">
+        DELETE FROM ${table_name} WHERE id = #{id}
+    </delete>
+</mapper>
+

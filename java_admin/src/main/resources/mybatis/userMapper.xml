@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ericjin.javadmin.mapper.UserMapper">
+    <!-- 创建数据表 -->
+    <update id="createUserTable">
+        CREATE TABLE IF NOT EXISTS admin_user(
+            id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+            username VARCHAR(16) NOT NULL DEFAULT 'java_admin',
+            password VARCHAR(64) NOT NULL DEFAULT '123',
+            email VARCHAR(32) NOT NULL DEFAULT 'javaadmin@gmail.com',
+            is_admin CHAR(1) NOT NULL DEFAULT '0'
+        )ENGINE=INNODB;
+    </update>
+
+    <!-- 添加用户 -->
+    <insert id="createUser" parameterType="user">
+        INSERT INTO admin_user(username, password, email, is_admin)
+        VALUES(#{username}, #{password}, #{email}, #{isAdmin})
+    </insert>
+
+    <!-- 通过email查询user -->
+    <select id="checkUser" resultType="user">
+        SELECT id, username, email, is_admin, password
+        FROM admin_user
+        WHERE email = #{email}
+    </select>
+</mapper>
+

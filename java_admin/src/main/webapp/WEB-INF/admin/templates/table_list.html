@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>[[ ${tableName} ]]列表</title>
+
+    <link th:href="@{/static/plugins/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+    <link th:href="@{/static/css/table_list.css}" rel="stylesheet">
+
+    <script th:src="@{/static/js/jq/jquery.min.js}"></script>
+    <script th:src="@{/static/plugins/bootstrap/js/bootstrap.min.js}"></script>
+
+    <link th:href="@{/static/plugins/layui/css/layui.css}" rel="stylesheet">
+    <script th:src="@{/static/plugins/layui/layui.js}"></script>
+
+    <script th:src="@{/static/js/jq/jquery.dataTables.min.js}"></script>
+    <link rel="stylesheet" th:href="@{/static/css/dataTable.bootstrap.css}">
+    <script th:src="@{/static/js/dataTable.bootstrap.js}"></script>
+</head>
+<body>
+<div th:replace="header::header"></div>
+<div class="container">
+    <ol class="breadcrumb">
+        <li><a th:href="@{/admin}">首页</a></li>
+        <li><a href="javascript:void(0);">[[ ${tableName} ]]</a></li>
+    </ol>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="page-header">
+                <h3>修改[[ ${tableName} ]]</h3>
+                <a th:href="@{'/admin/' + ${modelName} + '/' + ${beanName} + '/add'}">
+                    <button type="button" class="btn btn-success">
+                        添加[[ ${tableName} ]] &nbsp;
+                        <i class="glyphicon glyphicon-plus"></i>
+                    </button>
+                </a>
+            </div>
+            <table class="layui-table table-sort">
+                <!-- 生成表头 -->
+                <thead>
+                <tr>
+                    <th class="layui-form">
+                        <input type="checkbox" lay-skin="primary">
+                    </th>
+                    <th th:each="item : ${dataList.get(0).keySet()}">
+                        [[ ${item} ]]
+                    </th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="item : ${dataList}">
+                    <th class="layui-form">
+                        <input type="checkbox" lay-skin="primary" th:value="${item.get('id')}">
+                    </th>
+                    <td th:each="tableId, tableIdStat : ${item}">
+                        [[ ${tableIdStat.current.value} ]]
+                    </td>
+                    <td>
+                        <a th:href="@{'/admin/' + ${modelName} + '/' + ${beanName} + '/edit/' + ${item.get('id')}}">
+                            <button type="button" class="layui-btn layui-btn-sm layui-btn-normal">
+                                <i class="layui-icon">&#xe642;</i>编辑
+                            </button>
+                        </a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<script>
+    layui.use('form', function () {
+        layui.form;
+    });
+    $('.table-sort').dataTable({
+        "bStateSave": true, // 状态保存
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>编辑 [[ tableName ]]</title>
+    <link rel="stylesheet" th:href="@{/static/css/edit_table.css}">
+    <link rel="stylesheet" th:href="@{/static/plugins/bootstrap/css/bootstrap.min.css}">
+
+    <link rel="stylesheet" th:href="@{/static/plugins/layui/css/layui.css}">
+    <script th:src="@{/static/js/jq/jquery.min.js}"></script>
+    <script th:src="@{/static/plugins/bootstrap/js/bootstrap.min.js}"></script>
+    <script th:src="@{/static/plugins/layui/layui.js}"></script>
+</head>
+<body>
+<div th:replace="header :: header"></div>
+<div class="container">
+    <ol class="breadcrumb">
+        <li><a th:href="@{/admin}">首页</a></li>
+        <li><a id="back" th:href="@{'/admin/' + ${modelName} + '/' + ${beanName}}">[[ ${tableName} ]]</a></li>
+        <li><a href="javascript:void(0);">编辑[[ ${tableName} ]]</a></li>
+    </ol>
+    <div id="alert_info" role="alert" style="display: none;">
+        <button type="button" class="close">
+            <span aria-hidden="true">&times;</span></button>
+        <b></b>
+    </div>
+    <div class="page-header">
+        <blockquote class="layui-elem-quote">编辑[[ ${tableName} ]]</blockquote>
+    </div>
+    <form class="area layui-form" id="form_list">
+        [( ${inputStr} )]
+    </form>
+
+    <div class="alert alert-success edit-area" role="alert">
+        <div class="left">
+            <a id="del_url" th:href="@{'/admin/' + ${modelName} + '/' + ${beanName} + '/del/' + ${id}}"></a>
+            <button type="button" class="btn btn-danger" onclick="deleteTable()">删除数据</button>
+        </div>
+        <div class="right">
+            <a id="edit_url" th:href="@{'/admin/' + ${modelName} + '/' + ${beanName} + '/edit/' + ${id}}"
+               style="opacity: 0;"></a>
+            <button type="button" class="btn btn-info" onclick="saveAndContinueEdit()">保存并且继续编辑数据</button>
+            <button type="button" class="btn btn-success" onclick="save()">保存</button>
+        </div>
+    </div>
+</div>
+<script>
+    $(function () {
+        $("#alert_info button").click(function () {
+            $("#alert_info").css("display", "none");
+        });
+    });
+
+    /**
+     * 将表单转换成json对象
+     */
+    $.fn.serializes = function () {
+        let params = {};
+        let data = this.serializeArray();
+        $.each(data, function (name, val) {
+            let key = this.name;
+            let value = this.value;
+            if (params[this.name] !== undefined) {
+                if (!params[key].push) {
+                    params[key] = [params[key]];
+                }
+                params[key].push(value || "");
+            } else {
+                params[key] = value || "";
+
+            }
+        });
+        //以下代码单选框复选框为空时,赋值为空字符串,不需要的可以删除
+        let $radio = $('input[type=radio],input[type=checkbox]', this);
+        $.each($radio, function () {
+            if (!params.hasOwnProperty(this.name)) {
+                params[this.name] = '';
+            }
+        });
+        return params;
+    };
+
+
+    function parentCommit(callback) {
+        let formObj = $("#form_list");
+        let data = formObj.serializes();
+        // 上传数据
+        $.ajax({
+            url: $("#edit_url").attr("href"),
+            type: "post",
+            data,
+            success(args) {
+                callback(args);
+            },
+        });
+    }
+
+    function saveAndContinueEdit() {
+        parentCommit((args) => {
+            let alertDom = $("#alert_info");
+            alertDom.css("display", "block");
+            if (args === "1") {
+                // 添加成功
+                // 显示成功信息
+                alertDom.find("b").html("添加成功，请继续编辑数据");
+                alertDom.addClass("alert alert-success alert-dismissible");
+            } else {
+                alertDom.find("b").html("添加失败");
+                alertDom.addClass("alert alert-danger alert-dismissible");
+            }
+        });
+    }
+
+    function save() {
+        parentCommit((args) => {
+            let alertDom = $("#alert_info");
+            alertDom.css("display", "block");
+            if (args === "1") {
+                // 添加成功
+                location.href = $("#back").attr("href");
+            } else {
+                alertDom.find("b").html("添加失败");
+                alertDom.addClass("alert alert-danger alert-dismissible");
+            }
+        });
+    }
+
+    /**
+     * 删除数据
+     */
+    function deleteTable() {
+        $.ajax({
+            url: $("#del_url").attr("href"),
+            type: "delete",
+            success(args) {
+                let alertDom = $("#alert_info");
+                alertDom.css("display", "block");
+                if (args === "1") {
+                    // 删除成功
+                    location.href = $("#back").attr("href");
+                } else {
+                    alertDom.find("b").html("删除失败");
+                    alertDom.addClass("alert alert-danger alert-dismissible");
+                }
+            },
+        });
+    }
+</script>
+</body>
+</html>

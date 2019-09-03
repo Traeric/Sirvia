@@ -19,7 +19,7 @@ public class FieldToInputStr {
     public static String getInputStr(Field field) {
         Class type = field.getType();
         String fieldName = ToCamelCase.humpToLine(field.getName());
-        if (type == Integer.class || type == int.class || type == String.class) {
+        if (type == Integer.class || type == int.class || type == String.class || type == Long.class || type == long.class) {
             // 查看该字段上面是否标注了注解
             if (field.isAnnotationPresent(Choose.class)) {
                 // 获取注解
@@ -125,7 +125,7 @@ public class FieldToInputStr {
         String fieldName = ToCamelCase.humpToLine(field.getName());
         // 获取值
         String val = (String) map.get(fieldName);
-        if (type == Integer.class || type == int.class || type == String.class) {
+        if (type == Integer.class || type == int.class || type == String.class || type == Long.class || type == long.class) {
             // 查看该字段上面是否标注了注解
             if (field.isAnnotationPresent(Choose.class)) {
                 // 获取注解
@@ -225,7 +225,7 @@ public class FieldToInputStr {
             return String.format("<div class=\"layui-form-item layui-form-text\">\n" +
                     "            <label class=\"layui-form-label\">%s:</label>\n" +
                     "            <div class=\"layui-input-block\">\n" +
-                    "                <textarea name='%s' placeholder=\"请输入内容\" class=\"layui-textarea\" value='%s'></textarea>\n" +
+                    "                <textarea name='%s' placeholder=\"请输入内容\" class=\"layui-textarea\">%s</textarea>\n" +
                     "            </div>\n" +
                     "        </div>\n" +
                     "        <hr class=\"layui-bg-gray\">", fieldName, fieldName, val);

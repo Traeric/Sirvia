@@ -27,20 +27,44 @@
     <div class="panel panel-default">
         <div class="panel-body">
             <div class="page-header">
-                <h3>修改[[ ${tableName} ]]</h3>
-                <a th:href="@{'/admin/' + ${modelName} + '/' + ${beanName} + '/add'}">
-                    <button type="button" class="btn btn-success">
-                        添加[[ ${tableName} ]] &nbsp;
-                        <i class="glyphicon glyphicon-plus"></i>
-                    </button>
-                </a>
+                <div class="title">
+                    <div class="operation">
+                        <h3>修改[[ ${tableName} ]]</h3>
+                    </div>
+
+                    <a th:href="@{'/admin/' + ${modelName} + '/' + ${beanName} + '/add'}">
+                        <button type="button" class="btn btn-success">
+                            添加[[ ${tableName} ]] &nbsp;
+                            <i class="glyphicon glyphicon-plus"></i>
+                        </button>
+                    </a>
+                </div>
             </div>
+            <!-- action操作 -->
+            <div class="action layui-form">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">Action: </label>
+                    <div class="layui-input-inline">
+                        <select name="city" lay-verify="required">
+                            <option value="">------------------</option>
+                            <option value="0">北京</option>
+                            <option value="1">上海</option>
+                            <option value="2">广州</option>
+                            <option value="3">深圳</option>
+                            <option value="4">杭州</option>
+                        </select>
+                    </div>
+                    <button type="button" class="layui-btn  layui-btn-warm">执行</button>
+                    <div id="selected" class="layui-badge">选中了<span>1</span>条数据</div>
+                </div>
+            </div>
+
             <table class="layui-table table-sort">
                 <!-- 生成表头 -->
                 <thead>
                 <tr>
                     <th class="layui-form">
-                        <input type="checkbox" lay-skin="primary">
+                        <input type="checkbox" lay-skin="primary" id="select_all" lay-filter="selectAll">
                     </th>
                     <th th:each="item : ${dataList.get(0).keySet()}">
                         [[ ${item} ]]
@@ -51,7 +75,8 @@
                 <tbody>
                 <tr th:each="item : ${dataList}">
                     <th class="layui-form">
-                        <input type="checkbox" lay-skin="primary" th:value="${item.get('id')}">
+                        <input class="select-item" type="checkbox" lay-skin="primary" th:value="${item.get('id')}"
+                               lay-filter="selectItem">
                     </th>
                     <td th:each="tableId, tableIdStat : ${item}">
                         [[ ${tableIdStat.current.value} ]]
@@ -70,9 +95,50 @@
     </div>
 </div>
 <script>
+    // 选中的数组
+    let selectArr = [];
+
     layui.use('form', function () {
-        layui.form;
+        let form = layui.form;
+        // 设置复选框全选事件
+        form.on('checkbox(selectAll)', function () {
+            if (this.checked) {
+                // 选中
+                $("table tbody th div.layui-form-checkbox").addClass("layui-form-checked");
+                $(".select-item").prop("checked", true);
+                // 设置样式
+                $("table tbody tr").css("background-color", "#E6A23C");
+            } else {
+                $(".select-item").prop("checked", false);
+                $("table tbody th div.layui-form-checkbox").removeClass("layui-form-checked");
+                $("table tbody tr").css("background-color", "#FFF");
+            }
+            // 将选中的数据添加到数组中
+            selectArr = [];
+            $("table tbody th input[type=checkbox]:checked").each((index, item) => {
+                selectArr.push($(item).val());
+            });
+            console.log(selectArr);
+        });
+        // 设置单个checkbox
+        form.on('checkbox(selectItem)', function (data) {
+            if (data.elem.checked) {
+                // 选中
+                $(this).parents("tr").css("background-color", "#E6A23C");
+            } else {
+                // 未选中
+                $(this).parents("tr").css("background-color", "#FFF");
+            }
+            // 将选中的数据添加到数组中
+            selectArr = [];
+            $("table tbody th input[type=checkbox]:checked").each((index, item) => {
+                selectArr.push($(item).val());
+            });
+            console.log(selectArr);
+        });
     });
+
+    // data table
     $('.table-sort').dataTable({
         "bStateSave": true, // 状态保存
     });

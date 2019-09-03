@@ -15,8 +15,12 @@ import java.util.Map;
 public class IndexController {
     @Resource(name = "userService")
     private UserService userService;
+
     @Resource(name = "indexService")
     private IndexService indexService;
+
+    @Resource(name = "actionMap")
+    private Map<String, String> actionMap;
 
     /**
      * 后台首页
@@ -49,6 +53,8 @@ public class IndexController {
         model.addAttribute("tableName", indexService.getShowName(modelName, tableName));
         model.addAttribute("modelName", modelName);
         model.addAttribute("beanName", tableName);
+        // 获取action映射
+        model.addAttribute("actionMap", actionMap);
         return "table_list";
     }
 

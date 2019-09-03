@@ -105,6 +105,11 @@
     <bean name="systemTableList" factory-bean="register" factory-method="systemTableList"/>
     <!-- 用户表 -->
     <bean name="userTableList" factory-bean="register" factory-method="userTableList"/>
+
+    <!--
+        配置action
+    -->
+    <bean name="actionMap" factory-bean="register" factory-method="actionMap"/>
 </beans>
 
 

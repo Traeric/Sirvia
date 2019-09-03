@@ -41,21 +41,18 @@
                 </div>
             </div>
             <!-- action操作 -->
-            <div class="action layui-form">
+            <div id="action" class="action layui-form">
                 <div class="layui-form-item">
                     <label class="layui-form-label">Action: </label>
                     <div class="layui-input-inline">
+                        <a id="action_url" th:href="@{'/admin/action/' + ${modelName} + '/' + ${beanName}}" style="display: none;"></a>
                         <select name="city" lay-verify="required">
                             <option value="">------------------</option>
-                            <option value="0">北京</option>
-                            <option value="1">上海</option>
-                            <option value="2">广州</option>
-                            <option value="3">深圳</option>
-                            <option value="4">杭州</option>
+                            <option value="0" th:each="item, itemStat : ${actionMap}" th:value="${item.key}">[[ ${item.value} ]]</option>
                         </select>
                     </div>
-                    <button type="button" class="layui-btn  layui-btn-warm">执行</button>
-                    <div id="selected" class="layui-badge">选中了<span>1</span>条数据</div>
+                    <button type="button" class="layui-btn  layui-btn-warm" onclick="doAction()">执行</button>
+                    <div id="selected" class="layui-badge">选中了<span>0</span>条数据</div>
                 </div>
             </div>
 
@@ -118,7 +115,7 @@
             $("table tbody th input[type=checkbox]:checked").each((index, item) => {
                 selectArr.push($(item).val());
             });
-            console.log(selectArr);
+            $("#selected span").html(selectArr.length);
         });
         // 设置单个checkbox
         form.on('checkbox(selectItem)', function (data) {
@@ -134,7 +131,7 @@
             $("table tbody th input[type=checkbox]:checked").each((index, item) => {
                 selectArr.push($(item).val());
             });
-            console.log(selectArr);
+            $("#selected span").html(selectArr.length);
         });
     });
 
@@ -142,6 +139,29 @@
     $('.table-sort').dataTable({
         "bStateSave": true, // 状态保存
     });
+
+    function doAction() {
+        // 获取要执行的方法名称
+        let method_name = $("#action select option:checked").val();
+        if (method_name === '') {
+            return;
+        }
+        $.ajax({
+            url: $("#action_url").attr("href"),
+            type: "post",
+            data: {
+                "select_arr": selectArr,
+                method_name,
+            },
+            success(args) {
+                if (args === "1") {
+                    layer.msg('执行成功', {icon: 1, offset: "150px"});
+                } else {
+                    layer.msg('执行失败', {icon: 5, offset: "150px"});
+                }
+            }
+        });
+    }
 </script>
 </body>
 </html>

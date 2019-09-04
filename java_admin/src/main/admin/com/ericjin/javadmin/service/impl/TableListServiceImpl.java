@@ -1,8 +1,10 @@
 package com.ericjin.javadmin.service.impl;
 
 import com.ericjin.javadmin.Action;
+import com.ericjin.javadmin.mapper.SuperMapper;
 import com.ericjin.javadmin.service.IndexService;
 import com.ericjin.javadmin.service.TableListService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -16,6 +18,9 @@ import java.util.List;
 public class TableListServiceImpl implements TableListService {
     @Resource(name = "indexService")
     private IndexService indexService;
+
+    @Autowired
+    private SuperMapper superMapper;
 
     /**
      * 执行action方法
@@ -33,10 +38,10 @@ public class TableListServiceImpl implements TableListService {
         Class<Action> action = Action.class;
         // 获取要执行的方法
         try {
-            Method method = action.getDeclaredMethod(methodName, List.class, String.class);
+            Method method = action.getDeclaredMethod(methodName, List.class, String.class, SuperMapper.class);
             Object obj = action.getConstructor().newInstance();
             // 执行方法
-            return (Boolean) method.invoke(obj, selectArr, tableName);
+            return (Boolean) method.invoke(obj, selectArr, tableName, superMapper);
         } catch (NoSuchMethodException | InstantiationException | IllegalAccessException | InvocationTargetException e) {
             e.printStackTrace();
         }

@@ -45,10 +45,13 @@
                 <div class="layui-form-item">
                     <label class="layui-form-label">Action: </label>
                     <div class="layui-input-inline">
-                        <a id="action_url" th:href="@{'/admin/action/' + ${modelName} + '/' + ${beanName}}" style="display: none;"></a>
+                        <a id="action_url" th:href="@{'/admin/action/' + ${modelName} + '/' + ${beanName}}"
+                           style="display: none;"></a>
                         <select name="city" lay-verify="required">
-                            <option value="">------------------</option>
-                            <option value="0" th:each="item, itemStat : ${actionMap}" th:value="${item.key}">[[ ${item.value} ]]</option>
+                            <option value="">---------------------------</option>
+                            <option value="0" th:each="item, itemStat : ${actionMap}" th:value="${item.key}">[[
+                                ${item.value} ]]
+                            </option>
                         </select>
                     </div>
                     <button type="button" class="layui-btn  layui-btn-warm" onclick="doAction()">执行</button>
@@ -70,7 +73,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr th:each="item : ${dataList}">
+                <tr th:each="item : ${dataList}" th:index="${item.get('id')}">
                     <th class="layui-form">
                         <input class="select-item" type="checkbox" lay-skin="primary" th:value="${item.get('id')}"
                                lay-filter="selectItem">
@@ -104,7 +107,7 @@
                 $("table tbody th div.layui-form-checkbox").addClass("layui-form-checked");
                 $(".select-item").prop("checked", true);
                 // 设置样式
-                $("table tbody tr").css("background-color", "#E6A23C");
+                $("table tbody tr").css("background-color", "#ffc");
             } else {
                 $(".select-item").prop("checked", false);
                 $("table tbody th div.layui-form-checkbox").removeClass("layui-form-checked");
@@ -121,7 +124,7 @@
         form.on('checkbox(selectItem)', function (data) {
             if (data.elem.checked) {
                 // 选中
-                $(this).parents("tr").css("background-color", "#E6A23C");
+                $(this).parents("tr").css("background-color", "#ffc");
             } else {
                 // 未选中
                 $(this).parents("tr").css("background-color", "#FFF");
@@ -156,6 +159,11 @@
             success(args) {
                 if (args === "1") {
                     layer.msg('执行成功', {icon: 1, offset: "150px"});
+                    $("table tbody tr").each((index, item) => {
+                        if (selectArr.indexOf($(item).attr("index")) !== -1) {
+                            $(item).remove();
+                        }
+                    });
                 } else {
                     layer.msg('执行失败', {icon: 5, offset: "150px"});
                 }

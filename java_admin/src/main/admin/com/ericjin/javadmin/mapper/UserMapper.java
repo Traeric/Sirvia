@@ -10,4 +10,8 @@ public interface UserMapper {
     Boolean createUser(User user);
 
     User checkUser(@Param("email") String email);
+
+    String getUser(@Param("id") String userId);
+
+    Boolean changePassword(@Param("id") String userId, @Param("password") String password);
 }

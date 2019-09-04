@@ -80,6 +80,7 @@ public class IndexController {
 
     /**
      * 添加数据到表中
+     *
      * @param modelName
      * @param beanName
      * @return

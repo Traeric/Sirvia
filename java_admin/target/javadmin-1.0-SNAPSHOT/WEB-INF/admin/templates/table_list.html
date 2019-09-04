@@ -160,7 +160,6 @@
                 if (args === "1") {
                     layer.msg('执行成功', {icon: 1, offset: "150px"});
                     $("table tbody tr").each((index, item) => {
-                        console.log($(item).attr("index"));
                         if (selectArr.indexOf($(item).attr("index")) !== -1) {
                             $(item).remove();
                         }

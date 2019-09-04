@@ -26,5 +26,13 @@
         FROM admin_user
         WHERE email = #{email}
     </select>
+
+    <select id="getUser" resultType="string">
+        SELECT password FROM admin_user WHERE id = #{id}
+    </select>
+
+    <update id="changePassword">
+        UPDATE admin_user SET password = #{password} WHERE id = #{id}
+    </update>
 </mapper>
 

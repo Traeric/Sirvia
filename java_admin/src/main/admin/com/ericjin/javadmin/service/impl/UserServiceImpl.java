@@ -1,13 +1,17 @@
 package com.ericjin.javadmin.service.impl;
 
+import com.ericjin.javadmin.Settings;
 import com.ericjin.javadmin.annotation.ShowName;
+import com.ericjin.javadmin.beans.User;
 import com.ericjin.javadmin.mapper.UserMapper;
 import com.ericjin.javadmin.service.UserService;
 import com.ericjin.javadmin.shiro.enumerate.RoleType;
 import com.ericjin.javadmin.shiro.token.UserToken;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
+import org.apache.shiro.crypto.hash.SimpleHash;
 import org.apache.shiro.subject.Subject;
+import org.apache.shiro.util.ByteSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -23,8 +27,12 @@ import java.util.Map;
 public class UserServiceImpl implements UserService {
     @Resource(name = "systemTableList")
     private List<Class> systemTableList;
+
     @Resource(name = "userTableList")
     private List<Class> userTableList;
+
+    @Autowired
+    private UserMapper userMapper;
 
     /**
      * 验证用户是否登陆
@@ -69,8 +77,10 @@ public class UserServiceImpl implements UserService {
         return result;
     }
 
+
     /**
      * 构建单个表信息
+     *
      * @param table
      * @return
      */
@@ -88,4 +98,35 @@ public class UserServiceImpl implements UserService {
         map.put("url", table.getSimpleName());
         return map;
     }
+
+    /**
+     * 验证旧密码
+     *
+     * @param userId
+     * @param oldPassword
+     * @return
+     */
+    @Override
+    public Boolean confirmOldPassword(String userId, String oldPassword) {
+        String password = userMapper.getUser(userId);
+        // 检查密码
+        oldPassword = new SimpleHash("MD5", oldPassword, ByteSource.Util.bytes(Settings.salt), 1024).toString();
+        return oldPassword.equals(password);
+    }
+
+    /**
+     * 修改密码
+     *
+     * @param userId
+     * @param new_password
+     * @return
+     */
+    @Override
+    public Boolean changePassword(String userId, String new_password) {
+        // 密码加密
+        new_password = new SimpleHash("MD5", new_password, ByteSource.Util.bytes(Settings.salt), 1024).toString();
+        return userMapper.changePassword(userId, new_password);
+    }
+
+
 }

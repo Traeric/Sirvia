@@ -6,7 +6,7 @@ import java.lang.annotation.*;
  * 标注在类上，表示该表有多对多字段
  */
 @Documented
-@Target(ElementType.TYPE)
+@Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface ManyToManyField {
     String relation_table();    // 关联表的名字

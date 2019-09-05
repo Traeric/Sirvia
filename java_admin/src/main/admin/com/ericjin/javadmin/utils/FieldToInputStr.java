@@ -1,10 +1,7 @@
 package com.ericjin.javadmin.utils;
 
 import com.ericjin.javadmin.Settings;
-import com.ericjin.javadmin.annotation.Choose;
-import com.ericjin.javadmin.annotation.DateUse;
-import com.ericjin.javadmin.annotation.ForeignKey;
-import com.ericjin.javadmin.annotation.Password;
+import com.ericjin.javadmin.annotation.*;
 
 import java.lang.reflect.Field;
 import java.util.*;
@@ -20,7 +17,8 @@ public class FieldToInputStr {
     public static String getInputStr(Field field, List<Map<String, Object>> list) {
         Class type = field.getType();
         String fieldName = ToCamelCase.humpToLine(field.getName());
-        if (type == Integer.class || type == int.class || type == String.class || type == Long.class || type == long.class) {
+        if (type == Integer.class || type == int.class || type == String.class || type == Long.class || type == long.class
+                || type == List.class) {
             // 查看该字段上面是否标注了注解
             if (field.isAnnotationPresent(Choose.class)) {
                 // 获取注解
@@ -77,9 +75,34 @@ public class FieldToInputStr {
                         "      <label class=\"layui-form-label\">%s:</label>\n" +
                         "      <div class=\"layui-input-inline\">\n" +
                         "        <select name=\"%s\" lay-verify=\"required\" lay-search=\"\">", fieldName, fieldName));
-                list.stream().forEach(map -> result.append(String.format("<option value=\"%s\">%s</option>",
+                list.forEach(map -> result.append(String.format("<option value=\"%s\">%s</option>",
                         map.get(foreignKey.relation_key()), map.get(foreignKey.show_field()))));
                 return result.append("</select></div></div><hr class=\"layui-bg-gray\">").toString();
+            } else if (field.isAnnotationPresent(ManyToManyField.class)) {
+                // 获取注解
+                ManyToManyField manyToManyField = field.getAnnotation(ManyToManyField.class);
+                StringBuilder result = new StringBuilder(String.format("<div class=\"layui-inline\">\n" +
+                        "      <label class=\"layui-form-label\">%s:</label>\n" +
+                        "      <div class=\"layui-input-inline\">\n" +
+                        "      <div id=\"transfer_%s\" class=\"demo-transfer\"></div></div></div>" +
+                        "      <script>layui.use(['transfer', 'layer', 'util'], function(){\n" +
+                        "        var $=layui.$\n" +
+                        "        ,transfer=layui.transfer\n" +
+                        "        ,layer=layui.layer\n" +
+                        "        ,util=layui.util;\n" +
+                        "        let data1=[", fieldName, fieldName));
+                // 填充数据
+                list.forEach(map1 -> result.append(String.format("{\"value\":\"%s\",\"title\":\"%s\"},\n",
+                        map1.get(manyToManyField.relation_field()), map1.get(manyToManyField.show_field()))));
+                return result.append(String.format("]\n" +
+                        "        transfer.render({\n" +
+                        "        elem:'#transfer_%s'\n" +
+                        "        ,data:data1\n" +
+                        "        ,title:['可供选择','已经选择']\n" +
+                        "        ,showSearch:true\n" +
+                        "        })\n" +
+                        "});</script><hr class=\"layui-bg-gray\">", fieldName)).toString();
+
             } else {
                 return String.format("<div class='layui-form-item'>\n" +
                         "            <label class='layui-form-label'>%s:</label>\n" +
@@ -294,3 +317,5 @@ public class FieldToInputStr {
         return FieldToInputStr.getInputStrWithValue(field, map, new ArrayList<>());
     }
 }
+
+

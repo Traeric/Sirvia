@@ -1,9 +1,6 @@
 package com.ericjin.javadmin.service.impl;
 
-import com.ericjin.javadmin.annotation.EntityTableName;
-import com.ericjin.javadmin.annotation.ForeignKey;
-import com.ericjin.javadmin.annotation.Id;
-import com.ericjin.javadmin.annotation.ShowName;
+import com.ericjin.javadmin.annotation.*;
 import com.ericjin.javadmin.mapper.SuperMapper;
 import com.ericjin.javadmin.service.IndexService;
 import com.ericjin.javadmin.utils.FieldToInputStr;
@@ -137,9 +134,19 @@ public class IndexServiceImpl implements IndexService {
                     // 获取关联表的信息
                     List<Map<String, Object>> foreignInfo = this.getRelationTableInfo(field);
                     result.append(FieldToInputStr.getInputStr(field, foreignInfo));
+                } else if (field.isAnnotationPresent(ManyToManyField.class)) {
+                    // 获取注解
+                    ManyToManyField manyToManyField = field.getAnnotation(ManyToManyField.class);
+                    // 获取注解信息
+                    String relationTable = manyToManyField.relation_table();
+                    String relationField = manyToManyField.relation_field();
+                    String showField = manyToManyField.show_field();
+                    List<Map<String, Object>> foreignInfo = superMapper.getForeignInfo(relationTable, relationField, showField);
+                    result.append(FieldToInputStr.getInputStr(field, foreignInfo));
                 } else {
                     result.append(FieldToInputStr.getInputStr(field));
                 }
+
             }
         }
         return result.toString();

@@ -141,13 +141,15 @@ public class FieldToInputStr {
      * 通过字段类型确定表单，并且填值
      *
      * @param field
+     * @param map
+     * @param list
      * @return
      */
-    public static String getInputStrWithValue(Field field, Map<String, Object> map) {
+    public static String getInputStrWithValue(Field field, Map<String, Object> map, List<Map<String, Object>> list) {
         Class type = field.getType();
         String fieldName = ToCamelCase.humpToLine(field.getName());
         // 获取值
-        String val = (String) map.get(fieldName);
+        String val = String.valueOf(map.get(fieldName));
         if (type == Integer.class || type == int.class || type == String.class || type == Long.class || type == long.class) {
             // 查看该字段上面是否标注了注解
             if (field.isAnnotationPresent(Choose.class)) {
@@ -206,6 +208,24 @@ public class FieldToInputStr {
                         "            </div>\n" +
                         "        </div>\n" +
                         "        <hr class=\"layui-bg-gray\">", fieldName, fieldName, fieldName, val);
+            } else if (field.isAnnotationPresent(ForeignKey.class)) {
+                // 获取键值对
+                ForeignKey foreignKey = field.getAnnotation(ForeignKey.class);
+                // select类型
+                StringBuilder result = new StringBuilder(String.format("<div class=\"layui-inline\">\n" +
+                        "      <label class=\"layui-form-label\">%s:</label>\n" +
+                        "      <div class=\"layui-input-inline\">\n" +
+                        "        <select name=\"%s\" lay-verify=\"required\" lay-search=\"\">", fieldName, fieldName));
+                list.forEach(map1 -> {
+                    if (val.equals(String.valueOf(map1.get(foreignKey.relation_key())))) {
+                        result.append(String.format("<option value=\"%s\" selected = \"selected\">%s</option>",
+                                map1.get(foreignKey.relation_key()), map1.get(foreignKey.show_field())));
+                    } else {
+                        result.append(String.format("<option value=\"%s\">%s</option>",
+                                map1.get(foreignKey.relation_key()), map1.get(foreignKey.show_field())));
+                    }
+                });
+                return result.append("</select></div></div><hr class=\"layui-bg-gray\">").toString();
             } else {
                 return String.format("<div class='layui-form-item'>\n" +
                         "            <label class='layui-form-label'>%s:</label>\n" +
@@ -261,5 +281,16 @@ public class FieldToInputStr {
                 "            </div>\n" +
                 "        </div>\n" +
                 "        <hr class=\"layui-bg-gray\">", fieldName, fieldName, fieldName, val);
+    }
+
+    /**
+     * getInputStrWithValue
+     *
+     * @param field
+     * @param map
+     * @return
+     */
+    public static String getInputStrWithValue(Field field, Map<String, Object> map) {
+        return FieldToInputStr.getInputStrWithValue(field, map, new ArrayList<>());
     }
 }

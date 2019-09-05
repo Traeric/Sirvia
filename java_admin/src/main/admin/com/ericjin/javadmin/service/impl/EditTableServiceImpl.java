@@ -1,5 +1,6 @@
 package com.ericjin.javadmin.service.impl;
 
+import com.ericjin.javadmin.annotation.ForeignKey;
 import com.ericjin.javadmin.annotation.Id;
 import com.ericjin.javadmin.mapper.SuperMapper;
 import com.ericjin.javadmin.service.EditTableService;
@@ -11,6 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.lang.reflect.Field;
+import java.util.List;
 import java.util.Map;
 
 @Service("editTableService")
@@ -40,7 +42,14 @@ public class EditTableServiceImpl implements EditTableService {
         for (Field field : declaredFields) {
             // 排除id
             if (!field.isAnnotationPresent(Id.class)) {
-                result.append(FieldToInputStr.getInputStrWithValue(field, map));
+                // 处理外键
+                if (field.isAnnotationPresent(ForeignKey.class)) {
+                    // 获取关联表的信息
+                    List<Map<String, Object>> foreignInfo = indexService.getRelationTableInfo(field);
+                    result.append(FieldToInputStr.getInputStrWithValue(field, map, foreignInfo));
+                } else {
+                    result.append(FieldToInputStr.getInputStrWithValue(field, map));
+                }
             }
         }
         return result.toString();

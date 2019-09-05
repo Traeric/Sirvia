@@ -100,6 +100,22 @@ public class IndexServiceImpl implements IndexService {
     }
 
     /**
+     * 获取关联表的信息
+     *
+     * @param field
+     * @return
+     */
+    public List<Map<String, Object>> getRelationTableInfo(Field field) {
+        // 获取表名，要展示的字段名，以及外键关联的字段名
+        ForeignKey foreignKey = field.getAnnotation(ForeignKey.class);
+        String tableName = foreignKey.relation_table();
+        String relationField = foreignKey.relation_key();
+        String showField = foreignKey.show_field();
+        // 获取关联表的信息
+        return superMapper.getForeignInfo(tableName, relationField, showField);
+    }
+
+    /**
      * 获取表单展示的内容
      *
      * @param modelName
@@ -118,13 +134,8 @@ public class IndexServiceImpl implements IndexService {
             if (!field.isAnnotationPresent(Id.class)) {
                 // 处理外键
                 if (field.isAnnotationPresent(ForeignKey.class)) {
-                    // 获取表名，要展示的字段名，以及外键关联的字段名
-                    ForeignKey foreignKey = field.getAnnotation(ForeignKey.class);
-                    String tableName = foreignKey.relation_table();
-                    String relationField = foreignKey.relation_key();
-                    String showField = foreignKey.show_field();
                     // 获取关联表的信息
-                    List<Map<String, Object>> foreignInfo = superMapper.getForeignInfo(tableName, relationField, showField);
+                    List<Map<String, Object>> foreignInfo = this.getRelationTableInfo(field);
                     result.append(FieldToInputStr.getInputStr(field, foreignInfo));
                 } else {
                     result.append(FieldToInputStr.getInputStr(field));

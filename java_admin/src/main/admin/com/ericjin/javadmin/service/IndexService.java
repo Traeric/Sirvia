@@ -1,5 +1,6 @@
 package com.ericjin.javadmin.service;
 
+import java.lang.reflect.Field;
 import java.util.List;
 import java.util.Map;
 
@@ -15,4 +16,6 @@ public interface IndexService {
     Class getBean(String modelName, String beanName);
 
     String getTableName(Class bean);
+
+    List<Map<String, Object>> getRelationTableInfo(Field field);
 }

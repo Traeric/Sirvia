@@ -89,6 +89,10 @@
     function parentCommit(callback) {
         let formObj = $("#form_list");
         let data = formObj.serializes();
+        // 移除不需要的参数
+        delete data['layTransferLeftCheckAll'];
+        delete data['layTransferLeftCheck'];
+        delete data['layTransferRightCheckAll'];
         // 上传数据
         $.ajax({
             url: $("#url").attr("href"),

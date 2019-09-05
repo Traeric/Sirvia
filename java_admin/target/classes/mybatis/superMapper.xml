@@ -43,5 +43,20 @@
     <select id="getForeignInfo" resultType="map">
         SELECT ${relation_key}, ${show_field} FROM ${table_name}
     </select>
+
+    <!-- 获取最新插入的id -->
+    <select id="getId" resultType="string">
+        SELECT @@IDENTITY
+    </select>
+
+    <!-- 根据添加的id查询要在第三张表中插入的数据 -->
+    <select id="manyToManySelfId" resultType="string">
+        SELECT ${select_field} FROM ${table_name} WHERE id = #{id}
+    </select>
+
+    <!-- 多对多时将数据插入第三张表 -->
+    <insert id="thirdInsert">
+        INSERT INTO ${third_table}(${relation_field}, ${self_field}) VALUE (#{relation_val}, #{self_val})
+    </insert>
 </mapper>
 

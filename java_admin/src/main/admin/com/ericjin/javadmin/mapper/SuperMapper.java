@@ -25,4 +25,14 @@ public interface SuperMapper {
     // 获取外键关联的表信息
     List<Map<String, Object>> getForeignInfo(@Param("table_name") String tableName, @Param("relation_key") String relationKey,
                                        @Param("show_field") String showField);
+
+    // 获取最近插入的id
+    String getId();
+
+    // 根据添加的id查询要在第三张表中插入的数据
+    String manyToManySelfId(@Param("table_name") String tableName, @Param("select_field") String selectField, @Param("id") String id);
+
+    // 多对多时将数据插入第三张表
+    Boolean thirdInsert(@Param("third_table") String thirdTable, @Param("relation_field") String relationField,
+                        @Param("relation_val") String relationVal, @Param("self_field") String selfField, @Param("self_val") String selfVal);
 }

@@ -11,10 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.lang.reflect.Field;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Service("indexService")
@@ -168,7 +165,52 @@ public class IndexServiceImpl implements IndexService {
         // 整理数据
         Map<String, String> data_map = new HashMap<>();
         map.forEach((key, val) -> data_map.put(ToCamelCase.humpToLine(key), (String) val));
+
+        List<Map<String, String>> thirdInfo = new ArrayList<>();
+        // 获取在第三张表中添加的数据
+        Field[] declaredFields = bean.getDeclaredFields();
+        // 获取关联表要插入第三章表的数据
+        for (Field field : declaredFields) {
+            if (field.isAnnotationPresent(ManyToManyField.class)) {
+                // 获取注解
+                ManyToManyField manyToManyField = field.getAnnotation(ManyToManyField.class);
+                // 获取第三张表数据
+                String thirdTable = manyToManyField.third_table();
+                String thirdRelationField = manyToManyField.third_relation_field();
+                String thirdSelfField = manyToManyField.third_self_field();
+                // 获取要添加的字段
+                String relationValues = (String) map.get(String.format("%s_%s", thirdTable, field.getName()));
+                data_map.remove(String.format("%s_%s", thirdTable, field.getName()));
+                // 获取当前表要插入第三张表的字段
+                String insertField = manyToManyField.insert_field();
+                // 将信息保存
+                Map<String, String> m = new LinkedHashMap<>();
+                m.put("third_table", thirdTable);
+                m.put("third_relation_field", thirdRelationField);
+                m.put("third_self_field", thirdSelfField);
+                m.put("relation_values", relationValues);
+                m.put("insert_field", insertField);
+                thirdInfo.add(m);
+            }
+        }
         // 添加数据
-        return superMapper.addTable(data_map, tableName);
+        if (!superMapper.addTable(data_map, tableName)) {
+            return false;
+        }
+        String id = superMapper.getId();
+        // 添加第三张表的数据
+        thirdInfo.parallelStream().forEach(item -> {
+            // 查询出当前表要在第三张表中插入的值
+            String selfId = superMapper.manyToManySelfId(tableName, item.get("insert_field"), id);
+            // 获取关联表中的所有要插入的值
+            String values = item.get("relation_values");
+            String[] valuesArr = values.trim().split(" ");
+            // 将数据插入到第三张表中
+            for (String value : valuesArr) {
+                superMapper.thirdInsert(item.get("third_table"), item.get("third_relation_field"), value,
+                        item.get("third_self_field"), selfId);
+            }
+        });
+        return true;
     }
 }

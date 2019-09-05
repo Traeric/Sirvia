@@ -84,13 +84,14 @@ public class FieldToInputStr {
                 StringBuilder result = new StringBuilder(String.format("<div class=\"layui-inline\">\n" +
                         "      <label class=\"layui-form-label\">%s:</label>\n" +
                         "      <div class=\"layui-input-inline\">\n" +
-                        "      <div id=\"transfer_%s\" class=\"demo-transfer\"></div></div></div>" +
+                        "      <input type='hidden' name='%s_%s' value=''>\n" +
+                        "      <div id=\"transfer_%s\" class=\"demo-transfer\"></div></div></div>\n" +
                         "      <script>layui.use(['transfer', 'layer', 'util'], function(){\n" +
                         "        var $=layui.$\n" +
                         "        ,transfer=layui.transfer\n" +
                         "        ,layer=layui.layer\n" +
                         "        ,util=layui.util;\n" +
-                        "        let data1=[", fieldName, fieldName));
+                        "        let data1=[", fieldName, manyToManyField.third_table(), fieldName, fieldName));
                 // 填充数据
                 list.forEach(map1 -> result.append(String.format("{\"value\":\"%s\",\"title\":\"%s\"},\n",
                         map1.get(manyToManyField.relation_field()), map1.get(manyToManyField.show_field()))));
@@ -99,9 +100,19 @@ public class FieldToInputStr {
                         "        elem:'#transfer_%s'\n" +
                         "        ,data:data1\n" +
                         "        ,title:['可供选择','已经选择']\n" +
-                        "        ,showSearch:true\n" +
+                        "        ,showSearch:true,\n" +
+                        "        id: '%s',\n" +
+                        "        onchange(data, index) {\n" +
+                        "            let selectValue = transfer.getData('%s');\n" +
+                        "            let values = '';\n" +
+                        "            $.each(selectValue, (index, item) => {\n" +
+                        "                values += item['value'] + ' ';\n" +
+                        "            });\n" +
+                        "            $('input[name=%s_%s]').val(values)\n" +
+                        "        }\n" +
                         "        })\n" +
-                        "});</script><hr class=\"layui-bg-gray\">", fieldName)).toString();
+                        "});</script><hr class=\"layui-bg-gray\">", fieldName, fieldName, fieldName, manyToManyField.third_table(),
+                        fieldName)).toString();
 
             } else {
                 return String.format("<div class='layui-form-item'>\n" +

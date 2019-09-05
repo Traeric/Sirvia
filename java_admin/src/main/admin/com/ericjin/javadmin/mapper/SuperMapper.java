@@ -21,4 +21,8 @@ public interface SuperMapper {
 
     // 删除表数据
     Boolean deleteTable(@Param("table_name") String tableName, @Param("id") Integer id);
+
+    // 获取外键关联的表信息
+    List<Map<String, Object>> getForeignInfo(@Param("table_name") String tableName, @Param("relation_key") String relationKey,
+                                       @Param("show_field") String showField);
 }

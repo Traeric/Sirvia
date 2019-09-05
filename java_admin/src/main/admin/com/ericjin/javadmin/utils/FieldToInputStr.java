@@ -3,20 +3,21 @@ package com.ericjin.javadmin.utils;
 import com.ericjin.javadmin.Settings;
 import com.ericjin.javadmin.annotation.Choose;
 import com.ericjin.javadmin.annotation.DateUse;
+import com.ericjin.javadmin.annotation.ForeignKey;
 import com.ericjin.javadmin.annotation.Password;
 
 import java.lang.reflect.Field;
-import java.util.Date;
-import java.util.Map;
+import java.util.*;
 
 public class FieldToInputStr {
     /**
      * 通过字段类型获取对应的表单
      *
      * @param field
+     * @param list
      * @return
      */
-    public static String getInputStr(Field field) {
+    public static String getInputStr(Field field, List<Map<String, Object>> list) {
         Class type = field.getType();
         String fieldName = ToCamelCase.humpToLine(field.getName());
         if (type == Integer.class || type == int.class || type == String.class || type == Long.class || type == long.class) {
@@ -68,6 +69,17 @@ public class FieldToInputStr {
                         "            </div>\n" +
                         "        </div>\n" +
                         "        <hr class=\"layui-bg-gray\">", fieldName, fieldName, fieldName);
+            } else if (field.isAnnotationPresent(ForeignKey.class)) {
+                // 获取键值对
+                ForeignKey foreignKey = field.getAnnotation(ForeignKey.class);
+                // select类型
+                StringBuilder result = new StringBuilder(String.format("<div class=\"layui-inline\">\n" +
+                        "      <label class=\"layui-form-label\">%s:</label>\n" +
+                        "      <div class=\"layui-input-inline\">\n" +
+                        "        <select name=\"%s\" lay-verify=\"required\" lay-search=\"\">", fieldName, fieldName));
+                list.stream().forEach(map -> result.append(String.format("<option value=\"%s\">%s</option>",
+                        map.get(foreignKey.relation_key()), map.get(foreignKey.show_field()))));
+                return result.append("</select></div></div><hr class=\"layui-bg-gray\">").toString();
             } else {
                 return String.format("<div class='layui-form-item'>\n" +
                         "            <label class='layui-form-label'>%s:</label>\n" +
@@ -116,7 +128,18 @@ public class FieldToInputStr {
     }
 
     /**
+     * 重载getInputStr
+     *
+     * @param field
+     * @return
+     */
+    public static String getInputStr(Field field) {
+        return FieldToInputStr.getInputStr(field, new ArrayList<>());
+    }
+
+    /**
      * 通过字段类型确定表单，并且填值
+     *
      * @param field
      * @return
      */

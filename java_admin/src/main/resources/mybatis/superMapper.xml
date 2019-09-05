@@ -34,8 +34,14 @@
         WHERE id = #{id}
     </update>
 
+    <!-- 删除一条字段 -->
     <delete id="deleteTable">
         DELETE FROM ${table_name} WHERE id = #{id}
     </delete>
+
+    <!-- 获取外键关联的表信息 -->
+    <select id="getForeignInfo" resultType="map">
+        SELECT ${relation_key}, ${show_field} FROM ${table_name}
+    </select>
 </mapper>
 

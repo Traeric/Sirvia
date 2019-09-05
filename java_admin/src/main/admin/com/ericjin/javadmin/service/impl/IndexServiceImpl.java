@@ -1,6 +1,7 @@
 package com.ericjin.javadmin.service.impl;
 
 import com.ericjin.javadmin.annotation.EntityTableName;
+import com.ericjin.javadmin.annotation.ForeignKey;
 import com.ericjin.javadmin.annotation.Id;
 import com.ericjin.javadmin.annotation.ShowName;
 import com.ericjin.javadmin.mapper.SuperMapper;
@@ -115,7 +116,19 @@ public class IndexServiceImpl implements IndexService {
         for (Field field : declaredFields) {
             // 排除id
             if (!field.isAnnotationPresent(Id.class)) {
-                result.append(FieldToInputStr.getInputStr(field));
+                // 处理外键
+                if (field.isAnnotationPresent(ForeignKey.class)) {
+                    // 获取表名，要展示的字段名，以及外键关联的字段名
+                    ForeignKey foreignKey = field.getAnnotation(ForeignKey.class);
+                    String tableName = foreignKey.relation_table();
+                    String relationField = foreignKey.relation_key();
+                    String showField = foreignKey.show_field();
+                    // 获取关联表的信息
+                    List<Map<String, Object>> foreignInfo = superMapper.getForeignInfo(tableName, relationField, showField);
+                    result.append(FieldToInputStr.getInputStr(field, foreignInfo));
+                } else {
+                    result.append(FieldToInputStr.getInputStr(field));
+                }
             }
         }
         return result.toString();

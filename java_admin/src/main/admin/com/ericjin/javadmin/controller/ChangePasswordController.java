@@ -43,8 +43,6 @@ public class ChangePasswordController {
     @ResponseBody
     @PostMapping("/change")
     public String changePassword(@RequestParam("user_id") String userId, @RequestParam("new_password") String newPassword) {
-        System.out.println(userId);
-        System.out.println(newPassword);
         return userService.changePassword(userId, newPassword) ? "1" : "0";
     }
 }

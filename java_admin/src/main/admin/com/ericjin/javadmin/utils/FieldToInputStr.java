@@ -5,6 +5,7 @@ import com.ericjin.javadmin.annotation.*;
 
 import java.lang.reflect.Field;
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class FieldToInputStr {
     /**
@@ -96,24 +97,23 @@ public class FieldToInputStr {
                 list.forEach(map1 -> result.append(String.format("{\"value\":\"%s\",\"title\":\"%s\"},\n",
                         map1.get(manyToManyField.relation_field()), map1.get(manyToManyField.show_field()))));
                 return result.append(String.format("]\n" +
-                        "        transfer.render({\n" +
-                        "        elem:'#transfer_%s'\n" +
-                        "        ,data:data1\n" +
-                        "        ,title:['可供选择','已经选择']\n" +
-                        "        ,showSearch:true,\n" +
-                        "        id: '%s',\n" +
-                        "        onchange(data, index) {\n" +
-                        "            let selectValue = transfer.getData('%s');\n" +
-                        "            let values = '';\n" +
-                        "            $.each(selectValue, (index, item) => {\n" +
-                        "                values += item['value'] + ' ';\n" +
-                        "            });\n" +
-                        "            $('input[name=%s_%s]').val(values)\n" +
-                        "        }\n" +
-                        "        })\n" +
-                        "});</script><hr class=\"layui-bg-gray\">", fieldName, fieldName, fieldName, manyToManyField.third_table(),
+                                "        transfer.render({\n" +
+                                "        elem:'#transfer_%s'\n" +
+                                "        ,data:data1\n" +
+                                "        ,title:['可供选择','已经选择']\n" +
+                                "        ,showSearch:true,\n" +
+                                "        id: '%s',\n" +
+                                "        onchange(data, index) {\n" +
+                                "            let selectValue = transfer.getData('%s');\n" +
+                                "            let values = '';\n" +
+                                "            $.each(selectValue, (index, item) => {\n" +
+                                "                values += item['value'] + ' ';\n" +
+                                "            });\n" +
+                                "            $('input[name=%s_%s]').val(values)\n" +
+                                "        }\n" +
+                                "        })\n" +
+                                "});</script><hr class=\"layui-bg-gray\">", fieldName, fieldName, fieldName, manyToManyField.third_table(),
                         fieldName)).toString();
-
             } else {
                 return String.format("<div class='layui-form-item'>\n" +
                         "            <label class='layui-form-label'>%s:</label>\n" +
@@ -179,12 +179,14 @@ public class FieldToInputStr {
      * @param list
      * @return
      */
-    public static String getInputStrWithValue(Field field, Map<String, Object> map, List<Map<String, Object>> list) {
+    public static String getInputStrWithValue(Field field, Map<String, Object> map, List<Map<String, Object>> list,
+                                              List<Map<String, String>> selectData) {
         Class type = field.getType();
         String fieldName = ToCamelCase.humpToLine(field.getName());
-        // 获取值
+        // 由于是修改，需要获取已经有的值
         String val = String.valueOf(map.get(fieldName));
-        if (type == Integer.class || type == int.class || type == String.class || type == Long.class || type == long.class) {
+        if (type == Integer.class || type == int.class || type == String.class || type == Long.class || type == long.class
+                || type == List.class) {
             // 查看该字段上面是否标注了注解
             if (field.isAnnotationPresent(Choose.class)) {
                 // 获取注解
@@ -260,6 +262,50 @@ public class FieldToInputStr {
                     }
                 });
                 return result.append("</select></div></div><hr class=\"layui-bg-gray\">").toString();
+            } else if (field.isAnnotationPresent(ManyToManyField.class)) {
+                // 获取注解
+                ManyToManyField manyToManyField = field.getAnnotation(ManyToManyField.class);
+                // 将已经选中的数据填入input框中
+                StringBuilder values = new StringBuilder();
+                StringBuilder transferValue = new StringBuilder("[");
+                for (Map<String, String> item : selectData) {
+                    values.append(String.valueOf(item.get(manyToManyField.third_relation_field()))).append(" ");
+                    transferValue.append(String.format("'%s', ", item.get(manyToManyField.third_relation_field())));
+                }
+                transferValue.append("]");
+                StringBuilder result = new StringBuilder(String.format("<div class=\"layui-inline\">\n" +
+                        "      <label class=\"layui-form-label\">%s:</label>\n" +
+                        "      <div class=\"layui-input-inline\">\n" +
+                        "      <input type='hidden' name='%s_%s' value='%s'>\n" +
+                        "      <div id=\"transfer_%s\" class=\"demo-transfer\"></div></div></div>\n" +
+                        "      <script>layui.use(['transfer', 'layer', 'util'], function(){\n" +
+                        "        var $=layui.$\n" +
+                        "        ,transfer=layui.transfer\n" +
+                        "        ,layer=layui.layer\n" +
+                        "        ,util=layui.util;\n" +
+                        "        let data1=[", fieldName, manyToManyField.third_table(), fieldName, values.toString(), fieldName));
+                // 填充数据
+                list.forEach(map1 -> result.append(String.format("{\"value\":\"%s\",\"title\":\"%s\"},\n",
+                        map1.get(manyToManyField.relation_field()), map1.get(manyToManyField.show_field()))));
+                return result.append(String.format("]\n" +
+                                "        transfer.render({\n" +
+                                "        elem:'#transfer_%s'\n" +
+                                "        ,data:data1\n" +
+                                "        ,title:['可供选择','已经选择']\n" +
+                                "        ,showSearch:true,\n" +
+                                "        id: '%s',\n" +
+                                "        value: %s,\n" +
+                                "        onchange(data, index) {\n" +
+                                "            let selectValue = transfer.getData('%s');\n" +
+                                "            let values = '';\n" +
+                                "            $.each(selectValue, (index, item) => {\n" +
+                                "                values += item['value'] + ' ';\n" +
+                                "            });\n" +
+                                "            $('input[name=%s_%s]').val(values)\n" +
+                                "        }\n" +
+                                "        })\n" +
+                                "});</script><hr class=\"layui-bg-gray\">", fieldName, fieldName, transferValue.toString(), fieldName,
+                        manyToManyField.third_table(), fieldName)).toString();
             } else {
                 return String.format("<div class='layui-form-item'>\n" +
                         "            <label class='layui-form-label'>%s:</label>\n" +
@@ -326,6 +372,16 @@ public class FieldToInputStr {
      */
     public static String getInputStrWithValue(Field field, Map<String, Object> map) {
         return FieldToInputStr.getInputStrWithValue(field, map, new ArrayList<>());
+    }
+
+    /**
+     * @param field
+     * @param map
+     * @param list
+     * @return
+     */
+    public static String getInputStrWithValue(Field field, Map<String, Object> map, List<Map<String, Object>> list) {
+        return FieldToInputStr.getInputStrWithValue(field, map, list, new ArrayList<>());
     }
 }
 

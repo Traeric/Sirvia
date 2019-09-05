@@ -35,4 +35,8 @@ public interface SuperMapper {
     // 多对多时将数据插入第三张表
     Boolean thirdInsert(@Param("third_table") String thirdTable, @Param("relation_field") String relationField,
                         @Param("relation_val") String relationVal, @Param("self_field") String selfField, @Param("self_val") String selfVal);
+
+    // 查询某个值在第三张表中的全部结果
+    List<Map<String, String>> getThirdInfo(@Param("third_table") String thirdTable, @Param("relation_field") String relationField,
+                                           @Param("self_field") String selfField, @Param("select_value") String selectVal);
 }

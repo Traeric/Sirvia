@@ -58,5 +58,10 @@
     <insert id="thirdInsert">
         INSERT INTO ${third_table}(${relation_field}, ${self_field}) VALUE (#{relation_val}, #{self_val})
     </insert>
+
+    <!-- 查询某个值在第三张表中的全部结果 -->
+    <select id="getThirdInfo" resultType="map">
+        SELECT ${relation_field}, ${self_field} FROM ${third_table} WHERE ${self_field} = #{select_value}
+    </select>
 </mapper>
 

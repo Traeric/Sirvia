@@ -2,6 +2,7 @@ package com.ericjin.javadmin.service.impl;
 
 import com.ericjin.javadmin.annotation.ForeignKey;
 import com.ericjin.javadmin.annotation.Id;
+import com.ericjin.javadmin.annotation.ManyToManyField;
 import com.ericjin.javadmin.mapper.SuperMapper;
 import com.ericjin.javadmin.service.EditTableService;
 import com.ericjin.javadmin.service.IndexService;
@@ -47,6 +48,23 @@ public class EditTableServiceImpl implements EditTableService {
                     // 获取关联表的信息
                     List<Map<String, Object>> foreignInfo = indexService.getRelationTableInfo(field);
                     result.append(FieldToInputStr.getInputStrWithValue(field, map, foreignInfo));
+                } else if (field.isAnnotationPresent(ManyToManyField.class)) {
+                    // 获取注解
+                    ManyToManyField manyToManyField = field.getAnnotation(ManyToManyField.class);
+                    // 获取注解信息
+                    String relationTable = manyToManyField.relation_table();
+                    String relationField = manyToManyField.relation_field();
+                    String showField = manyToManyField.show_field();
+                    List<Map<String, Object>> foreignInfo = superMapper.getForeignInfo(relationTable, relationField, showField);
+                    // 获取第三张表的信息
+                    String thirdTable = manyToManyField.third_table();
+                    String thirdRelationField = manyToManyField.third_relation_field();
+                    String thirdSelfField = manyToManyField.third_self_field();
+                    String insertField = manyToManyField.insert_field();
+                    String selectVal = superMapper.manyToManySelfId(tableName, insertField, String.valueOf(id));
+                    // 查询第三张表的数据
+                    List<Map<String, String>> thirdInfo = superMapper.getThirdInfo(thirdTable, thirdRelationField, thirdSelfField, selectVal);
+                    result.append(FieldToInputStr.getInputStrWithValue(field, map, foreignInfo, thirdInfo));
                 } else {
                     result.append(FieldToInputStr.getInputStrWithValue(field, map));
                 }

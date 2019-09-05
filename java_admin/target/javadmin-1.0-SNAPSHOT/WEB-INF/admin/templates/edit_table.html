@@ -28,6 +28,7 @@
         <blockquote class="layui-elem-quote">编辑[[ ${tableName} ]]</blockquote>
     </div>
     <form class="area layui-form" id="form_list">
+        <input type="hidden" name="id" th:value="${id}">
         [( ${inputStr} )]
     </form>
 

@@ -69,7 +69,7 @@
                 <!-- 生成表头 -->
                 <thead>
                 <tr>
-                    <th class="layui-form">
+                    <th class="layui-form" style="width: 50px;">
                         <input type="checkbox" lay-skin="primary" id="select_all" lay-filter="selectAll">
                     </th>
                     <th th:each="item : ${dataList.get(0).keySet()}">
@@ -80,7 +80,7 @@
                 </thead>
                 <tbody>
                 <tr th:each="item : ${dataList}" th:index="${item.get('id')}">
-                    <th class="layui-form">
+                    <th class="layui-form" style="width: 50px;">
                         <input class="select-item" type="checkbox" lay-skin="primary" th:value="${item.get('id')}"
                                lay-filter="selectItem">
                     </th>

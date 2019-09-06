@@ -110,6 +110,22 @@ public class IndexServiceImpl implements IndexService {
     }
 
     /**
+     * 获取第三张表的信息
+     *
+     * @param field
+     * @return
+     */
+    public List<Map<String, Object>> getThirdTableInfo(Field field) {
+        // 获取注解
+        ManyToManyField manyToManyField = field.getAnnotation(ManyToManyField.class);
+        // 获取注解信息
+        String relationTable = manyToManyField.relation_table();
+        String relationField = manyToManyField.relation_field();
+        String showField = manyToManyField.show_field();
+        return superMapper.getForeignInfo(relationTable, relationField, showField);
+    }
+
+    /**
      * 获取表单展示的内容
      *
      * @param modelName
@@ -130,16 +146,12 @@ public class IndexServiceImpl implements IndexService {
                 if (field.isAnnotationPresent(ForeignKey.class)) {
                     // 获取关联表的信息
                     List<Map<String, Object>> foreignInfo = this.getRelationTableInfo(field);
-                    result.append(FieldToInputStr.getInputStr(field, foreignInfo));
+                    result.append(FieldToInputStr.getInputStr(field, foreignInfo, modelName,
+                            field.getAnnotation(ForeignKey.class).relation_bean().getSimpleName()));
                 } else if (field.isAnnotationPresent(ManyToManyField.class)) {
-                    // 获取注解
-                    ManyToManyField manyToManyField = field.getAnnotation(ManyToManyField.class);
-                    // 获取注解信息
-                    String relationTable = manyToManyField.relation_table();
-                    String relationField = manyToManyField.relation_field();
-                    String showField = manyToManyField.show_field();
-                    List<Map<String, Object>> foreignInfo = superMapper.getForeignInfo(relationTable, relationField, showField);
-                    result.append(FieldToInputStr.getInputStr(field, foreignInfo));
+                    List<Map<String, Object>> foreignInfo = this.getThirdTableInfo(field);
+                    result.append(FieldToInputStr.getInputStr(field, foreignInfo, modelName,
+                            field.getAnnotation(ManyToManyField.class).relation_bean().getSimpleName()));
                 } else {
                     result.append(FieldToInputStr.getInputStr(field));
                 }

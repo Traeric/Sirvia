@@ -22,4 +22,6 @@ public @interface ManyToManyField {
     String third_self_field();    // 当前字段在第三张表中的名称
 
     String insert_field() default "id";    // 当前表要插入第三张表的字段
+
+    Class relation_bean();    // 关联表的java bean对象
 }

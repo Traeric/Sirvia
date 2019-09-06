@@ -7,8 +7,6 @@ import com.ericjin.javadmin.mapper.SuperMapper;
 import com.ericjin.javadmin.service.EditTableService;
 import com.ericjin.javadmin.service.IndexService;
 import com.ericjin.javadmin.utils.FieldToInputStr;
-import com.hazelcast.util.StringUtil;
-import com.mysql.jdbc.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

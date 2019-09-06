@@ -17,7 +17,7 @@ public class FieldToInputStr {
      * @param list
      * @return
      */
-    public static String getInputStr(Field field, List<Map<String, Object>> list) {
+    public static String getInputStr(Field field, List<Map<String, Object>> list, String modelName, String beanName) {
         Class type = field.getType();
         String fieldName = ToCamelCase.humpToLine(field.getName());
         if (type == Integer.class || type == int.class || type == String.class || type == Long.class || type == long.class
@@ -80,7 +80,11 @@ public class FieldToInputStr {
                         "        <select name=\"%s\" lay-verify=\"required\" lay-search=\"\">", fieldName, fieldName));
                 list.forEach(map -> result.append(String.format("<option value=\"%s\">%s</option>",
                         map.get(foreignKey.relation_key()), map.get(foreignKey.show_field()))));
-                return result.append("</select></div></div><hr class=\"layui-bg-gray\">").toString();
+                return result.append(String.format("</select></div>" +
+                        "<button type=\"button\" class=\"layui-btn layui-btn-xs layui-btn-warm\" " +
+                        "style='margin-left: 10px;' title='添加%s' onclick='openWindow(\"/admin/%s/%s/add\")'>" +
+                        "<i class=\"layui-icon layui-icon-add-1\"></i>" +
+                        "</button></div><hr class=\"layui-bg-gray\">", fieldName, modelName, beanName)).toString();
             } else if (field.isAnnotationPresent(ManyToManyField.class)) {
                 // 获取注解
                 ManyToManyField manyToManyField = field.getAnnotation(ManyToManyField.class);
@@ -88,13 +92,17 @@ public class FieldToInputStr {
                         "      <label class=\"layui-form-label\">%s:</label>\n" +
                         "      <div class=\"layui-input-inline\">\n" +
                         "      <input type='hidden' name='%s_%s' value=''>\n" +
-                        "      <div id=\"transfer_%s\" class=\"demo-transfer\"></div></div></div>\n" +
+                        "      <div id=\"transfer_%s\" class=\"demo-transfer\"></div></div>" +
+                        "      <button type='button' class='layui-btn layui-btn-xs layui-btn-warm' " +
+                        "       style='margin-left: 10px;' title='添加%s' onclick='openWindow(\"/admin/%s/%s/add\")'>" +
+                        "          <i class='layui-icon layui-icon-add-1'></i>" +
+                        "      </button></div>\n" +
                         "      <script>layui.use(['transfer', 'layer', 'util'], function(){\n" +
                         "        var $=layui.$\n" +
                         "        ,transfer=layui.transfer\n" +
                         "        ,layer=layui.layer\n" +
                         "        ,util=layui.util;\n" +
-                        "        let data1=[", fieldName, manyToManyField.third_table(), fieldName, fieldName));
+                        "        let data1=[", fieldName, manyToManyField.third_table(), fieldName, fieldName, fieldName, modelName, beanName));
                 // 填充数据
                 list.forEach(map1 -> result.append(String.format("{\"value\":\"%s\",\"title\":\"%s\"},\n",
                         map1.get(manyToManyField.relation_field()), map1.get(manyToManyField.show_field()))));
@@ -170,7 +178,7 @@ public class FieldToInputStr {
      * @return
      */
     public static String getInputStr(Field field) {
-        return FieldToInputStr.getInputStr(field, new ArrayList<>());
+        return FieldToInputStr.getInputStr(field, new ArrayList<>(), "", "");
     }
 
     /**
@@ -386,5 +394,3 @@ public class FieldToInputStr {
         return FieldToInputStr.getInputStrWithValue(field, map, list, new ArrayList<>());
     }
 }
-
-

@@ -14,4 +14,6 @@ public @interface ForeignKey {
     String relation_key() default "id";     // 关联字段
 
     String show_field();     // 要展示的字段
+
+    Class relation_bean();   // 关联的java bean对象
 }

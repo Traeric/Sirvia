@@ -194,9 +194,7 @@ public class IndexServiceImpl implements IndexService {
             }
         }
         // 添加数据
-        if (!superMapper.addTable(data_map, tableName)) {
-            return false;
-        }
+        superMapper.addTable(data_map, tableName);
         String id = superMapper.getId();
         // 添加第三张表的数据
         thirdInfo.parallelStream().forEach(item -> {
@@ -207,8 +205,10 @@ public class IndexServiceImpl implements IndexService {
             String[] valuesArr = values.trim().split(" ");
             // 将数据插入到第三张表中
             for (String value : valuesArr) {
-                superMapper.thirdInsert(item.get("third_table"), item.get("third_relation_field"), value,
-                        item.get("third_self_field"), selfId);
+                if (!"".equals(value)) {
+                    superMapper.thirdInsert(item.get("third_table"), item.get("third_relation_field"), value,
+                            item.get("third_self_field"), selfId);
+                }
             }
         });
         return true;

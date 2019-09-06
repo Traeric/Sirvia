@@ -39,4 +39,8 @@ public interface SuperMapper {
     // 查询某个值在第三张表中的全部结果
     List<Map<String, String>> getThirdInfo(@Param("third_table") String thirdTable, @Param("relation_field") String relationField,
                                            @Param("self_field") String selfField, @Param("select_value") String selectVal);
+
+    // 从以三张表中移除数据
+    Boolean removeFromThirdTable(@Param("third_table") String thirdTable, @Param("third_self_field") String thirdSelfField,
+                                 @Param("select_id") String selectId);
 }

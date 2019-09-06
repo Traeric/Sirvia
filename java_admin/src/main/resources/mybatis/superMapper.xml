@@ -63,5 +63,10 @@
     <select id="getThirdInfo" resultType="map">
         SELECT ${relation_field}, ${self_field} FROM ${third_table} WHERE ${self_field} = #{select_value}
     </select>
+
+    <!-- 从以三张表中移除数据 -->
+    <delete id="removeFromThirdTable">
+        DELETE FROM ${third_table} WHERE ${third_self_field} = #{select_id}
+    </delete>
 </mapper>
 

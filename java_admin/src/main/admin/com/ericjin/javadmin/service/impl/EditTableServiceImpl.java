@@ -13,6 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.lang.reflect.Field;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -47,7 +48,8 @@ public class EditTableServiceImpl implements EditTableService {
                 if (field.isAnnotationPresent(ForeignKey.class)) {
                     // 获取关联表的信息
                     List<Map<String, Object>> foreignInfo = indexService.getRelationTableInfo(field);
-                    result.append(FieldToInputStr.getInputStrWithValue(field, map, foreignInfo));
+                    result.append(FieldToInputStr.getInputStrWithValue(field, map, foreignInfo, null, modelName,
+                            field.getAnnotation(ForeignKey.class).relation_bean().getSimpleName()));
                 } else if (field.isAnnotationPresent(ManyToManyField.class)) {
                     // 获取注解
                     ManyToManyField manyToManyField = field.getAnnotation(ManyToManyField.class);
@@ -64,7 +66,8 @@ public class EditTableServiceImpl implements EditTableService {
                     String selectVal = superMapper.manyToManySelfId(tableName, insertField, String.valueOf(id));
                     // 查询第三张表的数据
                     List<Map<String, String>> thirdInfo = superMapper.getThirdInfo(thirdTable, thirdRelationField, thirdSelfField, selectVal);
-                    result.append(FieldToInputStr.getInputStrWithValue(field, map, foreignInfo, thirdInfo));
+                    result.append(FieldToInputStr.getInputStrWithValue(field, map, foreignInfo, thirdInfo, modelName,
+                            manyToManyField.relation_bean().getSimpleName()));
                 } else {
                     result.append(FieldToInputStr.getInputStrWithValue(field, map));
                 }

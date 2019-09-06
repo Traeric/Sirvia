@@ -121,7 +121,13 @@
             alertDom.css("display", "block");
             if (args === "1") {
                 // 添加成功
-                location.href = $("#back").attr("href");
+                if (window.opener == null) {
+                    location.href = $("#back").attr("href");
+                } else {
+                    window.opener = null;
+                    window.open('', '_self');
+                    window.close();
+                }
             } else {
                 alertDom.find("b").html("添加失败");
                 alertDom.addClass("alert alert-danger alert-dismissible");
@@ -148,6 +154,13 @@
                 }
             },
         });
+    }
+
+    /**
+     * 打开一个新窗口
+     */
+    function openWindow(url) {
+        window.open(url, "newwindow", "height=500, width=800, top=250, left=500, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no");
     }
 </script>
 </body>

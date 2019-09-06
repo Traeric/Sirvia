@@ -178,7 +178,7 @@ public class FieldToInputStr {
      * @return
      */
     public static String getInputStr(Field field) {
-        return FieldToInputStr.getInputStr(field, new ArrayList<>(), "", "");
+        return FieldToInputStr.getInputStr(field, null, "", "");
     }
 
     /**
@@ -190,7 +190,7 @@ public class FieldToInputStr {
      * @return
      */
     public static String getInputStrWithValue(Field field, Map<String, Object> map, List<Map<String, Object>> list,
-                                              List<Map<String, String>> selectData) {
+                                              List<Map<String, String>> selectData, String modelName, String beanName) {
         Class type = field.getType();
         String fieldName = ToCamelCase.humpToLine(field.getName());
         // 由于是修改，需要获取已经有的值
@@ -271,7 +271,11 @@ public class FieldToInputStr {
                                 map1.get(foreignKey.relation_key()), map1.get(foreignKey.show_field())));
                     }
                 });
-                return result.append("</select></div></div><hr class=\"layui-bg-gray\">").toString();
+                return result.append(String.format("</select></div>" +
+                        "<button type='button' class='layui-btn layui-btn-xs layui-btn-warm' style='margin-left: 10px;' " +
+                        "title='添加%s' onclick='openWindow(\"/admin/%s/%s/add\")'>" +
+                        "<i class='layui-icon layui-icon-add-1'></i>" +
+                        "</button></div><hr class=\"layui-bg-gray\">", fieldName, modelName, beanName)).toString();
             } else if (field.isAnnotationPresent(ManyToManyField.class)) {
                 // 获取注解
                 ManyToManyField manyToManyField = field.getAnnotation(ManyToManyField.class);
@@ -287,13 +291,18 @@ public class FieldToInputStr {
                         "      <label class=\"layui-form-label\">%s:</label>\n" +
                         "      <div class=\"layui-input-inline\">\n" +
                         "      <input type='hidden' name='%s_%s' value='%s'>\n" +
-                        "      <div id=\"transfer_%s\" class=\"demo-transfer\"></div></div></div>\n" +
+                        "      <div id=\"transfer_%s\" class=\"demo-transfer\"></div></div>" +
+                        "      <button type='button' class='layui-btn layui-btn-xs layui-btn-warm' style='margin-left: 10px;' " +
+                        "       title='添加%s' onclick='openWindow(\"/admin/%s/%s/add\")'>" +
+                        "          <i class='layui-icon layui-icon-add-1'></i>" +
+                        "      </button>" +
+                        "      </div>\n" +
                         "      <script>layui.use(['transfer', 'layer', 'util'], function(){\n" +
                         "        var $=layui.$\n" +
                         "        ,transfer=layui.transfer\n" +
                         "        ,layer=layui.layer\n" +
                         "        ,util=layui.util;\n" +
-                        "        let data1=[", fieldName, manyToManyField.third_table(), fieldName, values.toString(), fieldName));
+                        "        let data1=[", fieldName, manyToManyField.third_table(), fieldName, values.toString(), fieldName, fieldName, modelName, beanName));
                 // 填充数据
                 list.forEach(map1 -> result.append(String.format("{\"value\":\"%s\",\"title\":\"%s\"},\n",
                         map1.get(manyToManyField.relation_field()), map1.get(manyToManyField.show_field()))));
@@ -381,7 +390,7 @@ public class FieldToInputStr {
      * @return
      */
     public static String getInputStrWithValue(Field field, Map<String, Object> map) {
-        return FieldToInputStr.getInputStrWithValue(field, map, new ArrayList<>());
+        return FieldToInputStr.getInputStrWithValue(field, map, null);
     }
 
     /**
@@ -391,6 +400,6 @@ public class FieldToInputStr {
      * @return
      */
     public static String getInputStrWithValue(Field field, Map<String, Object> map, List<Map<String, Object>> list) {
-        return FieldToInputStr.getInputStrWithValue(field, map, list, new ArrayList<>());
+        return FieldToInputStr.getInputStrWithValue(field, map, list, null, "", "");
     }
 }

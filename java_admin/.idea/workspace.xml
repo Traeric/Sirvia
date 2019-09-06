@@ -7,14 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b821a04f-eb7f-46a5-9edc-4fd38a1641fb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/admin/com/ericjin/javadmin/annotation/ForeignKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/admin/com/ericjin/javadmin/annotation/ForeignKey.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/admin/com/ericjin/javadmin/annotation/ManyToManyField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/admin/com/ericjin/javadmin/annotation/ManyToManyField.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/admin/com/ericjin/javadmin/service/impl/EditTableServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/admin/com/ericjin/javadmin/service/impl/EditTableServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/admin/com/ericjin/javadmin/service/impl/IndexServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/admin/com/ericjin/javadmin/service/impl/IndexServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/admin/com/ericjin/javadmin/utils/FieldToInputStr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/admin/com/ericjin/javadmin/utils/FieldToInputStr.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/test/hah/Article.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/test/hah/Article.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/admin/templates/add_table.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/admin/templates/add_table.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/admin/templates/edit_table.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/admin/templates/edit_table.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -32,7 +27,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/admin/com/ericjin/javadmin/service/impl/IndexServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="512">
+            <state relative-caret-position="800">
               <caret line="156" column="17" lean-forward="true" selection-start-line="156" selection-start-column="17" selection-end-line="156" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -48,8 +43,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/admin/com/ericjin/javadmin/service/impl/EditTableServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3630">
-              <caret line="16" column="21" lean-forward="true" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
+            <state relative-caret-position="352">
+              <caret line="46" column="23" lean-forward="true" selection-start-line="46" selection-start-column="23" selection-end-line="46" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -78,26 +73,15 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/admin/com/ericjin/javadmin/utils/FieldToInputStr.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="484">
-              <caret line="104" column="141" selection-start-line="104" selection-start-column="141" selection-end-line="104" selection-end-column="141" />
+            <state relative-caret-position="498">
+              <caret line="180" column="54" selection-start-line="180" selection-start-column="54" selection-end-line="180" selection-end-column="54" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/admin/templates/add_table.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="134" column="40" selection-start-line="134" selection-start-column="40" selection-end-line="134" selection-end-column="40" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#11532#11533#0" expanded="true" />
+                <element signature="e#11603#11604#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -181,14 +165,14 @@
         <option value="$PROJECT_DIR$/src/main/admin/com/ericjin/javadmin/service/IndexService.java" />
         <option value="$PROJECT_DIR$/src/main/admin/com/ericjin/javadmin/mapper/SuperMapper.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mybatis/superMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/admin/templates/edit_table.html" />
-        <option value="$PROJECT_DIR$/src/main/admin/com/ericjin/javadmin/service/impl/EditTableServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/admin/com/ericjin/javadmin/annotation/ForeignKey.java" />
         <option value="$PROJECT_DIR$/src/main/admin/com/ericjin/javadmin/annotation/ManyToManyField.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/test/hah/Article.java" />
         <option value="$PROJECT_DIR$/src/main/admin/com/ericjin/javadmin/service/impl/IndexServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/admin/com/ericjin/javadmin/utils/FieldToInputStr.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/admin/templates/add_table.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/admin/templates/edit_table.html" />
+        <option value="$PROJECT_DIR$/src/main/admin/com/ericjin/javadmin/service/impl/EditTableServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/admin/com/ericjin/javadmin/utils/FieldToInputStr.java" />
       </list>
     </option>
   </component>
@@ -605,12 +589,12 @@
       <workItem from="1567322377320" duration="45024000" />
       <workItem from="1567403393457" duration="25579000" />
       <workItem from="1567433466180" duration="3454000" />
-      <workItem from="1567480628699" duration="84963000" />
+      <workItem from="1567480628699" duration="87010000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="201528000" />
+    <option name="totallyTimeSpent" value="203575000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -996,36 +980,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/admin/templates/edit_table.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-832">
-          <caret line="30" selection-start-line="30" selection-end-line="30" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/admin/com/ericjin/javadmin/mapper/SuperMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-96">
-          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/admin/com/ericjin/javadmin/service/impl/EditTableServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3630">
-          <caret line="16" column="21" lean-forward="true" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/admin/com/ericjin/javadmin/annotation/ForeignKey.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="544">
@@ -1050,9 +1004,40 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/admin/com/ericjin/javadmin/mapper/SuperMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-96">
+          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/admin/templates/edit_table.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="163" column="5" selection-start-line="163" selection-start-column="5" selection-end-line="163" selection-end-column="5" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/admin/templates/add_table.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="152" column="7" lean-forward="true" selection-start-line="152" selection-start-column="7" selection-end-line="152" selection-end-column="7" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/admin/com/ericjin/javadmin/service/impl/IndexServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="512">
+        <state relative-caret-position="800">
           <caret line="156" column="17" lean-forward="true" selection-start-line="156" selection-start-column="17" selection-end-line="156" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1064,23 +1049,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/admin/com/ericjin/javadmin/utils/FieldToInputStr.java">
+    <entry file="file://$PROJECT_DIR$/src/main/admin/com/ericjin/javadmin/service/impl/EditTableServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="104" column="141" selection-start-line="104" selection-start-column="141" selection-end-line="104" selection-end-column="141" />
+        <state relative-caret-position="352">
+          <caret line="46" column="23" lean-forward="true" selection-start-line="46" selection-start-column="23" selection-end-line="46" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/admin/templates/add_table.html">
+    <entry file="file://$PROJECT_DIR$/src/main/admin/com/ericjin/javadmin/utils/FieldToInputStr.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="134" column="40" selection-start-line="134" selection-start-column="40" selection-end-line="134" selection-end-column="40" />
+        <state relative-caret-position="498">
+          <caret line="180" column="54" selection-start-line="180" selection-start-column="54" selection-end-line="180" selection-end-column="54" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#11532#11533#0" expanded="true" />
+            <element signature="e#11603#11604#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -2,6 +2,9 @@ package com.ericjin.javadmin.controller;
 
 import com.ericjin.javadmin.service.IndexService;
 import com.ericjin.javadmin.service.UserService;
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -46,8 +49,11 @@ public class IndexController {
      */
     @GetMapping("/{model}/{table_name}")
     public String singleTable(Model model, @PathVariable("model") String modelName,
-                              @PathVariable("table_name") String tableName) {
+                              @PathVariable("table_name") String tableName, @RequestParam(value = "page", defaultValue = "1") Integer page) {
+        PageHelper.startPage(page, 10);   // 每页显示10条数据
         List<Map<String, Object>> singleTable = indexService.getSingleTable(modelName, tableName);
+        PageInfo<Map<String, Object>> pageInfo = new PageInfo<>(singleTable, 5);    // 连续显示5页
+        model.addAttribute("pageInfo", pageInfo);    // 分页信息
         model.addAttribute("dataList", singleTable);
         // 获取表名
         model.addAttribute("tableName", indexService.getShowName(modelName, tableName));

@@ -13,6 +13,11 @@
     <typeAliases>
         <package name="com.ericjin.javadmin.beans"/>
     </typeAliases>
+    <!-- 插件配置 -->
+    <plugins>
+        <!-- 配置分页 -->
+        <plugin interceptor="com.github.pagehelper.PageInterceptor"></plugin>
+    </plugins>
     <!-- 配置环境 -->
     <environments default="development">
         <environment id="development">

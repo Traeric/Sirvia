@@ -45,6 +45,7 @@ public class Register {
         Map<String, String> map = new LinkedHashMap<>();
         // 添加要执行的action
         map.put("deleteSelectData", "删除选中的数据");
+        map.put("printSelectedData", "打印所选数据的信息");
         return map;
     }
 }

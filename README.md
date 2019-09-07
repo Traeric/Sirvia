@@ -219,7 +219,46 @@ private List tags;
 
 # Action
 
-Java Admin还有一个比价重要的功能，就是对数据进行批量处理，在上面已经提到了
+Java Admin还有一个比较重要的功能，就是对数据进行批量处理，在上面已经提到了批量删除一些字段，那么如果想要实现一些其他的批量操作的功能应该怎么办呢？
+
+首先需要在`Action`类中实现批量操作的具体内容，`Action`类在admin目录下的`com.ericjin.javadmin`包里面，该类中已经有了一个批量删除的实现方法，可以在里面写上自己想要实现的批量操纵方法，例如：
+
+```java
+public class Action {
+    // 自定义批量操作的方法
+    public Boolean printSelectedData(List<Integer> selectArr, String tableName, SuperMapper superMapper) {
+        selectArr.forEach(System.out::println);
+        return true;
+    }
+}
+```
+
+写完该方法后，需要在`Register`类中定义，该类在admin包下面的`com.ericjin.javadmin`包下，这个类在注册用户表的时候也使用到了，在这里面有一个`actionMap()`方法，会返回一个map，在这个方法中，我们需要将自己定义的方法名称跟要显示在批量操作的select框里面的option的内容，现在将刚刚定义的action方法注册进去
+
+```java
+/**
+ * 想要执行的action
+ *
+ * @return
+ */
+public Map<String, String> actionMap() {
+    Map<String, String> map = new LinkedHashMap<>();
+    // 添加要执行的action
+    map.put("deleteSelectData", "删除选中的数据");
+    map.put("printSelectedData", "打印所选数据的信息");
+    return map;
+}
+```
+
+现在重启项目来到数据展示页：
+
+![NO IMG](./photo/add_action.png)
+
+现在选中执行：
+
+![NO IMG](./photo/do_action.png)
+
+成功打印所选数据的id信息
 
 
 

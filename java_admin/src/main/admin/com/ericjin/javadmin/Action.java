@@ -6,7 +6,6 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
 
-@Transactional
 public class Action {
 
     /**
@@ -20,5 +19,10 @@ public class Action {
         AtomicReference<Boolean> flag = new AtomicReference<>(true);
         selectArr.parallelStream().forEach(id -> flag.set(superMapper.deleteTable(tableName, id)));
         return flag.get();
+    }
+
+    public Boolean printSelectedData(List<Integer> selectArr, String tableName, SuperMapper superMapper) {
+        selectArr.forEach(System.out::println);
+        return true;
     }
 }

@@ -189,11 +189,12 @@
             success(args) {
                 if (args === "1") {
                     layer.msg('执行成功', {icon: 1, offset: "150px"});
-                    $("table tbody tr").each((index, item) => {
-                        if (selectArr.indexOf($(item).attr("index")) !== -1) {
-                            $(item).remove();
-                        }
-                    });
+                    // $("table tbody tr").each((index, item) => {
+                    //     if (selectArr.indexOf($(item).attr("index")) !== -1) {
+                    //         $(item).remove();
+                    //     }
+                    // });
+                    location.reload();
                 } else {
                     layer.msg('执行失败', {icon: 5, offset: "150px"});
                 }

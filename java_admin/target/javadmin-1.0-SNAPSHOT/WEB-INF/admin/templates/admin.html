@@ -101,8 +101,6 @@
                     </div>
                     <div class="all-table">
                         <div class="tables">
-                            <p class="text-primary">fdfdsfdsfs</p>
-                            <p class="text-primary">fdfdsfdsfs</p>
                         </div>
                         <button type="button" class="btn btn-success center-block" onclick="getTables(this)">获取表</button>
                     </div>
@@ -132,8 +130,25 @@
     }
 
     function getTables(self) {
-        $(".tables").slideDown();
-        $(self).slideUp();
+        // 获取所有的表
+        $.ajax({
+            url: "/admin/get_all_tables",
+            type: "post",
+            dataType: "JSON",
+            success(args) {
+                if (args.flag) {
+                    // 添加数据到面板中
+                    let table_list = '';
+                    for (let item of args.list) {
+                        table_list += `<li class="text-primary">${item}</li>`;
+                    }
+                    $(".tables").append(table_list);
+                    $(".tables").slideDown("slow", () => {
+                        $(self).slideUp();
+                    });
+                }
+            },
+        });
     }
 </script>
 </body>

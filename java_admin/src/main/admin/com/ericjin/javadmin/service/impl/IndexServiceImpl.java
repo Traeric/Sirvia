@@ -225,4 +225,14 @@ public class IndexServiceImpl implements IndexService {
         });
         return true;
     }
+
+    /**
+     * 获取所有的表信息
+     *
+     * @return
+     */
+    @Override
+    public List<String> getAllTables() {
+        return superMapper.getAllTables();
+    }
 }

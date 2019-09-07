@@ -43,4 +43,7 @@ public interface SuperMapper {
     // 从以三张表中移除数据
     Boolean removeFromThirdTable(@Param("third_table") String thirdTable, @Param("third_self_field") String thirdSelfField,
                                  @Param("select_id") String selectId);
+
+    // 获取数据库中所有的表信息
+    List<String> getAllTables();
 }

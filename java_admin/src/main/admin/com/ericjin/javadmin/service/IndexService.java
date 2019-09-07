@@ -18,4 +18,6 @@ public interface IndexService {
     String getTableName(Class bean);
 
     List<Map<String, Object>> getRelationTableInfo(Field field);
+
+    List<String> getAllTables();
 }

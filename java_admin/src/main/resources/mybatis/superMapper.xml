@@ -68,5 +68,9 @@
     <delete id="removeFromThirdTable">
         DELETE FROM ${third_table} WHERE ${third_self_field} = #{select_id}
     </delete>
+
+    <select id="getAllTables" resultType="string">
+        SHOW TABLES
+    </select>
 </mapper>
 

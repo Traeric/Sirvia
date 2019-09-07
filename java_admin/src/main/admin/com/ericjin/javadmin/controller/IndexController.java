@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -99,5 +100,19 @@ public class IndexController {
             return "1";
         }
         return "0";
+    }
+
+    /**
+     * 获取数据库中所有的表
+     *
+     * @return
+     */
+    @ResponseBody
+    @PostMapping("/get_all_tables")
+    public Map<String, Object> getAllTables() {
+        Map<String, Object> map = new LinkedHashMap<>();
+        map.put("flag", true);
+        map.put("list", indexService.getAllTables());
+        return map;
     }
 }

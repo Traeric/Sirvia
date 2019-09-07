@@ -120,8 +120,107 @@ public class Article {}
 
 ## 字段注解
 
+### Id
+
+id注解起初出现的意义是为了屏蔽id字段，因为大多数情况下，id是自增的，因此并不需要自己填写，所以为了避免误填，可以在id字段上面标注`@Id`注解来屏蔽掉该字段，屏蔽后再添加或者修改数据就不会出现添加id的项了。当然这个注解并不仅仅是可以添加在id字段上，还可以添加在任何想要屏蔽的字段上。
+
+### Password
+
+该注解也是用于标注在字段上面的，一般标注在表示密码的字段上，表示在生成input框的时候type=password
+
+### DateUse
+
+该注解的作用与Password注解相似，一般标注在表示日期的字段上面，表示在生成input框的时候生成日期选择的输入框
+
+### Choose
+
+有的时候一些字段只有规定的几个值需要填，例如性别字段就只有男女两个选择，这个时候就可以使用`Choose`注解去规定生成select选择框。它有几个值需要填写：
+
+* type：这个字段用于确定复选框的类型，有0跟1两个选择，默认为0，0表示生成radio框，1表示生成select框；
+* valueList：选择框的value值；
+* textList：选择框要显示的文字信息；
+
+**type=0**
+
+下面演示type=0的效果，也就是生成radio框
+
+```java
+@ShowName(name = "文章表")
+public class Article {
+	@Choose(valueList = {"0", "1"}, textList = {"男", "女"})
+    public Integer gender;
+}
+```
+
+生成的input框如下：
+
+![NO IMG](./photo/choose_radio.png)
+
+**type=1**
+
+下面演示type=1的效果，也就是生成select框
+
+```java
+@ShowName(name = "文章表")
+public class Article {
+	@Choose(type = 1, valueList = {"0", "1"}, textList = {"男", "女"})
+    public Integer gender;
+}
+```
+
+生成的input框如下：
+
+![NO IMG](./photo/choose_select.png)
+
+### ForeignKey
+
+这个注解标注在表示外键的字段上面，标注该字段后，在添加或者编辑信息的时候会自动加载所关联的表的信息，以供选择。它有几个值需要填写：
+
+* relation_table：这个值需要填写外键关联的表名；
+* relation_key：外键关联的表的字段，默认是`id`，这个会作为select框的value值；
+* show_field：想要显示关联表的哪一列的内容，这个会作为select框中的option标签体里的内容；
+* relation_bean：关联的表对应的实体类；
+
+**示例：**
+
+```java
+@ForeignKey(relation_table = "tags", relation_key = "id", show_field = "name", relation_bean = Tags.class)
+private Integer tag;
+```
+
+生成的表单如下：
+
+![NO IMG](./photo/foreignkey.png)
+
+### ManyToManyField
+
+这个注解标注在多对多关联的字段上，会显示一个穿梭框，它会自动加载第三张表的信息以供选择。它有几个值需要填写：
+
+* relation_table：关联的表的表名；
+* third_table：多对多会出现第三张表，这个字段填写第三张表的表名；
+* show_field：想要显示关联表哪一列的内容；
+* relation_field：关联表在第三张表中插入的内容，一般是关联表的`id`
+* third_relation_field：关联表在第三张表中对应的字段，也就是说该字段是一个外键，关联着关联表的id(默认)
+* third_self_field：当前表在第三张表中对应的字段，也就是说该字段是一个外键，关联着当前表的id(默认)
+* insert_field：当前表在第三张表中插入的内容，一般是本表的`id`
+* relation_bean：当前表关联的表所对应的实体类
+
+**示例：**
+
+```java
+@ManyToManyField(relation_table = "tags", third_table = "tag_article", show_field = "name", relation_field = "id",
+            third_relation_field = "tag_id", third_self_field = "article_id", relation_bean = Tags.class)
+private List tags;
+```
+
+生成的穿梭框如下：
+
+![NO IMG](./photo/manytomanyfield.png)
+
+# Action
+
+Java Admin还有一个比价重要的功能，就是对数据进行批量处理，在上面已经提到了
 
 
-## Action
 
  

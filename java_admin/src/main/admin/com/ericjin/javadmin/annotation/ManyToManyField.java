@@ -15,13 +15,13 @@ public @interface ManyToManyField {
 
     String show_field();    // 关联表要显示的字段
 
-    String relation_field() default "id";    // 关联表的关联字段
+    String relation_field() default "id";    // 关联表在第三张表中插入的内容
 
-    String third_relation_field();     // 关联字段在第三张表的名称
+    String third_relation_field();     // 关联表在第三张表中对应的字段
 
-    String third_self_field();    // 当前字段在第三张表中的名称
+    String third_self_field();    // 当当前表在第三张表中对应的字段
 
-    String insert_field() default "id";    // 当前表要插入第三张表的字段
+    String insert_field() default "id";    // 当前表在第三张表中插入的内容，一般是本表的id
 
     Class relation_bean();    // 关联表的java bean对象
 }

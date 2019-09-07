@@ -1,9 +1,6 @@
 package com.test.hah;
 
-import com.ericjin.javadmin.annotation.ForeignKey;
-import com.ericjin.javadmin.annotation.Id;
-import com.ericjin.javadmin.annotation.ManyToManyField;
-import com.ericjin.javadmin.annotation.ShowName;
+import com.ericjin.javadmin.annotation.*;
 
 import java.util.List;
 

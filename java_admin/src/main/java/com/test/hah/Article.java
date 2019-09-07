@@ -3,10 +3,12 @@ package com.test.hah;
 import com.ericjin.javadmin.annotation.ForeignKey;
 import com.ericjin.javadmin.annotation.Id;
 import com.ericjin.javadmin.annotation.ManyToManyField;
+import com.ericjin.javadmin.annotation.ShowName;
 
 import java.util.List;
 
 
+@ShowName(name = "文章表")
 public class Article {
     @Id
     private Integer id;

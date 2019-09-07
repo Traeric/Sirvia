@@ -93,6 +93,35 @@ Java Admin系统只提供了一个批量删除的操作，如果需要实现其�
 
 ## Java Admin注解
 
+## 类注解
+
+### EntityTableName
+
+EntityTableName标注在实体类上面，它的作用是标明该实体类对应着数据库中的哪张表，如果不标注，Java Admin会按照实体类名的小写的方式确定表名，例如：`Article`会转换成`article`去数据库查询
+
+### ShowName
+
+这个注解的作用是为实体类重命名，在Java Admin中会按照实体类的名称来显示，如果希望显示自定义的名称，则可以通过该注解来实现。例如，现在在Java Admin中显示的名字是实体类名：
+
+![NO IMG](./photo/showname_entity.png)
+
+现在在Article类上面标注ShowName注解
+
+```java
+@ShowName(name = "文章表")
+public class Article {}
+```
+
+再次来到首页查看：
+
+![NO IMG](./photo/showname_name.png)
+
+可以看到，现在显示的名称已经变成了刚刚在ShowName中注解的名称
+
+## 字段注解
+
+
+
 ## Action
 
  

@@ -87,17 +87,55 @@
         </div><!--/.col-xs-12.col-sm-9-->
         <!-- 右侧面板 -->
         <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
-            <div class="panel panel-info">
+            <div class="panel panel-success">
                 <div class="panel-heading">
-                    <h3 class="panel-title">Java Admin</h3>
+                    <h3 class="panel-title">
+                        <button type="button" class="btn btn-success btn-xs" onclick="executeSql()">执行SQL</button>
+                        <button type="button" class="btn btn-info btn-xs" onclick="allTable()">所有表</button>
+                    </h3>
                 </div>
                 <div class="panel-body">
-                    更新了表的修改以及删除功能
+                    <div class="execute">
+                        <textarea class="form-control" rows="5" style="resize: none;"></textarea>
+                        <button type="button" class="btn btn-warning pull-right" style="margin-top: 10px;">执行</button>
+                    </div>
+                    <div class="all-table">
+                        <div class="tables">
+                            <p class="text-primary">fdfdsfdsfs</p>
+                            <p class="text-primary">fdfdsfdsfs</p>
+                        </div>
+                        <button type="button" class="btn btn-success center-block" onclick="getTables(this)">获取表</button>
+                    </div>
                 </div>
             </div>
         </div><!--/.sidebar-offcanvas-->
     </div><!--/row-->
 </div>
+<script>
+    $(() => {
+        $(".all-table").hide();
+        $(".tables").hide();
+    });
+
+    function executeSql() {
+        $(".all-table").slideUp("slow", () => {
+            $(".execute").slideDown("slow");
+            $(".panel").removeClass("panel-info").addClass("panel-success");
+        });
+    }
+
+    function allTable() {
+        $(".execute").slideUp("slow", () => {
+            $(".all-table").slideDown("slow");
+            $(".panel").removeClass("panel-success").addClass("panel-info");
+        });
+    }
+
+    function getTables(self) {
+        $(".tables").slideDown();
+        $(self).slideUp();
+    }
+</script>
 </body>
 </html>
 

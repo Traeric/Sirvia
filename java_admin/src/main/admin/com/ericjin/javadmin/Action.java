@@ -20,9 +20,4 @@ public class Action {
         selectArr.parallelStream().forEach(id -> flag.set(superMapper.deleteTable(tableName, id)));
         return flag.get();
     }
-
-    public Boolean printSelectedData(List<Integer> selectArr, String tableName, SuperMapper superMapper) {
-        selectArr.forEach(System.out::println);
-        return true;
-    }
 }

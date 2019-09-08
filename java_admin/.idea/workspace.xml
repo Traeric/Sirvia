@@ -7,17 +7,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b821a04f-eb7f-46a5-9edc-4fd38a1641fb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/admin/com/ericjin/javadmin/controller/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/admin/com/ericjin/javadmin/controller/IndexController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/admin/com/ericjin/javadmin/mapper/SuperMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/admin/com/ericjin/javadmin/mapper/SuperMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/admin/com/ericjin/javadmin/service/IndexService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/admin/com/ericjin/javadmin/service/IndexService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/admin/com/ericjin/javadmin/service/impl/IndexServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/admin/com/ericjin/javadmin/service/impl/IndexServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis/superMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis/superMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/admin/templates/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/admin/templates/admin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mybatis/superMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mybatis/superMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/javadmin-1.0-SNAPSHOT/WEB-INF/admin/templates/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/javadmin-1.0-SNAPSHOT/WEB-INF/admin/templates/admin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/javadmin-1.0-SNAPSHOT/WEB-INF/classes/mybatis/superMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/javadmin-1.0-SNAPSHOT/WEB-INF/classes/mybatis/superMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/admin/templates/table_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/admin/templates/table_list.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -41,11 +37,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/admin/templates/admin.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="64">
-              <caret line="138" selection-start-line="138" selection-end-line="138" />
+            <state relative-caret-position="352">
+              <caret line="170" column="44" selection-start-line="170" selection-start-column="44" selection-end-line="170" selection-end-column="44" />
               <folding>
                 <element signature="n#style#0;n#textarea#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#button#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -54,11 +50,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/admin/com/ericjin/javadmin/controller/IndexController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="310">
-              <caret line="112" column="51" selection-start-line="112" selection-start-column="38" selection-end-line="112" selection-end-column="51" />
+            <state relative-caret-position="448">
+              <caret line="130" column="21" selection-start-line="130" selection-start-column="21" selection-end-line="130" selection-end-column="21" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/admin/com/ericjin/javadmin/mapper/SuperMapper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="434">
+              <caret line="50" column="31" selection-start-line="50" selection-start-column="31" selection-end-line="50" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -143,17 +151,17 @@
         <option value="$PROJECT_DIR$/src/main/admin/com/ericjin/javadmin/service/impl/EditTableServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/test/hah/Article.java" />
         <option value="$PROJECT_DIR$/src/main/admin/com/ericjin/javadmin/annotation/ManyToManyField.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/admin/templates/table_list.html" />
         <option value="$PROJECT_DIR$/src/main/admin/com/ericjin/javadmin/Register.java" />
         <option value="$PROJECT_DIR$/src/main/admin/com/ericjin/javadmin/Action.java" />
-        <option value="$PROJECT_DIR$/src/main/admin/com/ericjin/javadmin/service/IndexService.java" />
-        <option value="$PROJECT_DIR$/src/main/admin/com/ericjin/javadmin/mapper/SuperMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mybatis/superMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/admin/com/ericjin/javadmin/service/impl/IndexServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/springMVC-servlet.xml" />
-        <option value="$PROJECT_DIR$/src/main/admin/com/ericjin/javadmin/controller/IndexController.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/mybatis/superMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/admin/templates/table_list.html" />
+        <option value="$PROJECT_DIR$/src/main/admin/com/ericjin/javadmin/service/IndexService.java" />
+        <option value="$PROJECT_DIR$/src/main/admin/com/ericjin/javadmin/service/impl/IndexServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/admin/com/ericjin/javadmin/mapper/SuperMapper.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/admin/templates/admin.html" />
+        <option value="$PROJECT_DIR$/src/main/admin/com/ericjin/javadmin/controller/IndexController.java" />
       </list>
     </option>
   </component>
@@ -248,15 +256,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="admin" type="462c0819:PsiDirectoryNode" />
               <item name="javadmin" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="java_admin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="java_admin" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="javadmin" type="462c0819:PsiDirectoryNode" />
               <item name="mapper" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -264,40 +263,6 @@
               <item name="java_admin" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="javadmin" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="java_admin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="java_admin" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="javadmin" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="java_admin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="java_admin" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="java_admin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="java_admin" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="hah" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="java_admin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="java_admin" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -305,32 +270,7 @@
               <item name="java_admin" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="mybatis" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="java_admin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="java_admin" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="java_admin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="java_admin" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="java_admin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="java_admin" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="java_admin" type="b2602c69:ProjectViewProjectNode" />
@@ -562,12 +502,12 @@
       <workItem from="1567403393457" duration="25579000" />
       <workItem from="1567433466180" duration="3454000" />
       <workItem from="1567480628699" duration="121827000" />
-      <workItem from="1567875153253" duration="432000" />
+      <workItem from="1567875153253" duration="4826000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="238824000" />
+    <option name="totallyTimeSpent" value="243218000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -612,17 +552,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/admin/templates/change_password.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1248">
-          <caret line="155" column="23" lean-forward="true" selection-start-line="155" selection-start-column="23" selection-end-line="155" selection-end-column="23" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#2817#2833#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/admin/com/ericjin/javadmin/controller/ChangePasswordController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="384">
@@ -860,18 +789,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/admin/templates/table_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="470">
-          <caret line="196" column="38" selection-start-line="196" selection-start-column="38" selection-end-line="196" selection-end-column="38" />
-          <folding>
-            <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/admin/com/ericjin/javadmin/Action.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="352">
@@ -921,48 +838,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/admin/com/ericjin/javadmin/service/IndexService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="21" column="32" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/admin/com/ericjin/javadmin/mapper/SuperMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="47" column="26" lean-forward="true" selection-start-line="47" selection-start-column="26" selection-end-line="47" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/userMapper.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/superMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="72" column="19" selection-start-line="72" selection-start-column="19" selection-end-line="72" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/admin/com/ericjin/javadmin/service/impl/IndexServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="231" column="14" lean-forward="true" selection-start-line="231" selection-start-column="14" selection-end-line="231" selection-end-column="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#getShowName#0;class#IndexServiceImpl#0" />
-            <element signature="method#getBean#0;class#IndexServiceImpl#0" />
-            <element signature="method#getTableName#0;class#IndexServiceImpl#0" />
-            <element signature="e#8188#8189#0" expanded="true" />
-            <element signature="e#8215#8216#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/springMVC-servlet.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="320">
@@ -984,10 +859,67 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/admin/com/ericjin/javadmin/controller/IndexController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/admin/templates/table_list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="112" column="51" selection-start-line="112" selection-start-column="38" selection-end-line="112" selection-end-column="51" />
+        <state relative-caret-position="416">
+          <caret line="194" column="20" selection-start-line="194" selection-start-column="20" selection-end-line="194" selection-end-column="20" />
+          <folding>
+            <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/userMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="8" column="55" lean-forward="true" selection-start-line="8" selection-start-column="55" selection-end-line="8" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/admin/com/ericjin/javadmin/mapper/UserMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/superMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="77" column="13" selection-start-line="77" selection-start-column="13" selection-end-line="77" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/admin/com/ericjin/javadmin/service/IndexService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="23" column="8" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/admin/com/ericjin/javadmin/service/impl/IndexServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="512">
+          <caret line="245" column="8" selection-start-line="245" selection-start-column="8" selection-end-line="245" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#getShowName#0;class#IndexServiceImpl#0" />
+            <element signature="method#getBean#0;class#IndexServiceImpl#0" />
+            <element signature="method#getTableName#0;class#IndexServiceImpl#0" />
+            <element signature="e#8188#8189#0" expanded="true" />
+            <element signature="e#8237#8238#0" expanded="true" />
+            <element signature="e#8349#8350#0" expanded="true" />
+            <element signature="e#8399#8400#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/admin/com/ericjin/javadmin/mapper/SuperMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="434">
+          <caret line="50" column="31" selection-start-line="50" selection-start-column="31" selection-end-line="50" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -996,11 +928,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/admin/templates/admin.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="138" selection-start-line="138" selection-end-line="138" />
+        <state relative-caret-position="352">
+          <caret line="170" column="44" selection-start-line="170" selection-start-column="44" selection-end-line="170" selection-end-column="44" />
           <folding>
             <element signature="n#style#0;n#textarea#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#button#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/admin/com/ericjin/javadmin/controller/IndexController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="130" column="21" selection-start-line="130" selection-start-column="21" selection-end-line="130" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

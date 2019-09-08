@@ -5,6 +5,7 @@ import com.ericjin.javadmin.service.UserService;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -114,5 +115,21 @@ public class IndexController {
         map.put("flag", true);
         map.put("list", indexService.getAllTables());
         return map;
+    }
+
+    /**
+     * 执行sql语句
+     *
+     * @return
+     */
+    @ResponseBody
+    @PostMapping("/execute_sql")
+    public String executeSql(String sql) {
+        try {
+            indexService.executeSql(sql);
+        } catch (Exception e) {
+            return "0";
+        }
+        return "1";
     }
 }

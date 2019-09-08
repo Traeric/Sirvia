@@ -46,4 +46,7 @@ public interface SuperMapper {
 
     // 获取数据库中所有的表信息
     List<String> getAllTables();
+
+    // 执行SQL语句
+    void executeSql(@Param("sql") String sql);
 }

@@ -19,6 +19,7 @@
     <link th:href="@{/static/css/index.css}" rel="stylesheet">
     <script th:src="@{/static/js/jq/jquery.min.js}"></script>
     <script th:src="@{/static/plugins/bootstrap/js/bootstrap.min.js}"></script>
+    <script th:src="@{/static/plugins/layui/layui.js}"></script>
 </head>
 
 <body>
@@ -96,13 +97,16 @@
                 </div>
                 <div class="panel-body">
                     <div class="execute">
-                        <textarea class="form-control" rows="5" style="resize: none;"></textarea>
-                        <button type="button" class="btn btn-warning pull-right" style="margin-top: 10px;">执行</button>
+                        <textarea class="form-control" rows="5" style="resize: none;" name="sql"></textarea>
+                        <button type="button" class="btn btn-warning pull-right" style="margin-top: 10px;"
+                                onclick="doSql()">执行
+                        </button>
                     </div>
                     <div class="all-table">
                         <div class="tables">
                         </div>
-                        <button type="button" class="btn btn-success center-block" onclick="getTables(this)">获取表</button>
+                        <button type="button" class="btn btn-success center-block" onclick="getTables(this)">获取表
+                        </button>
                     </div>
                 </div>
             </div>
@@ -148,6 +152,30 @@
                     });
                 }
             },
+        });
+    }
+
+    /**
+     * 执行sql语句
+     */
+    function doSql() {
+        let sql = $("textarea[name=sql]").val();
+        $.ajax({
+            url: "/admin/execute_sql",
+            type: "post",
+            data: {
+                sql,
+            },
+            success(args) {
+                layui.use("layer", () => {
+                    let layer = layui.layer;
+                    if (args === "1") {
+                        layer.msg('执行成功', {icon: 1, offset: "150px"});
+                    } else {
+                        layer.msg('执行失败', {icon: 5, offset: "150px"});
+                    }
+                });
+            }
         });
     }
 </script>

@@ -260,6 +260,10 @@ public Map<String, String> actionMap() {
 
 成功打印所选数据的id信息
 
+# 执行SQL
+
+在Java Admin的首页
+
 
 
  

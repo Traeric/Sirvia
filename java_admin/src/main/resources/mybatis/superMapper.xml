@@ -69,8 +69,13 @@
         DELETE FROM ${third_table} WHERE ${third_self_field} = #{select_id}
     </delete>
 
+    <!-- 获取所有的表 -->
     <select id="getAllTables" resultType="string">
         SHOW TABLES
     </select>
+
+    <update id="executeSql">
+        ${sql}
+    </update>
 </mapper>
 

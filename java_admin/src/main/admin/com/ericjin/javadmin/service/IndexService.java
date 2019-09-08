@@ -20,4 +20,6 @@ public interface IndexService {
     List<Map<String, Object>> getRelationTableInfo(Field field);
 
     List<String> getAllTables();
+
+    void executeSql(String sql);
 }

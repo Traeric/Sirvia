@@ -235,4 +235,14 @@ public class IndexServiceImpl implements IndexService {
     public List<String> getAllTables() {
         return superMapper.getAllTables();
     }
+
+    /**
+     * 执行sql语句
+     *
+     * @return
+     */
+    @Override
+    public void executeSql(String sql) {
+        superMapper.executeSql(sql);
+    }
 }

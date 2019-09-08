@@ -262,7 +262,23 @@ public Map<String, String> actionMap() {
 
 # 执行SQL
 
-在Java Admin的首页
+## 获取所有的表名
+
+在Java Admin的首页右侧还提供了两个功能，一个是获取当前连接的数据库的所有表名
+
+![NO IMG](./photo/get_all_table.png)
+
+点击获取表即可获取数据
+
+![NO IMG](./photo/get_all_tables-execute.png)
+
+## 执行SQL
+
+如果需要创建表，可以到执行sql的面板执行创建表的操作
+
+![NO IMG](./photo/execute_sql.png)
+
+将sql数据textarea中，然后点击执行即可
 
 
 

@@ -87,7 +87,7 @@
                     <td th:each="field : ${fields}">
                         [[ ${item.get(field)} ]]
                     </td>
-                    <td>
+                    <td style="width: 100px;">
                         <a th:href="@{'/admin/' + ${modelName} + '/' + ${beanName} + '/edit/' + ${item.get('id')}}">
                             <button type="button" class="layui-btn layui-btn-sm layui-btn-normal">
                                 <i class="layui-icon">&#xe642;</i>编辑

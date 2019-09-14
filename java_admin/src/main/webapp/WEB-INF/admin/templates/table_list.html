@@ -72,7 +72,7 @@
                     <th class="layui-form" style="width: 50px;">
                         <input type="checkbox" lay-skin="primary" id="select_all" lay-filter="selectAll">
                     </th>
-                    <th th:each="item : ${dataList.get(0).keySet()}">
+                    <th th:each="item : ${fields}">
                         [[ ${item} ]]
                     </th>
                     <th>操作</th>
@@ -84,8 +84,8 @@
                         <input class="select-item" type="checkbox" lay-skin="primary" th:value="${item.get('id')}"
                                lay-filter="selectItem">
                     </th>
-                    <td th:each="tableId, tableIdStat : ${item}">
-                        [[ ${tableIdStat.current.value} ]]
+                    <td th:each="field : ${fields}">
+                        [[ ${item.get(field)} ]]
                     </td>
                     <td>
                         <a th:href="@{'/admin/' + ${modelName} + '/' + ${beanName} + '/edit/' + ${item.get('id')}}">

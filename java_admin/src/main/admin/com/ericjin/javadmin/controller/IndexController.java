@@ -2,6 +2,7 @@ package com.ericjin.javadmin.controller;
 
 import com.ericjin.javadmin.service.IndexService;
 import com.ericjin.javadmin.service.UserService;
+import com.ericjin.javadmin.utils.ToCamelCase;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -11,9 +12,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
+import java.lang.reflect.Field;
+import java.util.*;
 
 @Controller
 @RequestMapping("/admin")
@@ -57,6 +57,21 @@ public class IndexController {
         PageInfo<Map<String, Object>> pageInfo = new PageInfo<>(singleTable, 5);    // 连续显示5页
         model.addAttribute("pageInfo", pageInfo);    // 分页信息
         model.addAttribute("dataList", singleTable);
+        // 获取属性名
+        Class bean = indexService.getBean(modelName, tableName);
+        Field[] fields = bean.getDeclaredFields();
+        List<Field> fieldList = Arrays.asList(fields);
+        List<String> list = new LinkedList<>();
+        // 处理属性名
+        fieldList.forEach((field) -> {
+            String toLowField = ToCamelCase.humpToLine(field.getName());
+            // 排除掉不在map中的字段
+            Set<String> strings = singleTable.get(0).keySet();
+            if (strings.contains(toLowField)) {
+                list.add(toLowField);
+            }
+        });
+        model.addAttribute("fields", list);
         // 获取表名
         model.addAttribute("tableName", indexService.getShowName(modelName, tableName));
         model.addAttribute("modelName", modelName);

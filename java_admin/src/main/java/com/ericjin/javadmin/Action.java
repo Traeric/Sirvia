@@ -1,7 +1,6 @@
 package com.ericjin.javadmin;
 
 import com.ericjin.javadmin.mapper.SuperMapper;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;

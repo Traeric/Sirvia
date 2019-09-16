@@ -1,6 +1,7 @@
 package com.ericjin.javadmin.service.impl;
 
 import com.ericjin.javadmin.Action;
+import com.ericjin.javadmin.CommonsSetting;
 import com.ericjin.javadmin.mapper.SuperMapper;
 import com.ericjin.javadmin.service.IndexService;
 import com.ericjin.javadmin.service.TableListService;
@@ -22,6 +23,9 @@ public class TableListServiceImpl implements TableListService {
     @Autowired
     private SuperMapper superMapper;
 
+    @Resource(name = "commonsSetting")
+    private CommonsSetting commonsSetting;
+
     /**
      * 执行action方法
      *
@@ -35,7 +39,13 @@ public class TableListServiceImpl implements TableListService {
         Class bean = indexService.getBean(modelName, beanName);
         String tableName = indexService.getTableName(bean);
         // 执行action
-        Class<Action> action = Action.class;
+        Class<Action> action;
+        try {
+            action = (Class<Action>) Class.forName(commonsSetting.actionPackage());
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+            return false;
+        }
         // 获取要执行的方法
         try {
             Method method = action.getDeclaredMethod(methodName, List.class, String.class, SuperMapper.class);

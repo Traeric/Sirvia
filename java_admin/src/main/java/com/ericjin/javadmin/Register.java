@@ -25,9 +25,7 @@ public class Register {
      * @return
      */
     public List<Class> userTableList() {
-        List<Class> list = new ArrayList<>();
-        // 此处添加用户表信息
-        return list;
+        return new ArrayList<>();
     }
 
     /**

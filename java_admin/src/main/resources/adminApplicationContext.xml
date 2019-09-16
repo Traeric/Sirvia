@@ -8,40 +8,6 @@
                  http://www.springframework.org/schema/context/spring-context.xsd">
     <context:component-scan base-package="com.ericjin.javadmin"/>
     <!--
-        配置mybatis
-    -->
-    <!-- 读取properties配置文件 -->
-    <context:property-placeholder location="classpath*:db.properties"/>
-    <!-- 配置数据源 -->
-    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
-        <property name="driverClass" value="${jdbc.driver}"/>
-        <property name="jdbcUrl" value="${jdbc.url}"/>
-        <property name="user" value="${jdbc.user}"/>
-        <property name="password" value="${jdbc.pwd}"/>
-        <!-- 当连接池中的连接耗尽的时候c3p0一次同时获取的连接数  -->
-        <property name="acquireIncrement" value="5"/>
-        <!-- 初始连接池大小 -->
-        <property name="initialPoolSize" value="10"/>
-        <!-- 连接池中连接最小个数 -->
-        <property name="minPoolSize" value="5"/>
-        <!-- 连接池中连接最大个数 -->
-        <property name="maxPoolSize" value="20"/>
-    </bean>
-    <!-- 构建会话工厂sqlSessionFactory -->
-    <bean name="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-        <property name="dataSource" ref="dataSource"/>
-        <!-- mybatis配置文件 -->
-        <property name="configLocation" value="classpath:mybatis/mybatis-config.xml"/>
-    </bean>
-    <!-- 自动扫扫描对象映射关系 -->
-    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <!-- 指定会话工厂 -->
-        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
-        <!-- 指定mapper包 -->
-        <property name="basePackage" value="com.ericjin.javadmin.mapper"/>
-    </bean>
-
-    <!--
         配置shiro
     -->
     <!-- 设置rememberMe cookie -->
@@ -103,13 +69,14 @@
     <bean name="register" class="com.ericjin.javadmin.Register"/>
     <!-- 系统表 -->
     <bean name="systemTableList" factory-bean="register" factory-method="systemTableList"/>
-    <!-- 用户表 -->
-    <bean name="userTableList" factory-bean="register" factory-method="userTableList"/>
 
     <!--
         配置action
     -->
     <bean name="actionMap" factory-bean="register" factory-method="actionMap"/>
+
+    <!-- 用于和外界的web项目进行沟通的类 -->
+    <bean name="commonsSetting" class="com.ericjin.javadmin.CommonsSetting"/>
 </beans>
 
 

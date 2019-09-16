@@ -2,7 +2,6 @@ package com.ericjin.javadmin.service.impl;
 
 import com.ericjin.javadmin.Settings;
 import com.ericjin.javadmin.annotation.ShowName;
-import com.ericjin.javadmin.beans.User;
 import com.ericjin.javadmin.mapper.UserMapper;
 import com.ericjin.javadmin.service.UserService;
 import com.ericjin.javadmin.shiro.enumerate.RoleType;

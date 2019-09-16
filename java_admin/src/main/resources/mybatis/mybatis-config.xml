@@ -4,7 +4,6 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
     <!-- 导入配置文件 -->
-    <properties resource="db.properties"/>
     <!-- 设置mybatis运行时行为 -->
     <settings>
         <setting name="mapUnderscoreToCamelCase" value="true"/>
@@ -19,17 +18,6 @@
         <plugin interceptor="com.github.pagehelper.PageInterceptor"></plugin>
     </plugins>
     <!-- 配置环境 -->
-    <environments default="development">
-        <environment id="development">
-            <transactionManager type="JDBC"/>
-            <dataSource type="POOLED">
-                <property name="driver" value="${jdbc.driver}"/>
-                <property name="url" value="${jdbc.url}"/>
-                <property name="username" value="${jdbc.user}"/>
-                <property name="password" value="${jdbc.pwd}"/>
-            </dataSource>
-        </environment>
-    </environments>
     <!-- 映射文件 -->
     <mappers>
         <mapper resource="mybatis/userMapper.xml"/>

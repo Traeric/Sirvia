@@ -3,15 +3,18 @@ package com.ericjin.javadmin.generate;
 import com.ericjin.javadmin.Settings;
 import com.ericjin.javadmin.beans.User;
 import com.ericjin.javadmin.mapper.UserMapper;
-import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.datasource.pooled.PooledDataSource;
+import org.apache.ibatis.mapping.Environment;
+import org.apache.ibatis.session.Configuration;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import org.apache.ibatis.transaction.TransactionFactory;
+import org.apache.ibatis.transaction.jdbc.JdbcTransactionFactory;
 import org.apache.shiro.crypto.hash.SimpleHash;
 import org.apache.shiro.util.ByteSource;
 
-import java.io.IOException;
-import java.io.InputStream;
+import javax.sql.DataSource;
 import java.util.Objects;
 import java.util.Scanner;
 
@@ -23,34 +26,39 @@ public class Generate {
     /**
      * 生成sqlSession
      *
+     * @param driver
+     * @param url
+     * @param user
+     * @param pwd
      * @return
      */
-    private SqlSession createSqlSession() {
-        final String resource = "mybatis/mybatis-config.xml";
-        InputStream inputStream = null;
-        try {
-            inputStream = Resources.getResourceAsStream(resource);
-            SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
-            return sqlSessionFactory.openSession(true);
-        } catch (IOException e) {
-            e.printStackTrace();
-            return null;
-        } finally {
-            try {
-                if (inputStream != null) {
-                    inputStream.close();
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
+    private SqlSession createSqlSession(String driver, String url, String user, String pwd) {
+        // 创建连接池
+        DataSource dataSource = new PooledDataSource(driver, url, user, pwd);
+        // 事务
+        TransactionFactory transactionFactory = new JdbcTransactionFactory();
+        // 创建环境
+        Environment environment = new Environment("development", transactionFactory, dataSource);
+        // 创建配置
+        Configuration configuration = new Configuration(environment);
+        // 开启驼峰规则
+        configuration.setMapUnderscoreToCamelCase(true);
+        // 加入资源（Mapper接口）
+        configuration.addMapper(UserMapper.class);
+        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(configuration);
+        return sqlSessionFactory.openSession(true);
     }
 
     /**
      * 创建user表
+     *
+     * @param driver
+     * @param url
+     * @param user
+     * @param pwd
      */
-    private void generateUserTable() {
-        SqlSession sqlSession = this.createSqlSession();
+    public void generateUserTable(String driver, String url, String user, String pwd) {
+        SqlSession sqlSession = this.createSqlSession(driver, url, user, pwd);
         if (Objects.nonNull(sqlSession)) {
             UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
             userMapper.createUserTable();
@@ -62,44 +70,49 @@ public class Generate {
 
     /**
      * 创建账户
+     *
+     * @param driver
+     * @param url
+     * @param name
+     * @param pwd
      */
-    public void createUser() {
+    public void createUser(String driver, String url, String name, String pwd) {
         boolean isRegister = true;
         System.out.println("\033[1;92m" + "创建JAVA ADMIN账户" + "\033[0m");
         Scanner scanner = new Scanner(System.in);
         // 输入用户名
         String username = "";
-        System.out.println("\033[1;96m" + "请输入用户名：" + "\033[0m");
+        System.out.print("\033[1;96m" + "请输入用户名：" + "\033[0m");
         while ("".equals(username.trim())) {
             username = scanner.nextLine();
             if ("".equals(username.trim().replace("\n", ""))) {
                 System.out.println("\033[1;91m" + "用户名不能为空！" + "\033[0m");
-                System.out.println("\033[1;96m" + "请输入用户名：" + "\033[0m");
+                System.out.print("\033[1;96m" + "请输入用户名：" + "\033[0m");
             }
         }
         // 输入邮箱
-        System.out.println("\033[1;96m" + "请输入邮箱：" + "\033[0m");
+        System.out.print("\033[1;96m" + "请输入邮箱：" + "\033[0m");
         String email = "";
         while ("".equals(email.trim())) {
             email = scanner.nextLine();
             if ("".equals(email.trim().replace("\n", ""))) {
                 System.out.println("\033[1;91m" + "邮箱不能为空！" + "\033[0m");
-                System.out.println("\033[1;96m" + "请输入邮箱：" + "\033[0m");
+                System.out.print("\033[1;96m" + "请输入邮箱：" + "\033[0m");
             }
         }
         // 输入密码
-        System.out.println("\033[1;96m" + "请输入密码：" + "\033[0m");
+        System.out.print("\033[1;96m" + "请输入密码：" + "\033[0m");
         String password = "";
         while ("".equals(password.trim())) {
             password = scanner.nextLine();
             if ("".equals(password.trim().replace("\n", ""))) {
                 System.out.println("\033[1;91m" + "密码不能为空！" + "\033[0m");
-                System.out.println("\033[1;96m" + "请输入密码：" + "\033[0m");
+                System.out.print("\033[1;96m" + "请输入密码：" + "\033[0m");
             }
         }
         // 判断密码长度
         if (password.length() <= 6) {
-            System.out.println("\033[1;91m" + "密码太短！确定要继续使用吗？" + "\033[0m");
+            System.out.print("\033[1;91m" + "密码太短！确定要继续使用吗？" + "\033[0m");
             if (!"".equals(scanner.nextLine())) {
                 isRegister = false;
             }
@@ -109,7 +122,7 @@ public class Generate {
             // 对密码进行加密
             password = new SimpleHash("MD5", password, ByteSource.Util.bytes(Settings.salt), 1024).toString();
             // 将数据写入数据库
-            SqlSession sqlSession = this.createSqlSession();
+            SqlSession sqlSession = this.createSqlSession(driver, url, name, pwd);
             if (Objects.nonNull(sqlSession)) {
                 UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
                 User user = new User();
@@ -127,10 +140,5 @@ public class Generate {
         } else {
             System.out.println("\033[1;92m" + "密码太短，请重新注册！" + "\033[0m");
         }
-    }
-
-    public static void main(String[] args) {
-//        new Generate().generateUserTable();
-        new Generate().createUser();
     }
 }

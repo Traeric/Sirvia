@@ -4,47 +4,193 @@
 
 **完美嵌入项目，丢弃沉重的数据库操作软件，启动项目就可以对数据进行增删改查**
 
-Java Admin是一套完备的在线增删改查系统，它舍弃了传统的通过Navicat或者PLSQL等软件操作数据库的方式，而是在项目内部嵌入了Java Admin，通过在网页端操作数据库，类似于Django的admin。
+Sirvia是一套完备的在线增删改查系统，它舍弃了传统的通过Navicat或者PLSQL等软件操作数据库的方式，而是在项目内部嵌入了Sirvia，通过在网页端操作数据库，类似于Django的admin。
 
-当Java Admin嵌入到项目中后，可以通过Generate类创建超级用户，通过账户跟密码登陆Java Admin，Java Admin使用shiro做用户认证，相对安全。登陆之后可以查看Java Admin的系统表，如果需要控制用户自己的表，需要将对应的实体类在Register类中进行注册，注册之后就可以登陆Java Admin对表进行增删改查的操作。
+当Sirvia嵌入到项目中后，可以通过Generate类创建超级用户，通过账户跟密码登陆Sirvia，Sirvia使用shiro做用户认证，相对安全。登陆之后可以查看Sirvia的系统表，如果需要控制用户自己的表，需要将对应的实体类在Register类中进行注册，注册之后就可以登陆Sirvia对表进行增删改查的操作。
 
 ## 起步
 
-### 1. 填写数据库信息
+### 1. 导入依赖
 
-使用Java Admin第一步需要在`resources/db.properties`文件中写上数据库连接的信息，包括url、user跟pwd
+```xml
+<dependency>
+    <groupId>com.ericjin.javadmin</groupId>
+    <artifactId>administration</artifactId>
+    <version>1.0-SNAPSHOT</version>
+</dependency>
+```
 
-### 2. 生成user表以及账户
+使用Sirvia第一步需要导入对应的maven依赖
 
-想要进入Java Admin页面管理数据表需要登陆，那么首先需要创建账户，账户存储在数据库中，因此需要先创建用户表，具体的创建是在`Generate`类中完成的，`Generate`的位置在`admin`目录的`com.ericjin.javadmin.generate`包下，通过执行类里面的`generateUserTable()`方法来创建用户表。
+### 2.配置web.xml
 
-创建用户表后就需要创建账户了，还是在`Generate`类下，执行`createUser()`方法按照要求填写即可创建账户。
+由于Sirvia使用了shiro做认证，所以需要在web.xml中配置shiroFilter，当然由于Sirvia也使用了Spring跟SpringMVC，所以需要配置DispatcherServlet跟spring配置文件
 
-### 3. 登陆Java admin
+```xml
+<!-- 配置Spring Dispatcher Servlet -->
+<servlet>
+    <servlet-name>springMVC</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    <!-- spring mvc配置文件 -->
+    <init-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>/WEB-INF/dispatcher-servlet.xml</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+</servlet>
+<servlet-mapping>
+    <servlet-name>springMVC</servlet-name>
+    <url-pattern>/</url-pattern>
+</servlet-mapping>
 
-启动项目后，通过地址`http://127.0.0.1:8080/admin/login`可以进入Java Admin的登陆页面，如下：
+
+<listener>
+    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+</listener>
+<!-- 指定spring的配置文件 -->
+<context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>/WEB-INF/applicationContext.xml</param-value>
+</context-param>
+
+
+<!--
+ 1. 配置  Shiro 的 shiroFilter.
+ 2. DelegatingFilterProxy 实际上是 Filter 的一个代理对象. 默认情况下, Spring 会到 IOC 容器中查找和
+ <filter-name> 对应的 filter bean. 也可以通过 targetBeanName 的初始化参数来配置 filter bean 的 id.
+ -->
+<filter>
+    <filter-name>shiroFilter</filter-name>
+    <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+    <init-param>
+        <param-name>targetFilterLifecycle</param-name>
+        <param-value>true</param-value>
+    </init-param>
+</filter>
+<filter-mapping>
+    <filter-name>shiroFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+</filter-mapping>
+```
+
+### 3.导入Sirvia的spring以及springMVC配置文件
+
+分别找到当前项目的spring以及SpringMVC配置文件，并在其中导入Sirvia的相关配置文件，当然，如果你的项目只有一个spring的配置文件，也可以将两项配置全部导入到这一个spring配置文件中
+
+`在当前项目的spring配置文件中导入Sirvia的spring配置文件（applicationContext.xml）`
+
+```xml
+<import resource="classpath*:adminApplicationContext.xml" />
+```
+
+`在当前项目的springMVC配置文件中导入Sirvia的springMVC配置文件（dispatcher-servlet.xml）`
+
+```xml
+<import resource="classpath*:springMVC-servlet.xml"/>
+```
+
+### 4.配置数据库
+
+由于Sirvia是用于操作数据库的工具，所以需要连接你的数据库，因此需要在你项目的spring配置文件中配置数据库的相关信息。
+
+在配置之前需要提一个东西，就是`CommonsSetting`类，这个类是用于你的项目与Sirvia进行通信的，所以数据库信息需要设置在这个类中，你可以自己新建一个类继承`CommonsSetting`类，也可以直接在Spring配置文件中配置这个类
+
+```xml
+<bean name="commonsSetting" class="com.ericjin.javadmin.CommonsSetting">
+    <property name="dataBase">
+        <map>
+            <entry key="url" value="jdbc:mysql://127.0.0.1:3306/java_admin?serverTimezone=UTC"/>
+            <entry key="password" value="root"/>
+            <entry key="user" value="root"/>
+            <entry key="driver" value="com.mysql.jdbc.Driver"/>
+        </map>
+    </property>
+</bean>
+```
+
+注意bean的名称不要改变
+
+### 5.导入templates目录
+
+Sirvia的所有页面都存在于templates目录中，需要拿到这个目录后放到自己项目的WEB-INF目录下面
+
+此时，启动项目如果成功，就表示已经引入Sirvia成功了
+
+访问：`/admin/login`就可以来到登陆页面，如下
 
 ![NO IMG](./photo/login.png)
 
-### 4. 操作数据表
+## 功能介绍
+
+想要使用Sirvia，还需要有一个账户
+
+### 1. 生成user表以及账户
+
+想要进入Sirvia页面管理数据表需要登陆，那么首先需要创建账户，账户存储在数据库中，因此需要先创建用户表，具体的创建是在`Generate`类中完成的
+
+在当前的项目中准备一个类，在类的`main`方法中执行`Generate`的`generateUserTable()`方法来创建用户表，方法需要传入数据库信息，按需传入即可。
+
+```java
+public class Test {
+    public static void main(String[] args) {
+        new Generate().generateUserTable("com.mysql.jdbc.Driver",
+                "jdbc:mysql://127.0.0.1:3306/java_admin?serverTimezone=UTC",
+                "root", "root");
+    }
+}
+```
+
+创建用户表后就需要创建账户了，还是在该类的`main`方法中执行`Generate`的`createUser()`方法，按照要求填写即可创建账户。
+
+```java
+public class Test {
+    public static void main(String[] args) {
+        new Generate().createUser("com.mysql.jdbc.Driver",
+                "jdbc:mysql://127.0.0.1:3306/java_admin?serverTimezone=UTC",
+                "root", "root");
+}
+```
+
+
+
+![NO IMG](./photo/create_user.png)
+
+### 2. 登陆Java admin
+
+启动项目后，通过地址`http://127.0.0.1:8080/admin/login`可以进入Sirvia的登陆页面，如下：
+
+![NO IMG](./photo/login.png)
+
+### 3. 操作数据表
 
 登陆后会进入首页，首页展示如下：
 
 ![NO IMG](./photo/index.png)
 
-可以看到，首页有一个Panel，Panel的头部写着系统表，这是Java Admin系统自带的表，可以看到有一张用户表，这张表就是刚刚第二步通过`Generate`类创建的表，里面存储有用户信息，一般不是太会用到。那么如果想要操作自己的表应该怎么做呢？
+可以看到，首页有一个Panel，Panel的头部写着系统表，这是Sirvia系统自带的表，可以看到有一张用户表，这张表就是刚刚第二步通过`Generate`类创建的表，里面存储有用户信息，一般不是太会用到。那么如果想要操作自己的表应该怎么做呢？
 
-来到项目中，可以看到一个`Register`类，具体位置在admin目录下的`com.ericjin.javadmin`包下，来到类中可以看到一个`userTableList()`方法，里面会实例化一个List，然后返回出去，如果想要操作自己的表，就需要在该方法中将自己表对应的java实体类的Class对象添加到这个列表中，例如：
+在你的项目中能够被spring扫描的包内创建一个类，这里命名为`MyRegister`，它需要继承`Register`类，如果需要将自己的表交给Sirvia管理，需要重写`userTableList()`方法，在方法中接收父类方法的列表，将需要自己表对应的实体类的Class对象添加到这个列表中，然后将这个列表返回出去
 
 ```java
-public List<Class> userTableList() {
-    List<Class> list = new ArrayList<>();
-    // 此处添加用户表信息
-    list.add(Test.class);
-    list.add(Article.class);
-    list.add(Tags.class);
-    return list;
+public class MyRegister extends Register {
+    @Override
+    public List<Class> userTableList() {
+        List<Class> list = super.userTableList();
+        list.add(Article.class);
+        list.add(Tags.class);
+        list.add(Test.class);
+        return list;
+    }
 }
+```
+
+然后将该列表放到spring容器中，即在applicationContext.xml文件中加入如下代码
+
+```xml
+<!-- 这里的MyRegister就是刚刚创建的，包路径填写自己的 -->
+<bean name="my_register" class="com.jinxin.MyRegister"/>
+<!-- 这里注意名字不能改变，必须是userTableList -->
+<bean name="userTableList" factory-bean="my_register" factory-method="userTableList"/>
 ```
 
 在上面的代码中添加了三个实体类，注意添加的实体类一定要在数据库中有对应的表。
@@ -52,6 +198,8 @@ public List<Class> userTableList() {
 重启项目，然后来到首页：
 
 ![NO IMG](./photo/index-user.png)
+
+可以看到，刚刚添加的三个表已经在首页展示了
 
 #### 查询数据
 
@@ -65,9 +213,9 @@ public List<Class> userTableList() {
 
 ![NO IMG](./photo/add.png)
 
-​	Java Admin会根据`Article`实体类中的所有私有属性进行表单渲染，表单类型会根据属性的类型来选择渲染，或input框，或select框，或radio框，或穿梭框等等。
+​	Sirvia会根据`Article`实体类中的所有私有属性进行表单渲染，表单类型会根据属性的类型来选择渲染，或input框，或select框，或radio框，或穿梭框等等。
 
-​	如果在该实体类中有外键关联了其他的实体类，Java Admin会找到所关联的表的所有字段渲染成一个select框供选择，显示外键的属性上面需要标注`@ForeignKey`注解，在注解里面可以配置要显示的字段名以及要保存的外键value。如果是多对多，则会渲染成穿梭框，需要在属性上标注`@ManyToManyField`注解，注解里面的内容后面会详细说明。
+​	如果在该实体类中有外键关联了其他的实体类，Sirvia会找到所关联的表的所有字段渲染成一个select框供选择，显示外键的属性上面需要标注`@ForeignKey`注解，在注解里面可以配置要显示的字段名以及要保存的外键value。如果是多对多，则会渲染成穿梭框，需要在属性上标注`@ManyToManyField`注解，注解里面的内容后面会详细说明。
 
 ​	在上图中可以看到不论是外键还是多对多的旁边都有一个添加按钮，点击这个按钮就可以往对应的关联表的中添加信息，例如上图中点击按钮就可以对tag表进行添加，如下：
 
@@ -89,9 +237,9 @@ Action是一个可以对数据进行批量操作的功能，在数据展示页�
 
 ![NO IMG](./photo/action.png)
 
-Java Admin系统只提供了一个批量删除的操作，如果需要实现其他的批量操作，可以在`Action`类中自己定义，关于自定义Action的具体内容会在后面说明。
+Sirvia系统只提供了一个批量删除的操作，如果需要实现其他的批量操作，可以在`Action`类中自己定义，关于自定义Action的具体内容会在后面说明。
 
-## Java Admin注解
+## Sirvia注解
 
 ## 类注解
 
@@ -219,33 +367,55 @@ private List tags;
 
 # Action
 
-Java Admin还有一个比较重要的功能，就是对数据进行批量处理，在上面已经提到了批量删除一些字段，那么如果想要实现一些其他的批量操作的功能应该怎么办呢？
+Sirvia还有一个比较重要的功能，就是对数据进行批量处理，在上面已经提到了批量删除一些字段，那么如果想要实现一些其他的批量操作的功能应该怎么办呢？
 
-首先需要在`Action`类中实现批量操作的具体内容，`Action`类在admin目录下的`com.ericjin.javadmin`包里面，该类中已经有了一个批量删除的实现方法，可以在里面写上自己想要实现的批量操纵方法，例如：
+首先需要在自己的项目中创建一个`MyAction`类，该类需要继承`Action`类，在该类中定义需要批量执行的方法
 
 ```java
-public class Action {
-    // 自定义批量操作的方法
-    public Boolean printSelectedData(List<Integer> selectArr, String tableName, SuperMapper superMapper) {
+public class MyAction extends Action {
+    public Boolean getNum(List<Integer> selectArr, String tableName, SuperMapper superMapper) {
+        System.out.println("一共选中了" + selectArr.size() + "条数据");
         selectArr.forEach(System.out::println);
         return true;
     }
 }
 ```
 
-写完该方法后，需要在`Register`类中定义，该类在admin包下面的`com.ericjin.javadmin`包下，这个类在注册用户表的时候也使用到了，在这里面有一个`actionMap()`方法，会返回一个map，在这个方法中，我们需要将自己定义的方法名称跟要显示在批量操作的select框里面的option的内容，现在将刚刚定义的action方法注册进去
+然后你需要让Sirvia知道你的Action的位置，告诉Sirvia位置后，Sirvia才能帮助你执行Action里面的方法
+
+告诉Sirvia的方法就是自定义一个类继承`CommonsSetting`类，重写`actionPackage()`方法，将自定义的Action类的路径返回出去
 
 ```java
-/**
- * 想要执行的action
- *
- * @return
- */
+public class MyCommonsSetting extends CommonsSetting {
+    @Override
+    public String actionPackage() {
+        return "com.jinxin.MyAction";
+    }
+}
+```
+
+将该类注册到Spring容器中，不过在开始配置数据库的时候就已经将该类注册到了容器中了，但是如果在配置数据库的时候不是使用的自定义的类而是使用Sirvia提供的`CommonsSetting`类的话就需要在这里进行替换，替换为自己的类
+
+```xml
+<bean name="commonsSetting" class="com.jinxin.MyCommonsSetting">
+    <property name="dataBase">
+        <map>
+            <entry key="url" value="jdbc:mysql://127.0.0.1:3306/java_admin?serverTimezone=UTC"/>
+            <entry key="password" value="root"/>
+            <entry key="user" value="root"/>
+            <entry key="driver" value="com.mysql.jdbc.Driver"/>
+        </map>
+    </property>
+</bean>
+```
+
+除此之外，还需要将刚刚的批量操作展示在页面上，这需要你去`MyRegister`类中重写`actionMap()`方法，继承父类的map，然后将刚刚定义的批量删除的方法名跟要展示在页面上的操作名称放入map中，然后返回出去
+
+```java
+@Override
 public Map<String, String> actionMap() {
-    Map<String, String> map = new LinkedHashMap<>();
-    // 添加要执行的action
-    map.put("deleteSelectData", "删除选中的数据");
-    map.put("printSelectedData", "打印所选数据的信息");
+    Map<String, String> map = super.actionMap();
+    map.put("getNum", "打印所选数据的信息");
     return map;
 }
 ```

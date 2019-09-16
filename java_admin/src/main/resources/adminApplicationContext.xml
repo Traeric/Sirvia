@@ -69,6 +69,8 @@
     <bean name="register" class="com.ericjin.javadmin.Register"/>
     <!-- 系统表 -->
     <bean name="systemTableList" factory-bean="register" factory-method="systemTableList"/>
+    <!-- 用户表 -->
+    <bean name="userTableList" factory-bean="register" factory-method="userTableList"/>
 
     <!--
         配置action
@@ -76,7 +78,16 @@
     <bean name="actionMap" factory-bean="register" factory-method="actionMap"/>
 
     <!-- 用于和外界的web项目进行沟通的类 -->
-    <bean name="commonsSetting" class="com.ericjin.javadmin.CommonsSetting"/>
+    <bean name="commonsSetting" class="com.ericjin.javadmin.CommonsSetting">
+        <property name="dataBase">
+            <map>
+                <entry key="url" value="jdbc:mysql://127.0.0.1:3306/java_admin?serverTimezone=UTC"/>
+                <entry key="password" value="root"/>
+                <entry key="user" value="root"/>
+                <entry key="driver" value="com.mysql.jdbc.Driver"/>
+            </map>
+        </property>
+    </bean>
 </beans>
 
 

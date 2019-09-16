@@ -7,7 +7,7 @@
 
     <name>javadmin-administration</name>
     <groupId>com.ericjin.javadmin</groupId>
-    <artifactId>administration</artifactId>
+    <artifactId>sirvia</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <build>

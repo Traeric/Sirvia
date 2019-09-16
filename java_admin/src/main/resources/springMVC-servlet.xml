@@ -8,25 +8,5 @@
     <mvc:annotation-driven/>
 
     <mvc:resources location="classpath:/static/" mapping="/static/**"/>
-
-    <bean id="templateResolver" class="org.thymeleaf.templateresolver.ServletContextTemplateResolver">
-        <property name="prefix" value="/templates/"/>
-        <property name="suffix" value=".html"/>
-        <property name="templateMode" value="HTML5"/>
-        <property name="cacheable" value="false"/>
-        <property name="characterEncoding" value="UTF-8"/>
-    </bean>
-    <!-- 配置shiro方言 -->
-    <bean name="shiroDialect" class="at.pollux.thymeleaf.shiro.dialect.ShiroDialect"/>
-    <bean id="templateEngine" class="org.thymeleaf.spring4.SpringTemplateEngine">
-        <property name="templateResolver" ref="templateResolver"/>
-        <property name="additionalDialects" ref="shiroDialect"/>
-    </bean>
-
-    <bean class="org.thymeleaf.spring4.view.ThymeleafViewResolver">
-        <property name="templateEngine" ref="templateEngine"/>
-        <property name="characterEncoding" value="UTF-8"/>
-    </bean>
-
 </beans>
 

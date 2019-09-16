@@ -10,7 +10,7 @@
         <!-- spring mvc配置文件 -->
         <init-param>
             <param-name>contextConfigLocation</param-name>
-            <param-value>/WEB-INF/springMVC-servlet.xml</param-value>
+            <param-value>classpath:springMVC-servlet.xml</param-value>
         </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>
@@ -27,7 +27,7 @@
     </listener>
     <context-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>/WEB-INF/applicationContext.xml</param-value>
+        <param-value>classpath:adminApplicationContext.xml</param-value>
     </context-param>
 
     <!--

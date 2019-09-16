@@ -10,7 +10,7 @@
     <mvc:resources location="classpath:/static/" mapping="/static/**"/>
 
     <bean id="templateResolver" class="org.thymeleaf.templateresolver.ServletContextTemplateResolver">
-        <property name="prefix" value="/WEB-INF/templates/"/>
+        <property name="prefix" value="/templates/"/>
         <property name="suffix" value=".html"/>
         <property name="templateMode" value="HTML5"/>
         <property name="cacheable" value="false"/>

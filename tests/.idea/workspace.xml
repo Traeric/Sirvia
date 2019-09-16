@@ -7,26 +7,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7f681309-fdb0-4787-9f64-7b2b51b3bfe7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../java_admin/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../java_admin/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java_admin/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../java_admin/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java_admin/src/main/java/com/ericjin/javadmin/CommonsSetting.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java_admin/src/main/java/com/ericjin/javadmin/CommonsSetting.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java_admin/src/main/java/com/ericjin/javadmin/generate/Generate.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java_admin/src/main/java/com/ericjin/javadmin/generate/Generate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java_admin/src/main/java/com/ericjin/javadmin/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java_admin/src/main/java/com/ericjin/javadmin/mapper/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java_admin/src/main/resources/adminApplicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../java_admin/src/main/resources/adminApplicationContext.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java_admin/src/main/resources/mybatis/mybatis-config.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java_admin/src/main/resources/mybatis/userMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../java_admin/src/main/resources/mybatis/userMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java_admin/src/main/java/com/ericjin/javadmin/config/SpringDataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java_admin/src/main/java/com/ericjin/javadmin/config/SpringDataSource.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../java_admin/src/main/resources/springMVC-servlet.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../java_admin/src/main/resources/springMVC-servlet.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java_admin/src/main/webapp/WEB-INF/templates/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/../java_admin/src/main/webapp/WEB-INF/templates/admin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java_admin/src/main/webapp/WEB-INF/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/../java_admin/src/main/webapp/WEB-INF/templates/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java_admin/src/main/webapp/WEB-INF/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/../java_admin/src/main/webapp/WEB-INF/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../photo/index-user.png" beforeDir="false" afterPath="$PROJECT_DIR$/../photo/index-user.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../photo/index.png" beforeDir="false" afterPath="$PROJECT_DIR$/../photo/index.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../photo/login.png" beforeDir="false" afterPath="$PROJECT_DIR$/../photo/login.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../photo/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/../photo/logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java_admin/src/main/webapp/WEB-INF/templates/add_table.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java_admin/src/main/webapp/WEB-INF/templates/admin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java_admin/src/main/webapp/WEB-INF/templates/change_password.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java_admin/src/main/webapp/WEB-INF/templates/edit_table.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java_admin/src/main/webapp/WEB-INF/templates/header.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java_admin/src/main/webapp/WEB-INF/templates/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java_admin/src/main/webapp/WEB-INF/templates/table_list.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jinxin/MyAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jinxin/MyAction.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -96,7 +87,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/jinxin/MyAction.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="315">
-              <caret line="11" column="12" lean-forward="true" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
+              <caret line="11" column="12" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -425,16 +416,15 @@
       <option name="presentableId" value="Default" />
       <updated>1568554170484</updated>
       <workItem from="1568554173435" duration="11682000" />
-      <workItem from="1568566379229" duration="21787000" />
+      <workItem from="1568566379229" duration="22019000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33469000" />
+    <option name="totallyTimeSpent" value="33701000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22097977" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -641,7 +631,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/jinxin/MyAction.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
-          <caret line="11" column="12" lean-forward="true" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
+          <caret line="11" column="12" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

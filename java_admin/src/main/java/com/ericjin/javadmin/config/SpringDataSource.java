@@ -1,6 +1,8 @@
 package com.ericjin.javadmin.config;
 
+import com.github.pagehelper.PageInterceptor;
 import com.mchange.v2.c3p0.ComboPooledDataSource;
+import org.apache.ibatis.plugin.Interceptor;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.mapper.MapperScannerConfigurer;
 import org.springframework.beans.factory.annotation.Value;
@@ -58,8 +60,11 @@ public class SpringDataSource {
      */
     @Bean("sqlSessionFactoryBean")
     public SqlSessionFactoryBean sqlSessionFactoryBean(ComboPooledDataSource comboPooledDataSource) throws Exception {
+        // 分页
+        PageInterceptor interceptor = new PageInterceptor();
         // 创建SqlSession工厂
         SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
+        sqlSessionFactoryBean.setPlugins(new Interceptor[]{interceptor});
         sqlSessionFactoryBean.setDataSource(comboPooledDataSource);
         PathMatchingResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
         sqlSessionFactoryBean.setMapperLocations(resolver.getResources("classpath:mybatis/*Mapper.xml"));

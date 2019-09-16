@@ -420,6 +420,13 @@ public Map<String, String> actionMap() {
 }
 ```
 
+然后将map放到spring容器中
+
+```xml
+<bean name="my_register" class="com.jinxin.MyRegister"/>
+<bean name="actionMap" factory-bean="my_register" factory-method="actionMap"/>
+```
+
 现在重启项目来到数据展示页：
 
 ![NO IMG](./photo/add_action.png)

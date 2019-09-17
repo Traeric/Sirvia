@@ -393,11 +393,11 @@
   </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat8">
     <configuration name="FieldToInputStr" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.ericjin.javadmin.utils.FieldToInputStr" />
-      <module name="java_admin" />
+      <option name="MAIN_CLASS_NAME" value="com.ericjin.sirvia.utils.FieldToInputStr" />
+      <module name="lsirvia" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.ericjin.javadmin.utils.*" />
+          <option name="PATTERN" value="com.ericjin.sirvia.utils.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -406,11 +406,11 @@
       </method>
     </configuration>
     <configuration name="Generate" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.ericjin.javadmin.generate.Generate" />
-      <module name="java_admin" />
+      <option name="MAIN_CLASS_NAME" value="com.ericjin.sirvia.generate.Generate" />
+      <module name="lsirvia" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.ericjin.javadmin.generate.*" />
+          <option name="PATTERN" value="com.ericjin.sirvia.generate.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -419,11 +419,11 @@
       </method>
     </configuration>
     <configuration name="ToCamelCase" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.ericjin.javadmin.utils.ToCamelCase" />
-      <module name="java_admin" />
+      <option name="MAIN_CLASS_NAME" value="com.ericjin.sirvia.utils.ToCamelCase" />
+      <module name="lsirvia" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.ericjin.javadmin.utils.*" />
+          <option name="PATTERN" value="com.ericjin.sirvia.utils.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>

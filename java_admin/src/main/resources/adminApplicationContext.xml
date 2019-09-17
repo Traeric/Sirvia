@@ -6,7 +6,7 @@
                 http://www.springframework.org/schema/beans/spring-beans.xsd
                  http://www.springframework.org/schema/context
                  http://www.springframework.org/schema/context/spring-context.xsd">
-    <context:component-scan base-package="com.ericjin.javadmin"/>
+    <context:component-scan base-package="com.ericjin.sirvia"/>
     <!--
         配置shiro
     -->
@@ -33,7 +33,7 @@
         <property name="rememberMeManager" ref="rememberMeManager"/>
     </bean>
     <!-- 配置自定义的Realm -->
-    <bean name="authRealm" class="com.ericjin.javadmin.shiro.realm.AdminRealm">
+    <bean name="authRealm" class="com.ericjin.sirvia.shiro.realm.AdminRealm">
         <property name="credentialsMatcher">
             <bean class="org.apache.shiro.authc.credential.HashedCredentialsMatcher">
                 <property name="hashAlgorithmName" value="MD5"/>   <!-- 加密方法 -->
@@ -43,7 +43,7 @@
         </property>
     </bean>
     <!-- 配置管理realm的规则 -->
-    <bean name="authenticator" class="com.ericjin.javadmin.shiro.authenticator.UserModularRealmAuthenticator">
+    <bean name="authenticator" class="com.ericjin.sirvia.shiro.authenticator.UserModularRealmAuthenticator">
         <property name="authenticationStrategy">
             <bean class="org.apache.shiro.authc.pam.AtLeastOneSuccessfulStrategy"/>
         </property>
@@ -61,12 +61,12 @@
     <bean name="filterChainDefinitionMap" factory-bean="filterChainDefinitionMapBuilder"
           factory-method="buildFilterChainDefinitionMap"/>
     <bean name="filterChainDefinitionMapBuilder"
-          class="com.ericjin.javadmin.shiro.factory.filterChainDefinitionMapBuilder"/>
+          class="com.ericjin.sirvia.shiro.factory.filterChainDefinitionMapBuilder"/>
 
     <!--
         配置注册的表信息
     -->
-    <bean name="register" class="com.ericjin.javadmin.Register"/>
+    <bean name="register" class="com.ericjin.sirvia.Register"/>
     <!-- 系统表 -->
     <bean name="systemTableList" factory-bean="register" factory-method="systemTableList"/>
     <!-- 用户表 -->
@@ -78,7 +78,7 @@
     <bean name="actionMap" factory-bean="register" factory-method="actionMap"/>
 
     <!-- 用于和外界的web项目进行沟通的类 -->
-    <bean name="commonsSetting" class="com.ericjin.javadmin.CommonsSetting">
+    <bean name="commonsSetting" class="com.ericjin.sirvia.CommonsSetting">
         <property name="dataBase">
             <map>
                 <entry key="url" value="jdbc:mysql://127.0.0.1:3306/java_admin?serverTimezone=UTC"/>

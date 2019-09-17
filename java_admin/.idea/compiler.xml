@@ -6,13 +6,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="lsirvia" />
         <module name="java_admin" />
-        <module name="sirvia" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="administration" target="8" />
       <module name="javadmin" target="8" />
+      <module name="sirvia" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>

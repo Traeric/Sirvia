@@ -6,8 +6,8 @@
     <packaging>jar</packaging>
 
     <name>Sirvia</name>
-    <groupId>com.github.traeric.lsirvia</groupId>
-    <artifactId>sirvia</artifactId>
+    <groupId>com.github.traeric.sirvia</groupId>
+    <artifactId>lsirvia</artifactId>
     <version>0.0.1-RELEASE</version>
 
     <build>

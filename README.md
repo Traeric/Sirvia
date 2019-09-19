@@ -14,9 +14,9 @@ Sirvia是一套完备的在线增删改查系统，它舍弃了传统的通过Na
 
 ```xml
 <dependency>
-    <groupId>com.ericjin.javadmin</groupId>
-    <artifactId>administration</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <groupId>io.github.traeric.sirvia</groupId>
+    <artifactId>lsirvia</artifactId>
+    <version>0.1.0-RELEASE</version>
 </dependency>
 ```
 

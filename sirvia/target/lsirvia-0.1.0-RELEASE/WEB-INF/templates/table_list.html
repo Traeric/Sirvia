@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>[[ ${tableName} ]]列表</title>
+
+    <link th:href="@{/static/plugins/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+    <link th:href="@{/static/css/table_list.css}" rel="stylesheet">
+
+    <script th:src="@{/static/js/jq/jquery.min.js}"></script>
+    <script th:src="@{/static/plugins/bootstrap/js/bootstrap.min.js}"></script>
+    <link rel="stylesheet" th:href="@{/static/css/pagnation.css}">
+
+    <link th:href="@{/static/plugins/layui/css/layui.css}" rel="stylesheet">
+    <script th:src="@{/static/plugins/layui/layui.js}"></script>
+
+    <script th:src="@{/static/js/jq/jquery.dataTables.min.js}"></script>
+    <link rel="stylesheet" th:href="@{/static/css/dataTable.bootstrap.css}">
+    <script th:src="@{/static/js/dataTable.bootstrap.js}"></script>
+</head>
+<body>
+<div th:replace="header::header"></div>
+<div class="container">
+    <ol class="breadcrumb">
+        <li><a th:href="@{/admin}">首页</a></li>
+        <li><a href="javascript:void(0);">[[ ${tableName} ]]</a></li>
+    </ol>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="page-header">
+                <div class="title">
+                    <div class="operation">
+                        <h3>修改[[ ${tableName} ]]</h3>
+                    </div>
+
+                    <a th:href="@{'/admin/' + ${modelName} + '/' + ${beanName} + '/add'}">
+                        <button type="button" class="btn btn-success">
+                            添加[[ ${tableName} ]] &nbsp;
+                            <i class="glyphicon glyphicon-plus"></i>
+                        </button>
+                    </a>
+                </div>
+            </div>
+            <!-- action操作 -->
+            <div id="action" class="action layui-form">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">Action: </label>
+                    <div class="layui-input-inline">
+                        <a id="action_url" th:href="@{'/admin/action/' + ${modelName} + '/' + ${beanName}}"
+                           style="display: none;"></a>
+                        <select name="city" lay-verify="required">
+                            <option value="">---------------------------</option>
+                            <option value="0" th:each="item, itemStat : ${actionMap}" th:value="${item.key}">[[
+                                ${item.value} ]]
+                            </option>
+                        </select>
+                    </div>
+                    <button type="button" class="layui-btn  layui-btn-warm" onclick="doAction()">执行</button>
+                    <div id="selected" class="layui-badge">选中了<span>0</span>条数据</div>
+                    <div class="right-list pull-right">
+                        <span class="layui-badge layui-bg-orange">
+                            总数据：[[ ${pageInfo.getTotal()} ]]
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <table class="layui-table table-sort">
+                <!-- 生成表头 -->
+                <thead>
+                <tr>
+                    <th class="layui-form" style="width: 50px;">
+                        <input type="checkbox" lay-skin="primary" id="select_all" lay-filter="selectAll">
+                    </th>
+                    <th th:each="item : ${fields}">
+                        [[ ${item} ]]
+                    </th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="item : ${dataList}" th:index="${item.get('id')}">
+                    <th class="layui-form" style="width: 50px;">
+                        <input class="select-item" type="checkbox" lay-skin="primary" th:value="${item.get('id')}"
+                               lay-filter="selectItem">
+                    </th>
+                    <td th:each="field : ${fields}">
+                        [[ ${item.get(field)} ]]
+                    </td>
+                    <td style="width: 100px;">
+                        <a th:href="@{'/admin/' + ${modelName} + '/' + ${beanName} + '/edit/' + ${item.get('id')}}">
+                            <button type="button" class="layui-btn layui-btn-sm layui-btn-normal">
+                                <i class="layui-icon">&#xe642;</i>编辑
+                            </button>
+                        </a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <div class="pager-wrap">
+                <div id="pager" class="pager clearfix">
+                    <a class="pg-first" title="首页"
+                       th:href="@{'/admin/' + ${modelName} + '/' + ${beanName}(page=1)}"></a>
+
+                    <a class="pg-prev" title="上一页"
+                       th:href="@{'/admin/' + ${modelName} + '/' + ${beanName}(page=${pageInfo.getPrePage()})}"
+                       th:if="${pageInfo.getPrePage()} >= 1"></a>
+                    <span class="forbidden pg-prev" th:if="${pageInfo.getPrePage()} < 1"></span>
+
+                    <span class="els" th:if="${pageInfo.getPageNum()} > 3">...</span>
+                    <th:block th:each="pageNum : ${pageInfo.getNavigatepageNums()}">
+                        <a th:if="${pageNum} != ${pageInfo.getPageNum()}"
+                           th:href="@{'/admin/' + ${modelName} + '/' + ${beanName}(page=${pageNum})}">
+                            [[ ${pageNum} ]]
+                        </a>
+                        <span class="current" th:if="${pageNum} == ${pageInfo.getPageNum()}">[[ ${pageNum} ]]</span>
+                    </th:block>
+                    <span class="els" th:if="${pageInfo.getPageNum()} < ${pageInfo.getPages()} - 2">...</span>
+
+                    <a class="pg-next" title="下一页"
+                       th:href="@{'/admin/' + ${modelName} + '/' + ${beanName}(page=${pageInfo.getNextPage()})}"
+                       th:if="${pageInfo.getNextPage()} != 0"></a>
+                    <span class="forbidden pg-next" th:if="${pageInfo.getNextPage()} == 0"></span>
+
+                    <a class="pg-last" title="尾页"
+                       th:href="@{'/admin/' + ${modelName} + '/' + ${beanName}(page=${pageInfo.getPages()})}"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    // 选中的数组
+    let selectArr = [];
+
+    layui.use(['form', 'laypage'], function () {
+        let form = layui.form;
+        // 设置复选框全选事件
+        form.on('checkbox(selectAll)', function () {
+            if (this.checked) {
+                // 选中
+                $("table tbody th div.layui-form-checkbox").addClass("layui-form-checked");
+                $(".select-item").prop("checked", true);
+                // 设置样式
+                $("table tbody tr").css("background-color", "#ffc");
+            } else {
+                $(".select-item").prop("checked", false);
+                $("table tbody th div.layui-form-checkbox").removeClass("layui-form-checked");
+                $("table tbody tr").css("background-color", "#FFF");
+            }
+            // 将选中的数据添加到数组中
+            selectArr = [];
+            $("table tbody th input[type=checkbox]:checked").each((index, item) => {
+                selectArr.push($(item).val());
+            });
+            $("#selected span").html(selectArr.length);
+        });
+        // 设置单个checkbox
+        form.on('checkbox(selectItem)', function (data) {
+            if (data.elem.checked) {
+                // 选中
+                $(this).parents("tr").css("background-color", "#ffc");
+            } else {
+                // 未选中
+                $(this).parents("tr").css("background-color", "#FFF");
+            }
+            // 将选中的数据添加到数组中
+            selectArr = [];
+            $("table tbody th input[type=checkbox]:checked").each((index, item) => {
+                selectArr.push($(item).val());
+            });
+            $("#selected span").html(selectArr.length);
+        });
+    });
+
+    function doAction() {
+        // 获取要执行的方法名称
+        let method_name = $("#action select option:checked").val();
+        if (method_name === '') {
+            return;
+        }
+        $.ajax({
+            url: $("#action_url").attr("href"),
+            type: "post",
+            data: {
+                "select_arr": selectArr,
+                method_name,
+            },
+            success(args) {
+                if (args === "1") {
+                    layer.msg('执行成功', {
+                        icon: 1,
+                        offset: "150px",
+                        time: 1000,
+                    }, () => {
+                        location.reload();
+                    });
+                    // $("table tbody tr").each((index, item) => {
+                    //     if (selectArr.indexOf($(item).attr("index")) !== -1) {
+                    //         $(item).remove();
+                    //     }
+                    // });
+                } else {
+                    layer.msg('执行失败', {icon: 5, offset: "150px"});
+                }
+            }
+        });
+    }
+</script>
+</body>
+</html>

@@ -8,7 +8,7 @@
     <name>Sirvia</name>
     <groupId>io.github.traeric.sirvia</groupId>
     <artifactId>lsirvia</artifactId>
-    <version>0.0.1-RELEASE</version>
+    <version>0.1.0-RELEASE</version>
     <description>a web database system</description>
     <url>https://github.com/Traeric/Sirvia</url>
 
@@ -81,7 +81,7 @@
     </build>
 
     <properties>
-        <spring.version>4.3.14.RELEASE</spring.version>
+        <spring.version>4.3.20.RELEASE</spring.version>
         <thymeleaf.version>3.0.9.RELEASE</thymeleaf.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>

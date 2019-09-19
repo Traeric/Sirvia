@@ -1,6 +1,9 @@
 package com.ericjin.sirvia;
 
 import com.ericjin.sirvia.beans.User;
+import com.ericjin.sirvia.test.Article;
+import com.ericjin.sirvia.test.Tags;
+import com.ericjin.sirvia.test.Test;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -25,7 +28,8 @@ public class Register {
      * @return
      */
     public List<Class> userTableList() {
-        return new ArrayList<>();
+        List<Class> list = new ArrayList<>();
+        return list;
     }
 
     /**

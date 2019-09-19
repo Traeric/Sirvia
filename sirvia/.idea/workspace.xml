@@ -6,11 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b821a04f-eb7f-46a5-9edc-4fd38a1641fb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/Register.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/Register.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/config/ThymeleafConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/config/ThymeleafConfig.java" afterDir="false" />
-    </list>
+    <list default="true" id="b821a04f-eb7f-46a5-9edc-4fd38a1641fb" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,38 +23,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/adminApplicationContext.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2848">
-              <caret line="89" column="11" selection-start-line="89" selection-start-column="11" selection-end-line="89" selection-end-column="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/springMVC-servlet.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="416">
-              <caret line="13" selection-start-line="13" selection-end-line="13" />
+            <state relative-caret-position="-64">
+              <caret line="10" column="15" lean-forward="true" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="15" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/springMVC-servlet.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="438">
-              <caret line="202" column="20" lean-forward="true" selection-start-line="202" selection-start-column="20" selection-end-line="202" selection-end-column="20" />
-              <folding>
-                <element signature="n#build#0;n#project#0;n#!!top" />
-                <element signature="n#plugin#0;n#plugins#0;n#build#0;n#project#0;n#!!top" />
-                <element signature="n#plugin#2;n#plugins#0;n#build#0;n#project#0;n#!!top" />
-                <element signature="n#plugin#3;n#plugins#0;n#build#0;n#project#0;n#!!top" />
-                <element signature="n#profiles#0;n#project#0;n#!!top" />
-                <element signature="n#plugin#0;n#plugins#0;n#build#0;n#profile#0;n#profiles#0;n#project#0;n#!!top" />
-                <element signature="n#plugin#1;n#plugins#0;n#build#0;n#profile#0;n#profiles#0;n#project#0;n#!!top" />
-                <element signature="n#plugin#2;n#plugins#0;n#build#0;n#profile#0;n#profiles#0;n#project#0;n#!!top" />
-                <element signature="n#plugin#3;n#plugins#0;n#build#0;n#profile#0;n#profiles#0;n#project#0;n#!!top" />
-                <element signature="n#plugin#4;n#plugins#0;n#build#0;n#profile#0;n#profiles#0;n#project#0;n#!!top" />
-              </folding>
+            <state relative-caret-position="416">
+              <caret line="13" selection-start-line="13" selection-end-line="13" />
             </state>
           </provider>
         </entry>
@@ -244,15 +219,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="sirvia" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sirvia" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sirvia" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="sirvia" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="sirvia" type="b2602c69:ProjectViewProjectNode" />
@@ -498,18 +464,18 @@
       <workItem from="1568816095171" duration="42000" />
       <workItem from="1568820041320" duration="1583000" />
       <workItem from="1568822116878" duration="1935000" />
-      <workItem from="1568862918833" duration="3677000" />
+      <workItem from="1568862918833" duration="4117000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="338956000" />
+    <option name="totallyTimeSpent" value="339396000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16822916" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16822916" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -519,7 +485,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.21330518" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3189018" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3189018" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.374868" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -874,23 +840,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/config/ThymeleafConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="27" column="36" selection-start-line="27" selection-start-column="36" selection-end-line="27" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/springMVC-servlet.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/Register.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="736">
@@ -901,17 +850,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/config/ThymeleafConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="27" column="36" selection-start-line="27" selection-start-column="36" selection-end-line="27" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/adminApplicationContext.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2848">
-          <caret line="89" column="11" selection-start-line="89" selection-start-column="11" selection-end-line="89" selection-end-column="11" />
+        <state relative-caret-position="-64">
+          <caret line="10" column="15" lean-forward="true" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="15" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="438">
-          <caret line="202" column="20" lean-forward="true" selection-start-line="202" selection-start-column="20" selection-end-line="202" selection-end-column="20" />
+        <state relative-caret-position="3008">
+          <caret line="202" column="20" selection-start-line="202" selection-start-column="20" selection-end-line="202" selection-end-column="20" />
           <folding>
             <element signature="n#build#0;n#project#0;n#!!top" />
             <element signature="n#plugin#0;n#plugins#0;n#build#0;n#project#0;n#!!top" />
@@ -924,6 +883,13 @@
             <element signature="n#plugin#3;n#plugins#0;n#build#0;n#profile#0;n#profiles#0;n#project#0;n#!!top" />
             <element signature="n#plugin#4;n#plugins#0;n#build#0;n#profile#0;n#profiles#0;n#project#0;n#!!top" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/springMVC-servlet.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
         </state>
       </provider>
     </entry>

@@ -6,9 +6,11 @@
     <packaging>jar</packaging>
 
     <name>Sirvia</name>
-    <groupId>com.github.traeric.sirvia</groupId>
+    <groupId>io.github.traeric.sirvia</groupId>
     <artifactId>lsirvia</artifactId>
     <version>0.0.1-RELEASE</version>
+    <description>a web database system</description>
+    <url>https://github.com/Traeric/Sirvia</url>
 
     <build>
         <plugins>

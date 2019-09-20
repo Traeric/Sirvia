@@ -16,6 +16,7 @@ G:\JavaAdmin\sirvia\src\main\java\com\ericjin\sirvia\utils\FieldToInputStr.java
 G:\JavaAdmin\sirvia\src\main\java\com\ericjin\sirvia\shiro\factory\filterChainDefinitionMapBuilder.java
 G:\JavaAdmin\sirvia\src\main\java\com\ericjin\sirvia\mapper\SuperMapper.java
 G:\JavaAdmin\sirvia\src\main\java\com\ericjin\sirvia\controller\EditTableController.java
+G:\JavaAdmin\sirvia\src\main\java\com\ericjin\sirvia\test\Test.java
 G:\JavaAdmin\sirvia\src\main\java\com\ericjin\sirvia\annotation\ForeignKey.java
 G:\JavaAdmin\sirvia\src\main\java\com\ericjin\sirvia\Register.java
 G:\JavaAdmin\sirvia\src\main\java\com\ericjin\sirvia\service\impl\UserServiceImpl.java
@@ -27,8 +28,10 @@ G:\JavaAdmin\sirvia\src\main\java\com\ericjin\sirvia\annotation\Id.java
 G:\JavaAdmin\sirvia\src\main\java\com\ericjin\sirvia\service\IndexService.java
 G:\JavaAdmin\sirvia\src\main\java\com\ericjin\sirvia\annotation\Password.java
 G:\JavaAdmin\sirvia\src\main\java\com\ericjin\sirvia\annotation\ShowName.java
+G:\JavaAdmin\sirvia\src\main\java\com\ericjin\sirvia\test\Article.java
 G:\JavaAdmin\sirvia\src\main\java\com\ericjin\sirvia\shiro\token\UserToken.java
 G:\JavaAdmin\sirvia\src\main\java\com\ericjin\sirvia\service\TableListService.java
+G:\JavaAdmin\sirvia\src\main\java\com\ericjin\sirvia\test\Tags.java
 G:\JavaAdmin\sirvia\src\main\java\com\ericjin\sirvia\Action.java
 G:\JavaAdmin\sirvia\src\main\java\com\ericjin\sirvia\controller\TableListController.java
 G:\JavaAdmin\sirvia\src\main\java\com\ericjin\sirvia\annotation\EntityTableName.java

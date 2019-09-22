@@ -13,12 +13,14 @@ com\ericjin\sirvia\annotation\Password.class
 com\ericjin\sirvia\annotation\ForeignKey.class
 com\ericjin\sirvia\annotation\Choose.class
 com\ericjin\sirvia\service\impl\IndexServiceImpl.class
+com\ericjin\sirvia\test\Test.class
 com\ericjin\sirvia\controller\IndexController.class
 com\ericjin\sirvia\shiro\authenticator\UserModularRealmAuthenticator.class
 com\ericjin\sirvia\shiro\token\UserToken.class
 com\ericjin\sirvia\shiro\factory\filterChainDefinitionMapBuilder.class
 com\ericjin\sirvia\utils\FieldToInputStr.class
 com\ericjin\sirvia\shiro\realm\AdminRealm.class
+com\ericjin\sirvia\test\Tags.class
 com\ericjin\sirvia\utils\ToCamelCase.class
 com\ericjin\sirvia\service\EditTableService.class
 com\ericjin\sirvia\service\impl\UserServiceImpl.class
@@ -37,3 +39,4 @@ com\ericjin\sirvia\annotation\DateUse.class
 com\ericjin\sirvia\beans\User.class
 com\ericjin\sirvia\shiro\enumerate\RoleType.class
 com\ericjin\sirvia\Register.class
+com\ericjin\sirvia\test\Article.class

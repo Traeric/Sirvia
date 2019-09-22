@@ -3,14 +3,12 @@ package com.ericjin.sirvia.config;
 import at.pollux.thymeleaf.shiro.dialect.ShiroDialect;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.dialect.IDialect;
 import org.thymeleaf.spring4.SpringTemplateEngine;
 import org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.spring4.view.ThymeleafViewResolver;
 import org.thymeleaf.templatemode.TemplateMode;
-import org.thymeleaf.templateresolver.ClassLoaderTemplateResolver;
 import org.thymeleaf.templateresolver.ITemplateResolver;
 
 import java.io.IOException;
@@ -28,7 +26,7 @@ public class ThymeleafConfig {
     public ITemplateResolver templateResolver() throws IOException {
         SpringResourceTemplateResolver templateResolver = new SpringResourceTemplateResolver();
         templateResolver.setTemplateMode(TemplateMode.HTML);
-        templateResolver.setPrefix("/WEB-INF/templates/");
+        templateResolver.setPrefix("classpath:/WEB-INF/templates/");
         templateResolver.setSuffix(".html");
         templateResolver.setCharacterEncoding("UTF-8");
         templateResolver.setCacheable(false);

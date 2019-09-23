@@ -81,7 +81,7 @@ public class FieldToInputStr {
                         map.get(foreignKey.relation_key()), map.get(foreignKey.show_field()))));
                 return result.append(String.format("</select></div>" +
                         "<button type=\"button\" class=\"layui-btn layui-btn-xs layui-btn-warm\" " +
-                        "style='margin-left: 10px;' title='添加%s' onclick='openWindow(\"/admin/%s/%s/add\")'>" +
+                        "style='margin-left: 10px;' title='添加%s' onclick='openWindow(\"/redis/%s/%s/add\")'>" +
                         "<i class=\"layui-icon layui-icon-add-1\"></i>" +
                         "</button></div><hr class=\"layui-bg-gray\">", fieldName, modelName, beanName)).toString();
             } else if (field.isAnnotationPresent(ManyToManyField.class)) {
@@ -93,7 +93,7 @@ public class FieldToInputStr {
                         "      <input type='hidden' name='%s_%s' value=''>\n" +
                         "      <div id=\"transfer_%s\" class=\"demo-transfer\"></div></div>" +
                         "      <button type='button' class='layui-btn layui-btn-xs layui-btn-warm' " +
-                        "       style='margin-left: 10px;' title='添加%s' onclick='openWindow(\"/admin/%s/%s/add\")'>" +
+                        "       style='margin-left: 10px;' title='添加%s' onclick='openWindow(\"/redis/%s/%s/add\")'>" +
                         "          <i class='layui-icon layui-icon-add-1'></i>" +
                         "      </button></div>\n" +
                         "      <script>layui.use(['transfer', 'layer', 'util'], function(){\n" +
@@ -272,7 +272,7 @@ public class FieldToInputStr {
                 });
                 return result.append(String.format("</select></div>" +
                         "<button type='button' class='layui-btn layui-btn-xs layui-btn-warm' style='margin-left: 10px;' " +
-                        "title='添加%s' onclick='openWindow(\"/admin/%s/%s/add\")'>" +
+                        "title='添加%s' onclick='openWindow(\"/redis/%s/%s/add\")'>" +
                         "<i class='layui-icon layui-icon-add-1'></i>" +
                         "</button></div><hr class=\"layui-bg-gray\">", fieldName, modelName, beanName)).toString();
             } else if (field.isAnnotationPresent(ManyToManyField.class)) {
@@ -292,7 +292,7 @@ public class FieldToInputStr {
                         "      <input type='hidden' name='%s_%s' value='%s'>\n" +
                         "      <div id=\"transfer_%s\" class=\"demo-transfer\"></div></div>" +
                         "      <button type='button' class='layui-btn layui-btn-xs layui-btn-warm' style='margin-left: 10px;' " +
-                        "       title='添加%s' onclick='openWindow(\"/admin/%s/%s/add\")'>" +
+                        "       title='添加%s' onclick='openWindow(\"/redis/%s/%s/add\")'>" +
                         "          <i class='layui-icon layui-icon-add-1'></i>" +
                         "      </button>" +
                         "      </div>\n" +

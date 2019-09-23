@@ -29,9 +29,9 @@ public class Register {
      */
     public List<Class> userTableList() {
         List<Class> list = new ArrayList<>();
-//        list.add(Article.class);
-//        list.add(Test.class);
-//        list.add(Tags.class);
+        list.add(Article.class);
+        list.add(Test.class);
+        list.add(Tags.class);
         return list;
     }
 

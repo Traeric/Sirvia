@@ -5,9 +5,9 @@ import java.util.LinkedHashMap;
 public class filterChainDefinitionMapBuilder {
     public LinkedHashMap<String, String> buildFilterChainDefinitionMap() {
         LinkedHashMap<String, String> map = new LinkedHashMap<>();
-        map.put("/admin/login", "anon");
+        map.put("/redis/login", "anon");
         map.put("/static/**", "anon");
-        map.put("/admin/logout", "logout");
+        map.put("/redis/logout", "logout");
         map.put("/**", "authc");
         return map;
     }

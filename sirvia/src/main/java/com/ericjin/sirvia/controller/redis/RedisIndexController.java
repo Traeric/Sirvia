@@ -11,4 +11,14 @@ public class RedisIndexController {
     public String index() {
         return "redis/index";
     }
+
+    @GetMapping("/view_data")
+    public String viewData() {
+        return "redis/view_data";
+    }
+
+    @GetMapping("/opt_data")
+    public String optData() {
+        return "redis/opt_data";
+    }
 }

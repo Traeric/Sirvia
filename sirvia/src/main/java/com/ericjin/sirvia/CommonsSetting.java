@@ -8,6 +8,8 @@ import java.util.Map;
 public class CommonsSetting {
     private Map<String, String> dataBase;
 
+    private Map<String, String> redisBase;
+
 
     /**
      * action类的位置

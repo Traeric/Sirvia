@@ -52,3 +52,7 @@
     flex: 0 0 65px;
     margin-right: 20px;
 }
+
+.link-redis .password {
+    margin-right: 20px;
+}

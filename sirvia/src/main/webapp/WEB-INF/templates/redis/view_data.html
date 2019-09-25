@@ -28,45 +28,47 @@
     </ol>
     <blockquote class="layui-elem-quote">Redis Keys</blockquote>
 
-    <div class="alert alert-info" role="alert">
-        <button type="button" class="layui-btn layui-btn-radius layui-btn-warm" style="margin: 10px 10px;">
-            <i class="layui-icon">&#xe674;</i> name
-        </button>
-        <button type="button" class="layui-btn layui-btn-radius layui-btn-normal" style="margin: 10px 10px;">
-            <i class="layui-icon">&#xe674;</i> name
-        </button>
-        <button type="button" class="layui-btn layui-btn-radius layui-btn-danger" style="margin: 10px 10px;">
-            <i class="layui-icon">&#xe674;</i> name
-        </button>
-        <button type="button" class="layui-btn layui-btn-radius layui-btn-primary" style="margin: 10px 10px;">
-            <i class="layui-icon">&#xe674;</i> name
-        </button>
-        <button type="button" class="layui-btn layui-btn-radius layui-btn-primary" style="margin: 10px 10px;">
-            <i class="layui-icon">&#xe674;</i> name
-        </button>
-        <button type="button" class="layui-btn layui-btn-radius layui-btn-primary" style="margin: 10px 10px;">
-            <i class="layui-icon">&#xe674;</i> name
-        </button>
-        <button type="button" class="layui-btn layui-btn-radius layui-btn-primary" style="margin: 10px 10px;">
-            <i class="layui-icon">&#xe674;</i> name
-        </button>
-        <button type="button" class="layui-btn layui-btn-radius layui-btn-primary" style="margin: 10px 10px;">
-            <i class="layui-icon">&#xe674;</i> name
-        </button>
-        <button type="button" class="layui-btn layui-btn-radius layui-btn-primary" style="margin: 10px 10px;">
-            <i class="layui-icon">&#xe674;</i> name
-        </button>
-        <button type="button" class="layui-btn layui-btn-radius layui-btn-primary" style="margin: 10px 10px;">
-            <i class="layui-icon">&#xe674;</i> name
-        </button>
-        <button type="button" class="layui-btn layui-btn-radius layui-btn-primary" style="margin: 10px 10px;">
-            <i class="layui-icon">&#xe674;</i> name
-        </button>
+    <div id="keyPanel" class="alert alert-info" role="alert">
+        <th:block th:each="key, stat : ${keys}">
+            <th:block th:if="${stat.index} % 5 == 0">
+                <button type="button" class="layui-btn layui-btn-radius layui-btn-warm" style="margin: 10px 10px;" th:data-key="${key}">
+                    <i class="layui-icon">&#xe674;</i> [[ ${key} ]]
+                </button>
+            </th:block>
+            <th:block th:if="${stat.index} % 5 == 1">
+                <button type="button" class="layui-btn layui-btn-radius layui-btn-danger" style="margin: 10px 10px;" th:data-key="${key}">
+                    <i class="layui-icon">&#xe674;</i> [[ ${key} ]]
+                </button>
+            </th:block>
+            <th:block th:if="${stat.index} % 5 == 2">
+                <button type="button" class="layui-btn layui-btn-radius layui-btn-primary" style="margin: 10px 10px;" th:data-key="${key}">
+                    <i class="layui-icon">&#xe674;</i> [[ ${key} ]]
+                </button>
+            </th:block>
+            <th:block th:if="${stat.index} % 5 == 3">
+                <button type="button" class="layui-btn layui-btn-radius" style="margin: 10px 10px;" th:data-key="${key}">
+                    <i class="layui-icon">&#xe674;</i> [[ ${key} ]]
+                </button>
+            </th:block>
+            <th:block th:if="${stat.index} % 5 == 4">
+                <button type="button" class="layui-btn layui-btn-radius layui-btn-normal" style="margin: 10px 10px;" th:data-key="${key}">
+                    <i class="layui-icon">&#xe674;</i> [[ ${key} ]]
+                </button>
+            </th:block>
+        </th:block>
     </div>
 </div>
 <script>
     // nav栏激活状态
     $(".navbar-right li:eq(0)").addClass("active");
+
+    $("#keyPanel").click((e) => {
+        let target = e.target;
+        if (target.localName === "button") {
+            let key = target.dataset['key'];
+            alert(key);
+        }
+    });
 </script>
 </body>
 </html>

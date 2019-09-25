@@ -63,6 +63,11 @@
     <bean name="filterChainDefinitionMapBuilder"
           class="com.ericjin.sirvia.shiro.factory.filterChainDefinitionMapBuilder"/>
 
+    <bean id="jedis" class="redis.clients.jedis.Jedis">
+        <constructor-arg name="host" value="#{commonsSetting.redisBase.get('host')}"/>
+        <constructor-arg name="port" value="#{commonsSetting.redisBase.get('port')}"/>
+    </bean>
+
     <!--
         配置注册的表信息
     -->
@@ -85,6 +90,14 @@
                 <entry key="password" value="root"/>
                 <entry key="user" value="root"/>
                 <entry key="driver" value="com.mysql.jdbc.Driver"/>
+            </map>
+        </property>
+        <property name="redisBase">
+            <map>
+                <entry key="host" value="192.168.188.128"/>
+                <entry key="port" value="6379"/>
+                <entry key="passowrd" value=""/>
+                <entry key="database" value="0"/>
             </map>
         </property>
     </bean>

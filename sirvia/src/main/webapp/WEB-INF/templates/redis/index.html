@@ -21,19 +21,7 @@
     </ol>
 
     <div class="page-header link-redis layui-form">
-        <h3>建立连接</h3>
-        <div class="link">
-            <input type="text" name="title" placeholder="请输入redis连接地址" autocomplete="off" class="layui-input">
-        </div>
-        <div class="dbs">
-            <select name="modules" lay-search="">
-                <option value="0">db0</option>
-                <option value="1">db1</option>
-                <option value="2">db2</option>
-                <option value="3">db3</option>
-            </select>
-        </div>
-        <button type="button" class="layui-btn layui-btn-warm">连接</button>
+        <h3>操作Redis</h3>
     </div>
 
     <div class="alert alert-success clear-float" role="alert">
@@ -75,16 +63,25 @@
     </div>
 </div>
 <script>
+    String.prototype.getCookie = function () {
+        let strArr = this.split(";");
+        let cookieObj = {};
+        for (let str of strArr) {
+            cookieObj[str.split("=")[0]] = str.split("=")[1];
+        }
+        return cookieObj;
+    };
+    let layer = null;
     $(function () {
         // nav栏激活状态
         $(".navbar-right li:eq(0)").addClass("active");
 
-        layui.use('form', function () {
+        layui.use(['form', 'layer'], function () {
             layui.form;
+            layer = layui.layer;
         });
-
-        
     });
+
 </script>
 </body>
 </html>

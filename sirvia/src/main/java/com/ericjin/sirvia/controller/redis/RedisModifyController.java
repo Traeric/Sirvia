@@ -88,6 +88,14 @@ public class RedisModifyController {
         return redisModifyService.addLineList(key, content) > 0 ? "1" : "0";
     }
 
+    /**
+     * <p>
+     *     移除指定行数的set
+     * </p>
+     * @param key 键值
+     * @param list 删除的值
+     * @return 返回1
+     */
     @ResponseBody
     @PostMapping("/remove_line_set")
     public String removeLineSet(String key, @RequestParam("list[]") String[] list) {
@@ -95,10 +103,71 @@ public class RedisModifyController {
         return "1";
     }
 
+    /**
+     * <p>
+     *     添加新行到set
+     * </p>
+     * @param key 键值
+     * @param content 内容
+     * @return 返回1
+     */
     @ResponseBody
     @PostMapping("/add_line_set")
     public String addLineSet(String key, String content) {
         redisModifyService.addLineSet(key, content);
+        return "1";
+    }
+
+    /**
+     * <p>
+     *     删除zset中指定行
+     * </p>
+     * @param key 键值
+     * @param list 要删除的value
+     * @return 返回1
+     */
+    @ResponseBody
+    @PostMapping("/remove_line_zset")
+    public String removeLineZset(String key, @RequestParam("list[]") String[] list) {
+        redisModifyService.removeLineZset(key, list);
+        return "1";
+    }
+
+    /**
+     * <p>
+     *     新增数据到zset中
+     * </p>
+     * @param key 键值
+     * @param content 内容
+     * @param score 分数
+     * @return 返回1
+     */
+    @ResponseBody
+    @PostMapping("/add_line_zset")
+    public String addLineZset(String key, String content, String score) {
+        redisModifyService.addLineZset(key, content, score);
+        return "1";
+    }
+
+    /**
+     * <p>
+     *     移除hash中指定的行
+     * </p>
+     * @param key 键值
+     * @param list 选中的行
+     * @return 返回1
+     */
+    @ResponseBody
+    @PostMapping("/remove_line_hash")
+    public String removeLineHash(String key, @RequestParam("list[]") String[] list) {
+        redisModifyService.removeLineHash(key, list);
+        return "1";
+    }
+
+    @ResponseBody
+    @PostMapping("/add_line_hash")
+    public String addLineHash(String key, String hashKey, String content) {
+        redisModifyService.addLineHash(key, hashKey, content);
         return "1";
     }
 }

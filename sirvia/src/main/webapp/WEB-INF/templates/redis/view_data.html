@@ -175,7 +175,7 @@
     }
 
     /**
-     * 重载string类型的键
+     * 重新设置键值
      */
     function reloadString() {
         layer.open({
@@ -280,8 +280,8 @@
             type: 1,
             yes: function (index, layero) {
                 // 获取内容
-                let content = $("textarea[name=new_line]").val().trim();
-                if (content !== "") {
+                let content = $("textarea[name=new_line]").val();
+                if (content.trim() !== "") {
                     $.ajax({
                         url: "/admin/redis/add_line_list",
                         type: "post",
@@ -353,13 +353,175 @@
             type: 1,
             yes: function (index, layero) {
                 // 获取内容
-                let content = $("textarea[name=new_line]").val().trim();
-                if (content !== "") {
+                let content = $("textarea[name=new_line]").val();
+                if (content.trim() !== "") {
                     $.ajax({
                         url: "/admin/redis/add_line_set",
                         type: "post",
                         data: {
                             content,
+                            key: CURRENTKEY,
+                        },
+                        success(args) {
+                            if (args === "1") {
+                                location.reload();
+                                layer.msg("添加成功", {icon: 1});
+                            } else {
+                                layer.msg("添加失败", {icon: 5});
+                            }
+                        }
+                    });
+                } else {
+                    layer.msg("内容不能为空", {icon: 5});
+                }
+            },
+            btn2: function (index, layero) {
+                layer.close(index);
+            }
+        });
+    }
+
+    /**
+     * 删除zset中的选中行
+     */
+    function removeLineZset() {
+        // 获取所有选中的列
+        let checkList = [];
+        $("input[name=row_select]:checked").each((index, item) => {
+            checkList.push($(item).val());
+        });
+        layer.confirm('确认删除选中的行?', {icon: 3, title: '删除选中'}, function (index) {
+            $.ajax({
+                url: "/admin/redis/remove_line_zset",
+                type: "post",
+                data: {
+                    key: CURRENTKEY,
+                    list: checkList,
+                },
+                success(args) {
+                    if (args === "1") {
+                        layer.msg("删除成功", {icon: 1});
+                        location.reload();
+                    } else {
+                        layer.msg("删除失败", {icon: 5});
+                    }
+                }
+            });
+            layer.close(index);
+        });
+    }
+
+    /**
+     * 为zset添加一行数据
+     */
+    function addLineZset() {
+        layer.open({
+            content: `
+                <div>分数：</div>
+                <input type="text" name="score" autocomplete="off" class="layui-input">
+                <div>内容：</div>
+                <textarea name='new_line' class='layui-textarea'></textarea>
+            `,
+            btn: ['添加', '关闭'],
+            area: "500px",
+            offset: "150px",
+            title: "插入新的一行",
+            shade: 0.8,
+            zIndex: 200,
+            type: 1,
+            yes: function (index, layero) {
+                // 获取分数
+                let score = $("input[name=score]").val().trim();
+                // 获取内容
+                let content = $("textarea[name=new_line]").val();
+                if (content.trim() !== "") {
+                    $.ajax({
+                        url: "/admin/redis/add_line_zset",
+                        type: "post",
+                        data: {
+                            content,
+                            score,
+                            key: CURRENTKEY,
+                        },
+                        success(args) {
+                            if (args === "1") {
+                                location.reload();
+                                layer.msg("添加成功", {icon: 1});
+                            } else {
+                                layer.msg("添加失败", {icon: 5});
+                            }
+                        }
+                    });
+                } else {
+                    layer.msg("内容不能为空", {icon: 5});
+                }
+            },
+            btn2: function (index, layero) {
+                layer.close(index);
+            }
+        });
+    }
+
+    /**
+     * 删除hash中选中的行
+     */
+    function removeLineHash() {
+        // 获取所有选中的列
+        let checkList = [];
+        $("input[name=row_select]:checked").each((index, item) => {
+            checkList.push($(item).val());
+        });
+        layer.confirm('确认删除选中的行?', {icon: 3, title: '删除选中'}, function (index) {
+            $.ajax({
+                url: "/admin/redis/remove_line_hash",
+                type: "post",
+                data: {
+                    key: CURRENTKEY,
+                    list: checkList,
+                },
+                success(args) {
+                    if (args === "1") {
+                        layer.msg("删除成功", {icon: 1});
+                        location.reload();
+                    } else {
+                        layer.msg("删除失败", {icon: 5});
+                    }
+                }
+            });
+            layer.close(index);
+        });
+    }
+
+    /**
+     * 添加新行到hash
+     */
+    function addLineHash() {
+        layer.open({
+            content: `
+                <div>键名：</div>
+                <input type="text" name="key" autocomplete="off" class="layui-input">
+                <div>键值：</div>
+                <textarea name='new_line' class='layui-textarea'></textarea>
+            `,
+            btn: ['添加', '关闭'],
+            area: "500px",
+            offset: "150px",
+            title: "插入新的一行",
+            shade: 0.8,
+            zIndex: 200,
+            type: 1,
+            yes: function (index, layero) {
+                // 获取分数
+                let hashKey = $("input[name=key]").val().trim();
+                // 获取内容
+                let content = $("textarea[name=new_line]").val();
+                if (content.trim() !== "") {
+                    $.ajax({
+                        url: "/admin/redis/add_line_hash",
+                        type: "post",
+                        data: {
+                            content,
+                            hashKey,
                             key: CURRENTKEY,
                         },
                         success(args) {

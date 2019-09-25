@@ -67,4 +67,28 @@ public class RedisModifyServiceImpl implements RedisModifyService {
     public void addLineSet(String key, String content) {
         jedis.sadd(key, content);
     }
+
+    @Override
+    public void removeLineZset(String key, String[] list) {
+        for (String item : list) {
+            jedis.zrem(key, item);
+        }
+    }
+
+    @Override
+    public void addLineZset(String key, String content, String score) {
+        jedis.zadd(key, Double.parseDouble(score), content);
+    }
+
+    @Override
+    public void removeLineHash(String key, String[] list) {
+        for (String item : list) {
+            jedis.hdel(key, item);
+        }
+    }
+
+    @Override
+    public void addLineHash(String key, String hashKey, String content) {
+        jedis.hset(key, hashKey, content);
+    }
 }

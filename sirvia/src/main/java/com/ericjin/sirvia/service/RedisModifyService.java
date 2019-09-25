@@ -14,4 +14,12 @@ public interface RedisModifyService {
     void removeLineSet(String key, String[] list);
 
     void addLineSet(String key, String content);
+
+    void removeLineZset(String key, String[] list);
+
+    void addLineZset(String key, String content, String score);
+
+    void removeLineHash(String key, String[] list);
+
+    void addLineHash(String key, String hashKey, String content);
 }

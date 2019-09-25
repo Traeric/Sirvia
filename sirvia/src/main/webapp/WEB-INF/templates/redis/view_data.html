@@ -8,10 +8,14 @@
     <link th:href="@{/static/plugins/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
     <link th:href="@{/static/css/redis/index.css}" rel="stylesheet">
     <link th:href="@{/static/plugins/layui/css/layui.css}" rel="stylesheet">
+    <link th:href="@{/static/css/redis/view_data.css}" rel="stylesheet">
 
     <link href="../../../static/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../../static/css/redis/view_data.css" rel="stylesheet">
     <link href="../../../static/css/redis/index.css" rel="stylesheet">
     <link href="../../../static/plugins/layui/css/layui.css" rel="stylesheet">
+    <script src="../../../static/js/jq/jquery.min.js"></script>
+    <script src="../../../static/plugins/layui/layui.js"></script>
 
     <!-- Custom styles for this template -->
     <script th:src="@{/static/js/jq/jquery.min.js}"></script>
@@ -31,27 +35,32 @@
     <div id="keyPanel" class="alert alert-info" role="alert">
         <th:block th:each="key, stat : ${keys}">
             <th:block th:if="${stat.index} % 5 == 0">
-                <button type="button" class="layui-btn layui-btn-radius layui-btn-warm" style="margin: 10px 10px;" th:data-key="${key}">
+                <button type="button" class="layui-btn layui-btn-radius layui-btn-warm" style="margin: 10px 10px;"
+                        th:data-key="${key}">
                     <i class="layui-icon">&#xe674;</i> [[ ${key} ]]
                 </button>
             </th:block>
             <th:block th:if="${stat.index} % 5 == 1">
-                <button type="button" class="layui-btn layui-btn-radius layui-btn-danger" style="margin: 10px 10px;" th:data-key="${key}">
+                <button type="button" class="layui-btn layui-btn-radius layui-btn-danger" style="margin: 10px 10px;"
+                        th:data-key="${key}">
                     <i class="layui-icon">&#xe674;</i> [[ ${key} ]]
                 </button>
             </th:block>
             <th:block th:if="${stat.index} % 5 == 2">
-                <button type="button" class="layui-btn layui-btn-radius layui-btn-primary" style="margin: 10px 10px;" th:data-key="${key}">
+                <button type="button" class="layui-btn layui-btn-radius layui-btn-primary" style="margin: 10px 10px;"
+                        th:data-key="${key}">
                     <i class="layui-icon">&#xe674;</i> [[ ${key} ]]
                 </button>
             </th:block>
             <th:block th:if="${stat.index} % 5 == 3">
-                <button type="button" class="layui-btn layui-btn-radius" style="margin: 10px 10px;" th:data-key="${key}">
+                <button type="button" class="layui-btn layui-btn-radius" style="margin: 10px 10px;"
+                        th:data-key="${key}">
                     <i class="layui-icon">&#xe674;</i> [[ ${key} ]]
                 </button>
             </th:block>
             <th:block th:if="${stat.index} % 5 == 4">
-                <button type="button" class="layui-btn layui-btn-radius layui-btn-normal" style="margin: 10px 10px;" th:data-key="${key}">
+                <button type="button" class="layui-btn layui-btn-radius layui-btn-normal" style="margin: 10px 10px;"
+                        th:data-key="${key}">
                     <i class="layui-icon">&#xe674;</i> [[ ${key} ]]
                 </button>
             </th:block>
@@ -59,6 +68,49 @@
     </div>
 </div>
 <script>
+    let layer = null;
+    let table = null;
+    let CURRENTKEY = null;
+    layui.use(["layer", "table"], () => {
+        layer = layui.layer;
+        table = layui.table;
+
+        // layer.open({
+        //     content: `
+        //         <div class='content'>
+        //             <div class='left'>
+        //                 <table lay-filter='table-filter'>
+        //                   <thead>
+        //                     <tr>
+        //                       <th lay-data="{field: 'select', width: 80}">选中</th>
+        //                       <th lay-data="{field: 'val'}">值</th>
+        //                     </tr>
+        //                   </thead>
+        //                   <tbody>
+        //                     <tr>
+        //                       <td><input type="checkbox" name="row_select" lay-skin="switch" lay-filter="switchTest"></td>
+        //                       <td>人生就像是一场修行 A</td>
+        //                     </tr>
+        //                   </tbody>
+        //                 </table>
+        //             </div>
+        //             <div class='right'>
+        //                 <button class='layui-btn'><i class='layui-icon'>&#xe9aa;</i> 重命名键名</button>
+        //                 <button class='layui-btn layui-btn-danger'><i class='layui-icon'>&#xe640;</i> 删除</button>
+        //                 <button class='layui-btn layui-btn-normal'><i class='layui-icon'>&#xe608;</i> 保存</button>
+        //             </div>
+        //         </div>
+        //     `,
+        //     btn: ['关闭'],
+        //     offset: "150px",
+        //     title: "的查询结果",
+        //     area: "50%",
+        //     yes: function (index, layero) {
+        //         layer.close(index);
+        //     }
+        // });
+        table.init('table-filter');
+    });
     // nav栏激活状态
     $(".navbar-right li:eq(0)").addClass("active");
 
@@ -66,9 +118,195 @@
         let target = e.target;
         if (target.localName === "button") {
             let key = target.dataset['key'];
-            alert(key);
+            $.ajax({
+                url: "/admin/redis/get_data",
+                type: "post",
+                data: {
+                    key,
+                },
+                dataType: "JSON",
+                success(args) {
+                    if (args.flag) {
+                        CURRENTKEY = key;
+                        layer.open({
+                            content: `${args.content}`,
+                            zIndex: 1,
+                            type: 1,
+                            btn: ['关闭'],
+                            offset: "150px",
+                            title: key + "的查询结果",
+                            area: "50%",
+                            yes: function (index, layero) {
+                                layer.close(index);
+                            }
+                        });
+                        table.init('table-filter', {
+                            limit: 100000000000000000000,
+                        });
+                    } else {
+                        layer.msg('获取失败', {icon: 5});
+                    }
+                },
+            });
         }
     });
+
+
+    /**
+     * 保存striing类型的值
+     */
+    function saveString() {
+        let content = $("textarea[name=content]").val();
+        $.ajax({
+            url: "/admin/redis/save_string",
+            type: "post",
+            data: {
+                key: CURRENTKEY,
+                content: content,
+            },
+            success(args) {
+                if (args === "1") {
+                    layer.msg("保存成功", {icon: 1});
+                } else {
+                    layer.msg("保存失败", {icon: 5});
+                }
+            }
+        });
+    }
+
+    /**
+     * 重载string类型的键
+     */
+    function reloadString() {
+        layer.open({
+            content: `<input type="text" name="new_key" autocomplete="off" class="layui-input" value="${CURRENTKEY}">`,
+            btn: ['更新', '关闭'],
+            offset: "150px",
+            title: "更新" + CURRENTKEY + "的键值",
+            shade: 0.8,
+            zIndex: 200,
+            type: 1,
+            yes: function (index, layero) {
+                // 获取新的键名
+                let newKey = $("input[name=new_key]").val();
+                $.ajax({
+                    url: "/admin/redis/reload_key_string",
+                    type: "post",
+                    data: {
+                        key: CURRENTKEY,
+                        newKey,
+                    },
+                    success(args) {
+                        if (args.flag) {
+                            layer.msg(args.msg, {icon: 1});
+                            layer.close(index);
+                        }
+                    }
+                });
+            },
+            btn2: function (index, layero) {
+                layer.close(index);
+            }
+        });
+    }
+
+    /**
+     * 删除键值对
+     */
+    function remove() {
+        layer.confirm('确认删除?', {icon: 3, title: '删除' + CURRENTKEY}, function (index) {
+            //do something
+            $.ajax({
+                url: "/admin/redis/remove",
+                type: "post",
+                data: {
+                    key: CURRENTKEY,
+                },
+                success(args) {
+                    if (args === "1") {
+                        layer.msg("删除成功", {icon: 1});
+                        location.reload();
+                    } else {
+                        layer.msg("删除失败", {icon: 5});
+                    }
+                }
+            });
+            layer.close(index);
+        });
+    }
+
+    /**
+     * 删除某一项
+     */
+    function removeLine() {
+        // 获取所有选中的列
+        let checkList = [];
+        $("input[name=row_select]:checked").each((index, item) => {
+            checkList.push($(item).val());
+        });
+        layer.confirm('确认删除选中的行?', {icon: 3, title: '删除选中'}, function (index) {
+            $.ajax({
+                url: "/admin/redis/remove_line",
+                type: "post",
+                data: {
+                    key: CURRENTKEY,
+                    list: checkList,
+                },
+                success(args) {
+                    if (args === "1") {
+                        layer.msg("删除成功", {icon: 1});
+                        location.reload();
+                    } else {
+                        layer.msg("删除失败", {icon: 5});
+                    }
+                }
+            });
+            layer.close(index);
+        });
+    }
+
+    /**
+     * 添加新的一行
+     */
+    function addLine() {
+        layer.open({
+            content: `<textarea name='new_line' class='layui-textarea'></textarea>`,
+            btn: ['添加', '关闭'],
+            area: "500px",
+            offset: "150px",
+            title: "插入新的一行",
+            shade: 0.8,
+            zIndex: 200,
+            type: 1,
+            yes: function (index, layero) {
+                // 获取内容
+                let content = $("textarea[name=new_line]").val().trim();
+                if (content !== "") {
+                    $.ajax({
+                        url: "/admin/redis/add_line_list",
+                        type: "post",
+                        data: {
+                            content,
+                            key: CURRENTKEY,
+                        },
+                        success(args) {
+                            if (args === "1") {
+                                location.reload();
+                                layer.msg("添加成功", {icon: 1});
+                            } else {
+                                layer.msg("添加失败", {icon: 5});
+                            }
+                        }
+                    });
+                } else {
+                    layer.msg("内容不能为空", {icon: 5});
+                }
+            },
+            btn2: function (index, layero) {
+                layer.close(index);
+            }
+        });
+    }
 </script>
 </body>
 </html>

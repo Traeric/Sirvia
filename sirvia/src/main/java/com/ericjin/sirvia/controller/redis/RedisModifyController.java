@@ -74,9 +74,31 @@ public class RedisModifyController {
         return "1";
     }
 
+    /**
+     * <p>
+     *     list添加一行新的数据 <br>
+     * </p>
+     * @param key 键值
+     * @param content 内容
+     * @return 1或者0
+     */
     @ResponseBody
     @PostMapping("/add_line_list")
     public String addNewLineList(String key, String content) {
         return redisModifyService.addLineList(key, content) > 0 ? "1" : "0";
+    }
+
+    @ResponseBody
+    @PostMapping("/remove_line_set")
+    public String removeLineSet(String key, @RequestParam("list[]") String[] list) {
+        redisModifyService.removeLineSet(key, list);
+        return "1";
+    }
+
+    @ResponseBody
+    @PostMapping("/add_line_set")
+    public String addLineSet(String key, String content) {
+        redisModifyService.addLineSet(key, content);
+        return "1";
     }
 }

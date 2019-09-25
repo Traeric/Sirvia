@@ -70,7 +70,34 @@ public class RedisIndexServiceImpl implements RedisIndexService {
             case "zset":
                 break;
             case "set":
-                break;
+                StringBuilder set = new StringBuilder("<div class='content'>" +
+                        "<div class='left'>" +
+                        "<table lay-filter='table-filter'>" +
+                        "<thead>" +
+                        "<tr>" +
+                        "<th lay-data=\"{field: 'select', width: 80}\">选中</th>" +
+                        "<th lay-data=\"{field: 'val'}\">值</th>" +
+                        "</tr>" +
+                        "</thead>" +
+                        "<tbody>");
+                // 获取数据
+                Set<String> smembers = jedis.smembers(key);
+                for (String member : smembers) {
+                    set.append(String.format("<tr>" +
+                            "<td>" +
+                            "<input type=\"checkbox\" name=\"row_select\" lay-skin=\"switch\" lay-filter=\"switchTest\" value='%s'>" +
+                            "</td>" +
+                            "<td>%s</td></tr>\n", member, member));
+                }
+                set.append("</tbody></table></div>\n" +
+                        "<div class='right'>\n" +
+                        "         <button class='layui-btn' onclick='reloadString()'><i class='layui-icon'>&#xe9aa;</i> 重命名键名</button>\n" +
+                        "         <button class='layui-btn layui-btn-danger' onclick='remove()'><i class='layui-icon'>&#xe640;</i> 全部删除</button>\n" +
+                        "         <button class='layui-btn layui-btn-warm' onclick='removeLineSet()'><i class='layui-icon'>&#xe640;</i> 删除行</button>\n" +
+                        "         <button class='layui-btn layui-btn-normal' onclick='addLineSet()'><i class='layui-icon'>&#xe608;</i> 插入行</button>\n" +
+                        "    </div>\n" +
+                        "</div>");
+                return String.valueOf(set);
             default:
                 break;
         }

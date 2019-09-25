@@ -55,4 +55,16 @@ public class RedisModifyServiceImpl implements RedisModifyService {
     public Long addLineList(String key, String content) {
         return jedis.lpush(key, content);
     }
+
+    @Override
+    public void removeLineSet(String key, String[] list) {
+        for (String item : list) {
+            jedis.srem(key, item);
+        }
+    }
+
+    @Override
+    public void addLineSet(String key, String content) {
+        jedis.sadd(key, content);
+    }
 }

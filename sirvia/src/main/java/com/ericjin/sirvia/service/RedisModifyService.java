@@ -10,4 +10,8 @@ public interface RedisModifyService {
     void removeLine(String key, Long[] list);
 
     Long addLineList(String key, String content);
+
+    void removeLineSet(String key, String[] list);
+
+    void addLineSet(String key, String content);
 }

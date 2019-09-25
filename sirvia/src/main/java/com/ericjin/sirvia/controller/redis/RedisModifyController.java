@@ -164,6 +164,15 @@ public class RedisModifyController {
         return "1";
     }
 
+    /**
+     * <p>
+     *     添加新数据到hash
+     * </p>
+     * @param key 键值
+     * @param hashKey hash键值
+     * @param content 内容
+     * @return 返回1
+     */
     @ResponseBody
     @PostMapping("/add_line_hash")
     public String addLineHash(String key, String hashKey, String content) {

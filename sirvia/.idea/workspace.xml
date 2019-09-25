@@ -8,10 +8,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b821a04f-eb7f-46a5-9edc-4fd38a1641fb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/controller/redis/RedisModifyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/controller/redis/RedisModifyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/service/RedisModifyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/service/RedisModifyService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/service/impl/RedisIndexServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/service/impl/RedisIndexServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/service/impl/RedisModifyServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/service/impl/RedisModifyServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/redis/view_data.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/redis/view_data.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/redis/opt_data.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/redis/opt_data.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -46,37 +43,33 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/redis/view_data.html">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/redis/opt_data.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="347">
-              <caret line="519" column="46" selection-start-line="519" selection-start-column="46" selection-end-line="519" selection-end-column="46" />
+            <state relative-caret-position="91">
+              <caret line="298" column="31" selection-start-line="298" selection-start-column="31" selection-end-line="298" selection-end-column="31" />
               <folding>
-                <element signature="e#3041#3057#0" />
-                <element signature="e#5532#5548#0" />
-                <element signature="e#6155#6163#0" />
-                <element signature="e#7361#7369#0" />
-                <element signature="e#8839#8847#0" />
-                <element signature="e#9728#10451#0" />
-                <element signature="e#11212#11220#0" />
-                <element signature="e#12081#12097#0" />
-                <element signature="e#13519#13527#0" />
-                <element signature="e#14415#14431#0" />
-                <element signature="e#16122#16138#0" />
+                <element signature="n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#3;n#div#1;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#4;n#div#1;n#body#0;n#html#0;n#!!top" />
+                <element signature="e#3207#4144#0" />
+                <element signature="e#4777#4793#0" />
+                <element signature="e#6362#6378#0" />
+                <element signature="e#7934#9477#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/controller/redis/RedisModifyController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="379">
-              <caret line="169" column="60" selection-start-line="169" selection-start-column="60" selection-end-line="169" selection-end-column="60" />
+            <state relative-caret-position="219">
+              <caret line="170" column="18" lean-forward="true" selection-start-line="170" selection-start-column="18" selection-end-line="170" selection-end-column="18" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1568#1569#0" expanded="true" />
-                <element signature="e#1636#1637#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -85,8 +78,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/service/RedisModifyService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="507">
-              <caret line="23" column="63" selection-start-line="23" selection-start-column="63" selection-end-line="23" selection-end-column="63" />
+            <state relative-caret-position="190">
+              <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -94,7 +87,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/service/impl/RedisModifyServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="507">
+            <state relative-caret-position="992">
               <caret line="91" column="40" selection-start-line="91" selection-start-column="40" selection-end-line="91" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -109,15 +102,6 @@
                 <element signature="e#2379#2380#0" expanded="true" />
                 <element signature="e#2399#2400#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/static/css/redis/view_data.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -178,7 +162,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/ericjin/javadmin/shiro/factory/filterChainDefinitionMapBuilder.java" />
         <option value="$PROJECT_DIR$/src/main/resources/db.properties" />
         <option value="$PROJECT_DIR$/src/main/resources/mybatis/mybatis-config.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/ericjin/javadmin/Register.java" />
@@ -213,7 +196,6 @@
         <option value="$PROJECT_DIR$/src/main/resources/static/css/redis/index.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/redis/data_list.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/static/css/redis/opt_data.css" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/redis/opt_data.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/static/css/redis/index.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/redis/index.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/CommonsSetting.java" />
@@ -228,7 +210,9 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/redis/view_data.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/service/RedisModifyService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/service/impl/RedisModifyServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/controller/redis/RedisAddController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/controller/redis/RedisModifyController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/redis/opt_data.html" />
       </list>
     </option>
   </component>
@@ -324,7 +308,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="sirvia" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="sirvia" type="b2602c69:ProjectViewProjectNode" />
@@ -333,8 +317,8 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="sirvia" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+              <item name="redis" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="sirvia" type="b2602c69:ProjectViewProjectNode" />
@@ -637,12 +621,12 @@
       <workItem from="1568976778660" duration="223000" />
       <workItem from="1568995528718" duration="16336000" />
       <workItem from="1569229778561" duration="47016000" />
-      <workItem from="1569343369490" duration="29890000" />
+      <workItem from="1569343369490" duration="31613000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="435266000" />
+    <option name="totallyTimeSpent" value="436989000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -687,13 +671,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/sirvia.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="8" column="51" lean-forward="true" selection-start-line="8" selection-start-column="51" selection-end-line="8" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dependency-reduced-pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
@@ -843,19 +820,6 @@
           <folding>
             <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/redis/opt_data.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="9" column="71" selection-start-line="9" selection-start-column="71" selection-end-line="9" selection-end-column="71" />
-          <folding>
-            <element signature="n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#3;n#div#1;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#4;n#div#1;n#body#0;n#html#0;n#!!top" />
           </folding>
         </state>
       </provider>
@@ -1047,24 +1011,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4896">
-          <caret line="9" column="28" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
-          <folding>
-            <element signature="n#plugin#0;n#plugins#0;n#build#0;n#project#0;n#!!top" />
-            <element signature="n#plugin#1;n#plugins#0;n#build#0;n#project#0;n#!!top" />
-            <element signature="n#plugin#2;n#plugins#0;n#build#0;n#project#0;n#!!top" />
-            <element signature="n#plugin#3;n#plugins#0;n#build#0;n#project#0;n#!!top" />
-            <element signature="n#plugin#0;n#plugins#0;n#build#0;n#profile#0;n#profiles#0;n#project#0;n#!!top" />
-            <element signature="n#plugin#1;n#plugins#0;n#build#0;n#profile#0;n#profiles#0;n#project#0;n#!!top" />
-            <element signature="n#plugin#2;n#plugins#0;n#build#0;n#profile#0;n#profiles#0;n#project#0;n#!!top" />
-            <element signature="n#plugin#3;n#plugins#0;n#build#0;n#profile#0;n#profiles#0;n#project#0;n#!!top" />
-            <element signature="n#plugin#4;n#plugins#0;n#build#0;n#profile#0;n#profiles#0;n#project#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/static/css/redis/view_data.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -1093,7 +1039,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/redis/view_data.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="347">
+        <state relative-caret-position="827">
           <caret line="519" column="46" selection-start-line="519" selection-start-column="46" selection-end-line="519" selection-end-column="46" />
           <folding>
             <element signature="e#3041#3057#0" />
@@ -1111,9 +1057,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4896">
+          <caret line="9" column="28" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
+          <folding>
+            <element signature="n#plugin#0;n#plugins#0;n#build#0;n#project#0;n#!!top" />
+            <element signature="n#plugin#1;n#plugins#0;n#build#0;n#project#0;n#!!top" />
+            <element signature="n#plugin#2;n#plugins#0;n#build#0;n#project#0;n#!!top" />
+            <element signature="n#plugin#3;n#plugins#0;n#build#0;n#project#0;n#!!top" />
+            <element signature="n#plugin#0;n#plugins#0;n#build#0;n#profile#0;n#profiles#0;n#project#0;n#!!top" />
+            <element signature="n#plugin#1;n#plugins#0;n#build#0;n#profile#0;n#profiles#0;n#project#0;n#!!top" />
+            <element signature="n#plugin#2;n#plugins#0;n#build#0;n#profile#0;n#profiles#0;n#project#0;n#!!top" />
+            <element signature="n#plugin#3;n#plugins#0;n#build#0;n#profile#0;n#profiles#0;n#project#0;n#!!top" />
+            <element signature="n#plugin#4;n#plugins#0;n#build#0;n#profile#0;n#profiles#0;n#project#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/controller/redis/RedisAddController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/service/RedisModifyService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/service/impl/RedisModifyServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="507">
+        <state relative-caret-position="992">
           <caret line="91" column="40" selection-start-line="91" selection-start-column="40" selection-end-line="91" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1131,21 +1112,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/service/RedisModifyService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/controller/redis/RedisModifyController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="507">
-          <caret line="23" column="63" selection-start-line="23" selection-start-column="63" selection-end-line="23" selection-end-column="63" />
+        <state relative-caret-position="219">
+          <caret line="170" column="18" lean-forward="true" selection-start-line="170" selection-start-column="18" selection-end-line="170" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/controller/redis/RedisModifyController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/redis/opt_data.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="169" column="60" selection-start-line="169" selection-start-column="60" selection-end-line="169" selection-end-column="60" />
+        <state relative-caret-position="91">
+          <caret line="298" column="31" selection-start-line="298" selection-start-column="31" selection-end-line="298" selection-end-column="31" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1568#1569#0" expanded="true" />
-            <element signature="e#1636#1637#0" expanded="true" />
+            <element signature="n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#3;n#div#1;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#4;n#div#1;n#body#0;n#html#0;n#!!top" />
+            <element signature="e#3207#4144#0" />
+            <element signature="e#4777#4793#0" />
+            <element signature="e#6362#6378#0" />
+            <element signature="e#7934#9477#0" />
           </folding>
         </state>
       </provider>

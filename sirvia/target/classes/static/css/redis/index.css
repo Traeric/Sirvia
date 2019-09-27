@@ -36,7 +36,7 @@
 }
 
 .well .wrap .pre {
-    color: #bc251b;
+    color: #f00;
 }
 
 .well .inp {
@@ -45,7 +45,7 @@
     outline: none;
     background-color: transparent;
     border: none;
-    color: #bc251b;
+    color: #f00;
 }
 
 .link-redis {

@@ -7,12 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b821a04f-eb7f-46a5-9edc-4fd38a1641fb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/CommonsSetting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/CommonsSetting.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/controller/redis/RedisModifyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/controller/redis/RedisModifyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/service/RedisModifyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/service/RedisModifyService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/service/impl/RedisModifyServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/service/impl/RedisModifyServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/header.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/redis/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/redis/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/static/css/redis/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/static/css/redis/index.css" afterDir="false" />
     </list>
@@ -91,15 +86,47 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/redis/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="410">
-              <caret line="41" column="51" selection-start-line="41" selection-start-column="51" selection-end-line="41" selection-end-column="51" />
+            <state relative-caret-position="507">
+              <caret line="103" column="16" selection-start-line="103" selection-start-column="16" selection-end-line="103" selection-end-column="16" />
               <folding>
                 <element signature="n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" />
                 <element signature="n#div#3;n#div#1;n#body#0;n#html#0;n#!!top" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#3;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="e#2481#2686#0" />
                 <element signature="e#2728#2932#0" />
-                <element signature="e#3015#3023#0" />
+                <element signature="e#3821#5258#0" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="e#305#311#0" expanded="true" />
+                <element signature="e#311#317#0" expanded="true" />
+                <element signature="e#317#323#0" expanded="true" />
+                <element signature="e#323#329#0" expanded="true" />
+                <element signature="e#514#520#0" expanded="true" />
+                <element signature="e#520#526#0" expanded="true" />
+                <element signature="e#526#532#0" expanded="true" />
+                <element signature="e#532#538#0" expanded="true" />
+                <element signature="e#684#690#0" expanded="true" />
+                <element signature="e#690#696#0" expanded="true" />
+                <element signature="e#696#702#0" expanded="true" />
+                <element signature="e#702#708#0" expanded="true" />
+                <element signature="e#960#966#0" expanded="true" />
+                <element signature="e#966#972#0" expanded="true" />
+                <element signature="e#972#978#0" expanded="true" />
+                <element signature="e#978#984#0" expanded="true" />
+                <element signature="e#4491#4507#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/header.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="219">
+              <caret line="38" column="89" selection-start-line="38" selection-start-column="89" selection-end-line="38" selection-end-column="89" />
+              <folding>
+                <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#a#0;n#li#1;n#ul#0;n#li#1;n#ul#0;n#div#1;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -108,8 +135,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/static/css/redis/index.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
-              <caret line="30" column="19" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="19" />
+            <state relative-caret-position="448">
+              <caret line="47" column="18" selection-start-line="47" selection-start-column="18" selection-end-line="47" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -186,7 +213,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/config/ThymeleafConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/Register.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/controller/redis/IndexController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/header.html" />
         <option value="$PROJECT_DIR$/src/main/resources/static/css/redis/index.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/redis/data_list.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/static/css/redis/opt_data.css" />
@@ -204,8 +230,9 @@
         <option value="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/service/RedisModifyService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/controller/redis/RedisModifyController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/service/impl/RedisModifyServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/static/css/redis/index.css" />
         <option value="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/Test.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/header.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/static/css/redis/index.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/redis/index.html" />
       </list>
     </option>
@@ -596,12 +623,12 @@
       <workItem from="1568976778660" duration="223000" />
       <workItem from="1568995528718" duration="16336000" />
       <workItem from="1569229778561" duration="47016000" />
-      <workItem from="1569343369490" duration="43402000" />
+      <workItem from="1569343369490" duration="46019000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="448778000" />
+    <option name="totallyTimeSpent" value="451395000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -760,17 +787,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="534">
           <caret line="20" selection-start-line="20" selection-end-line="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/header.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="23" column="48" selection-start-line="23" selection-start-column="48" selection-end-line="23" selection-end-column="48" />
-          <folding>
-            <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1069,13 +1085,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/css/redis/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="30" column="19" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/Test.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="91">
@@ -1113,17 +1122,54 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/header.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="38" column="89" selection-start-line="38" selection-start-column="89" selection-end-line="38" selection-end-column="89" />
+          <folding>
+            <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#a#0;n#li#1;n#ul#0;n#li#1;n#ul#0;n#div#1;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/css/redis/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="47" column="18" selection-start-line="47" selection-start-column="18" selection-end-line="47" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/redis/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="410">
-          <caret line="41" column="51" selection-start-line="41" selection-start-column="51" selection-end-line="41" selection-end-column="51" />
+        <state relative-caret-position="507">
+          <caret line="103" column="16" selection-start-line="103" selection-start-column="16" selection-end-line="103" selection-end-column="16" />
           <folding>
             <element signature="n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" />
             <element signature="n#div#3;n#div#1;n#body#0;n#html#0;n#!!top" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#3;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="e#2481#2686#0" />
             <element signature="e#2728#2932#0" />
-            <element signature="e#3015#3023#0" />
+            <element signature="e#3821#5258#0" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#305#311#0" expanded="true" />
+            <element signature="e#311#317#0" expanded="true" />
+            <element signature="e#317#323#0" expanded="true" />
+            <element signature="e#323#329#0" expanded="true" />
+            <element signature="e#514#520#0" expanded="true" />
+            <element signature="e#520#526#0" expanded="true" />
+            <element signature="e#526#532#0" expanded="true" />
+            <element signature="e#532#538#0" expanded="true" />
+            <element signature="e#684#690#0" expanded="true" />
+            <element signature="e#690#696#0" expanded="true" />
+            <element signature="e#696#702#0" expanded="true" />
+            <element signature="e#702#708#0" expanded="true" />
+            <element signature="e#960#966#0" expanded="true" />
+            <element signature="e#966#972#0" expanded="true" />
+            <element signature="e#972#978#0" expanded="true" />
+            <element signature="e#978#984#0" expanded="true" />
+            <element signature="e#4491#4507#0" />
           </folding>
         </state>
       </provider>

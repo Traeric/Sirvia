@@ -15,7 +15,7 @@
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
             <a class="navbar-brand" th:href="@{/admin}" style="padding: 0 !important;">
-                <img th:src="@{/static/images/logo.png}" alt="NO IMG" style="height: 46px; margin-bottom: 2px;">
+                <img th:src="@{/static/images/logo.png}" alt="NO IMG" style="height: 40px; margin: 5px 0;">
             </a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -35,18 +35,24 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="javascript:void(0);">
-                                <i class="glyphicon glyphicon-leaf"></i>
-                                Rel-ebb站点
+                            <a href="https://github.com/Traeric/Sirvia" target="_blank">
+                                <i class="glyphicon glyphicon-leaf" style="color: #77bc1f;"></i>
+                                Github地址
                             </a>
                         </li>
+                        <li>
+                            <a href="https://mvnrepository.com/artifact/io.github.traeric.sirvia/lsirvia" target="_blank">
+                                <i class="glyphicon glyphicon-heart" style="color: #f00;"></i>
+                                Maven Repository地址
+                            </a>
+                        </li>
+                        <li role="separator" class="divider"></li>
                         <li>
                             <a th:href="@{/admin/change_password}">
                                 <i class="glyphicon glyphicon-eye-open"></i>
                                 修改密码
                             </a>
                         </li>
-                        <li role="separator" class="divider"></li>
                         <li>
                             <a th:href="@{/admin/logout}">
                                 <i class="glyphicon glyphicon-log-out"></i>

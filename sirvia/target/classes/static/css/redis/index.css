@@ -27,14 +27,25 @@
     background-color: rgba(0, 0, 0, .7) !important;
     cursor: text;
     color: #fff;
+    height: 350px;
+    overflow: auto;
 }
 
 .well .wrap {
     display: flex;
 }
 
+.well .wrap .pre {
+    color: #f00;
+}
+
 .well .inp {
     margin-left: 5px;
+    flex: 1 1 auto;
+    outline: none;
+    background-color: transparent;
+    border: none;
+    color: #f00;
 }
 
 .link-redis {

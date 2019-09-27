@@ -13,9 +13,14 @@ public class CommonsSetting {
 
     /**
      * action类的位置
+     *
      * @return
      */
     public String actionPackage() {
         return "com.ericjin.sirvia.Action";
+    }
+
+    public Map<String, String> getRedisBase() {
+        return redisBase;
     }
 }

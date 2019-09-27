@@ -179,4 +179,10 @@ public class RedisModifyController {
         redisModifyService.addLineHash(key, hashKey, content);
         return "1";
     }
+
+    @ResponseBody
+    @PostMapping("/execute_redis_cmd")
+    public Object executeCmd(String cmd) {
+        return redisModifyService.executeCmd(cmd);
+    }
 }

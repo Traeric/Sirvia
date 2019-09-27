@@ -1,5 +1,7 @@
 package com.ericjin.sirvia.service;
 
+import java.util.Objects;
+
 public interface RedisModifyService {
     String saveString(String key, String content);
 
@@ -22,4 +24,6 @@ public interface RedisModifyService {
     void removeLineHash(String key, String[] list);
 
     void addLineHash(String key, String hashKey, String content);
+
+    Object executeCmd(String cmd);
 }

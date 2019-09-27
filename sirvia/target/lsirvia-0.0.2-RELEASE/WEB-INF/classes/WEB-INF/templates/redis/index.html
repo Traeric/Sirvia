@@ -33,13 +33,13 @@
             <a type="button" class="btn btn-success" href="/admin/redis/view_data">进入</a>
         </div>
     </div>
-    <div class="alert alert-info clear-float" role="alert">
+    <div class="alert alert-warning clear-float" role="alert">
         <div class="pull-left alert-left">
             <i class="layui-icon layui-icon-util"></i>
-            <span class="label label-info">增加数据</span>
+            <span class="label label-warning">增加数据</span>
         </div>
         <div class="pull-right">
-            <a type="button" class="btn btn-info" href="/admin/redis/opt_data">进入</a>
+            <a type="button" class="btn btn-warning" href="/admin/redis/opt_data">进入</a>
         </div>
     </div>
 
@@ -48,12 +48,15 @@
         <div class="layui-row layui-col-space15">
             <div class="layui-col-md12">
                 <div class="layui-card">
-                    <div class="layui-card-header">Terminal</div>
+                    <div class="layui-card-header" style="display: flex; justify-content: space-between; align-items: center;">
+                        <div>Terminal</div>
+                        <button type="button" class="btn btn-danger btn-sm" onclick="clearTerminal()">清除Terminal</button>
+                    </div>
                     <div class="layui-card-body clear-float">
                         <div class="well">
                             <div class="wrap">
-                                >>>
-                                <div class="inp">key</div>
+                                <span class="pre">>>></span>
+                                <input type="text" class="inp" onkeydown="excuteCmd(event)" name="current">
                             </div>
                         </div>
                     </div>
@@ -82,6 +85,53 @@
         });
     });
 
+    /**
+     * 执行cmd命令
+     */
+    function excuteCmd(event) {
+        let inputDom = $("input[name=current]");
+        // 获取输入的命令
+        let cmd = inputDom.val();
+        if (event.which === 13 && cmd !== "") {
+            // 移除name
+            $(inputDom).removeAttr("name");
+            // 重新设置点击事件
+            inputDom.get(0).onkeydown = function (event) {
+                if (event.which === 13) {
+                    $("input[name=current]").focus();
+                }
+            };
+            // 执行cmd
+            $.ajax({
+                url: "/admin/redis/execute_redis_cmd",
+                type: "post",
+                data: {
+                    cmd,
+                },
+                success(args) {
+                    args = args === "" ? "null" : args;
+                    $(".well").append(`
+                        <div class="msg">${args}</div>
+                        <div class="wrap">
+                            <span class="pre">>>></span>
+                            <input type="text" class="inp" onkeydown="excuteCmd(event)" name="current">
+                        </div>
+                    `);
+                    $("input[name=current]").focus();
+                }
+            });
+        }
+    }
+
+    function clearTerminal() {
+        $(".well").empty().append(`
+            <div class="wrap">
+                <span class="pre">>>></span>
+                <input type="text" class="inp" onkeydown="excuteCmd(event)" name="current">
+            </div>
+        `);
+        $("input[name=current]").focus();
+    }
 </script>
 </body>
 </html>

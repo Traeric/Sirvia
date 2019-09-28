@@ -74,41 +74,6 @@
     layui.use(["layer", "table"], () => {
         layer = layui.layer;
         table = layui.table;
-
-        // layer.open({
-        //     content: `
-        //         <div class='content'>
-        //             <div class='left'>
-        //                 <table lay-filter='table-filter'>
-        //                   <thead>
-        //                     <tr>
-        //                       <th lay-data="{field: 'select', width: 80}">选中</th>
-        //                       <th lay-data="{field: 'val'}">值</th>
-        //                     </tr>
-        //                   </thead>
-        //                   <tbody>
-        //                     <tr>
-        //                       <td><input type="checkbox" name="row_select" lay-skin="switch" lay-filter="switchTest"></td>
-        //                       <td>人生就像是一场修行 A</td>
-        //                     </tr>
-        //                   </tbody>
-        //                 </table>
-        //             </div>
-        //             <div class='right'>
-        //                 <button class='layui-btn'><i class='layui-icon'>&#xe9aa;</i> 重命名键名</button>
-        //                 <button class='layui-btn layui-btn-danger'><i class='layui-icon'>&#xe640;</i> 删除</button>
-        //                 <button class='layui-btn layui-btn-normal'><i class='layui-icon'>&#xe608;</i> 保存</button>
-        //             </div>
-        //         </div>
-        //     `,
-        //     btn: ['关闭'],
-        //     offset: "150px",
-        //     title: "的查询结果",
-        //     area: "50%",
-        //     yes: function (index, layero) {
-        //         layer.close(index);
-        //     }
-        // });
         table.init('table-filter');
     });
     // nav栏激活状态
@@ -583,7 +548,7 @@
                     success(args) {
                         if (args === "1") {
                             layer.close(index);
-                            $(self).parents("tr").find("input").val(value);
+                            $(self).parents("tr").find("td:eq(1) div").html(value);
                             layer.msg("修改成功", {icon: 1});
                         }
                     }

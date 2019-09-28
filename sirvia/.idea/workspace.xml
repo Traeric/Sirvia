@@ -7,17 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b821a04f-eb7f-46a5-9edc-4fd38a1641fb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/controller/redis/RedisModifyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/controller/redis/RedisModifyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/service/RedisModifyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/service/RedisModifyService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/service/impl/RedisIndexServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/service/impl/RedisIndexServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/service/impl/RedisModifyServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/service/impl/RedisModifyServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/redis/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/redis/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/redis/view_data.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/redis/view_data.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/WEB-INF/templates/redis/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/WEB-INF/templates/redis/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/lsirvia-0.0.2-RELEASE/WEB-INF/classes/WEB-INF/templates/redis/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/lsirvia-0.0.2-RELEASE/WEB-INF/classes/WEB-INF/templates/redis/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/lsirvia-0.0.2-RELEASE/WEB-INF/templates/redis/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/lsirvia-0.0.2-RELEASE/WEB-INF/templates/redis/index.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -83,8 +73,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/redis/view_data.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="379">
-              <caret line="586" column="43" selection-start-line="586" selection-start-column="43" selection-end-line="586" selection-end-column="43" />
+            <state relative-caret-position="219">
+              <caret line="550" column="63" selection-start-line="550" selection-start-column="63" selection-end-line="550" selection-end-column="63" />
               <folding>
                 <element signature="e#17027#18673#0" />
               </folding>
@@ -603,12 +593,12 @@
       <workItem from="1568995528718" duration="16336000" />
       <workItem from="1569229778561" duration="47016000" />
       <workItem from="1569343369490" duration="48248000" />
-      <workItem from="1569658435341" duration="5741000" />
+      <workItem from="1569658435341" duration="7045000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="459365000" />
+    <option name="totallyTimeSpent" value="460669000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1054,18 +1044,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/controller/redis/RedisModifyController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="196" column="30" lean-forward="true" selection-start-line="196" selection-start-column="30" selection-end-line="196" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#4503#4504#0" expanded="true" />
-            <element signature="e#4560#4561#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/Test.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -1097,10 +1075,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/controller/redis/RedisModifyController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="196" column="30" lean-forward="true" selection-start-line="196" selection-start-column="30" selection-end-line="196" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#4503#4504#0" expanded="true" />
+            <element signature="e#4560#4561#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/redis/view_data.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="586" column="43" selection-start-line="586" selection-start-column="43" selection-end-line="586" selection-end-column="43" />
+        <state relative-caret-position="219">
+          <caret line="550" column="63" selection-start-line="550" selection-start-column="63" selection-end-line="550" selection-end-column="63" />
           <folding>
             <element signature="e#17027#18673#0" />
           </folding>

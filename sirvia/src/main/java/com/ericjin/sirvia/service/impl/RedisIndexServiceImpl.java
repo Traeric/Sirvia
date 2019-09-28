@@ -45,6 +45,7 @@ public class RedisIndexServiceImpl implements RedisIndexService {
                     "<tr>" +
                     "<th lay-data=\"{field: 'select', width: 80}\">选中</th>" +
                     "<th lay-data=\"{field: 'val'}\">值</th>" +
+                    "<th lay-data=\"{field: 'opt', width: 100}\">操作</th>" +
                     "</tr>" +
                     "</thead>" +
                     "<tbody>");
@@ -55,7 +56,9 @@ public class RedisIndexServiceImpl implements RedisIndexService {
                             "<td>" +
                             "<input type=\"checkbox\" name=\"row_select\" lay-skin=\"switch\" lay-filter=\"switchTest\" value='%s'>" +
                             "</td>" +
-                            "<td>%s</td></tr>\n", i, jedis.lindex(key, i)));
+                            "<td>%s</td>" +
+                            "<td><button type=\"button\" class=\"layui-btn layui-btn-sm layui-btn-warm\" onclick=\"modifyList(%s, '%s', this)\">修改</button>" +
+                            "</td></tr>\n", i, jedis.lindex(key, i), i, jedis.lindex(key, i)));
                 }
                 res.append("</tbody></table></div>\n" +
                         "<div class='right'>\n" +

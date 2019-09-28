@@ -542,6 +542,58 @@
             }
         });
     }
+
+    /**
+     * 修改列表的某个值
+     * @param ind
+     * @param val
+     */
+    function modifyList(ind, val, self) {
+        layer.open({
+            content: `
+                <div>修改值：</div><br>
+                <input type="text" name="value" autocomplete="off" class="layui-input" value="${val}">
+            `,
+            btn: ['确认', '关闭'],
+            area: "500px",
+            offset: "150px",
+            title: "修改list的值",
+            shade: 0.8,
+            zIndex: 200,
+            type: 1,
+            yes: function (index, layero) {
+                // 获取修改后的值
+                let value = $("input[name=value]").val();
+                if (val === value) {
+                    layer.msg("未被修改", {icon: 5});
+                    return null;
+                }
+                if (value.trim() === "") {
+                    layer.msg("不能为空", {icon: 5});
+                    return null;
+                }
+                $.ajax({
+                    url: "/admin/redis/modify_list",
+                    type: "post",
+                    data: {
+                        key: CURRENTKEY,
+                        index: ind,
+                        value: value
+                    },
+                    success(args) {
+                        if (args === "1") {
+                            layer.close(index);
+                            $(self).parents("tr").find("input").val(value);
+                            layer.msg("修改成功", {icon: 1});
+                        }
+                    }
+                });
+            },
+            btn2: function (index, layero) {
+                layer.close(index);
+            }
+        });
+    }
 </script>
 </body>
 </html>

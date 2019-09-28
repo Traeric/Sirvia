@@ -26,4 +26,6 @@ public interface RedisModifyService {
     void addLineHash(String key, String hashKey, String content);
 
     Object executeCmd(String cmd);
+
+    void modifyList(String key, String value, Integer index);
 }

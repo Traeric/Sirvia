@@ -180,9 +180,23 @@ public class RedisModifyController {
         return "1";
     }
 
+    /**
+     * <p>
+     *     执行redis的原生命令
+     * </p>
+     * @param cmd 要执行的命令
+     * @return 返回处理的结果
+     */
     @ResponseBody
     @PostMapping("/execute_redis_cmd")
     public Object executeCmd(String cmd) {
         return redisModifyService.executeCmd(cmd);
+    }
+
+    @ResponseBody
+    @PostMapping("/modify_list")
+    public String modifyList(String key, String value, Integer index) {
+        redisModifyService.modifyList(key, value, index);
+        return "1";
     }
 }

@@ -9,7 +9,6 @@ import redis.clients.jedis.Jedis;
 import redis.clients.jedis.Protocol;
 
 import javax.annotation.Resource;
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -123,5 +122,10 @@ public class RedisModifyServiceImpl implements RedisModifyService {
             res = e.getMessage();
         }
         return res;
+    }
+
+    @Override
+    public void modifyList(String key, String value, Integer index) {
+        jedis.lset(key, index, value);
     }
 }

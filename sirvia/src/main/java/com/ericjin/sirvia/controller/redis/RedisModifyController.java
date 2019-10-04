@@ -1,9 +1,11 @@
 package com.ericjin.sirvia.controller.redis;
 
 import com.ericjin.sirvia.service.RedisModifyService;
-import org.omg.PortableInterceptor.ServerRequestInfo;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
 import java.util.LinkedHashMap;
@@ -226,6 +228,16 @@ public class RedisModifyController {
         return "1";
     }
 
+    /**
+     * <p>
+     *     修改zset的某个值
+     * </p>
+     * @param key 键
+     * @param oldValue 老值
+     * @param newValue 新值
+     * @param score 新的分数
+     * @return 返回1
+     */
     @ResponseBody
     @PostMapping("/modify_zset")
     public String modifyZset(String key, String oldValue, String newValue, String score) {
@@ -233,6 +245,16 @@ public class RedisModifyController {
         return "1";
     }
 
+    /**
+     * <p>
+     *     修改hash
+     * </p>
+     * @param key 键值
+     * @param oldField 老的字段
+     * @param newField 新的字段
+     * @param value 字段对应的值
+     * @return 返回1
+     */
     @ResponseBody
     @PostMapping("/modify_hash")
     public String modifyHash(String key, String oldField, String newField, String value) {

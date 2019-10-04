@@ -28,4 +28,6 @@ public interface RedisModifyService {
     Object executeCmd(String cmd);
 
     void modifyList(String key, String value, Integer index);
+
+    void modifySet(String key, String oldValue, String newValue);
 }

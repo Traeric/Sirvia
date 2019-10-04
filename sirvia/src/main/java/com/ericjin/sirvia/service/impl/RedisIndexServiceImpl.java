@@ -139,6 +139,7 @@ public class RedisIndexServiceImpl implements RedisIndexService {
                         "<tr>" +
                         "<th lay-data=\"{field: 'select', width: 80}\">选中</th>" +
                         "<th lay-data=\"{field: 'val'}\">值</th>" +
+                        "<th lay-data=\"{field: 'opt', width: 100}\">操作</th>" +
                         "</tr>" +
                         "</thead>" +
                         "<tbody>");
@@ -149,7 +150,9 @@ public class RedisIndexServiceImpl implements RedisIndexService {
                             "<td>" +
                             "<input type=\"checkbox\" name=\"row_select\" lay-skin=\"switch\" lay-filter=\"switchTest\" value='%s'>" +
                             "</td>" +
-                            "<td>%s</td></tr>\n", member, member));
+                            "<td>%s</td>" +
+                            "<td><button type=\"button\" class=\"layui-btn layui-btn-sm layui-btn-warm\" onclick=\"modifySet('%s', this)\">修改</button>" +
+                            "</td></tr>\n", member, member, member));
                 }
                 set.append("</tbody></table></div>\n" +
                         "<div class='right'>\n" +

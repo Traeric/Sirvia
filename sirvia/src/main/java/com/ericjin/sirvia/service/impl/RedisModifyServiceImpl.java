@@ -128,4 +128,10 @@ public class RedisModifyServiceImpl implements RedisModifyService {
     public void modifyList(String key, String value, Integer index) {
         jedis.lset(key, index, value);
     }
+
+    @Override
+    public void modifySet(String key, String oldValue, String newValue) {
+        jedis.srem(key, oldValue);
+        jedis.sadd(key, newValue);
+    }
 }

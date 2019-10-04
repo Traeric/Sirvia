@@ -199,4 +199,11 @@ public class RedisModifyController {
         redisModifyService.modifyList(key, value, index);
         return "1";
     }
+
+    @ResponseBody
+    @PostMapping("/modify_set")
+    public String modifySet(String oldValue, String newValue, String key) {
+        redisModifyService.modifySet(key, oldValue, newValue);
+        return "1";
+    }
 }

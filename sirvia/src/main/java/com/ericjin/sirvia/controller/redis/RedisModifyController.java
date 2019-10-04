@@ -1,6 +1,7 @@
 package com.ericjin.sirvia.controller.redis;
 
 import com.ericjin.sirvia.service.RedisModifyService;
+import org.omg.PortableInterceptor.ServerRequestInfo;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -193,6 +194,15 @@ public class RedisModifyController {
         return redisModifyService.executeCmd(cmd);
     }
 
+    /**
+     * <p>
+     *     修改list的某个值
+     * </p>
+     * @param key 键
+     * @param value 值
+     * @param index 位置
+     * @return 返回1
+     */
     @ResponseBody
     @PostMapping("/modify_list")
     public String modifyList(String key, String value, Integer index) {
@@ -200,10 +210,33 @@ public class RedisModifyController {
         return "1";
     }
 
+    /**
+     * <p>
+     *     修改set的某个值
+     * </p>
+     * @param oldValue 旧值
+     * @param newValue 新值
+     * @param key 键
+     * @return 返回1
+     */
     @ResponseBody
     @PostMapping("/modify_set")
     public String modifySet(String oldValue, String newValue, String key) {
         redisModifyService.modifySet(key, oldValue, newValue);
+        return "1";
+    }
+
+    @ResponseBody
+    @PostMapping("/modify_zset")
+    public String modifyZset(String key, String oldValue, String newValue, String score) {
+        redisModifyService.modifyZset(key, oldValue, newValue, score);
+        return "1";
+    }
+
+    @ResponseBody
+    @PostMapping("/modify_hash")
+    public String modifyHash(String key, String oldField, String newField, String value) {
+        redisModifyService.modifyHash(key, oldField, newField, value);
         return "1";
     }
 }

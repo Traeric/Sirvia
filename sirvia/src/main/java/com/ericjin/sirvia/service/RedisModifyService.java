@@ -30,4 +30,8 @@ public interface RedisModifyService {
     void modifyList(String key, String value, Integer index);
 
     void modifySet(String key, String oldValue, String newValue);
+
+    void modifyZset(String key, String oldValue, String newValue, String score);
+
+    void modifyHash(String key, String oldField, String newField, String value);
 }

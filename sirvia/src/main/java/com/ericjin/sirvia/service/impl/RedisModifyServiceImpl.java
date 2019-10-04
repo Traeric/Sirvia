@@ -134,4 +134,16 @@ public class RedisModifyServiceImpl implements RedisModifyService {
         jedis.srem(key, oldValue);
         jedis.sadd(key, newValue);
     }
+
+    @Override
+    public void modifyZset(String key, String oldValue, String newValue, String score) {
+        jedis.zrem(key, oldValue);
+        jedis.zadd(key, Double.parseDouble(score), newValue);
+    }
+
+    @Override
+    public void modifyHash(String key, String oldField, String newField, String value) {
+        jedis.hdel(key, oldField);
+        jedis.hset(key, newField, value);
+    }
 }

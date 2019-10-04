@@ -45,7 +45,7 @@ public class RedisIndexServiceImpl implements RedisIndexService {
                     "<tr>" +
                     "<th lay-data=\"{field: 'select', width: 80}\">选中</th>" +
                     "<th lay-data=\"{field: 'val'}\">值</th>" +
-                    "<th lay-data=\"{field: 'opt', width: 100}\">操作</th>" +
+                    "<th lay-data=\"{field: 'opt', width: 80}\">操作</th>" +
                     "</tr>" +
                     "</thead>" +
                     "<tbody>");
@@ -78,6 +78,7 @@ public class RedisIndexServiceImpl implements RedisIndexService {
                         "<th lay-data=\"{field: 'select', width: 80}\">选中</th>" +
                         "<th lay-data=\"{field: 'key'}\">键名</th>" +
                         "<th lay-data=\"{field: 'value'}\">值</th>" +
+                        "<th lay-data=\"{field: 'opt', width: 80}\">操作</th>" +
                         "</tr>" +
                         "</thead>" +
                         "<tbody>");
@@ -89,7 +90,9 @@ public class RedisIndexServiceImpl implements RedisIndexService {
                             "<input type=\"checkbox\" name=\"row_select\" lay-skin=\"switch\" lay-filter=\"switchTest\" value='%s'>" +
                             "</td>" +
                             "<td>%s</td>\n" +
-                            "<td>%s</td></tr>", k, k, v));
+                            "<td>%s</td>" +
+                            "<td><button type=\"button\" class=\"layui-btn layui-btn-sm layui-btn-warm\" onclick=\"modifyHash('%s', '%s', this)\">修改</button>" +
+                            "</td></tr>", k, k, v, k, v));
                 });
                 hash.append("</tbody></table></div>\n" +
                         "<div class='right'>\n" +
@@ -109,6 +112,7 @@ public class RedisIndexServiceImpl implements RedisIndexService {
                             "<th lay-data=\"{field: 'select', width: 80}\">选中</th>" +
                         "<th lay-data=\"{field: 'val'}\">值</th>" +
                         "<th lay-data=\"{field: 'score', width: 80}\">分数</th>" +
+                        "<th lay-data=\"{field: 'opt', width: 80}\">操作</th>" +
                         "</tr>" +
                         "</thead>" +
                         "<tbody>");
@@ -120,7 +124,9 @@ public class RedisIndexServiceImpl implements RedisIndexService {
                             "<input type=\"checkbox\" name=\"row_select\" lay-skin=\"switch\" lay-filter=\"switchTest\" value='%s'>" +
                             "</td>" +
                             "<td>%s</td>\n" +
-                            "<td>%s</td></tr>", member, member, jedis.zscore(key, member)));
+                            "<td>%s</td>" +
+                            "<td><button type=\"button\" class=\"layui-btn layui-btn-sm layui-btn-warm\" onclick=\"modifyZset('%s', '%s', this)\">修改</button>" +
+                            "</td></tr>", member, member, jedis.zscore(key, member), member, jedis.zscore(key, member)));
                 }
                 zset.append("</tbody></table></div>\n" +
                         "<div class='right'>\n" +
@@ -139,7 +145,7 @@ public class RedisIndexServiceImpl implements RedisIndexService {
                         "<tr>" +
                         "<th lay-data=\"{field: 'select', width: 80}\">选中</th>" +
                         "<th lay-data=\"{field: 'val'}\">值</th>" +
-                        "<th lay-data=\"{field: 'opt', width: 100}\">操作</th>" +
+                        "<th lay-data=\"{field: 'opt', width: 80}\">操作</th>" +
                         "</tr>" +
                         "</thead>" +
                         "<tbody>");

@@ -88,13 +88,13 @@
     /**
      * 执行cmd命令
      */
-    let c = $(".well .wrap input");
-    let CURRENTINPUT = c.eq(0);
+    let CURRENTINPUT = null;
     function excuteCmd(event, self) {
         let inputDom = $("input[name=current]");
         // 获取输入的命令
         let cmd = inputDom.val();
         if (event.which === 13 && cmd !== "") {
+            CURRENTINPUT = null;
             // 移除name
             $(inputDom).removeAttr("name");
             // 重新设置点击事件
@@ -125,7 +125,6 @@
                         </div>
                     `);
                 $("input[name=current]").focus();
-                CURRENTINPUT = $(self);
                 return;
             }
             // 执行cmd
@@ -145,16 +144,22 @@
                         </div>
                     `);
                     $("input[name=current]").focus();
-                    CURRENTINPUT = $(self);
                 }
             });
         } else if (event.which === 38) {
-            alert($(CURRENTINPUT).val());
-            $(self).val($(CURRENTINPUT).val());
-            let prevInput = $(CURRENTINPUT).parents(".wrap").prevAll(".wrap").find("input");
-            CURRENTINPUT = prevInput.get(0) === undefined ? CURRENTINPUT : prevInput;
+            // 获取上一个input
+            CURRENTINPUT = CURRENTINPUT == null
+                ? $(self).parents(".wrap").prev().prev().find("input")
+                : $(CURRENTINPUT).parents(".wrap").prev().prev().find("input");
+            $(self).val($(CURRENTINPUT).get(0) === undefined ? $(self).val() : $(CURRENTINPUT).val());
         } else if (event.which ===  40) {
-
+            // 获取下一个input
+            CURRENTINPUT = $(CURRENTINPUT).parents(".wrap").next().next().find("input").get(0) == null
+                ? $(self)
+                : $(CURRENTINPUT).parents(".wrap").next().next().find("input");
+            $(self).val($(CURRENTINPUT).val());
+        } else {
+            CURRENTINPUT = null;
         }
     }
 
@@ -169,7 +174,6 @@
             </div>
         `);
         $("input[name=current]").focus();
-        CURRENTINPUT = c.eq(0);
     }
 </script>
 </body>

@@ -7,11 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b821a04f-eb7f-46a5-9edc-4fd38a1641fb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/redis/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/redis/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/WEB-INF/templates/redis/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/WEB-INF/templates/redis/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/lsirvia-0.0.2-RELEASE/WEB-INF/classes/WEB-INF/templates/redis/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/lsirvia-0.0.2-RELEASE/WEB-INF/classes/WEB-INF/templates/redis/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/lsirvia-0.0.2-RELEASE/WEB-INF/templates/redis/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/lsirvia-0.0.2-RELEASE/WEB-INF/templates/redis/index.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -41,14 +37,13 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/redis/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="313">
-              <caret line="151" selection-start-line="151" selection-end-line="151" />
+            <state relative-caret-position="155">
+              <caret line="153" column="102" selection-start-line="153" selection-start-column="102" selection-end-line="153" selection-end-column="102" />
               <folding>
                 <element signature="n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#3;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#3;n#div#1;n#body#0;n#html#0;n#!!top" />
                 <element signature="e#2819#3024#0" />
-                <element signature="e#3485#5993#0" />
                 <element signature="n#div#0;n#!!top" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="e#305#311#0" expanded="true" />
@@ -561,12 +556,12 @@
       <workItem from="1569983543930" duration="800000" />
       <workItem from="1570157061705" duration="6090000" />
       <workItem from="1570193571278" duration="1383000" />
-      <workItem from="1570242952724" duration="4319000" />
+      <workItem from="1570242952724" duration="7483000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="473917000" />
+    <option name="totallyTimeSpent" value="477081000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1048,14 +1043,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/redis/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="151" selection-start-line="151" selection-end-line="151" />
+        <state relative-caret-position="155">
+          <caret line="153" column="102" selection-start-line="153" selection-start-column="102" selection-end-line="153" selection-end-column="102" />
           <folding>
             <element signature="n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#3;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#3;n#div#1;n#body#0;n#html#0;n#!!top" />
             <element signature="e#2819#3024#0" />
-            <element signature="e#3485#5993#0" />
             <element signature="n#div#0;n#!!top" />
             <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="e#305#311#0" expanded="true" />

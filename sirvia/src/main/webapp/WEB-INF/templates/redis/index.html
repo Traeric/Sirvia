@@ -56,7 +56,7 @@
                         <div class="well">
                             <div class="wrap">
                                 <span class="pre">>>></span>
-                                <input type="text" class="inp" onkeydown="excuteCmd(event)" name="current">
+                                <input type="text" class="inp" onkeydown="excuteCmd(event, this)" name="current">
                             </div>
                         </div>
                     </div>
@@ -88,7 +88,9 @@
     /**
      * 执行cmd命令
      */
-    function excuteCmd(event) {
+    let c = $(".well .wrap input");
+    let CURRENTINPUT = c.eq(0);
+    function excuteCmd(event, self) {
         let inputDom = $("input[name=current]");
         // 获取输入的命令
         let cmd = inputDom.val();
@@ -119,10 +121,11 @@
                         </div>
                         <div class="wrap">
                             <span class="pre">>>></span>
-                            <input type="text" class="inp" onkeydown="excuteCmd(event)" name="current">
+                            <input type="text" class="inp" onkeydown="excuteCmd(event, this)" name="current">
                         </div>
                     `);
                 $("input[name=current]").focus();
+                CURRENTINPUT = $(self);
                 return;
             }
             // 执行cmd
@@ -138,23 +141,34 @@
                         <div class="msg">${args}</div>
                         <div class="wrap">
                             <span class="pre">>>></span>
-                            <input type="text" class="inp" onkeydown="excuteCmd(event)" name="current">
+                            <input type="text" class="inp" onkeydown="excuteCmd(event, this)" name="current">
                         </div>
                     `);
                     $("input[name=current]").focus();
+                    CURRENTINPUT = $(self);
                 }
             });
+        } else if (event.which === 38) {
+            $(self).val($(CURRENTINPUT).val());
+            let prevInput = $(CURRENTINPUT).parents(".wrap").prevAll(".wrap").find("input");
+            CURRENTINPUT = prevInput.get(0) === undefined ? CURRENTINPUT : prevInput;
+        } else if (event.which ===  40) {
+
         }
     }
 
+    /**
+     * 清空terminal
+     */
     function clearTerminal() {
         $(".well").empty().append(`
             <div class="wrap">
                 <span class="pre">>>></span>
-                <input type="text" class="inp" onkeydown="excuteCmd(event)" name="current">
+                <input type="text" class="inp" onkeydown="excuteCmd(event, this)" name="current">
             </div>
         `);
         $("input[name=current]").focus();
+        CURRENTINPUT = c.eq(0);
     }
 </script>
 </body>

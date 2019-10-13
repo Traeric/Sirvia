@@ -1,10 +1,7 @@
 package com.ericjin.sirvia.test;
 
 
-import com.ericjin.sirvia.annotation.ForeignKey;
-import com.ericjin.sirvia.annotation.Id;
-import com.ericjin.sirvia.annotation.ManyToManyField;
-import com.ericjin.sirvia.annotation.ShowName;
+import com.ericjin.sirvia.annotation.*;
 
 import java.util.List;
 

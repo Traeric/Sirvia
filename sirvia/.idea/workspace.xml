@@ -7,9 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b821a04f-eb7f-46a5-9edc-4fd38a1641fb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/redis/opt_data.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/redis/opt_data.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/redis/view_data.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/redis/view_data.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/css/redis/view_data.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/static/css/redis/view_data.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/test/Article.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/test/Article.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/utils/FieldToInputStr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/utils/FieldToInputStr.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -24,48 +24,53 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/controller/redis/RedisModifyController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="32">
-              <caret line="19" column="7" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/redis/opt_data.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="83" column="58" lean-forward="true" selection-start-line="83" selection-start-column="58" selection-end-line="83" selection-end-column="58" />
-              <folding>
-                <element signature="n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#div#3;n#div#1;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#div#4;n#div#1;n#body#0;n#html#0;n#!!top" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/redis/view_data.html">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/utils/FieldToInputStr.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="174" column="58" selection-start-line="174" selection-start-column="58" selection-end-line="174" selection-end-column="58" />
+            <state relative-caret-position="288">
+              <caret line="17" column="29" lean-forward="true" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
               <folding>
-                <element signature="n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#th:block#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#div#1;n#div#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#div#2;n#div#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#div#3;n#div#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#div#4;n#div#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" />
+                <element signature="method#common#0;class#FieldToInputStr#0" />
+                <element signature="e#2739#2740#0" expanded="true" />
+                <element signature="e#2810#2811#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/test/Article.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="228">
+              <caret line="12" selection-start-line="12" selection-end-line="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/utils/strategyBean/BeanContext.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="480">
+              <caret line="23" column="46" selection-start-line="23" selection-start-column="46" selection-end-line="23" selection-end-column="46" />
+              <folding>
+                <element signature="e#188#189#0" expanded="true" />
+                <element signature="e#236#237#0" expanded="true" />
+                <element signature="e#298#299#0" expanded="true" />
+                <element signature="e#346#347#0" expanded="true" />
+                <element signature="e#383#384#0" expanded="true" />
+                <element signature="e#433#434#0" expanded="true" />
+                <element signature="e#542#543#0" expanded="true" />
+                <element signature="e#577#578#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/utils/strategyBean/BeanStrategy.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="256">
+              <caret line="8" column="1" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -81,9 +86,9 @@
         <option value="Tag Library Descriptor" />
         <option value="HTML File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
         <option value="Interface" />
         <option value="Class" />
-        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -112,17 +117,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/ericjin/javadmin/Action.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ericjin/javadmin/Settings.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ericjin/javadmin/utils/FieldToInputStr.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ericjin/javadmin/shiro/realm/AdminRealm.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ericjin/javadmin/service/impl/TableListServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ericjin/javadmin/service/impl/UserServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ericjin/javadmin/CommonsSetting.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/index.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ericjin/javadmin/utils/ResourceUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ericjin/javadmin/generate/Generate.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ericjin/javadmin/mapper/UserMapper.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mybatis/userMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/admin.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/ericjin/javadmin/config/SpringDataSource.java" />
@@ -132,7 +126,6 @@
         <option value="$PROJECT_DIR$/dependency-reduced-pom.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/springMVC-servlet.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/test/Tags.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/test/Article.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/test/Test.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/login.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/controller/LoginController.java" />
@@ -163,6 +156,18 @@
         <option value="$PROJECT_DIR$/src/main/webapp/static/js/redis/opt_data.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/redis/opt_data.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/redis/view_data.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/test/Article.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/utils/strategyBean/BeanStrategy.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/utils/strategyBean/BeanContext.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/utils/strategyBean/strategyImpl/ChooseStrategy.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/utils/strategyBean/strategyImpl/DateUseStrategy.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/utils/strategyBean/strategyImpl/PasswordStrategy.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/utils/strategyBean/strategyImpl/ForeignKeyStrategy.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/utils/strategyBean/strategyImpl/ManyToManyFieldStrategy.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/utils/strategyBean/strategyImpl/TextStrategy.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/utils/strategyBean/strategyImpl/CheckBoxStrategy.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/utils/strategyBean/strategyImpl/TextAreaStrategy.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/utils/FieldToInputStr.java" />
       </list>
     </option>
   </component>
@@ -200,7 +205,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="127" />
     <option name="y" value="385" />
     <option name="width" value="1455" />
@@ -217,6 +222,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -257,7 +264,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="sirvia" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="sirvia" type="b2602c69:ProjectViewProjectNode" />
@@ -266,30 +273,19 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="sirvia" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+              <item name="strategyBean" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="sirvia" type="b2602c69:ProjectViewProjectNode" />
               <item name="sirvia" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sirvia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="sirvia" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sirvia" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sirvia" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+              <item name="strategyBean" type="462c0819:PsiDirectoryNode" />
+              <item name="strategyImpl" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="sirvia" type="b2602c69:ProjectViewProjectNode" />
@@ -297,37 +293,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sirvia" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sirvia" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-              <item name="redis" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sirvia" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sirvia" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sirvia" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sirvia" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="redis" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="sirvia" type="b2602c69:ProjectViewProjectNode" />
@@ -345,23 +310,11 @@
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sirvia" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sirvia" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="redis" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -380,24 +333,25 @@
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="G:\JavaAdmin\sirvia\src\main\resources" />
-      <recent name="G:\JavaAdmin\sirvia\src\main\java\com\ericjin\sirvia\test" />
-      <recent name="G:\JavaAdmin\java_admin\src\main\resources" />
-      <recent name="G:\JavaAdmin\java_admin\src\main\resources\static\images" />
-      <recent name="G:\JavaAdmin\java_admin\src\main\java\com\ericjin\javadmin\mapper" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.ericjin.javadmin.generate" />
-      <recent name="com.ericjin.javadmin.mapper" />
-      <recent name="com.ericjin.javadmin.beans" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="G:\JavaAdmin\sirvia\src\main\webapp" />
       <recent name="G:\JavaAdmin\java_admin\src\main\webapp\WEB-INF" />
       <recent name="G:\JavaAdmin\java_admin\src\main\resources" />
       <recent name="G:\JavaAdmin\java_admin\src\main\resources\META-INF" />
       <recent name="G:\JavaAdmin\java_admin\src\main\resources\META-INF\resources" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.ericjin.sirvia.utils" />
+      <recent name="com.ericjin.javadmin.generate" />
+      <recent name="com.ericjin.javadmin.mapper" />
+      <recent name="com.ericjin.javadmin.beans" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\JavaAdmin\sirvia\src\main\resources" />
+      <recent name="G:\JavaAdmin\sirvia\src\main\java\com\ericjin\sirvia\test" />
+      <recent name="G:\JavaAdmin\java_admin\src\main\resources" />
+      <recent name="G:\JavaAdmin\java_admin\src\main\resources\static\images" />
+      <recent name="G:\JavaAdmin\java_admin\src\main\java\com\ericjin\javadmin\mapper" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -596,18 +550,20 @@
       <workItem from="1569983543930" duration="800000" />
       <workItem from="1570157061705" duration="6090000" />
       <workItem from="1570193571278" duration="1383000" />
-      <workItem from="1570242952724" duration="12485000" />
+      <workItem from="1570242952724" duration="13127000" />
+      <workItem from="1570549960494" duration="58000" />
+      <workItem from="1570933709110" duration="6072000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="482083000" />
+    <option name="totallyTimeSpent" value="488855000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18541667" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18541667" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -617,7 +573,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.21330518" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.34741288" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2967265" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.374868" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -646,130 +602,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://D:/maven/MavenRepository/org/thymeleaf/thymeleaf/3.0.9.RELEASE/thymeleaf-3.0.9.RELEASE.jar!/org/thymeleaf/templateresolver/AbstractConfigurableTemplateResolver.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="66" column="29" lean-forward="true" selection-start-line="66" selection-start-column="29" selection-end-line="66" selection-end-column="29" />
-          <folding>
-            <element signature="e#2732#2733#0" expanded="true" />
-            <element signature="e#2768#2769#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/maven/MavenRepository/org/springframework/spring-webmvc/4.3.20.RELEASE/spring-webmvc-4.3.20.RELEASE.jar!/org/springframework/web/servlet/mvc/method/AbstractHandlerMethodAdapter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="37" selection-start-line="37" selection-end-line="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/maven/MavenRepository/org/springframework/spring-webmvc/4.3.20.RELEASE/spring-webmvc-4.3.20.RELEASE.jar!/org/springframework/web/servlet/mvc/method/annotation/ServletInvocableHandlerMethod.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="66" selection-start-line="66" selection-end-line="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="11" column="36" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/config/SpringDataSource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1856">
-          <caret line="69" column="95" selection-start-line="69" selection-start-column="95" selection-end-line="69" selection-end-column="95" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/controller/LoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="21" column="33" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
-          <folding>
-            <element signature="e#696#697#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/css/index.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/css/edit_table.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/springMVC-servlet.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/Register.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/admin.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="17" column="44" lean-forward="true" selection-start-line="17" selection-start-column="44" selection-end-line="17" selection-end-column="44" />
-          <folding>
-            <element signature="n#style#0;n#textarea#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/css/redis/opt_data.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="534">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/add_table.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-819">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/edit_table.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3776">
-          <caret line="20" column="9" lean-forward="true" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/table_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="190" column="39" lean-forward="true" selection-start-line="190" selection-start-column="39" selection-end-line="190" selection-end-column="39" />
-          <folding>
-            <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://D:/maven/MavenRepository/org/apache/shiro/shiro-all/1.4.1/shiro-all-1.4.1.jar!/org/apache/shiro/subject/support/SubjectCallable.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
@@ -1078,7 +910,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/controller/redis/RedisModifyController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
+        <state relative-caret-position="320">
           <caret line="19" column="7" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1088,8 +920,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/redis/opt_data.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="83" column="58" lean-forward="true" selection-start-line="83" selection-start-column="58" selection-end-line="83" selection-end-column="58" />
+        <state relative-caret-position="1376">
+          <caret line="83" column="58" selection-start-line="83" selection-start-column="58" selection-end-line="83" selection-end-column="58" />
           <folding>
             <element signature="n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" />
             <element signature="n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" />
@@ -1102,8 +934,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/redis/view_data.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="174" column="58" selection-start-line="174" selection-start-column="58" selection-end-line="174" selection-end-column="58" />
+        <state relative-caret-position="388">
+          <caret line="164" column="27" lean-forward="true" selection-start-line="164" selection-start-column="27" selection-end-line="164" selection-end-column="27" />
           <folding>
             <element signature="n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" />
             <element signature="n#th:block#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" />
@@ -1112,6 +944,149 @@
             <element signature="n#div#2;n#div#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" />
             <element signature="n#div#3;n#div#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" />
             <element signature="n#div#4;n#div#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/utils/FieldToInputStrs.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/annotation/Choose.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="7" column="18" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/add_table.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-643" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/test/Article.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/utils/strategyBean/BeanStrategy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="8" column="1" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/utils/strategyBean/BeanContext.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="23" column="46" selection-start-line="23" selection-start-column="46" selection-end-line="23" selection-end-column="46" />
+          <folding>
+            <element signature="e#188#189#0" expanded="true" />
+            <element signature="e#236#237#0" expanded="true" />
+            <element signature="e#298#299#0" expanded="true" />
+            <element signature="e#346#347#0" expanded="true" />
+            <element signature="e#383#384#0" expanded="true" />
+            <element signature="e#433#434#0" expanded="true" />
+            <element signature="e#542#543#0" expanded="true" />
+            <element signature="e#577#578#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/utils/strategyBean/strategyImpl/CheckBoxStrategy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="21" column="57" selection-start-line="21" selection-start-column="57" selection-end-line="21" selection-end-column="57" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/utils/strategyBean/strategyImpl/ChooseStrategy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="363">
+          <caret line="50" column="42" selection-start-line="50" selection-start-column="42" selection-end-line="50" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#getEmptyInput#0;class#ChooseStrategy#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/utils/strategyBean/strategyImpl/DateUseStrategy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="736">
+          <caret line="23" column="42" selection-start-line="23" selection-start-column="42" selection-end-line="23" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/utils/strategyBean/strategyImpl/ForeignKeyStrategy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1376">
+          <caret line="43" column="16" selection-start-line="43" selection-start-column="16" selection-end-line="43" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/utils/strategyBean/strategyImpl/ManyToManyFieldStrategy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2752">
+          <caret line="92" column="98" selection-start-line="92" selection-start-column="92" selection-end-line="92" selection-end-column="98" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/utils/strategyBean/strategyImpl/PasswordStrategy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="992">
+          <caret line="31" column="17" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/utils/strategyBean/strategyImpl/TextStrategy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/utils/strategyBean/strategyImpl/TextAreaStrategy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="704">
+          <caret line="22" column="42" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/utils/FieldToInputStr.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="17" column="29" lean-forward="true" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
+          <folding>
+            <element signature="method#common#0;class#FieldToInputStr#0" />
+            <element signature="e#2739#2740#0" expanded="true" />
+            <element signature="e#2810#2811#0" expanded="true" />
           </folding>
         </state>
       </provider>

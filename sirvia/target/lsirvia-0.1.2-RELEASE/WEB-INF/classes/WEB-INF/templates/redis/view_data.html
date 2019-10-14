@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>REDIS INDEX</title>
+
+    <!-- Bootstrap core CSS -->
+    <link th:href="@{/static/plugins/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+    <link th:href="@{/static/css/redis/index.css}" rel="stylesheet">
+    <link th:href="@{/static/plugins/layui/css/layui.css}" rel="stylesheet">
+    <link th:href="@{/static/css/redis/view_data.css}" rel="stylesheet">
+
+    <link href="../../../static/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../../static/css/redis/view_data.css" rel="stylesheet">
+    <link href="../../../static/css/redis/index.css" rel="stylesheet">
+    <link href="../../../static/plugins/layui/css/layui.css" rel="stylesheet">
+    <script src="../../../static/js/jq/jquery.min.js"></script>
+    <script src="../../../static/plugins/layui/layui.js"></script>
+
+    <!-- Custom styles for this template -->
+    <script th:src="@{/static/js/jq/jquery.min.js}"></script>
+    <script th:src="@{/static/plugins/bootstrap/js/bootstrap.min.js}"></script>
+    <script th:src="@{/static/plugins/layui/layui.js}"></script>
+</head>
+<body>
+<div th:replace="header :: header"></div>
+<div class="container">
+    <ol class="breadcrumb">
+        <li><a th:href="@{/admin}">首页</a></li>
+        <li><a href="/admin/redis/index">redis操作</a></li>
+        <li><a href="javascript:void(0);">查看数据</a></li>
+    </ol>
+    <blockquote class="layui-elem-quote">Redis Keys</blockquote>
+    <div id="keyPanel" class="alert alert-info" role="alert">
+        <th:block th:each="key, stat : ${keys}">
+            <th:block th:if="${stat.index} % 5 == 0">
+                <button type="button" class="layui-btn layui-btn-radius layui-btn-warm" style="margin: 10px 10px;"
+                        th:data-key="${key}">
+                    <i class="layui-icon">&#xe674;</i> [[ ${key} ]]
+                </button>
+            </th:block>
+            <th:block th:if="${stat.index} % 5 == 1">
+                <button type="button" class="layui-btn layui-btn-radius layui-btn-danger" style="margin: 10px 10px;"
+                        th:data-key="${key}">
+                    <i class="layui-icon">&#xe674;</i> [[ ${key} ]]
+                </button>
+            </th:block>
+            <th:block th:if="${stat.index} % 5 == 2">
+                <button type="button" class="layui-btn layui-btn-radius layui-btn-primary" style="margin: 10px 10px;"
+                        th:data-key="${key}">
+                    <i class="layui-icon">&#xe674;</i> [[ ${key} ]]
+                </button>
+            </th:block>
+            <th:block th:if="${stat.index} % 5 == 3">
+                <button type="button" class="layui-btn layui-btn-radius" style="margin: 10px 10px;"
+                        th:data-key="${key}">
+                    <i class="layui-icon">&#xe674;</i> [[ ${key} ]]
+                </button>
+            </th:block>
+            <th:block th:if="${stat.index} % 5 == 4">
+                <button type="button" class="layui-btn layui-btn-radius layui-btn-normal" style="margin: 10px 10px;"
+                        th:data-key="${key}">
+                    <i class="layui-icon">&#xe674;</i> [[ ${key} ]]
+                </button>
+            </th:block>
+        </th:block>
+    </div>
+
+    <!-- 添加新的内容 -->
+    <div id="add">
+        <div class="panel">
+            <div class="wrap">
+                <div class="alert alert-success clear-float" role="alert">
+                    <div class="pull-left alert-left">
+                        <i class="layui-icon">&#xe6b1;</i>
+                        <span class="label label-success">添加string</span>
+                    </div>
+                    <div class="pull-right">
+                        <button class="btn btn-success" onclick="addString()">添加</button>
+                    </div>
+                </div>
+                <div class="alert alert-info clear-float" role="alert">
+                    <div class="pull-left alert-left">
+                        <i class="layui-icon">&#xe66a;</i>
+                        <span class="label label-info">添加list</span>
+                    </div>
+                    <div class="pull-right">
+                        <button class="btn btn-info" onclick="addList()">添加</button>
+                    </div>
+                </div>
+                <div class="alert alert-danger clear-float" role="alert">
+                    <div class="pull-left alert-left">
+                        <i class="layui-icon">&#xe756;</i>
+                        <span class="label label-danger">增加set</span>
+                    </div>
+                    <div class="pull-right">
+                        <button class="btn btn-danger" onclick="addSet()">添加</button>
+                    </div>
+                </div>
+                <div class="alert alert-warning clear-float" role="alert">
+                    <div class="pull-left alert-left">
+                        <i class="layui-icon">&#xe632;</i>
+                        <span class="label label-warning">添加zset</span>
+                    </div>
+                    <div class="pull-right">
+                        <button class="btn btn-warning" onclick="addZset()">添加</button>
+                    </div>
+                </div>
+                <div class="alert alert-success clear-float" role="alert">
+                    <div class="pull-left alert-left">
+                        <i class="layui-icon">&#xe629;</i>
+                        <span class="label label-success">添加hash</span>
+                    </div>
+                    <div class="pull-right">
+                        <button class="btn btn-success" onclick="addHash()">添加</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button type="button" class="layui-btn  layui-btn-warm" onclick="toggle()">
+            <i class="layui-icon layui-icon-right"></i>
+        </button>
+    </div>
+</div>
+<script>
+    let layer = null;
+    let table = null;
+    let CURRENTKEY = null;
+    layui.use(["layer", "table"], () => {
+        layer = layui.layer;
+        table = layui.table;
+        table.init('table-filter');
+    });
+    // nav栏激活状态
+    $(".navbar-right li:eq(0)").addClass("active");
+
+    $("#keyPanel").click((e) => {
+        let target = e.target;
+        if (target.localName === "button") {
+            let key = target.dataset['key'];
+            $.ajax({
+                url: "/admin/redis/get_data",
+                type: "post",
+                data: {
+                    key,
+                },
+                dataType: "JSON",
+                success(args) {
+                    if (args.flag) {
+                        CURRENTKEY = key;
+                        layer.open({
+                            content: `${args.content}`,
+                            zIndex: 1,
+                            type: 1,
+                            btn: ['关闭'],
+                            offset: "150px",
+                            title: key + "的查询结果",
+                            area: "50%",
+                            yes: function (index, layero) {
+                                layer.close(index);
+                            }
+                        });
+                        table.init('table-filter', {
+                            limit: 100000000000000000000,
+                        });
+                    } else {
+                        layer.msg('获取失败', {icon: 5});
+                    }
+                },
+            });
+        }
+    });
+</script>
+<script th:src="@{/static/js/redis/view_data.js}"></script>
+<script th:src="@{/static/js/redis/opt_data.js}"></script>
+</body>
+</html>

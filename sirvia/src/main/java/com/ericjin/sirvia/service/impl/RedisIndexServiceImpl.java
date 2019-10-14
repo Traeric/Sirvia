@@ -8,7 +8,7 @@ import javax.annotation.Resource;
 import java.util.Map;
 import java.util.Set;
 
-@Service("redisIndexServiceImpl")
+@Service
 public class RedisIndexServiceImpl implements RedisIndexService {
     @Resource(name = "jedis")
     private Jedis jedis;
@@ -23,32 +23,31 @@ public class RedisIndexServiceImpl implements RedisIndexService {
         // 获取键的类型
         String type = jedis.type(key);
         switch (type) {
-            case "string":
-                {
-                    String con = jedis.get(key);
-                    return String.format("<div class='content'>" +
-                            "<div class='left'>" +
-                            "<textarea name='content' class='layui-textarea' rows='15'>%s</textarea>" +
-                            "</div>" +
-                            "<div class='right'>" +
-                            "<button class='layui-btn' onclick='reloadString()'><i class='layui-icon'>&#xe9aa;</i> 重命名键名</button>" +
-                            "<button class='layui-btn layui-btn-danger' onclick='remove()'><i class='layui-icon'>&#xe640;</i> 删除</button>" +
-                            "<button class='layui-btn layui-btn-normal' onclick='saveString()'><i class='layui-icon'>&#xe608;</i> 保存</button>" +
-                            "</div>" +
-                            "</div>", con);
-                }
+            case "string": {
+                String con = jedis.get(key);
+                return String.format("<div class='content'>" +
+                        "<div class='left'>" +
+                        "<textarea name='content' class='layui-textarea' rows='15'>%s</textarea>" +
+                        "</div>" +
+                        "<div class='right'>" +
+                        "<button class='layui-btn' onclick='reloadString()'><i class='layui-icon'>&#xe9aa;</i> 重命名键名</button>" +
+                        "<button class='layui-btn layui-btn-danger' onclick='remove()'><i class='layui-icon'>&#xe640;</i> 删除</button>" +
+                        "<button class='layui-btn layui-btn-normal' onclick='saveString()'><i class='layui-icon'>&#xe608;</i> 保存</button>" +
+                        "</div>" +
+                        "</div>", con);
+            }
             case "list":
                 StringBuilder res = new StringBuilder("<div class='content'>" +
-                    "<div class='left'>" +
-                    "<table lay-filter='table-filter'>" +
-                    "<thead>" +
-                    "<tr>" +
-                    "<th lay-data=\"{field: 'select', width: 80}\">选中</th>" +
-                    "<th lay-data=\"{field: 'val'}\">值</th>" +
-                    "<th lay-data=\"{field: 'opt', width: 80}\">操作</th>" +
-                    "</tr>" +
-                    "</thead>" +
-                    "<tbody>");
+                        "<div class='left'>" +
+                        "<table lay-filter='table-filter'>" +
+                        "<thead>" +
+                        "<tr>" +
+                        "<th lay-data=\"{field: 'select', width: 80}\">选中</th>" +
+                        "<th lay-data=\"{field: 'val'}\">值</th>" +
+                        "<th lay-data=\"{field: 'opt', width: 80}\">操作</th>" +
+                        "</tr>" +
+                        "</thead>" +
+                        "<tbody>");
                 // 获取数据
                 Long llen = jedis.llen(key);
                 for (Long i = 0L; i < llen; i++) {
@@ -109,7 +108,7 @@ public class RedisIndexServiceImpl implements RedisIndexService {
                         "<table lay-filter='table-filter'>" +
                         "<thead>" +
                         "<tr>" +
-                            "<th lay-data=\"{field: 'select', width: 80}\">选中</th>" +
+                        "<th lay-data=\"{field: 'select', width: 80}\">选中</th>" +
                         "<th lay-data=\"{field: 'val'}\">值</th>" +
                         "<th lay-data=\"{field: 'score', width: 80}\">分数</th>" +
                         "<th lay-data=\"{field: 'opt', width: 80}\">操作</th>" +

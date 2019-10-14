@@ -2,7 +2,6 @@ package com.ericjin.sirvia.service.impl;
 
 import com.ericjin.sirvia.CommonsSetting;
 import com.ericjin.sirvia.service.RedisModifyService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import redis.clients.jedis.Connection;
 import redis.clients.jedis.Jedis;
@@ -19,7 +18,7 @@ public class RedisModifyServiceImpl implements RedisModifyService {
     @Resource(name = "jedis")
     private Jedis jedis;
 
-    @Autowired
+    @Resource(name = "commonsSetting")
     private CommonsSetting commonsSetting;
 
     @Override

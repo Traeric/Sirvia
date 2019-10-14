@@ -94,7 +94,7 @@
         </property>
         <property name="redisBase">
             <map>
-                <entry key="host" value="192.168.188.128"/>
+                <entry key="host" value="119.3.146.100"/>
                 <entry key="port" value="6379"/>
                 <entry key="passowrd" value=""/>
                 <entry key="database" value="0"/>

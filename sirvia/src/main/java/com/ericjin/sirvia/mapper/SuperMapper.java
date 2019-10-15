@@ -40,7 +40,7 @@ public interface SuperMapper {
     List<Map<String, String>> getThirdInfo(@Param("third_table") String thirdTable, @Param("relation_field") String relationField,
                                            @Param("self_field") String selfField, @Param("select_value") String selectVal);
 
-    // 从以三张表中移除数据
+    // 从第三张表中移除数据
     Boolean removeFromThirdTable(@Param("third_table") String thirdTable, @Param("third_self_field") String thirdSelfField,
                                  @Param("select_id") String selectId);
 
@@ -49,4 +49,8 @@ public interface SuperMapper {
 
     // 执行SQL语句
     void executeSql(@Param("sql") String sql);
+
+    // 在删除多对多的时候，查询出被删除的信息在第三张表中的id
+    List<Integer> getThirdDeleteInfo(@Param("third_table_name") String thirdTableName, @Param("third_self_field") String thirdSelfField,
+                                     @Param("current_id") Integer currentId);
 }

@@ -13,6 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.lang.reflect.Field;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
@@ -140,5 +141,43 @@ public class EditTableServiceImpl implements EditTableService {
         String tableName = indexService.getTableName(bean);
         // 删除数据
         return superMapper.deleteTable(tableName, id);
+    }
+
+    @Override
+    public String getDeleteRelationInfo(String modelName, String beanName, Integer id) {
+        StringBuffer result = new StringBuffer();
+        // 获取表名
+        Class bean = indexService.getBean(modelName, beanName);
+        // 获取所有的字段
+        Field[] fields = bean.getDeclaredFields();
+        for (Field field : fields) {
+            if (field.isAnnotationPresent(ManyToManyField.class)) {
+                // 获取注解
+                ManyToManyField manyToManyField = field.getAnnotation(ManyToManyField.class);
+                // 获取第三张表的名字
+                String thirdTableName = manyToManyField.third_table();
+                // 需要当前表在第三张表中关联的字段
+                String thirdSelfField = manyToManyField.third_self_field();
+                // 获取第三章表中所有与当前删除字段相关的内容
+                List<Integer> thirdDeleteInfo = superMapper.getThirdDeleteInfo(thirdTableName, thirdSelfField, id);
+                if (thirdDeleteInfo.size() == 0) {
+                    continue;
+                }
+                // 生成HTML信息
+                result.append(String.format("<div class=\"layui-card\">\n" +
+                        "                <div class=\"layui-card-header\">%s</div>\n" +
+                        "                <div class=\"layui-card-body\">\n" +
+                        "                    <ul class=\"layui-timeline\">", thirdTableName));
+                // 生成列表信息
+                thirdDeleteInfo.forEach(currentId -> result.append(String.format("<li class=\"layui-timeline-item\">\n" +
+                        "                            <i class=\"layui-icon layui-timeline-axis\">&#xe756;</i>\n" +
+                        "                            <div class=\"layui-timeline-content layui-text\">\n" +
+                        "                                <p>如果你想要删除当前记录，那么%s的id为%d的记录也会被改变。</p>\n" +
+                        "                            </div>\n" +
+                        "                        </li>", thirdTableName, currentId)));
+                result.append("</ul></div></div>");
+            }
+        }
+        return result.toString();
     }
 }

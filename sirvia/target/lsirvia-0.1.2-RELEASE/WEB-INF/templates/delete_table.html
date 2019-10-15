@@ -48,37 +48,20 @@
                     </ul>
                 </div>
             </div>
-            <div class="layui-card">
-                <div class="layui-card-header">用户表</div>
-                <div class="layui-card-body">
-                    <ul class="layui-timeline">
-                        <li class="layui-timeline-item">
-                            <i class="layui-icon layui-timeline-axis">&#xe756;</i>
-                            <div class="layui-timeline-content layui-text">
-                                <h3 class="layui-timeline-title">8月18日</h3>
-                            </div>
-                        </li>
-                        <li class="layui-timeline-item">
-                            <i class="layui-icon layui-timeline-axis">&#xe756;</i>
-                            <div class="layui-timeline-content layui-text">
-                                <h3 class="layui-timeline-title">8月16日</h3>
-                            </div>
-                        </li>
-                        <li class="layui-timeline-item">
-                            <i class="layui-icon layui-timeline-axis">&#xe756;</i>
-                            <div class="layui-timeline-content layui-text">
-                                <h3 class="layui-timeline-title">8月15日</h3>
-                            </div>
-                        </li>
-                        <li class="layui-timeline-item">
-                            <i class="layui-icon layui-timeline-axis">&#xe756;</i>
-                            <div class="layui-timeline-content layui-text">
-                                <div class="layui-timeline-title">过去</div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+            [( ${deleteInfo} )]
+<!--            <div class="layui-card">-->
+<!--                <div class="layui-card-header">用户表</div>-->
+<!--                <div class="layui-card-body">-->
+<!--                    <ul class="layui-timeline">-->
+<!--                        <li class="layui-timeline-item">-->
+<!--                            <i class="layui-icon layui-timeline-axis">&#xe756;</i>-->
+<!--                            <div class="layui-timeline-content layui-text">-->
+<!--                                <h3 class="layui-timeline-title">8月18日</h3>-->
+<!--                            </div>-->
+<!--                        </li>-->
+<!--                    </ul>-->
+<!--                </div>-->
+<!--            </div>-->
         </div>
     </div>
     <div>
@@ -98,8 +81,6 @@
      * 删除数据
      */
     function deleteTable() {
-        alert(111);
-        /*
         $.ajax({
             url: $("#del_url").attr("href"),
             type: "delete",
@@ -115,7 +96,6 @@
                 }
             },
         });
-        */
     }
 </script>
 </body>

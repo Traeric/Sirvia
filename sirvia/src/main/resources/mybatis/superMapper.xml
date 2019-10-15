@@ -77,5 +77,9 @@
     <update id="executeSql">
         ${sql}
     </update>
+
+    <select id="getThirdDeleteInfo" resultType="integer">
+        SELECT id FROM ${third_table_name} WHERE ${third_self_field} = #{current_id}
+    </select>
 </mapper>
 

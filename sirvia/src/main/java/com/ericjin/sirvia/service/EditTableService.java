@@ -8,4 +8,6 @@ public interface EditTableService {
     Boolean updateTable(String modelName, String beanName, Integer id, Map<String, Object> map);
 
     Boolean deleteTable(String modelName, String beanName, Integer id);
+
+    String getDeleteRelationInfo(String modelName, String beanName, Integer id);
 }

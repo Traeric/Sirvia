@@ -140,23 +140,6 @@
      */
     function deleteTable() {
         location.href = $("#del_url").attr("href");
-        /*
-        $.ajax({
-            url: $("#del_url").attr("href"),
-            type: "delete",
-            success(args) {
-                let alertDom = $("#alert_info");
-                alertDom.css("display", "block");
-                if (args === "1") {
-                    // 删除成功
-                    location.href = $("#back").attr("href");
-                } else {
-                    alertDom.find("b").html("删除失败");
-                    alertDom.addClass("alert alert-danger alert-dismissible");
-                }
-            },
-        });
-        */
     }
 
     /**

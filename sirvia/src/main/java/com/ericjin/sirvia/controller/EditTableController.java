@@ -74,7 +74,7 @@ public class EditTableController {
         model.addAttribute("tableName", tableName);
         model.addAttribute("id", id);
         // 获取删除的信息
-
+        model.addAttribute("deleteInfo", editTableService.getDeleteRelationInfo(modelName, beanName, id));
         return "delete_table";
     }
 

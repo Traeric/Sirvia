@@ -126,6 +126,4 @@ public class UserServiceImpl implements UserService {
         new_password = new SimpleHash("MD5", new_password, ByteSource.Util.bytes(Settings.salt), 1024).toString();
         return userMapper.changePassword(userId, new_password);
     }
-
-
 }

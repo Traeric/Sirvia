@@ -81,7 +81,7 @@ public class ManyToManyFieldStrategy implements BeanStrategy {
                 "      <input type='hidden' name='%s_%s' value='%s'>\n" +
                 "      <div id=\"transfer_%s\" class=\"demo-transfer\"></div></div>" +
                 "      <button type='button' class='layui-btn layui-btn-xs layui-btn-warm' style='margin-left: 10px;' " +
-                "       title='添加%s' onclick='openWindow(\"/redis/%s/%s/add\")'>" +
+                "       title='添加%s' onclick='openWindow(\"/admin/%s/%s/add\")'>" +
                 "          <i class='layui-icon layui-icon-add-1'></i>" +
                 "      </button>" +
                 "      </div>\n" +

@@ -59,7 +59,7 @@ public class ForeignKeyStrategy implements BeanStrategy {
         });
         return result.append(String.format("</select></div>" +
                 "<button type='button' class='layui-btn layui-btn-xs layui-btn-warm' style='margin-left: 10px;' " +
-                "title='添加%s' onclick='openWindow(\"/redis/%s/%s/add\")'>" +
+                "title='添加%s' onclick='openWindow(\"/admin/%s/%s/add\")'>" +
                 "<i class='layui-icon layui-icon-add-1'></i>" +
                 "</button></div><hr class=\"layui-bg-gray\">", fieldName, modelName, beanName)).toString();
     }

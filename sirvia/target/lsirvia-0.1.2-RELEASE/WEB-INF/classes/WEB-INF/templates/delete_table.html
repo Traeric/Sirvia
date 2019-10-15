@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>编辑 [[ tableName ]]</title>
+    <link rel="stylesheet" th:href="@{/static/css/delete_table.css}">
+    <link rel="stylesheet" th:href="@{/static/plugins/bootstrap/css/bootstrap.min.css}">
+
+    <link rel="stylesheet" th:href="@{/static/plugins/layui/css/layui.css}">
+    <script th:src="@{/static/js/jq/jquery.min.js}"></script>
+    <script th:src="@{/static/plugins/bootstrap/js/bootstrap.min.js}"></script>
+    <script th:src="@{/static/plugins/layui/layui.js}"></script>
+</head>
+<body>
+<div th:replace="header :: header"></div>
+<div class="container">
+    <ol class="breadcrumb">
+        <li><a th:href="@{/admin}">首页</a></li>
+        <li><a id="back" th:href="@{'/admin/' + ${modelName} + '/' + ${beanName}}">[[ ${tableName} ]]</a></li>
+        <li><a th:href="@{'/admin/' + ${modelName} + '/' + ${beanName} + '/edit/' + ${id}}">编辑[[ ${tableName} ]]</a>
+        </li>
+        <li><a href="javascript:void(0);">删除[[ ${tableName} ]]</a></li>
+    </ol>
+    <div class="page-header">
+        <blockquote class="layui-elem-quote">删除[[ ${tableName} ]]</blockquote>
+    </div>
+    <div class="center">
+        <div class="confirm">确认删除吗？</div>
+        <div class="msg">
+            你确定要删除[[ ${tableName} ]]的id为[[ ${id} ]]的记录吗？所有与之关联的项已显示在下面：
+        </div>
+        <div class="area">
+            <!-- 当前删除的表信息 -->
+            <div class="layui-card">
+                <div class="layui-card-header">[[ ${tableName} ]]</div>
+                <div class="layui-card-body">
+                    <ul class="layui-timeline">
+                        <li class="layui-timeline-item">
+                            <i class="layui-icon layui-timeline-axis">&#xe756;</i>
+                            <div class="layui-timeline-content layui-text">
+                                <p>
+                                    如果你想要删除当前记录，那么<a
+                                        th:href="@{'/admin/' + ${modelName} + '/' + ${beanName} + '/edit/' + ${id}}"
+                                        target="_blank">[[ ${tableName} ]]的id为[[ ${id} ]]的记录</a>也会被删除。
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="layui-card">
+                <div class="layui-card-header">用户表</div>
+                <div class="layui-card-body">
+                    <ul class="layui-timeline">
+                        <li class="layui-timeline-item">
+                            <i class="layui-icon layui-timeline-axis">&#xe756;</i>
+                            <div class="layui-timeline-content layui-text">
+                                <h3 class="layui-timeline-title">8月18日</h3>
+                            </div>
+                        </li>
+                        <li class="layui-timeline-item">
+                            <i class="layui-icon layui-timeline-axis">&#xe756;</i>
+                            <div class="layui-timeline-content layui-text">
+                                <h3 class="layui-timeline-title">8月16日</h3>
+                            </div>
+                        </li>
+                        <li class="layui-timeline-item">
+                            <i class="layui-icon layui-timeline-axis">&#xe756;</i>
+                            <div class="layui-timeline-content layui-text">
+                                <h3 class="layui-timeline-title">8月15日</h3>
+                            </div>
+                        </li>
+                        <li class="layui-timeline-item">
+                            <i class="layui-icon layui-timeline-axis">&#xe756;</i>
+                            <div class="layui-timeline-content layui-text">
+                                <div class="layui-timeline-title">过去</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <button type="button" class="btn btn-danger" onclick="deleteTable()">确认删除</button>
+        <button type="button" class="btn btn-default" onclick="history.back();">不用了，回退</button>
+        <a id="del_url" th:href="@{'/admin/' + ${modelName} + '/' + ${beanName} + '/del/' + ${id}}"></a>
+    </div>
+</div>
+<script>
+    $(function () {
+        $("#alert_info button").click(function () {
+            $("#alert_info").css("display", "none");
+        });
+    });
+
+    /**
+     * 删除数据
+     */
+    function deleteTable() {
+        alert(111);
+        /*
+        $.ajax({
+            url: $("#del_url").attr("href"),
+            type: "delete",
+            success(args) {
+                let alertDom = $("#alert_info");
+                alertDom.css("display", "block");
+                if (args === "1") {
+                    // 删除成功
+                    location.href = $("#back").attr("href");
+                } else {
+                    alertDom.find("b").html("删除失败");
+                    alertDom.addClass("alert alert-danger alert-dismissible");
+                }
+            },
+        });
+        */
+    }
+</script>
+</body>
+</html>

@@ -7,222 +7,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b821a04f-eb7f-46a5-9edc-4fd38a1641fb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/Register.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/Register.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/Test.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/test/Article.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/test/Tags.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/test/Test.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/allclasses-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/allclasses-frame.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/allclasses-noframe.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/allclasses-noframe.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/Action.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/Action.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/CommonsSetting.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/CommonsSetting.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/Register.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/Register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/Settings.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/Settings.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/Test.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/annotation/Choose.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/annotation/Choose.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/annotation/DateUse.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/annotation/DateUse.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/annotation/EntityTableName.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/annotation/EntityTableName.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/annotation/ForeignKey.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/annotation/ForeignKey.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/annotation/Id.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/annotation/Id.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/annotation/ManyToManyField.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/annotation/ManyToManyField.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/annotation/Password.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/annotation/Password.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/annotation/ShowName.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/annotation/ShowName.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/annotation/class-use/Choose.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/annotation/class-use/Choose.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/annotation/class-use/DateUse.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/annotation/class-use/DateUse.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/annotation/class-use/EntityTableName.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/annotation/class-use/EntityTableName.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/annotation/class-use/ForeignKey.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/annotation/class-use/ForeignKey.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/annotation/class-use/Id.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/annotation/class-use/Id.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/annotation/class-use/ManyToManyField.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/annotation/class-use/ManyToManyField.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/annotation/class-use/Password.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/annotation/class-use/Password.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/annotation/class-use/ShowName.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/annotation/class-use/ShowName.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/annotation/package-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/annotation/package-frame.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/annotation/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/annotation/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/annotation/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/annotation/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/annotation/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/annotation/package-use.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/beans/User.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/beans/User.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/beans/class-use/User.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/beans/class-use/User.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/beans/package-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/beans/package-frame.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/beans/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/beans/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/beans/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/beans/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/beans/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/beans/package-use.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/class-use/Action.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/class-use/Action.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/class-use/CommonsSetting.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/class-use/CommonsSetting.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/class-use/Register.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/class-use/Register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/class-use/Settings.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/class-use/Settings.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/class-use/Test.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/config/SpringDataSource.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/config/SpringDataSource.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/config/ThymeleafConfig.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/config/ThymeleafConfig.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/config/class-use/SpringDataSource.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/config/class-use/SpringDataSource.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/config/class-use/ThymeleafConfig.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/config/class-use/ThymeleafConfig.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/config/package-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/config/package-frame.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/config/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/config/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/config/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/config/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/config/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/config/package-use.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/controller/ChangePasswordController.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/controller/ChangePasswordController.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/controller/EditTableController.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/controller/EditTableController.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/controller/IndexController.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/controller/IndexController.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/controller/LoginController.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/controller/LoginController.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/controller/RedisIndexController.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/controller/RedisIndexController.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/controller/RedisModifyController.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/controller/RedisModifyController.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/controller/TableListController.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/controller/TableListController.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/controller/class-use/ChangePasswordController.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/controller/class-use/ChangePasswordController.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/controller/class-use/EditTableController.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/controller/class-use/EditTableController.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/controller/class-use/IndexController.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/controller/class-use/IndexController.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/controller/class-use/LoginController.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/controller/class-use/LoginController.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/controller/class-use/RedisIndexController.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/controller/class-use/RedisIndexController.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/controller/class-use/RedisModifyController.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/controller/class-use/RedisModifyController.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/controller/class-use/TableListController.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/controller/class-use/TableListController.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/controller/package-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/controller/package-frame.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/controller/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/controller/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/controller/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/controller/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/controller/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/controller/package-use.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/generate/Generate.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/generate/Generate.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/generate/class-use/Generate.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/generate/class-use/Generate.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/generate/package-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/generate/package-frame.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/generate/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/generate/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/generate/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/generate/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/generate/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/generate/package-use.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/mapper/SuperMapper.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/mapper/SuperMapper.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/mapper/UserMapper.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/mapper/UserMapper.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/mapper/class-use/SuperMapper.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/mapper/class-use/SuperMapper.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/mapper/class-use/UserMapper.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/mapper/class-use/UserMapper.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/mapper/package-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/mapper/package-frame.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/mapper/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/mapper/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/mapper/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/mapper/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/mapper/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/mapper/package-use.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/package-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/package-frame.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/package-use.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/service/EditTableService.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/service/EditTableService.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/service/IndexService.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/service/IndexService.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/service/RedisIndexService.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/service/RedisIndexService.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/service/RedisModifyService.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/service/RedisModifyService.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/service/TableListService.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/service/TableListService.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/service/UserService.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/service/UserService.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/service/class-use/EditTableService.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/service/class-use/EditTableService.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/service/class-use/IndexService.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/service/class-use/IndexService.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/service/class-use/RedisIndexService.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/service/class-use/RedisIndexService.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/service/class-use/RedisModifyService.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/service/class-use/RedisModifyService.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/service/class-use/TableListService.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/service/class-use/TableListService.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/service/class-use/UserService.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/service/class-use/UserService.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/service/impl/EditTableServiceImpl.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/service/impl/EditTableServiceImpl.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/service/impl/IndexServiceImpl.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/service/impl/IndexServiceImpl.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/service/impl/RedisIndexServiceImpl.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/service/impl/RedisIndexServiceImpl.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/service/impl/RedisModifyServiceImpl.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/service/impl/RedisModifyServiceImpl.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/service/impl/TableListServiceImpl.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/service/impl/TableListServiceImpl.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/service/impl/UserServiceImpl.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/service/impl/UserServiceImpl.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/service/impl/class-use/EditTableServiceImpl.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/service/impl/class-use/EditTableServiceImpl.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/service/impl/class-use/IndexServiceImpl.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/service/impl/class-use/IndexServiceImpl.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/service/impl/class-use/RedisIndexServiceImpl.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/service/impl/class-use/RedisIndexServiceImpl.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/service/impl/class-use/RedisModifyServiceImpl.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/service/impl/class-use/RedisModifyServiceImpl.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/service/impl/class-use/TableListServiceImpl.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/service/impl/class-use/TableListServiceImpl.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/service/impl/class-use/UserServiceImpl.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/service/impl/class-use/UserServiceImpl.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/service/impl/package-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/service/impl/package-frame.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/service/impl/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/service/impl/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/service/impl/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/service/impl/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/service/impl/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/service/impl/package-use.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/service/package-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/service/package-frame.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/service/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/service/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/service/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/service/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/service/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/service/package-use.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/shiro/annotation/RoleCode.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/shiro/annotation/RoleCode.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/shiro/annotation/class-use/RoleCode.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/shiro/annotation/class-use/RoleCode.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/shiro/annotation/package-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/shiro/annotation/package-frame.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/shiro/annotation/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/shiro/annotation/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/shiro/annotation/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/shiro/annotation/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/shiro/annotation/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/shiro/annotation/package-use.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/shiro/authenticator/UserModularRealmAuthenticator.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/shiro/authenticator/UserModularRealmAuthenticator.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/shiro/authenticator/class-use/UserModularRealmAuthenticator.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/shiro/authenticator/class-use/UserModularRealmAuthenticator.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/shiro/authenticator/package-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/shiro/authenticator/package-frame.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/shiro/authenticator/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/shiro/authenticator/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/shiro/authenticator/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/shiro/authenticator/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/shiro/authenticator/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/shiro/authenticator/package-use.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/shiro/enumerate/RoleType.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/shiro/enumerate/RoleType.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/shiro/enumerate/class-use/RoleType.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/shiro/enumerate/class-use/RoleType.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/shiro/enumerate/package-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/shiro/enumerate/package-frame.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/shiro/enumerate/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/shiro/enumerate/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/shiro/enumerate/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/shiro/enumerate/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/shiro/enumerate/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/shiro/enumerate/package-use.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/shiro/factory/class-use/filterChainDefinitionMapBuilder.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/shiro/factory/class-use/filterChainDefinitionMapBuilder.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/shiro/factory/filterChainDefinitionMapBuilder.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/shiro/factory/filterChainDefinitionMapBuilder.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/shiro/factory/package-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/shiro/factory/package-frame.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/shiro/factory/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/shiro/factory/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/shiro/factory/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/shiro/factory/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/shiro/factory/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/shiro/factory/package-use.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/shiro/realm/AdminRealm.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/shiro/realm/AdminRealm.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/shiro/realm/class-use/AdminRealm.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/shiro/realm/class-use/AdminRealm.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/shiro/realm/package-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/shiro/realm/package-frame.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/shiro/realm/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/shiro/realm/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/shiro/realm/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/shiro/realm/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/shiro/realm/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/shiro/realm/package-use.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/shiro/token/UserToken.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/shiro/token/UserToken.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/shiro/token/class-use/UserToken.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/shiro/token/class-use/UserToken.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/shiro/token/package-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/shiro/token/package-frame.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/shiro/token/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/shiro/token/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/shiro/token/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/shiro/token/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/shiro/token/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/shiro/token/package-use.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/test/Article.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/test/Tags.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/test/Test.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/test/class-use/Article.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/test/class-use/Tags.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/test/class-use/Test.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/test/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/test/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/test/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/test/package-use.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/utils/FieldToInputStr.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/utils/FieldToInputStr.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/utils/ToCamelCase.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/utils/ToCamelCase.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/utils/class-use/FieldToInputStr.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/utils/class-use/FieldToInputStr.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/utils/class-use/ToCamelCase.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/utils/class-use/ToCamelCase.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/utils/package-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/utils/package-frame.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/utils/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/utils/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/utils/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/utils/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/utils/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/utils/package-use.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/utils/strategyBean/BeanContext.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/utils/strategyBean/BeanContext.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/utils/strategyBean/BeanStrategy.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/utils/strategyBean/BeanStrategy.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/utils/strategyBean/class-use/BeanContext.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/utils/strategyBean/class-use/BeanContext.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/utils/strategyBean/class-use/BeanStrategy.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/utils/strategyBean/class-use/BeanStrategy.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/utils/strategyBean/package-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/utils/strategyBean/package-frame.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/utils/strategyBean/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/utils/strategyBean/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/utils/strategyBean/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/utils/strategyBean/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/utils/strategyBean/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/utils/strategyBean/package-use.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/utils/strategyBean/strategyImpl/CheckBoxStrategy.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/utils/strategyBean/strategyImpl/CheckBoxStrategy.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/utils/strategyBean/strategyImpl/ChooseStrategy.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/utils/strategyBean/strategyImpl/ChooseStrategy.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/utils/strategyBean/strategyImpl/DateUseStrategy.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/utils/strategyBean/strategyImpl/DateUseStrategy.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/utils/strategyBean/strategyImpl/ForeignKeyStrategy.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/utils/strategyBean/strategyImpl/ForeignKeyStrategy.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/utils/strategyBean/strategyImpl/ManyToManyFieldStrategy.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/utils/strategyBean/strategyImpl/ManyToManyFieldStrategy.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/utils/strategyBean/strategyImpl/PasswordStrategy.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/utils/strategyBean/strategyImpl/PasswordStrategy.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/utils/strategyBean/strategyImpl/TextAreaStrategy.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/utils/strategyBean/strategyImpl/TextAreaStrategy.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/utils/strategyBean/strategyImpl/TextStrategy.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/utils/strategyBean/strategyImpl/TextStrategy.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/utils/strategyBean/strategyImpl/class-use/CheckBoxStrategy.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/utils/strategyBean/strategyImpl/class-use/CheckBoxStrategy.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/utils/strategyBean/strategyImpl/class-use/ChooseStrategy.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/utils/strategyBean/strategyImpl/class-use/ChooseStrategy.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/utils/strategyBean/strategyImpl/class-use/DateUseStrategy.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/utils/strategyBean/strategyImpl/class-use/DateUseStrategy.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/utils/strategyBean/strategyImpl/class-use/ForeignKeyStrategy.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/utils/strategyBean/strategyImpl/class-use/ForeignKeyStrategy.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/utils/strategyBean/strategyImpl/class-use/ManyToManyFieldStrategy.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/utils/strategyBean/strategyImpl/class-use/ManyToManyFieldStrategy.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/utils/strategyBean/strategyImpl/class-use/PasswordStrategy.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/utils/strategyBean/strategyImpl/class-use/PasswordStrategy.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/utils/strategyBean/strategyImpl/class-use/TextAreaStrategy.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/utils/strategyBean/strategyImpl/class-use/TextAreaStrategy.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/utils/strategyBean/strategyImpl/class-use/TextStrategy.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/utils/strategyBean/strategyImpl/class-use/TextStrategy.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/utils/strategyBean/strategyImpl/package-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/utils/strategyBean/strategyImpl/package-frame.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/utils/strategyBean/strategyImpl/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/utils/strategyBean/strategyImpl/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/utils/strategyBean/strategyImpl/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/utils/strategyBean/strategyImpl/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/utils/strategyBean/strategyImpl/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/ericjin/sirvia/utils/strategyBean/strategyImpl/package-use.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/constant-values.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/constant-values.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/deprecated-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/deprecated-list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/help-doc.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/help-doc.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/index-all.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/index-all.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/overview-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/overview-frame.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/overview-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/overview-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/overview-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/overview-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/package-list" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/package-list" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/apidocs/serialized-form.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/serialized-form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/WEB-INF/templates/redis/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/WEB-INF/templates/redis/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/controller/EditTableController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/controller/EditTableController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/utils/strategyBean/strategyImpl/ForeignKeyStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/utils/strategyBean/strategyImpl/ForeignKeyStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/utils/strategyBean/strategyImpl/ManyToManyFieldStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/utils/strategyBean/strategyImpl/ManyToManyFieldStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/add_table.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/add_table.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/edit_table.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/edit_table.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/static/css/index.css" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -238,93 +29,46 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/edit_table.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5536">
-              <caret line="232" column="36" selection-start-line="232" selection-start-column="36" selection-end-line="232" selection-end-column="36" />
+            <state relative-caret-position="-896">
+              <caret line="35" column="89" selection-start-line="35" selection-start-column="89" selection-end-line="35" selection-end-column="89" />
               <folding>
-                <element signature="n#plugin#0;n#plugins#0;n#build#0;n#project#0;n#!!top" />
-                <element signature="n#plugin#1;n#plugins#0;n#build#0;n#project#0;n#!!top" />
-                <element signature="n#plugin#2;n#plugins#0;n#build#0;n#project#0;n#!!top" />
-                <element signature="n#plugin#3;n#plugins#0;n#build#0;n#project#0;n#!!top" />
-                <element signature="n#plugin#0;n#plugins#0;n#build#0;n#profile#0;n#profiles#0;n#project#0;n#!!top" />
-                <element signature="n#plugin#1;n#plugins#0;n#build#0;n#profile#0;n#profiles#0;n#project#0;n#!!top" />
-                <element signature="n#plugin#2;n#plugins#0;n#build#0;n#profile#0;n#profiles#0;n#project#0;n#!!top" />
-                <element signature="n#plugin#3;n#plugins#0;n#build#0;n#profile#0;n#profiles#0;n#project#0;n#!!top" />
-                <element signature="n#plugin#4;n#plugins#0;n#build#0;n#profile#0;n#profiles#0;n#project#0;n#!!top" />
+                <element signature="e#2337#3113#0" />
+                <element signature="e#3153#3450#0" />
+                <element signature="e#3487#4004#0" />
+                <element signature="e#4026#4657#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/Register.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/controller/EditTableController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="992">
-              <caret line="34" column="21" selection-start-line="34" selection-start-column="21" selection-end-line="34" selection-end-column="21" />
+            <state relative-caret-position="536">
+              <caret line="76" column="8" selection-start-line="76" selection-start-column="8" selection-end-line="76" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/delete_table.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="242">
+              <caret line="84" column="16" selection-start-line="84" selection-start-column="16" selection-end-line="84" selection-end-column="16" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="n#div#1;n#div#1;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/adminApplicationContext.xml">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/static/css/delete_table.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3104">
-              <caret line="97" column="48" selection-start-line="97" selection-start-column="48" selection-end-line="97" selection-end-column="48" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/service/impl/RedisIndexServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-40">
-              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/service/impl/RedisModifyServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3912">
-              <caret line="2" column="25" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/service/impl/EditTableServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-512">
-              <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/controller/RedisModifyController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="20" column="10" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/springMVC-servlet.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
-              <caret line="8" column="71" selection-start-line="8" selection-start-column="71" selection-end-line="8" selection-end-column="71" />
+            <state relative-caret-position="320">
+              <caret line="10" column="53" selection-start-line="10" selection-start-column="53" selection-end-line="10" selection-end-column="53" />
             </state>
           </provider>
         </entry>
@@ -338,11 +82,11 @@
         <option value="Enum" />
         <option value="AnnotationType" />
         <option value="Tag Library Descriptor" />
-        <option value="HTML File" />
-        <option value="CSS File" />
         <option value="JavaScript File" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="HTML File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -371,14 +115,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/ericjin/javadmin/config/SpringDataSource.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ericjin/javadmin/config/ThymeleafConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/generate/Generate.java" />
-        <option value="$PROJECT_DIR$/java_admin.iml" />
-        <option value="$PROJECT_DIR$/dependency-reduced-pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/test/Tags.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/test/Test.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/login.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/controller/LoginController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/config/ThymeleafConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/controller/redis/IndexController.java" />
@@ -390,7 +126,6 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/header.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/shiro/factory/filterChainDefinitionMapBuilder.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/static/css/redis/index.css" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/Test.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/service/RedisModifyService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/controller/redis/RedisModifyController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/static/css/redis/view_data.css" />
@@ -404,8 +139,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/utils/strategyBean/strategyImpl/ChooseStrategy.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/utils/strategyBean/strategyImpl/DateUseStrategy.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/utils/strategyBean/strategyImpl/PasswordStrategy.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/utils/strategyBean/strategyImpl/ForeignKeyStrategy.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/utils/strategyBean/strategyImpl/ManyToManyFieldStrategy.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/utils/strategyBean/strategyImpl/TextStrategy.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/utils/strategyBean/strategyImpl/CheckBoxStrategy.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/utils/strategyBean/strategyImpl/TextAreaStrategy.java" />
@@ -422,6 +155,17 @@
         <option value="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/service/impl/RedisIndexServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/redis/index.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/Register.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/static/css/index.css" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/change_password.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/admin.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/Test.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/add_table.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/utils/strategyBean/strategyImpl/ForeignKeyStrategy.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/utils/strategyBean/strategyImpl/ManyToManyFieldStrategy.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/edit_table.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/static/css/delete_table.css" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/delete_table.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/controller/EditTableController.java" />
       </list>
     </option>
   </component>
@@ -459,7 +203,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="322" />
     <option name="y" value="204" />
     <option name="width" value="1455" />
@@ -516,7 +260,50 @@
               <item name="sirvia" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="sirvia" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sirvia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sirvia" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sirvia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sirvia" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sirvia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sirvia" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sirvia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sirvia" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sirvia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sirvia" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -529,7 +316,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/ericjin/sirvia" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/test" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -761,15 +548,16 @@
       <workItem from="1570549960494" duration="58000" />
       <workItem from="1570933709110" duration="11564000" />
       <workItem from="1570971866449" duration="19360000" />
-      <workItem from="1571040262288" duration="1522000" />
+      <workItem from="1571040262288" duration="20486000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="515229000" />
+    <option name="totallyTimeSpent" value="534193000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.499187" visible="true" weight="0.18541667" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -782,7 +570,7 @@
       <window_info id="EJB" order="8" sideWeight="0.500813" side_tool="true" weight="0.18956336" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.21330518" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3315734" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.31678987" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.374868" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -799,7 +587,7 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Maven" order="3" visible="true" weight="0.12916666" />
+      <window_info anchor="right" id="Maven" order="3" weight="0.12916666" />
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
       <window_info anchor="right" id="Database" order="6" />
@@ -811,93 +599,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/service/RedisIndexService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="7" column="29" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/controller/redis/RedisAddController.java" />
-    <entry file="jar://D:/maven/MavenRepository/redis/clients/jedis/2.9.0/jedis-2.9.0.jar!/redis/clients/jedis/Protocol.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="284" column="8" selection-start-line="284" selection-start-column="8" selection-end-line="284" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/jdk/jdk1.8/src.zip!/java/lang/Throwable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="632" column="16" selection-start-line="632" selection-start-column="16" selection-end-line="632" selection-end-column="16" />
-          <folding>
-            <element signature="e#26222#26223#0" expanded="true" />
-            <element signature="e#26265#26266#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/maven/MavenRepository/redis/clients/jedis/2.9.0/jedis-2.9.0.jar!/redis/clients/jedis/Connection.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="295" column="18" selection-start-line="295" selection-start-column="18" selection-end-line="295" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/maven/MavenRepository/org/springframework/spring-webmvc/4.3.20.RELEASE/spring-webmvc-4.3.20.RELEASE.jar!/org/springframework/web/servlet/DispatcherServlet.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="454" selection-start-line="454" selection-end-line="454" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/maven/MavenRepository/org/springframework/spring-webmvc/4.3.20.RELEASE/spring-webmvc-4.3.20.RELEASE.jar!/org/springframework/web/servlet/mvc/method/annotation/RequestMappingHandlerAdapter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="530" selection-start-line="530" selection-end-line="530" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/maven/MavenRepository/org/springframework/spring-web/4.3.20.RELEASE/spring-web-4.3.20.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="125" selection-start-line="125" selection-end-line="125" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/header.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="38" column="89" selection-start-line="38" selection-start-column="89" selection-end-line="38" selection-end-column="89" />
-          <folding>
-            <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#0;n#a#0;n#li#1;n#ul#0;n#li#1;n#ul#0;n#div#1;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/shiro/factory/filterChainDefinitionMapBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="13" column="1" lean-forward="true" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/css/redis/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1376">
-          <caret line="43" column="19" selection-start-line="43" selection-start-column="19" selection-end-line="43" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/service/RedisModifyService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1120">
-          <caret line="35" column="78" selection-start-line="35" selection-start-column="78" selection-end-line="35" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/static/css/redis/view_data.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="219">
@@ -965,11 +666,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/add_table.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-643" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/test/Article.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/utils/strategyBean/BeanStrategy.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1003,26 +699,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="736">
           <caret line="23" column="42" selection-start-line="23" selection-start-column="42" selection-end-line="23" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/utils/strategyBean/strategyImpl/ForeignKeyStrategy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1376">
-          <caret line="43" column="16" selection-start-line="43" selection-start-column="16" selection-end-line="43" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/utils/strategyBean/strategyImpl/ManyToManyFieldStrategy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2752">
-          <caret line="92" column="98" selection-start-line="92" selection-start-column="92" selection-end-line="92" selection-end-column="98" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1096,7 +772,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/config/RedisConfig.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/Test.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/config/SpringDataSource.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
@@ -1236,18 +911,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/service/impl/RedisModifyServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3912">
+        <state relative-caret-position="-3894">
           <caret line="2" column="25" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/service/impl/EditTableServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-512">
-          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1260,11 +925,144 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/Register.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="992">
+        <state relative-caret-position="-118">
           <caret line="34" column="21" selection-start-line="34" selection-start-column="21" selection-end-line="34" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/css/dataTable.bootstrap.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/change_password.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/css/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="91" selection-start-line="91" selection-end-line="91" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/admin.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1056">
+          <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="20" column="9" lean-forward="true" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/service/impl/EditTableServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3574">
+          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/service/impl/IndexServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-6824">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/service/impl/TableListServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-264">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/service/impl/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2792">
+          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/utils/strategyBean/strategyImpl/ForeignKeyStrategy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1112">
+          <caret line="61" column="58" selection-start-line="61" selection-start-column="58" selection-end-line="61" selection-end-column="58" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/utils/strategyBean/strategyImpl/ManyToManyFieldStrategy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="83" column="65" selection-start-line="83" selection-start-column="65" selection-end-line="83" selection-end-column="65" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/add_table.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="153" column="25" selection-start-line="153" selection-start-column="25" selection-end-line="153" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/edit_table.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-896">
+          <caret line="35" column="89" selection-start-line="35" selection-start-column="89" selection-end-line="35" selection-end-column="89" />
+          <folding>
+            <element signature="e#2337#3113#0" />
+            <element signature="e#3153#3450#0" />
+            <element signature="e#3487#4004#0" />
+            <element signature="e#4026#4657#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/css/edit_table.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/css/delete_table.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="10" column="53" selection-start-line="10" selection-start-column="53" selection-end-line="10" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/delete_table.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="84" column="16" selection-start-line="84" selection-start-column="16" selection-end-line="84" selection-end-column="16" />
+          <folding>
+            <element signature="n#div#1;n#div#1;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ericjin/sirvia/controller/EditTableController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="536">
+          <caret line="76" column="8" selection-start-line="76" selection-start-column="8" selection-end-line="76" selection-end-column="8" />
         </state>
       </provider>
     </entry>

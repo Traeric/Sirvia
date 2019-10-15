@@ -83,6 +83,7 @@ footer {
 .table .item {
     color: #447e9b;
     border-bottom: 1px solid #eee;
+    background-color: #fff;
 }
 
 .table .item a {

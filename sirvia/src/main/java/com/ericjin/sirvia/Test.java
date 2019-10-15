@@ -1,29 +1,59 @@
 package com.ericjin.sirvia;
 
-import org.quartz.SimpleTrigger;
-import redis.clients.jedis.Connection;
-import redis.clients.jedis.Jedis;
-import redis.clients.jedis.Protocol;
-
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-
 public class Test {
     public static void main(String[] args) {
-//        try (Connection connection = new Connection("192.168.188.128")) {
-//            Method method = Connection.class.getDeclaredMethod("sendCommand", Protocol.Command.class, String[].class);
-//            method.setAccessible(true);
-//            method.invoke(connection, Protocol.Command.KEYS, new String[]{"*"});
-//            String re = String.valueOf(connection.getOne());
-//            System.out.println(re);
-//        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
-//            e.printStackTrace();
-//        }
-//        for (Protocol.Command e : Protocol.Command.values()) {
-//            System.out.println(e);
-//        }
-        Jedis jedis = new Jedis("192.168.188.128", 6379);
-        System.out.println(jedis.get("name"));
-        jedis.lset("list", 1, "sssseeeettt");
+        int[] arr = new int[]{2, 1, 6, 5, 4, 8};
+
+        boolean flag = false;
+        outterLoop:
+        for (int i = 0; i < arr.length; i++) {
+            int cur = arr[i];
+            for (int j = i + 1; j < arr.length; j++) {
+                if (cur == arr[j]) {
+                    System.out.printf("第一个相同的数是：%d", cur);
+                    flag = true;
+                    break outterLoop;
+                }
+            }
+        }
+        if (!flag) {
+            System.out.printf("第一个相同的数是：%d", -1);
+        }
+    }
+
+    public static void quickSort(int[] arr, int low, int high) {
+        int i, j, temp, t;
+        if (low > high) {
+            return;
+        }
+        i = low;
+        j = high;
+        //temp就是基准位
+        temp = arr[low];
+
+        while (i < j) {
+            //先看右边，依次往左递减
+            while (temp <= arr[j] && i < j) {
+                j--;
+            }
+            //再看左边，依次往右递增
+            while (temp >= arr[i] && i < j) {
+                i++;
+            }
+            //如果满足条件则交换
+            if (i < j) {
+                t = arr[j];
+                arr[j] = arr[i];
+                arr[i] = t;
+            }
+
+        }
+        //最后将基准为与i和j相等位置的数字交换
+        arr[low] = arr[i];
+        arr[i] = temp;
+        //递归调用左半数组
+        quickSort(arr, low, j - 1);
+        //递归调用右半数组
+        quickSort(arr, j + 1, high);
     }
 }

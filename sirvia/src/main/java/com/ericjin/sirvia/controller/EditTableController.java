@@ -57,6 +57,26 @@ public class EditTableController {
         return editTableService.updateTable(modelName, beanName, id, map) ? "1" : "0";
     }
 
+    /**
+     * 获取删除页面
+     * @param modelName 模型名
+     * @param beanName javabean名称
+     * @param id 数据id
+     * @return 返回html页面的值
+     */
+    @GetMapping("/{model}/{bean_name}/del/{id}")
+    public String deletePage(@PathVariable("model") String modelName, @PathVariable("bean_name") String beanName,
+                             @PathVariable("id") Integer id, Model model) {
+        // 获取表名
+        String tableName = indexService.getShowName(modelName, beanName);
+        model.addAttribute("modelName", modelName);
+        model.addAttribute("beanName", beanName);
+        model.addAttribute("tableName", tableName);
+        model.addAttribute("id", id);
+        // 获取删除的信息
+
+        return "delete_table";
+    }
 
     /**
      * 删除数据

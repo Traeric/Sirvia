@@ -147,7 +147,14 @@
      * 打开一个新窗口
      */
     function openWindow(url) {
-        window.open (url, "newwindow", "height=500, width=800, top=250, left=500, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no");
+        let ref = window.open (url, "newwindow", "height=500, width=800, top=250, left=500, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no");
+        // 监听关闭
+        let timer = setInterval(() => {
+            if (ref != null && ref.closed) {
+                alert("关闭了");
+                clearInterval(timer);
+            }
+        }, 1000);
     }
 </script>
 </body>

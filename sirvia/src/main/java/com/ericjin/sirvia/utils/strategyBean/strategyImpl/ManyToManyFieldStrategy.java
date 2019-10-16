@@ -13,9 +13,9 @@ public class ManyToManyFieldStrategy implements BeanStrategy {
         // 解构数据
         Field field = (Field) map.get("field");
         String fieldName = (String) map.get("fieldName");
-        List<Map<String, Object>> list = (List<Map<String, Object>>) map.get("list");
         String modelName = (String) map.get("modelName");
         String beanName = (String) map.get("beanName");
+        List<Map<String, Object>> list = (List<Map<String, Object>>) map.get("list");
         // 获取注解
         ManyToManyField manyToManyField = field.getAnnotation(ManyToManyField.class);
         StringBuilder result = new StringBuilder(String.format("<div class=\"layui-inline\">\n" +

@@ -249,49 +249,65 @@ public class EditTableServiceImpl implements EditTableService {
                         "form1.render();\n" +
                         "});</script>", fieldName, modelName, foreignKey.relation_bean().getSimpleName(), fieldName)).toString();
             } else if (field.isAnnotationPresent(ManyToManyField.class)) {
-//                // 获取注解
-//                ManyToManyField manyToManyField = field.getAnnotation(ManyToManyField.class);
-//                // 查出对应的数据
-//                List<Map<String, Object>> list = getThirdTableInfo(field);
-//                StringBuilder result = new StringBuilder(String.format("<div class=\"layui-inline\"><input type='hidden'>\n" +
-//                                "      <label class=\"layui-form-label\">%s:</label>\n" +
-//                                "      <div class=\"layui-input-inline\">\n" +
-//                                "      <input type='hidden' name='%s_%s' value=''>\n" +
-//                                "      <div id=\"transfer_%s\" class=\"demo-transfer\"></div></div>" +
-//                                "      <button type='button' class='layui-btn layui-btn-xs layui-btn-warm' " +
-//                                "       style='margin-left: 10px;' title='添加%s' onclick='openWindow(\"/admin/%s/%s/add\", \"%s\", this)'>" +
-//                                "          <i class='layui-icon layui-icon-add-1'></i>" +
-//                                "      </button></div>\n" +
-//                                "      <script>" +
-//                                "layui.use(['transfer', 'layer', 'util'], function(){\n" +
-//                                "        var $=layui.$\n" +
-//                                "        ,transfer=layui.transfer\n" +
-//                                "        ,layer=layui.layer\n" +
-//                                "        ,util=layui.util;\n" +
-//                                "        let data1=[", fieldName, manyToManyField.third_table(), fieldName, fieldName, fieldName, modelName,
-//                        manyToManyField.relation_bean().getSimpleName(), fieldName));
-//                // 填充数据
-//                list.forEach(map1 -> result.append(String.format("{\"value\":\"%s\",\"title\":\"%s\"},\n",
-//                        map1.get(manyToManyField.relation_field()), map1.get(manyToManyField.show_field()))));
-//                return result.append(String.format("]\n" +
-//                                "        transfer.render({\n" +
-//                                "        elem:'#transfer_%s'\n" +
-//                                "        ,data:data1\n" +
-//                                "        ,title:['可供选择','已经选择']\n" +
-//                                "        ,showSearch:true,\n" +
-//                                "        id: '%s',\n" +
-//                                "        onchange(data, index) {\n" +
-//                                "            let selectValue = transfer.getData('%s');\n" +
-//                                "            let values = '';\n" +
-//                                "            $.each(selectValue, (index, item) => {\n" +
-//                                "                values += item['value'] + ' ';\n" +
-//                                "            });\n" +
-//                                "            $('input[name=%s_%s]').val(values)\n" +
-//                                "        }\n" +
-//                                "        })\n" +
-//                                "});" +
-//                                "layui.use('form', function () {let form1 = layui.form;form1.render();});</script></div>", fieldName, fieldName, fieldName, manyToManyField.third_table(),
-//                        fieldName)).toString();
+                // 获取注解
+                ManyToManyField manyToManyField = field.getAnnotation(ManyToManyField.class);
+                // 查出对应的数据
+                // 获取第三张表的信息
+                String thirdTable = manyToManyField.third_table();
+                String thirdRelationField = manyToManyField.third_relation_field();
+                String thirdSelfField = manyToManyField.third_self_field();
+                String insertField = manyToManyField.insert_field();
+                String selectVal = superMapper.manyToManySelfId(indexService.getTableName(bean), insertField, String.valueOf(id));
+                // 查询第三张表的数据
+                List<Map<String, String>> selectData = superMapper.getThirdInfo(thirdTable, thirdRelationField, thirdSelfField, selectVal);
+                List<Map<String, Object>> list = indexService.getThirdTableInfo(field);
+                // 封装信息
+                StringBuilder transferValue = new StringBuilder("[");
+                StringBuilder values = new StringBuilder();
+                for (Map<String, String> item : selectData) {
+                    values.append(String.valueOf(item.get(manyToManyField.third_relation_field()))).append(" ");
+                    transferValue.append(String.format("'%s', ", item.get(manyToManyField.third_relation_field())));
+                }
+                transferValue.append("]");
+                StringBuilder result = new StringBuilder(String.format("<div class=\"layui-inline\">\n" +
+                                "      <label class=\"layui-form-label\">%s:</label>\n" +
+                                "      <div class=\"layui-input-inline\">\n" +
+                                "      <input type='hidden' name='%s_%s' value='%s'>\n" +
+                                "      <div id=\"transfer_%s\" class=\"demo-transfer\"></div></div>" +
+                                "      <button type='button' class='layui-btn layui-btn-xs layui-btn-warm' style='margin-left: 10px;' " +
+                                "       title='添加%s' onclick='openWindow(\"/admin/%s/%s/add\", \"%s\", this)'>" +
+                                "          <i class='layui-icon layui-icon-add-1'></i>" +
+                                "      </button>" +
+                                "      <script>layui.use(['transfer', 'layer', 'util'], function(){\n" +
+                                "        var $=layui.$\n" +
+                                "        ,layer=layui.layer\n" +
+                                "        ,transfer=layui.transfer\n" +
+                                "        ,util=layui.util;\n" +
+                                "        let data1=[", fieldName, manyToManyField.third_table(), fieldName, values.toString(), fieldName, fieldName,
+                        modelName, manyToManyField.relation_bean().getSimpleName(), fieldName));
+                // 填充数据
+                list.forEach(map1 -> result.append(String.format("{\"value\":\"%s\",\"title\":\"%s\"},\n",
+                        map1.get(manyToManyField.relation_field()), map1.get(manyToManyField.show_field()))));
+                return result.append(String.format("]\n" +
+                                "        transfer.render({\n" +
+                                "        elem:'#transfer_%s'\n" +
+                                "        ,data:data1\n" +
+                                "        ,title:['可供选择','已经选择']\n" +
+                                "        ,showSearch:true,\n" +
+                                "        id: '%s',\n" +
+                                "        value: %s,\n" +
+                                "        onchange(data, index) {\n" +
+                                "            let selectValue = transfer.getData('%s');\n" +
+                                "            let values = '';\n" +
+                                "            $.each(selectValue, (index, item) => {\n" +
+                                "                values += item['value'] + ' ';\n" +
+                                "            });\n" +
+                                "            $('input[name=%s_%s]').val(values)\n" +
+                                "        }\n" +
+                                "        })\n" +
+                                "});" +
+                                "layui.use('form', function () {let form1 = layui.form;form1.render();});</script></div>", fieldName, fieldName, transferValue.toString(), fieldName,
+                        manyToManyField.third_table(), fieldName)).toString();
             }
         } catch (NoSuchFieldException e) {
             e.printStackTrace();

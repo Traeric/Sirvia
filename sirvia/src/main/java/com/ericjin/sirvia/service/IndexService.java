@@ -24,4 +24,6 @@ public interface IndexService {
     void executeSql(String sql);
 
     String addSingleInput(String modelName, String beanName, String fieldName);
+
+    List<Map<String, Object>> getThirdTableInfo(Field field);
 }

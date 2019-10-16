@@ -38,8 +38,8 @@ public class ForeignKeyStrategy implements BeanStrategy {
         Field field = (Field) map.get("field");
         String fieldName = (String) map.get("fieldName");
         List<Map<String, Object>> list = (List<Map<String, Object>>) map.get("list");
-        String modelName = (String) map.get("modelName");
         String beanName = (String) map.get("beanName");
+        String modelName = (String) map.get("modelName");
         String val = (String) map.get("val");
         // 获取键值对
         ForeignKey foreignKey = field.getAnnotation(ForeignKey.class);

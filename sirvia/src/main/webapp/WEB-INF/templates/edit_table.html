@@ -145,13 +145,25 @@
     /**
      * 打开一个新窗口
      */
-    function openWindow(url) {
+    function openWindow(url, field, self) {
         let ref = window.open(url, "newwindow", "height=500, width=800, top=250, left=500, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no");
         // 监听关闭
         let timer = setInterval(() => {
             if (ref != null && ref.closed) {
-                alert("关闭了");
                 clearInterval(timer);
+                // 将添加的数据刷新到页面
+                $.ajax({
+                    url: "/admin/[[ ${modelName} ]]/[[ ${beanName} ]]/" + field + "/[[ ${id} ]]/edit_single_input",
+                    type: "post",
+                    success(args) {
+                        if (args === "0") {
+                            layer.msg("刷新失败", {icon: 5, offset: "150px"});
+                        } else {
+                            console.log(args);
+                            $(self).parents(".layui-inline").replaceWith(args);
+                        }
+                    }
+                });
             }
         }, 1000);
     }

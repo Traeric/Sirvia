@@ -10,4 +10,6 @@ public interface EditTableService {
     Boolean deleteTable(String modelName, String beanName, String id);
 
     String getDeleteRelationInfo(String modelName, String beanName, String id);
+
+    String editSingleInput(String modelName, String beanName, String fieldName, String id);
 }

@@ -92,4 +92,11 @@ public class EditTableController {
                               @PathVariable("id") String id) {
         return editTableService.deleteTable(modelName, beanName, id) ? "1" : "0";
     }
+
+    @PostMapping(value = "/{model}/{bean}/{field}/{id}/edit_single_input", produces = "text/plain;charset=utf-8")
+    @ResponseBody
+    public String editSingleInput(@PathVariable("model") String modelName, @PathVariable("bean") String beanName,
+                                  @PathVariable("field") String fieldName, @PathVariable("id") String id) {
+        return editTableService.editSingleInput(modelName, beanName, fieldName, id);
+    }
 }

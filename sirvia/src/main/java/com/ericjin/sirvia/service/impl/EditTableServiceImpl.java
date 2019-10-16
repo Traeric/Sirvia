@@ -211,4 +211,91 @@ public class EditTableServiceImpl implements EditTableService {
         }
         return result.toString();
     }
+
+    @Override
+    public String editSingleInput(String modelName, String beanName, String fieldName, String id) {
+        // 获取bean
+        Class bean = indexService.getBean(modelName, beanName);
+        // 获取对应的字段
+        try {
+            Field field = bean.getDeclaredField(fieldName);
+            if (field.isAnnotationPresent(ForeignKey.class)) {
+                // 获取注解
+                ForeignKey foreignKey = field.getAnnotation(ForeignKey.class);
+                // 查询出对应的数据
+                List<Map<String, Object>> list = indexService.getRelationTableInfo(field);
+                Map<String, Object> oneRecord = superMapper.getOneRecord(indexService.getTableName(bean), id);
+                String val = String.valueOf(oneRecord.get(fieldName));
+                StringBuilder result = new StringBuilder(String.format("<div class=\"layui-inline\"><input type='hidden'>\n" +
+                        "      <label class=\"layui-form-label\">%s:</label>\n" +
+                        "      <div class=\"layui-input-inline\">\n" +
+                        "        <select name=\"%s\" lay-verify=\"required\" lay-search=\"\">", fieldName, fieldName));
+                list.forEach(map1 -> {
+                    if (val.equals(String.valueOf(map1.get(foreignKey.relation_key())))) {
+                        result.append(String.format("<option value=\"%s\" selected = \"selected\">%s</option>",
+                                map1.get(foreignKey.relation_key()), map1.get(foreignKey.show_field())));
+                    } else {
+                        System.out.println();
+                        result.append(String.format("<option value=\"%s\">%s</option>",
+                                map1.get(foreignKey.relation_key()), map1.get(foreignKey.show_field())));
+                    }
+                });
+                return result.append(String.format("</select></div>" +
+                        "<button type=\"button\" class=\"layui-btn layui-btn-xs layui-btn-warm\" " +
+                        "style='margin-left: 10px;' title='添加%s' onclick='openWindow(\"/admin/%s/%s/add\", \"%s\", this)'>" +
+                        "<i class=\"layui-icon layui-icon-add-1\"></i>" +
+                        "</button><script>layui.use('form', function () {\n" +
+                        "let form1 = layui.form;" +
+                        "form1.render();\n" +
+                        "});</script>", fieldName, modelName, foreignKey.relation_bean().getSimpleName(), fieldName)).toString();
+            } else if (field.isAnnotationPresent(ManyToManyField.class)) {
+//                // 获取注解
+//                ManyToManyField manyToManyField = field.getAnnotation(ManyToManyField.class);
+//                // 查出对应的数据
+//                List<Map<String, Object>> list = getThirdTableInfo(field);
+//                StringBuilder result = new StringBuilder(String.format("<div class=\"layui-inline\"><input type='hidden'>\n" +
+//                                "      <label class=\"layui-form-label\">%s:</label>\n" +
+//                                "      <div class=\"layui-input-inline\">\n" +
+//                                "      <input type='hidden' name='%s_%s' value=''>\n" +
+//                                "      <div id=\"transfer_%s\" class=\"demo-transfer\"></div></div>" +
+//                                "      <button type='button' class='layui-btn layui-btn-xs layui-btn-warm' " +
+//                                "       style='margin-left: 10px;' title='添加%s' onclick='openWindow(\"/admin/%s/%s/add\", \"%s\", this)'>" +
+//                                "          <i class='layui-icon layui-icon-add-1'></i>" +
+//                                "      </button></div>\n" +
+//                                "      <script>" +
+//                                "layui.use(['transfer', 'layer', 'util'], function(){\n" +
+//                                "        var $=layui.$\n" +
+//                                "        ,transfer=layui.transfer\n" +
+//                                "        ,layer=layui.layer\n" +
+//                                "        ,util=layui.util;\n" +
+//                                "        let data1=[", fieldName, manyToManyField.third_table(), fieldName, fieldName, fieldName, modelName,
+//                        manyToManyField.relation_bean().getSimpleName(), fieldName));
+//                // 填充数据
+//                list.forEach(map1 -> result.append(String.format("{\"value\":\"%s\",\"title\":\"%s\"},\n",
+//                        map1.get(manyToManyField.relation_field()), map1.get(manyToManyField.show_field()))));
+//                return result.append(String.format("]\n" +
+//                                "        transfer.render({\n" +
+//                                "        elem:'#transfer_%s'\n" +
+//                                "        ,data:data1\n" +
+//                                "        ,title:['可供选择','已经选择']\n" +
+//                                "        ,showSearch:true,\n" +
+//                                "        id: '%s',\n" +
+//                                "        onchange(data, index) {\n" +
+//                                "            let selectValue = transfer.getData('%s');\n" +
+//                                "            let values = '';\n" +
+//                                "            $.each(selectValue, (index, item) => {\n" +
+//                                "                values += item['value'] + ' ';\n" +
+//                                "            });\n" +
+//                                "            $('input[name=%s_%s]').val(values)\n" +
+//                                "        }\n" +
+//                                "        })\n" +
+//                                "});" +
+//                                "layui.use('form', function () {let form1 = layui.form;form1.render();});</script></div>", fieldName, fieldName, fieldName, manyToManyField.third_table(),
+//                        fieldName)).toString();
+            }
+        } catch (NoSuchFieldException e) {
+            e.printStackTrace();
+        }
+        return "0";
+    }
 }

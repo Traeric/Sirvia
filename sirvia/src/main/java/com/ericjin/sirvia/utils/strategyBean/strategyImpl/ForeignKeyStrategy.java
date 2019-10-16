@@ -27,9 +27,9 @@ public class ForeignKeyStrategy implements BeanStrategy {
                 cMap.get(foreignKey.relation_key()), cMap.get(foreignKey.show_field()))));
         return result.append(String.format("</select></div>" +
                 "<button type=\"button\" class=\"layui-btn layui-btn-xs layui-btn-warm\" " +
-                "style='margin-left: 10px;' title='添加%s' onclick='openWindow(\"/admin/%s/%s/add\")'>" +
+                "style='margin-left: 10px;' title='添加%s' onclick='openWindow(\"/admin/%s/%s/add\", \"%s\", this)'>" +
                 "<i class=\"layui-icon layui-icon-add-1\"></i>" +
-                "</button></div><hr class=\"layui-bg-gray\">", fieldName, modelName, beanName)).toString();
+                "</button></div><hr class=\"layui-bg-gray\">", fieldName, modelName, beanName, fieldName)).toString();
     }
 
     @Override
@@ -59,8 +59,8 @@ public class ForeignKeyStrategy implements BeanStrategy {
         });
         return result.append(String.format("</select></div>" +
                 "<button type='button' class='layui-btn layui-btn-xs layui-btn-warm' style='margin-left: 10px;' " +
-                "title='添加%s' onclick='openWindow(\"/admin/%s/%s/add\")'>" +
+                "title='添加%s' onclick='openWindow(\"/admin/%s/%s/add\", \"%s\", this)'>" +
                 "<i class='layui-icon layui-icon-add-1'></i>" +
-                "</button></div><hr class=\"layui-bg-gray\">", fieldName, modelName, beanName)).toString();
+                "</button></div><hr class=\"layui-bg-gray\">", fieldName, modelName, beanName, fieldName)).toString();
     }
 }

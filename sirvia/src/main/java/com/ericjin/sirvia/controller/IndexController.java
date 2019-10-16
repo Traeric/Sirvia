@@ -116,11 +116,25 @@ public class IndexController {
     }
 
     /**
+     * 获取单个select框或者穿梭框的html内容，用于添加内容后刷新页面
+     * @param modelName 模型名
+     * @param beanName javabean名称
+     * @param fieldName 字段名
+     * @return 返回html内容
+     */
+    @ResponseBody
+    @PostMapping("/{model}/{bean}/{field}/add_single_input")
+    public String addSingleInput(@PathVariable("model") String modelName, @PathVariable("bean") String beanName,
+                                 @PathVariable("field") String fieldName) {
+        return indexService.addSingleInput(modelName, beanName, fieldName);
+    }
+
+    /**
      * 添加数据到表中
      *
-     * @param modelName
-     * @param beanName
-     * @return
+     * @param modelName 模型名
+     * @param beanName javabean名
+     * @return 返回0或者1
      */
     @ResponseBody
     @PostMapping("/{model}/{table_name}/add")
@@ -135,7 +149,7 @@ public class IndexController {
     /**
      * 获取数据库中所有的表
      *
-     * @return
+     * @return 返回所有的表
      */
     @ResponseBody
     @PostMapping("/get_all_tables")
@@ -149,7 +163,7 @@ public class IndexController {
     /**
      * 执行sql语句
      *
-     * @return
+     * @return 返回0或者1
      */
     @ResponseBody
     @PostMapping("/execute_sql")

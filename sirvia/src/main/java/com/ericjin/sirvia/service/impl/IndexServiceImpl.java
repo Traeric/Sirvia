@@ -244,4 +244,39 @@ public class IndexServiceImpl implements IndexService {
     public void executeSql(String sql) {
         superMapper.executeSql(sql);
     }
+
+    @Override
+    public String addSingleInput(String modelName, String beanName, String fieldName) {
+        // 获取bean
+        Class bean = getBean(modelName, beanName);
+        // 获取对应的字段
+        try {
+            Field field = bean.getDeclaredField(fieldName);
+            if (field.isAnnotationPresent(ForeignKey.class)) {
+                // 获取外键
+                ForeignKey foreignKey = field.getAnnotation(ForeignKey.class);
+                // 查询出对应的数据
+                List<Map<String, Object>> list = getRelationTableInfo(field);
+                StringBuilder result = new StringBuilder(String.format("<div class=\"layui-inline\">\n" +
+                        "      <label class=\"layui-form-label\">%s:</label>\n" +
+                        "      <div class=\"layui-input-inline\">\n" +
+                        "        <select name=\"%s\" lay-verify=\"required\" lay-search=\"\">", fieldName, fieldName));
+                list.forEach(cMap -> result.append(String.format("<option value=\"%s\">%s</option>",
+                        cMap.get(foreignKey.relation_key()), cMap.get(foreignKey.show_field()))));
+                return result.append(String.format("</select></div>" +
+                        "<button type=\"button\" class=\"layui-btn layui-btn-xs layui-btn-warm\" " +
+                        "style='margin-left: 10px;' title='添加%s' onclick='openWindow(\"/admin/%s/%s/add\", \"%s\", this)'>" +
+                        "<i class=\"layui-icon layui-icon-add-1\"></i>" +
+                        "</button></div><script>layui.use('form', function () {\n" +
+                        "let form1 = layui.form;" +
+                        "form1.render();\n" +
+                        "});</script>", fieldName, modelName, foreignKey.relation_bean().getSimpleName(), fieldName)).toString();
+            } else if (field.isAnnotationPresent(ManyToManyField.class)) {
+                return  "";
+            }
+        } catch (NoSuchFieldException e) {
+            e.printStackTrace();
+        }
+        return "0";
+    }
 }

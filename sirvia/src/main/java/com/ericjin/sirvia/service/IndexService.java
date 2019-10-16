@@ -22,4 +22,6 @@ public interface IndexService {
     List<String> getAllTables();
 
     void executeSql(String sql);
+
+    String addSingleInput(String modelName, String beanName, String fieldName);
 }

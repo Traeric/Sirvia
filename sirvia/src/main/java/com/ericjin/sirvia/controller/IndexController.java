@@ -80,15 +80,31 @@ public class IndexController {
     }
 
     /**
+     * 展示添加页面
+     * @param modelName 模型名
+     * @param beanName javabean名
+     * @param model 数据模型
+     * @return 返回html名称
+     */
+    @GetMapping("/{model}/{table_name}/display")
+    public String addTableDisplay(@PathVariable("model") String modelName,
+                                  @PathVariable("table_name") String beanName, Model model) {
+        model.addAttribute("tableName", indexService.getShowName(modelName, beanName));
+        model.addAttribute("modelName", modelName);
+        model.addAttribute("beanName", beanName);
+        return "add_display";
+    }
+
+    /**
      * 展示添加列表
      *
-     * @param modelName
-     * @param beanName
-     * @param model
-     * @return
+     * @param modelName 模型名
+     * @param beanName javabean名称
+     * @param model 数据模型
+     * @return 返回html页面
      */
     @GetMapping("/{model}/{table_name}/add")
-    public String addTableDisplay(@PathVariable("model") String modelName,
+    public String addTable(@PathVariable("model") String modelName,
                                   @PathVariable("table_name") String beanName, Model model) {
         model.addAttribute("tableName", indexService.getShowName(modelName, beanName));
         model.addAttribute("modelName", modelName);

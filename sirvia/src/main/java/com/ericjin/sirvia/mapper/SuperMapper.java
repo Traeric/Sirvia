@@ -13,14 +13,14 @@ public interface SuperMapper {
     Boolean addTable(@Param("data_map") Map<String, String> map, @Param("table_name") String tableName);
 
     // 查询一条数据
-    Map<String, Object> getOneRecord(@Param("table_name") String tableName, @Param("id") Integer id);
+    Map<String, Object> getOneRecord(@Param("table_name") String tableName, @Param("id") String id);
 
     // 更新表中数据
-    Boolean updateTable(@Param("table_name") String tableName, @Param("id") Integer id,
+    Boolean updateTable(@Param("table_name") String tableName, @Param("id") String id,
                         @Param("data_map") Map<String, Object> map);
 
     // 删除表数据
-    Boolean deleteTable(@Param("table_name") String tableName, @Param("id") Integer id);
+    Boolean deleteTable(@Param("table_name") String tableName, @Param("id") String id);
 
     // 获取外键关联的表信息
     List<Map<String, Object>> getForeignInfo(@Param("table_name") String tableName, @Param("relation_key") String relationKey,
@@ -51,6 +51,10 @@ public interface SuperMapper {
     void executeSql(@Param("sql") String sql);
 
     // 在删除多对多的时候，查询出被删除的信息在第三张表中的id
-    List<Integer> getThirdDeleteInfo(@Param("third_table_name") String thirdTableName, @Param("third_self_field") String thirdSelfField,
-                                     @Param("current_id") Integer currentId);
+    List<String> getThirdDeleteInfo(@Param("third_table_name") String thirdTableName, @Param("third_self_field") String thirdSelfField,
+                                     @Param("current_id") String currentId);
+
+    // 删除一对多一的一方时，查询出所有多的数据id
+    List<String> getRelationDeleteInfo(@Param("relation_table") String relationTable, @Param("foreign_key") String foreignKey,
+                                       @Param("id") String id);
 }

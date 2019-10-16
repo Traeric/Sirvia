@@ -21,15 +21,15 @@ public class EditTableController {
     /**
      * 展示编辑表单
      *
-     * @param modelName
-     * @param beanName
-     * @param id
-     * @param model
-     * @return
+     * @param modelName 模型名
+     * @param beanName javabean名称
+     * @param id id值
+     * @param model 数据模型
+     * @return HTML文件名称
      */
     @GetMapping("/{model}/{bean_name}/edit/{id}")
     public String editTableDisplay(@PathVariable("model") String modelName, @PathVariable("bean_name") String beanName,
-                                   @PathVariable("id") Integer id, Model model) {
+                                   @PathVariable("id") String id, Model model) {
         // 获取表名
         String tableName = indexService.getShowName(modelName, beanName);
         model.addAttribute("tableName", tableName);
@@ -45,15 +45,15 @@ public class EditTableController {
     /**
      * 更新数据
      *
-     * @param modelName
-     * @param beanName
-     * @param id
-     * @return
+     * @param modelName 模型名
+     * @param beanName  javabean名称
+     * @param id id
+     * @return 0或者1
      */
     @ResponseBody
     @PostMapping("/{model}/{bean_name}/edit/{id}")
     public String editTable(@PathVariable("model") String modelName, @PathVariable("bean_name") String beanName,
-                            @PathVariable("id") Integer id, @RequestParam Map<String, Object> map) {
+                            @PathVariable("id") String id, @RequestParam Map<String, Object> map) {
         return editTableService.updateTable(modelName, beanName, id, map) ? "1" : "0";
     }
 
@@ -66,7 +66,7 @@ public class EditTableController {
      */
     @GetMapping("/{model}/{bean_name}/del/{id}")
     public String deletePage(@PathVariable("model") String modelName, @PathVariable("bean_name") String beanName,
-                             @PathVariable("id") Integer id, Model model) {
+                             @PathVariable("id") String id, Model model) {
         // 获取表名
         String tableName = indexService.getShowName(modelName, beanName);
         model.addAttribute("modelName", modelName);
@@ -81,15 +81,15 @@ public class EditTableController {
     /**
      * 删除数据
      *
-     * @param modelName
-     * @param beanName
-     * @param id
-     * @return
+     * @param modelName 模型名
+     * @param beanName javabean名
+     * @param id id
+     * @return 0或者1
      */
     @ResponseBody
     @DeleteMapping("/{model}/{bean_name}/del/{id}")
     public String deleteTable(@PathVariable("model") String modelName, @PathVariable("bean_name") String beanName,
-                              @PathVariable("id") Integer id) {
+                              @PathVariable("id") String id) {
         return editTableService.deleteTable(modelName, beanName, id) ? "1" : "0";
     }
 }

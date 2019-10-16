@@ -78,8 +78,12 @@
         ${sql}
     </update>
 
-    <select id="getThirdDeleteInfo" resultType="integer">
+    <select id="getThirdDeleteInfo" resultType="string">
         SELECT id FROM ${third_table_name} WHERE ${third_self_field} = #{current_id}
+    </select>
+
+    <select id="getRelationDeleteInfo" resultType="string">
+        SELECT id FROM ${relation_table} WHERE ${foreign_key} = ${id}
     </select>
 </mapper>
 

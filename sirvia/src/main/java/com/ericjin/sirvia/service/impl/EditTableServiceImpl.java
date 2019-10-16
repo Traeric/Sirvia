@@ -3,6 +3,7 @@ package com.ericjin.sirvia.service.impl;
 import com.ericjin.sirvia.annotation.ForeignKey;
 import com.ericjin.sirvia.annotation.Id;
 import com.ericjin.sirvia.annotation.ManyToManyField;
+import com.ericjin.sirvia.annotation.OneField;
 import com.ericjin.sirvia.mapper.SuperMapper;
 import com.ericjin.sirvia.service.EditTableService;
 import com.ericjin.sirvia.service.IndexService;
@@ -13,7 +14,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.lang.reflect.Field;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
@@ -32,7 +32,7 @@ public class EditTableServiceImpl implements EditTableService {
      *
      * @return
      */
-    public String getOneData(String modelName, String beanName, Integer id) {
+    public String getOneData(String modelName, String beanName, String id) {
         // 获取javabean
         Class bean = indexService.getBean(modelName, beanName);
         // 获取数据库中的数据
@@ -86,7 +86,7 @@ public class EditTableServiceImpl implements EditTableService {
      * @return
      */
     @Override
-    public Boolean updateTable(String modelName, String beanName, Integer id, Map<String, Object> map) {
+    public Boolean updateTable(String modelName, String beanName, String id, Map<String, Object> map) {
         // 获取javabean
         Class bean = indexService.getBean(modelName, beanName);
         // 获取表名
@@ -134,7 +134,7 @@ public class EditTableServiceImpl implements EditTableService {
      * @return
      */
     @Override
-    public Boolean deleteTable(String modelName, String beanName, Integer id) {
+    public Boolean deleteTable(String modelName, String beanName, String id) {
         // 获取java bean
         Class bean = indexService.getBean(modelName, beanName);
         // 获取表名
@@ -144,7 +144,7 @@ public class EditTableServiceImpl implements EditTableService {
     }
 
     @Override
-    public String getDeleteRelationInfo(String modelName, String beanName, Integer id) {
+    public String getDeleteRelationInfo(String modelName, String beanName, String id) {
         StringBuffer result = new StringBuffer();
         // 获取表名
         Class bean = indexService.getBean(modelName, beanName);
@@ -159,7 +159,7 @@ public class EditTableServiceImpl implements EditTableService {
                 // 需要当前表在第三张表中关联的字段
                 String thirdSelfField = manyToManyField.third_self_field();
                 // 获取第三章表中所有与当前删除字段相关的内容
-                List<Integer> thirdDeleteInfo = superMapper.getThirdDeleteInfo(thirdTableName, thirdSelfField, id);
+                List<String> thirdDeleteInfo = superMapper.getThirdDeleteInfo(thirdTableName, thirdSelfField, id);
                 if (thirdDeleteInfo.size() == 0) {
                     continue;
                 }
@@ -172,9 +172,40 @@ public class EditTableServiceImpl implements EditTableService {
                 thirdDeleteInfo.forEach(currentId -> result.append(String.format("<li class=\"layui-timeline-item\">\n" +
                         "                            <i class=\"layui-icon layui-timeline-axis\">&#xe756;</i>\n" +
                         "                            <div class=\"layui-timeline-content layui-text\">\n" +
-                        "                                <p>如果你想要删除当前记录，那么%s的id为%d的记录也会被改变。</p>\n" +
+                        "                                <p>如果你想要删除当前记录，那么%s的id为%s的记录也会被改变。</p>\n" +
                         "                            </div>\n" +
                         "                        </li>", thirdTableName, currentId)));
+                result.append("</ul></div></div>");
+            }
+
+            if (field.isAnnotationPresent(OneField.class)) {
+                // 获取注解
+                OneField oneField = field.getAnnotation(OneField.class);
+                // 获取关联表信息
+                String relationTable = oneField.relation_table();
+                // 获取外键名
+                String foreignKey = oneField.foreign_key();
+                // 获取关联表对应的javabean
+                Class relationBean = oneField.relation_bean();
+                // 查询出关联表中与之关联的数据
+                List<String> relationDeleteInfo = superMapper.getRelationDeleteInfo(relationTable, foreignKey, id);
+                if (relationDeleteInfo.size() == 0) {
+                    continue;
+                }
+                // 生成HTML信息
+                result.append(String.format("<div class=\"layui-card\">\n" +
+                        "                <div class=\"layui-card-header\">%s</div>\n" +
+                        "                <div class=\"layui-card-body\">\n" +
+                        "                    <ul class=\"layui-timeline\">", relationTable));
+                // 生成列表信息
+                relationDeleteInfo.forEach(currentId -> result.append(String.format("<li class=\"layui-timeline-item\">\n" +
+                        "                            <i class=\"layui-icon layui-timeline-axis\">&#xe756;</i>\n" +
+                        "                            <div class=\"layui-timeline-content layui-text\">\n" +
+                        "                                <p>如果你想要删除当前记录，那么<a\n" +
+                        "                                        href=\"/admin/%s/%s/edit/%s\"\n" +
+                        "                                        target=\"_blank\">%s的id为%s的记录</a>也会被改变。</p>\n" +
+                        "                            </div>\n" +
+                        "                        </li>", modelName, relationBean.getSimpleName(), currentId, relationTable, currentId)));
                 result.append("</ul></div></div>");
             }
         }

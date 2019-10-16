@@ -29,9 +29,9 @@ public class IndexServiceImpl implements IndexService {
     /**
      * 查询某张表的所有数据
      *
-     * @param modelName
-     * @param tableName
-     * @return
+     * @param modelName 模型名
+     * @param tableName 表名
+     * @return 返回所有的数据
      */
     @Override
     public List<Map<String, Object>> getSingleTable(String modelName, String tableName) {
@@ -44,11 +44,11 @@ public class IndexServiceImpl implements IndexService {
     }
 
     /**
-     * 获取用户自定义的显示在java admin的名称
+     * 获取用户自定义的显示在sirvia的名称
      *
-     * @param modelName
-     * @param beanName
-     * @return
+     * @param modelName 模型名
+     * @param beanName javabean名
+     * @return 用户自定义的表名
      */
     @Override
     public String getShowName(String modelName, String beanName) {
@@ -62,9 +62,9 @@ public class IndexServiceImpl implements IndexService {
     /**
      * 获取对应的javabean
      *
-     * @param modelName
-     * @param beanName
-     * @return
+     * @param modelName 模型名
+     * @param beanName javabean名
+     * @return javabean名称
      */
     public Class getBean(String modelName, String beanName) {
         List<Class> tableList = new ArrayList<>();
@@ -80,8 +80,8 @@ public class IndexServiceImpl implements IndexService {
     /**
      * 根据对象获取表名
      *
-     * @param bean
-     * @return
+     * @param bean javabean名称
+     * @return 表名
      */
     public String getTableName(Class bean) {
         if (bean.isAnnotationPresent(EntityTableName.class)) {
@@ -96,8 +96,8 @@ public class IndexServiceImpl implements IndexService {
     /**
      * 获取关联表的信息
      *
-     * @param field
-     * @return
+     * @param field 字段名
+     * @return 关联表信息
      */
     public List<Map<String, Object>> getRelationTableInfo(Field field) {
         // 获取表名，要展示的字段名，以及外键关联的字段名
@@ -112,8 +112,8 @@ public class IndexServiceImpl implements IndexService {
     /**
      * 获取第三张表的信息
      *
-     * @param field
-     * @return
+     * @param field 字段名
+     * @return 第三张表名
      */
     public List<Map<String, Object>> getThirdTableInfo(Field field) {
         // 获取注解
@@ -128,9 +128,9 @@ public class IndexServiceImpl implements IndexService {
     /**
      * 获取表单展示的内容
      *
-     * @param modelName
-     * @param beanName
-     * @return
+     * @param modelName 模型名
+     * @param beanName javabean名
+     * @return 表单展示名
      */
     @Override
     public String getInputList(String modelName, String beanName) {
@@ -164,8 +164,8 @@ public class IndexServiceImpl implements IndexService {
     /**
      * 添加数据到表
      *
-     * @param map
-     * @return
+     * @param map 用户填写的数据
+     * @return 返回添加是否成功
      */
     @Override
     public Boolean addTable(Map<String, Object> map, String modelName, String beanName) {
@@ -229,7 +229,7 @@ public class IndexServiceImpl implements IndexService {
     /**
      * 获取所有的表信息
      *
-     * @return
+     * @return 获取数据库中所有表的信息
      */
     @Override
     public List<String> getAllTables() {
@@ -238,8 +238,7 @@ public class IndexServiceImpl implements IndexService {
 
     /**
      * 执行sql语句
-     *
-     * @return
+     * @param sql 要执行的sql语句
      */
     @Override
     public void executeSql(String sql) {

@@ -22,7 +22,7 @@ public class TableListController {
      */
     @ResponseBody
     @PostMapping("/action/{modelName}/{beanName}")
-    public String doAction(@RequestParam("method_name") String methodName, @RequestParam("select_arr[]") List<Integer> selectArr,
+    public String doAction(@RequestParam("method_name") String methodName, @RequestParam("select_arr[]") List<String> selectArr,
                            @PathVariable String modelName, @PathVariable String beanName) {
         return tableListService.doAction(selectArr, methodName, modelName, beanName) ? "1" : "0";
     }

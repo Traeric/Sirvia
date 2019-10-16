@@ -3,11 +3,11 @@ package com.ericjin.sirvia.service;
 import java.util.Map;
 
 public interface EditTableService {
-    String getOneData(String modelName, String beanName, Integer id);
+    String getOneData(String modelName, String beanName, String id);
 
-    Boolean updateTable(String modelName, String beanName, Integer id, Map<String, Object> map);
+    Boolean updateTable(String modelName, String beanName, String id, Map<String, Object> map);
 
-    Boolean deleteTable(String modelName, String beanName, Integer id);
+    Boolean deleteTable(String modelName, String beanName, String id);
 
-    String getDeleteRelationInfo(String modelName, String beanName, Integer id);
+    String getDeleteRelationInfo(String modelName, String beanName, String id);
 }

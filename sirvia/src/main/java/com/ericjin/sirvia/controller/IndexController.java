@@ -5,6 +5,8 @@ import com.ericjin.sirvia.service.UserService;
 import com.ericjin.sirvia.utils.ToCamelCase;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.sun.deploy.net.HttpResponse;
+import org.springframework.http.server.ServletServerHttpResponse;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -123,9 +125,10 @@ public class IndexController {
      * @return 返回html内容
      */
     @ResponseBody
-    @PostMapping("/{model}/{bean}/{field}/add_single_input")
+    @PostMapping(value = "/{model}/{bean}/{field}/add_single_input", produces = "text/plain;charset=utf-8")
     public String addSingleInput(@PathVariable("model") String modelName, @PathVariable("bean") String beanName,
                                  @PathVariable("field") String fieldName) {
+
         return indexService.addSingleInput(modelName, beanName, fieldName);
     }
 

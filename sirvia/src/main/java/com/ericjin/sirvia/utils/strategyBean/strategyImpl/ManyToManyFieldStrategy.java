@@ -24,15 +24,16 @@ public class ManyToManyFieldStrategy implements BeanStrategy {
                 "      <input type='hidden' name='%s_%s' value=''>\n" +
                 "      <div id=\"transfer_%s\" class=\"demo-transfer\"></div></div>" +
                 "      <button type='button' class='layui-btn layui-btn-xs layui-btn-warm' " +
-                "       style='margin-left: 10px;' title='添加%s' onclick='openWindow(\"/admin/%s/%s/add\")'>" +
+                "       style='margin-left: 10px;' title='添加%s' onclick='openWindow(\"/admin/%s/%s/add\", \"%s\", this)'>" +
                 "          <i class='layui-icon layui-icon-add-1'></i>" +
-                "      </button></div>\n" +
+                "      </button>\n" +
                 "      <script>layui.use(['transfer', 'layer', 'util'], function(){\n" +
                 "        var $=layui.$\n" +
                 "        ,transfer=layui.transfer\n" +
                 "        ,layer=layui.layer\n" +
                 "        ,util=layui.util;\n" +
-                "        let data1=[", fieldName, manyToManyField.third_table(), fieldName, fieldName, fieldName, modelName, beanName));
+                "        let data1=[", fieldName, manyToManyField.third_table(), fieldName, fieldName, fieldName, modelName,
+                beanName, fieldName));
         // 填充数据
         list.forEach(map1 -> result.append(String.format("{\"value\":\"%s\",\"title\":\"%s\"},\n",
                 map1.get(manyToManyField.relation_field()), map1.get(manyToManyField.show_field()))));
@@ -52,7 +53,7 @@ public class ManyToManyFieldStrategy implements BeanStrategy {
                         "            $('input[name=%s_%s]').val(values)\n" +
                         "        }\n" +
                         "        })\n" +
-                        "});</script><hr class=\"layui-bg-gray\">", fieldName, fieldName, fieldName, manyToManyField.third_table(),
+                        "});</script></div><hr class=\"layui-bg-gray\">", fieldName, fieldName, fieldName, manyToManyField.third_table(),
                 fieldName)).toString();
     }
 
@@ -81,16 +82,16 @@ public class ManyToManyFieldStrategy implements BeanStrategy {
                 "      <input type='hidden' name='%s_%s' value='%s'>\n" +
                 "      <div id=\"transfer_%s\" class=\"demo-transfer\"></div></div>" +
                 "      <button type='button' class='layui-btn layui-btn-xs layui-btn-warm' style='margin-left: 10px;' " +
-                "       title='添加%s' onclick='openWindow(\"/admin/%s/%s/add\")'>" +
+                "       title='添加%s' onclick='openWindow(\"/admin/%s/%s/add\", \"%s\", this)'>" +
                 "          <i class='layui-icon layui-icon-add-1'></i>" +
                 "      </button>" +
-                "      </div>\n" +
                 "      <script>layui.use(['transfer', 'layer', 'util'], function(){\n" +
                 "        var $=layui.$\n" +
                 "        ,transfer=layui.transfer\n" +
                 "        ,layer=layui.layer\n" +
                 "        ,util=layui.util;\n" +
-                "        let data1=[", fieldName, manyToManyField.third_table(), fieldName, values.toString(), fieldName, fieldName, modelName, beanName));
+                "        let data1=[", fieldName, manyToManyField.third_table(), fieldName, values.toString(), fieldName, fieldName,
+                modelName, beanName, fieldName));
         // 填充数据
         list.forEach(map1 -> result.append(String.format("{\"value\":\"%s\",\"title\":\"%s\"},\n",
                 map1.get(manyToManyField.relation_field()), map1.get(manyToManyField.show_field()))));
@@ -111,7 +112,7 @@ public class ManyToManyFieldStrategy implements BeanStrategy {
                         "            $('input[name=%s_%s]').val(values)\n" +
                         "        }\n" +
                         "        })\n" +
-                        "});</script><hr class=\"layui-bg-gray\">", fieldName, fieldName, transferValue.toString(), fieldName,
+                        "});</script></div><hr class=\"layui-bg-gray\">", fieldName, fieldName, transferValue.toString(), fieldName,
                 manyToManyField.third_table(), fieldName)).toString();
     }
 }

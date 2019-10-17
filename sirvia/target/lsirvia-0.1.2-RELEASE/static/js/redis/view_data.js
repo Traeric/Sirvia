@@ -44,6 +44,7 @@ function reloadString() {
                 },
                 success(args) {
                     if (args.flag) {
+                        parent.layer.title(newKey + "的查询结果", panelIndex);
                         layer.msg(args.msg, {icon: 1});
                         layer.close(index);
                     }
@@ -112,7 +113,7 @@ function removeLine() {
 }
 
 /**
- * 添加新的一行
+ * 添加新的一行到list
  */
 function addLine() {
     layer.open({
@@ -137,7 +138,11 @@ function addLine() {
                     },
                     success(args) {
                         if (args === "1") {
-                            location.reload();
+                            layer.close(index);
+                            // 先关闭原来的数据展示框
+                            layer.close(panelIndex);
+                            // 重新请求数据
+                            reloadData();
                             layer.msg("添加成功", {icon: 1});
                         } else {
                             layer.msg("添加失败", {icon: 5});
@@ -151,6 +156,39 @@ function addLine() {
         btn2: function (index, layero) {
             layer.close(index);
         }
+    });
+}
+
+/**
+ * 重新加载数据
+ */
+function reloadData() {
+    $.ajax({
+        url: "/admin/redis/get_data",
+        type: "post",
+        data: {
+            key: CURRENTKEY,
+        },
+        dataType: "JSON",
+        success(args) {
+            if (args.flag) {
+                panelIndex = layer.open({
+                    content: `${args.content}`,
+                    zIndex: 1,
+                    type: 1,
+                    btn: ['关闭'],
+                    offset: "150px",
+                    title: CURRENTKEY + "的查询结果",
+                    area: "50%",
+                    yes: function (index, layero) {
+                        layer.close(index);
+                    }
+                });
+                table.init('table-filter', {
+                    limit: 100000000000000000000,
+                });
+            }
+        },
     });
 }
 

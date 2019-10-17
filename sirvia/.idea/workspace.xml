@@ -7,8 +7,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b821a04f-eb7f-46a5-9edc-4fd38a1641fb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/redis/opt_data.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/redis/opt_data.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/redis/view_data.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/redis/view_data.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/static/js/redis/view_data.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/static/js/redis/view_data.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -36,19 +34,19 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/static/js/redis/view_data.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="144" column="41" selection-start-line="144" selection-start-column="41" selection-end-line="144" selection-end-column="41" />
+            <state relative-caret-position="453">
+              <caret line="427" column="41" selection-start-line="427" selection-start-column="41" selection-end-line="427" selection-end-column="41" />
               <folding>
                 <element signature="n#!!block;n#saveString#0" />
                 <element signature="n#!!block;n#reloadString#0" />
                 <element signature="n#!!block;n#remove#0" />
                 <element signature="n#!!block;n#removeLine#0" />
+                <element signature="n#!!block;n#addLine#0" />
+                <element signature="n#!!block;n#reloadData#0" />
                 <element signature="n#!!block;n#removeLineSet#0" />
                 <element signature="n#!!block;n#addLineSet#0" />
                 <element signature="n#!!block;n#removeLineZset#0" />
                 <element signature="n#!!block;n#addLineZset#0" />
-                <element signature="n#!!block;n#removeLineHash#0" />
-                <element signature="n#!!block;n#addLineHash#0" />
                 <element signature="n#!!block;n#modifyList#0" />
                 <element signature="n#!!block;n#modifySet#0" />
                 <element signature="n#!!block;n#modifyZset#0" />
@@ -626,12 +624,12 @@
       <workItem from="1570549960494" duration="58000" />
       <workItem from="1570933709110" duration="11564000" />
       <workItem from="1570971866449" duration="19360000" />
-      <workItem from="1571040262288" duration="53870000" />
+      <workItem from="1571040262288" duration="54736000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="567577000" />
+    <option name="totallyTimeSpent" value="568443000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1087,19 +1085,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/static/js/redis/view_data.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="144" column="41" selection-start-line="144" selection-start-column="41" selection-end-line="144" selection-end-column="41" />
+        <state relative-caret-position="453">
+          <caret line="427" column="41" selection-start-line="427" selection-start-column="41" selection-end-line="427" selection-end-column="41" />
           <folding>
             <element signature="n#!!block;n#saveString#0" />
             <element signature="n#!!block;n#reloadString#0" />
             <element signature="n#!!block;n#remove#0" />
             <element signature="n#!!block;n#removeLine#0" />
+            <element signature="n#!!block;n#addLine#0" />
+            <element signature="n#!!block;n#reloadData#0" />
             <element signature="n#!!block;n#removeLineSet#0" />
             <element signature="n#!!block;n#addLineSet#0" />
             <element signature="n#!!block;n#removeLineZset#0" />
             <element signature="n#!!block;n#addLineZset#0" />
-            <element signature="n#!!block;n#removeLineHash#0" />
-            <element signature="n#!!block;n#addLineHash#0" />
             <element signature="n#!!block;n#modifyList#0" />
             <element signature="n#!!block;n#modifySet#0" />
             <element signature="n#!!block;n#modifyZset#0" />

@@ -102,7 +102,9 @@ function removeLine() {
             success(args) {
                 if (args === "1") {
                     layer.msg("删除成功", {icon: 1});
-                    location.reload();
+                    layer.close(index);
+                    layer.close(panelIndex);
+                    reloadData();
                 } else {
                     layer.msg("删除失败", {icon: 5});
                 }
@@ -138,12 +140,12 @@ function addLine() {
                     },
                     success(args) {
                         if (args === "1") {
+                            layer.msg("添加成功", {icon: 1});
                             layer.close(index);
                             // 先关闭原来的数据展示框
                             layer.close(panelIndex);
                             // 重新请求数据
                             reloadData();
-                            layer.msg("添加成功", {icon: 1});
                         } else {
                             layer.msg("添加失败", {icon: 5});
                         }
@@ -212,7 +214,9 @@ function removeLineSet() {
             success(args) {
                 if (args === "1") {
                     layer.msg("删除成功", {icon: 1});
-                    location.reload();
+                    layer.close(index);
+                    layer.close(panelIndex);
+                    reloadData();
                 } else {
                     layer.msg("删除失败", {icon: 5});
                 }
@@ -248,8 +252,10 @@ function addLineSet() {
                     },
                     success(args) {
                         if (args === "1") {
-                            location.reload();
                             layer.msg("添加成功", {icon: 1});
+                            layer.close(index);
+                            layer.close(panelIndex);
+                            reloadData();
                         } else {
                             layer.msg("添加失败", {icon: 5});
                         }
@@ -285,7 +291,9 @@ function removeLineZset() {
             success(args) {
                 if (args === "1") {
                     layer.msg("删除成功", {icon: 1});
-                    location.reload();
+                    layer.close(index);
+                    layer.close(panelIndex);
+                    reloadData();
                 } else {
                     layer.msg("删除失败", {icon: 5});
                 }
@@ -329,8 +337,10 @@ function addLineZset() {
                     },
                     success(args) {
                         if (args === "1") {
-                            location.reload();
                             layer.msg("添加成功", {icon: 1});
+                            layer.close(index);
+                            layer.close(panelIndex);
+                            reloadData();
                         } else {
                             layer.msg("添加失败", {icon: 5});
                         }
@@ -366,7 +376,9 @@ function removeLineHash() {
             success(args) {
                 if (args === "1") {
                     layer.msg("删除成功", {icon: 1});
-                    location.reload();
+                    layer.close(index);
+                    layer.close(panelIndex);
+                    reloadData();
                 } else {
                     layer.msg("删除失败", {icon: 5});
                 }
@@ -410,8 +422,10 @@ function addLineHash() {
                     },
                     success(args) {
                         if (args === "1") {
-                            location.reload();
                             layer.msg("添加成功", {icon: 1});
+                            layer.close(index);
+                            layer.close(panelIndex);
+                            reloadData();
                         } else {
                             layer.msg("添加失败", {icon: 5});
                         }

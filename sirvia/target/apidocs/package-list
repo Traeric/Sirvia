@@ -13,6 +13,7 @@ com.ericjin.sirvia.shiro.enumerate
 com.ericjin.sirvia.shiro.factory
 com.ericjin.sirvia.shiro.realm
 com.ericjin.sirvia.shiro.token
+com.ericjin.sirvia.test
 com.ericjin.sirvia.utils
 com.ericjin.sirvia.utils.strategyBean
 com.ericjin.sirvia.utils.strategyBean.strategyImpl

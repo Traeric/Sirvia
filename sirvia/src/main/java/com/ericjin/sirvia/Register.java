@@ -15,7 +15,7 @@ public class Register {
     /**
      * 系统表
      *
-     * @return
+     * @return 系统表数据
      */
     public List<Class> systemTableList() {
         List<Class> list = new ArrayList<>();
@@ -26,7 +26,7 @@ public class Register {
     /**
      * 用户表
      *
-     * @return
+     * @return 用户表数据
      */
     public List<Class> userTableList() {
         List<Class> list = new ArrayList<>();
@@ -39,7 +39,7 @@ public class Register {
     /**
      * 想要执行的action
      *
-     * @return
+     * @return action的map
      */
     public Map<String, String> actionMap() {
         Map<String, String> map = new LinkedHashMap<>();

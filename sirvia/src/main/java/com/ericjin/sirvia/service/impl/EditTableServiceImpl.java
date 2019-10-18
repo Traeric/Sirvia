@@ -128,14 +128,14 @@ public class EditTableServiceImpl implements EditTableService {
     /**
      * 删除表数据
      *
-     * @param modelName
-     * @param beanName
-     * @param id
-     * @return
+     * @param modelName 模型名
+     * @param beanName javabean名
+     * @param id id
+     * @return 是否删除成功
      */
     @Override
     public Boolean deleteTable(String modelName, String beanName, String id) {
-        // 获取java bean
+        // 获取java beans
         Class bean = indexService.getBean(modelName, beanName);
         // 获取表名
         String tableName = indexService.getTableName(bean);

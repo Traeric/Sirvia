@@ -35,7 +35,7 @@ public class TableListServiceImpl implements TableListService {
      */
     @Override
     public Boolean doAction(List<String> selectArr, String methodName, String modelName, String beanName) {
-        // 获取java bean
+        // 获取java beans
         Class bean = indexService.getBean(modelName, beanName);
         String tableName = indexService.getTableName(bean);
         // 执行action

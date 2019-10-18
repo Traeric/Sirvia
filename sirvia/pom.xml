@@ -8,7 +8,7 @@
     <name>Sirvia</name>
     <groupId>io.github.traeric.sirvia</groupId>
     <artifactId>lsirvia</artifactId>
-    <version>0.1.2-RELEASE</version>
+    <version>0.1.4-RELEASE</version>
     <description>a web database system</description>
     <url>https://github.com/Traeric/Sirvia</url>
 

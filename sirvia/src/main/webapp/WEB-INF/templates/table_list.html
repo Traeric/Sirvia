@@ -64,38 +64,40 @@
                     </div>
                 </div>
             </div>
-            <table class="layui-table table-sort" style="overflow: auto;">
-                <!-- 生成表头 -->
-                <thead>
-                <tr>
-                    <th class="layui-form" style="width: 50px;">
-                        <input type="checkbox" lay-skin="primary" id="select_all" lay-filter="selectAll">
-                    </th>
-                    <th th:each="item : ${fields}">
-                        [[ ${item} ]]
-                    </th>
-                    <th>操作</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr th:each="item : ${dataList}" th:index="${item.get('id')}">
-                    <th class="layui-form" style="width: 50px;">
-                        <input class="select-item" type="checkbox" lay-skin="primary" th:value="${item.get('id')}"
-                               lay-filter="selectItem">
-                    </th>
-                    <td th:each="field : ${fields}">
-                        [[ ${item.get(field)} ]]
-                    </td>
-                    <td style="width: 100px;">
-                        <a th:href="@{'/admin/' + ${modelName} + '/' + ${beanName} + '/edit/' + ${item.get('id')}}">
-                            <button type="button" class="layui-btn layui-btn-sm layui-btn-normal">
-                                <i class="layui-icon">&#xe642;</i>编辑
-                            </button>
-                        </a>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
+            <div class="wrap" style="overflow: auto;">
+                <table class="layui-table table-sort">
+                    <!-- 生成表头 -->
+                    <thead>
+                    <tr>
+                        <th class="layui-form">
+                            <input type="checkbox" lay-skin="primary" id="select_all" lay-filter="selectAll">
+                        </th>
+                        <th th:each="item : ${fields}">
+                            [[ ${item} ]]
+                        </th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="item : ${dataList}" th:index="${item.get('id')}">
+                        <th class="layui-form">
+                            <input class="select-item" type="checkbox" lay-skin="primary" th:value="${item.get('id')}"
+                                   lay-filter="selectItem">
+                        </th>
+                        <td th:each="field : ${fields}">
+                            [[ ${item.get(field)} ]]
+                        </td>
+                        <td>
+                            <a th:href="@{'/admin/' + ${modelName} + '/' + ${beanName} + '/edit/' + ${item.get('id')}}">
+                                <button type="button" class="layui-btn layui-btn-sm layui-btn-normal">
+                                    <i class="layui-icon">&#xe642;</i>编辑
+                                </button>
+                            </a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
             <div class="pager-wrap">
                 <div id="pager" class="pager clearfix">
                     <a class="pg-first" title="首页"
@@ -162,6 +164,9 @@
             } else {
                 // 未选中
                 $(this).parents("tr").css("background-color", "#FFF");
+                // 有一个未选中，就把总的未选中框删除
+                $("table thead th div.layui-form-checkbox").removeClass("layui-form-checked");
+                $("#select_all").prop("checked", false);
             }
             // 将选中的数据添加到数组中
             selectArr = [];

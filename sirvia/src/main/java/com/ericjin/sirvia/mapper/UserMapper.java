@@ -4,6 +4,7 @@ package com.ericjin.sirvia.mapper;
 import com.ericjin.sirvia.beans.User;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
 public interface UserMapper {
@@ -19,6 +20,7 @@ public interface UserMapper {
     @Insert("INSERT INTO admin_user(username, password, email, is_admin) VALUES(#{username}, #{password}, #{email}, #{isAdmin})")
     Boolean createUser(User user);
 
+    @Select("SELECT id, username, email, is_admin, password FROM admin_user WHERE email = #{email}")
     User checkUser(@Param("email") String email);
 
     String getUser(@Param("id") String userId);

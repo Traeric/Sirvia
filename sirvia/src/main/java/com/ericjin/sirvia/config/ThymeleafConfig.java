@@ -2,7 +2,6 @@ package com.ericjin.sirvia.config;
 
 import at.pollux.thymeleaf.shiro.dialect.ShiroDialect;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.dialect.IDialect;
 import org.thymeleaf.spring4.SpringTemplateEngine;
@@ -15,12 +14,11 @@ import java.io.IOException;
 import java.util.HashSet;
 import java.util.Set;
 
-@Configuration
 public class ThymeleafConfig {
     /**
      * 模板解析器
      *
-     * @return
+     * @return ITemplateResolver
      */
     @Bean
     public ITemplateResolver templateResolver() throws IOException {
@@ -36,7 +34,7 @@ public class ThymeleafConfig {
     /**
      * 配置shiro方言
      *
-     * @return
+     * @return ShiroDialect
      */
     @Bean
     public ShiroDialect shiroDialect() {
@@ -46,8 +44,8 @@ public class ThymeleafConfig {
     /**
      * 模板引擎
      *
-     * @param templateResolver
-     * @return
+     * @param templateResolver ITemplateResolver
+     * @return TemplateEngine
      */
     @Bean
     public TemplateEngine templateEngine(ITemplateResolver templateResolver, ShiroDialect shiroDialect) {

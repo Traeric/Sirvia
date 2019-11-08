@@ -21,11 +21,11 @@
 <!--    </insert>-->
 
     <!-- 通过email查询user -->
-    <select id="checkUser" resultType="com.ericjin.sirvia.beans.User">
-        SELECT id, username, email, is_admin, password
-        FROM admin_user
-        WHERE email = #{email}
-    </select>
+<!--    <select id="checkUser" resultType="com.ericjin.sirvia.beans.User">-->
+<!--        SELECT id, username, email, is_admin, password-->
+<!--        FROM admin_user-->
+<!--        WHERE email = #{email}-->
+<!--    </select>-->
 
     <select id="getUser" resultType="string">
         SELECT password FROM admin_user WHERE id = #{id}

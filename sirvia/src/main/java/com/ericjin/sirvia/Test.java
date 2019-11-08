@@ -1,59 +1,10 @@
 package com.ericjin.sirvia;
 
+import com.ericjin.sirvia.generate.Generate;
+
 public class Test {
     public static void main(String[] args) {
-        int[] arr = new int[]{2, 1, 6, 5, 4, 8};
-
-        boolean flag = false;
-        outterLoop:
-        for (int i = 0; i < arr.length; i++) {
-            int cur = arr[i];
-            for (int j = i + 1; j < arr.length; j++) {
-                if (cur == arr[j]) {
-                    System.out.printf("第一个相同的数是：%d", cur);
-                    flag = true;
-                    break outterLoop;
-                }
-            }
-        }
-        if (!flag) {
-            System.out.printf("第一个相同的数是：%d", -1);
-        }
-    }
-
-    public static void quickSort(int[] arr, int low, int high) {
-        int i, j, temp, t;
-        if (low > high) {
-            return;
-        }
-        i = low;
-        j = high;
-        //temp就是基准位
-        temp = arr[low];
-
-        while (i < j) {
-            //先看右边，依次往左递减
-            while (temp <= arr[j] && i < j) {
-                j--;
-            }
-            //再看左边，依次往右递增
-            while (temp >= arr[i] && i < j) {
-                i++;
-            }
-            //如果满足条件则交换
-            if (i < j) {
-                t = arr[j];
-                arr[j] = arr[i];
-                arr[i] = t;
-            }
-
-        }
-        //最后将基准为与i和j相等位置的数字交换
-        arr[low] = arr[i];
-        arr[i] = temp;
-        //递归调用左半数组
-        quickSort(arr, low, j - 1);
-        //递归调用右半数组
-        quickSort(arr, j + 1, high);
+        new Generate().createUser("com.mysql.jdbc.Driver",
+                "jdbc:mysql://127.0.0.1:3306/java_admin?serverTimezone=UTC", "root", "root");
     }
 }

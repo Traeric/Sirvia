@@ -5,15 +5,14 @@ import com.mchange.v2.c3p0.ComboPooledDataSource;
 import org.apache.ibatis.plugin.Interceptor;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.mapper.MapperScannerConfigurer;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 
 import java.beans.PropertyVetoException;
 import java.sql.SQLException;
 
-@Configuration
 public class SpringDataSource {
     @Value("#{commonsSetting.dataBase.get('url')}")
     private String jdbcUrl;
@@ -59,7 +58,8 @@ public class SpringDataSource {
      * @throws Exception
      */
     @Bean("sqlSessionFactoryBean")
-    public SqlSessionFactoryBean sqlSessionFactoryBean(ComboPooledDataSource comboPooledDataSource) throws Exception {
+    public SqlSessionFactoryBean sqlSessionFactoryBean(@Qualifier("comboPooledDataSource") ComboPooledDataSource comboPooledDataSource)
+            throws Exception {
         // 分页
         PageInterceptor interceptor = new PageInterceptor();
         // 创建SqlSession工厂

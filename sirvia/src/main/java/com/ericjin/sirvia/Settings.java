@@ -1,9 +1,9 @@
 package com.ericjin.sirvia;
 
-public interface Settings {
-    String salt = "@!#$^&*&(*&^^_)+))()*(1254545dfgfdgfdgdfgd*((&*9";
+public abstract class Settings {
+    public static final String salt = "@!#$^&*&(*&^^_)+))()*(1254545dfgfdgfdgdfgd*((&*9";
 
-    Integer RADIO = 0;
+    public static final Integer RADIO = 0;
 
-    Integer SELECT = 1;
+    public static final Integer SELECT = 1;
 }

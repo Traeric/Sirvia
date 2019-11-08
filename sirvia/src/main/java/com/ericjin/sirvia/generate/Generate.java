@@ -32,7 +32,7 @@ public class Generate {
      * @param pwd
      * @return
      */
-    private SqlSession createSqlSession(String driver, String url, String user, String pwd) {
+    public SqlSession createSqlSession(String driver, String url, String user, String pwd) {
         // 创建连接池
         DataSource dataSource = new PooledDataSource(driver, url, user, pwd);
         // 事务

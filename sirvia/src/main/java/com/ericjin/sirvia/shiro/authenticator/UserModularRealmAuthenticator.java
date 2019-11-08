@@ -17,9 +17,9 @@ public class UserModularRealmAuthenticator extends ModularRealmAuthenticator {
      * 重写doAuthenticate方法
      * 在特定情况下指定特定的realm进行验证
      *
-     * @param authenticationToken
-     * @return
-     * @throws AuthenticationException
+     * @param authenticationToken f
+     * @return f
+     * @throws AuthenticationException f
      */
     @Override
     protected AuthenticationInfo doAuthenticate(AuthenticationToken authenticationToken) throws AuthenticationException {

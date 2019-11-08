@@ -69,25 +69,25 @@
                     <!-- 生成表头 -->
                     <thead>
                     <tr>
-                        <th class="layui-form">
+                        <th class="layui-form" style="width: 50px;">
                             <input type="checkbox" lay-skin="primary" id="select_all" lay-filter="selectAll">
                         </th>
                         <th th:each="item : ${fields}">
                             [[ ${item} ]]
                         </th>
-                        <th>操作</th>
+                        <th style="width: 100px;">操作</th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr th:each="item : ${dataList}" th:index="${item.get('id')}">
-                        <th class="layui-form">
+                        <th class="layui-form" style="width: 50px;">
                             <input class="select-item" type="checkbox" lay-skin="primary" th:value="${item.get('id')}"
                                    lay-filter="selectItem">
                         </th>
                         <td th:each="field : ${fields}">
                             [[ ${item.get(field)} ]]
                         </td>
-                        <td>
+                        <td style="width: 100px;">
                             <a th:href="@{'/admin/' + ${modelName} + '/' + ${beanName} + '/edit/' + ${item.get('id')}}">
                                 <button type="button" class="layui-btn layui-btn-sm layui-btn-normal">
                                     <i class="layui-icon">&#xe642;</i>编辑

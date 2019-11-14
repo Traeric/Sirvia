@@ -11,9 +11,6 @@ import java.util.List;
 import java.util.Map;
 
 @Configuration
-@ComponentScan(basePackages={"com.ericjin.sirvia"},
-        excludeFilters = { @ComponentScan.Filter(type= FilterType.ANNOTATION,value= EnableWebMvc.class)})
-@Import({ThymeleafConfig.class, SpringDataSource.class, ShiroConfig.class})
 public class SpringConfig {
     /**
      * 配置jedis

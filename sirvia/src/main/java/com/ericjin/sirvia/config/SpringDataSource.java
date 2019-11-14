@@ -8,11 +8,13 @@ import org.mybatis.spring.mapper.MapperScannerConfigurer;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 
 import java.beans.PropertyVetoException;
 import java.sql.SQLException;
 
+@Configuration
 public class SpringDataSource {
     @Value("#{commonsSetting.dataBase.get('url')}")
     private String jdbcUrl;

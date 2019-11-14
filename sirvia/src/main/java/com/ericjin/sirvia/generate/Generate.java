@@ -2,6 +2,7 @@ package com.ericjin.sirvia.generate;
 
 import com.ericjin.sirvia.Settings;
 import com.ericjin.sirvia.beans.User;
+import com.ericjin.sirvia.config.SpringConfig;
 import com.ericjin.sirvia.mapper.UserMapper;
 import org.apache.ibatis.datasource.pooled.PooledDataSource;
 import org.apache.ibatis.mapping.Environment;
@@ -13,9 +14,11 @@ import org.apache.ibatis.transaction.TransactionFactory;
 import org.apache.ibatis.transaction.jdbc.JdbcTransactionFactory;
 import org.apache.shiro.crypto.hash.SimpleHash;
 import org.apache.shiro.util.ByteSource;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.web.context.support.XmlWebApplicationContext;
 
 import javax.sql.DataSource;
-import java.util.Objects;
 import java.util.Scanner;
 
 /**
@@ -24,15 +27,15 @@ import java.util.Scanner;
 public class Generate {
 
     /**
-     * 生成sqlSession
+     * 生成sqlSession 不用配置文件
      *
-     * @param driver
-     * @param url
-     * @param user
-     * @param pwd
-     * @return
+     * @param driver 驱动名
+     * @param url    数据库url
+     * @param user   数据库用户名
+     * @param pwd    数据库密码
+     * @return SqlSession
      */
-    public SqlSession createSqlSession(String driver, String url, String user, String pwd) {
+    private static SqlSession createSqlSession(String driver, String url, String user, String pwd) {
         // 创建连接池
         DataSource dataSource = new PooledDataSource(driver, url, user, pwd);
         // 事务
@@ -50,33 +53,28 @@ public class Generate {
     }
 
     /**
-     * 创建user表
-     *
-     * @param driver
-     * @param url
-     * @param user
-     * @param pwd
+     * 获取userMapper
+     * @return UserMapper
      */
-    public void generateUserTable(String driver, String url, String user, String pwd) {
-        SqlSession sqlSession = this.createSqlSession(driver, url, user, pwd);
-        if (Objects.nonNull(sqlSession)) {
-            UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
-            userMapper.createUserTable();
-            System.out.println("创建成功");
-        }
-        sqlSession.close();
+    public static UserMapper getMapper() {
+        ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("classpath*:adminApplicationContext.xml");
+        return (UserMapper) applicationContext.getBean("userMapper");
+    }
+
+    /**
+     * 创建user表
+     */
+    public static void generateUserTable() {
+        UserMapper userMapper = Generate.getMapper();
+        userMapper.createUserTable();
+        System.out.println("\033[1;96m" + "*****创建成功*****" + "\033[0m");
     }
 
 
     /**
      * 创建账户
-     *
-     * @param driver
-     * @param url
-     * @param name
-     * @param pwd
      */
-    public void createUser(String driver, String url, String name, String pwd) {
+    public static void createUser() {
         boolean isRegister = true;
         System.out.println("\033[1;92m" + "创建JAVA ADMIN账户" + "\033[0m");
         Scanner scanner = new Scanner(System.in);
@@ -122,21 +120,17 @@ public class Generate {
             // 对密码进行加密
             password = new SimpleHash("MD5", password, ByteSource.Util.bytes(Settings.salt), 1024).toString();
             // 将数据写入数据库
-            SqlSession sqlSession = this.createSqlSession(driver, url, name, pwd);
-            if (Objects.nonNull(sqlSession)) {
-                UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
-                User user = new User();
-                user.setUsername(username);
-                user.setPassword(password);
-                user.setEmail(email);
-                user.setIsAdmin("0");
-                if (userMapper.createUser(user)) {
-                    System.out.println("\033[1;92m" + "创建成功！" + "\033[0m");
-                } else {
-                    System.out.println("\033[1;91m" + "创建失败！" + "\033[0m");
-                }
+            UserMapper userMapper = Generate.getMapper();
+            User user = new User();
+            user.setUsername(username);
+            user.setPassword(password);
+            user.setEmail(email);
+            user.setIsAdmin("0");
+            if (userMapper.createUser(user)) {
+                System.out.println("\033[1;92m" + "创建成功！" + "\033[0m");
+            } else {
+                System.out.println("\033[1;91m" + "创建失败！" + "\033[0m");
             }
-            sqlSession.close();
         } else {
             System.out.println("\033[1;92m" + "密码太短，请重新注册！" + "\033[0m");
         }

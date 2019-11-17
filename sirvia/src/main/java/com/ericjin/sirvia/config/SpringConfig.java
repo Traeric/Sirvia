@@ -67,7 +67,7 @@ public class SpringConfig {
         commonsSetting.setDataBase(databaseMap);
         // redis初始信息
         Map<String, String> redisMap = new HashMap<>();
-        redisMap.put("host", "119.3.146.100");
+        redisMap.put("host", "127.0.0.1");
         redisMap.put("port", "6379");
         redisMap.put("passowrd", "");
         redisMap.put("database", "0");

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org"
+      xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Sirvia HOMEPAGE</title>
+
+    <!-- Bootstrap core CSS -->
+    <link th:href="@{/static/plugins/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link th:href="@{/static/css/index.css}" rel="stylesheet">
+    <script th:src="@{/static/js/jq/jquery.min.js}"></script>
+    <script th:src="@{/static/plugins/bootstrap/js/bootstrap.min.js}"></script>
+    <script th:src="@{/static/plugins/layui/layui.js}"></script>
+</head>
+
+<body>
+<!-- 头部导航条 -->
+<div th:replace="header::header"></div>
+
+<div class="container">
+    <div class="row row-offcanvas row-offcanvas-right">
+        <div class="col-xs-12 col-sm-9">
+            <div class="jumbotron">
+                <h1>L Sirvia!</h1>
+                <p>
+                    Sirvia是一套web端的数据库增删改查系统
+                </p>
+            </div>
+            <div class="row">
+                <div class="system-table table" th:if="${systemTable.size()}">
+                    <div class="title">系统表</div>
+                    <div class="item" th:each="table : ${systemTable}">
+                        <div class="name">
+                            <a th:href="@{'/admin/system/' + ${table.url}}">
+                                [[ ${table.table} ]]
+                            </a>
+                        </div>
+                        <div class="options">
+                            <div class="add">
+                                <a th:href="@{'/admin/system/' + ${table.url} + '/display'}">
+                                    <i class="glyphicon glyphicon-plus"></i>
+                                    添加
+                                </a>
+                            </div>
+                            <div class="change">
+                                <a th:href="@{'/admin/system/' + ${table.url}}">
+                                    <i class="glyphicon glyphicon-pencil"></i>
+                                    修改
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="user-table table" th:if="${userTable.size()}">
+                    <div class="title">用户表</div>
+                    <div class="item" th:each="table : ${userTable}">
+                        <div class="name">
+                            <a th:href="@{'/admin/user/' + ${table.url}}">
+                                [[ ${table.table} ]]
+                            </a>
+                        </div>
+                        <div class="options">
+                            <div class="add">
+                                <a th:href="@{'/admin/user/' + ${table.url} + '/display'}">
+                                    <i class="glyphicon glyphicon-plus"></i>
+                                    添加
+                                </a>
+                            </div>
+                            <div class="change">
+                                <a th:href="@{'/admin/user/' + ${table.url}}">
+                                    <i class="glyphicon glyphicon-pencil"></i>
+                                    修改
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!--/row-->
+        </div><!--/.col-xs-12.col-sm-9-->
+        <!-- 右侧面板 -->
+        <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        <button type="button" class="btn btn-success btn-xs" onclick="executeSql()">执行SQL</button>
+                        <button type="button" class="btn btn-info btn-xs" onclick="allTable()">所有表</button>
+                    </h3>
+                </div>
+                <div class="panel-body">
+                    <div class="execute">
+                        <textarea class="form-control" rows="5" style="resize: none;" name="sql"></textarea>
+                        <button type="button" class="btn btn-warning pull-right" style="margin-top: 10px;"
+                                onclick="doSql()">执行
+                        </button>
+                    </div>
+                    <div class="all-table">
+                        <div class="tables">
+                        </div>
+                        <button type="button" class="btn btn-success center-block" onclick="getTables(this)">获取表
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div><!--/.sidebar-offcanvas-->
+    </div><!--/row-->
+</div>
+<script>
+    $(() => {
+        $(".all-table").hide();
+        $(".tables").hide();
+    });
+
+    function executeSql() {
+        $(".all-table").slideUp("slow", () => {
+            $(".execute").slideDown("slow");
+            $(".panel").removeClass("panel-info").addClass("panel-success");
+        });
+    }
+
+    function allTable() {
+        $(".execute").slideUp("slow", () => {
+            $(".all-table").slideDown("slow");
+            $(".panel").removeClass("panel-success").addClass("panel-info");
+        });
+    }
+
+    function getTables(self) {
+        // 获取所有的表
+        $.ajax({
+            url: "/admin/get_all_tables",
+            type: "post",
+            dataType: "JSON",
+            success(args) {
+                if (args.flag) {
+                    // 添加数据到面板中
+                    let table_list = '';
+                    for (let item of args.list) {
+                        table_list += `<li class="text-primary">${item}</li>`;
+                    }
+                    $(".tables").append(table_list);
+                    $(".tables").slideDown("slow", () => {
+                        $(self).slideUp();
+                    });
+                }
+            },
+        });
+    }
+
+    /**
+     * 执行sql语句
+     */
+    function doSql() {
+        let sql = $("textarea[name=sql]").val();
+        $.ajax({
+            url: "/admin/execute_sql",
+            type: "post",
+            data: {
+                sql,
+            },
+            success(args) {
+                layui.use("layer", () => {
+                    let layer = layui.layer;
+                    if (args === "1") {
+                        layer.msg('执行成功', {icon: 1, offset: "150px"});
+                    } else {
+                        layer.msg('执行失败', {icon: 5, offset: "150px"});
+                    }
+                });
+            }
+        });
+    }
+</script>
+</body>
+</html>
+

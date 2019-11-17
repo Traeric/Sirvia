@@ -1,0 +1,53 @@
+.content {
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.content .left {
+    flex: 1 1 auto;
+    padding: 0 10px;
+    box-sizing: border-box;
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.content .right {
+    flex: 0 0 160px;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.content .right button {
+    margin: 5px 0;
+}
+
+.layui-layer-content {
+    padding: 0 10px;
+    box-sizing: border-box;
+    overflow: auto;
+}
+
+#add {
+    position: fixed;
+    left: 0;
+    top: 51px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#add .panel {
+    width: 0;
+    overflow: hidden;
+    transition: all .5s linear;
+}
+
+#add .panel .wrap {
+    background-color: #f9f9f9;
+    padding: 5px 10px;
+    border-radius: 8px;
+    min-width: 236px;
+}
+

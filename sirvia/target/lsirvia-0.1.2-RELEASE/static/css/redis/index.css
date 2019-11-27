@@ -1,0 +1,69 @@
+.breadcrumb {
+    margin-top: 51px;
+}
+
+.alert {
+    cursor: pointer;
+}
+
+.clear-float::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.alert-left {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.alert-left i {
+    font-size: 36px;
+    margin-right: 10px;
+}
+
+.well {
+    background-color: rgba(0, 0, 0, .7) !important;
+    cursor: text;
+    color: #fff;
+    height: 350px;
+    overflow: auto;
+}
+
+.well .wrap {
+    display: flex;
+}
+
+.well .wrap .pre {
+    color: #f00;
+}
+
+.well .inp {
+    margin-left: 5px;
+    flex: 1 1 auto;
+    outline: none;
+    background-color: transparent;
+    border: none;
+    color: #f00;
+}
+
+.link-redis {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.link-redis .link {
+    flex: 1 1 auto;
+    margin: 0 20px;
+}
+
+.link-redis .dbs {
+    flex: 0 0 65px;
+    margin-right: 20px;
+}
+
+.link-redis .password {
+    margin-right: 20px;
+}

@@ -36,9 +36,9 @@ public class UserServiceImpl implements UserService {
     /**
      * 验证用户是否登陆
      *
-     * @param email
-     * @param password
-     * @return
+     * @param email 邮箱
+     * @param password 密码
+     * @return Boolean
      */
     @Override
     public Boolean checkLogin(String email, String password) {
@@ -60,7 +60,7 @@ public class UserServiceImpl implements UserService {
     /**
      * 读取所有的表名
      *
-     * @return
+     * @return Map
      */
     @Override
     public Map<String, List<Map<String, String>>> getTableList() {
@@ -80,8 +80,8 @@ public class UserServiceImpl implements UserService {
     /**
      * 构建单个表信息
      *
-     * @param table
-     * @return
+     * @param table 表
+     * @return Map
      */
     private Map<String, String> getTableMap(Class table) {
         Map<String, String> map = new LinkedHashMap<>();
@@ -101,9 +101,9 @@ public class UserServiceImpl implements UserService {
     /**
      * 验证旧密码
      *
-     * @param userId
-     * @param oldPassword
-     * @return
+     * @param userId 用户id
+     * @param oldPassword 旧的密码
+     * @return Boolean
      */
     @Override
     public Boolean confirmOldPassword(String userId, String oldPassword) {
@@ -116,9 +116,9 @@ public class UserServiceImpl implements UserService {
     /**
      * 修改密码
      *
-     * @param userId
-     * @param new_password
-     * @return
+     * @param userId 用户id
+     * @param new_password 新的密码
+     * @return Boolean
      */
     @Override
     public Boolean changePassword(String userId, String new_password) {

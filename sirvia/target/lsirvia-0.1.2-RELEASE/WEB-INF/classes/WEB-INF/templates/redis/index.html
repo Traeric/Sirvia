@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>REDIS INDEX</title>
+
+    <!-- Bootstrap core CSS -->
+    <script th:src="@{/static/js/jq/jquery.min.js}"></script>
+    <script th:src="@{/static/plugins/layui/layui.js}"></script>
+    <link th:href="@{/static/plugins/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+    <script th:src="@{/static/plugins/bootstrap/js/bootstrap.min.js}"></script>
+    <link th:href="@{/static/css/redis/index.css}" rel="stylesheet">
+    <link th:href="@{/static/plugins/layui/css/layui.css}" rel="stylesheet">
+</head>
+<body>
+<div th:replace="header :: header"></div>
+<div class="container">
+    <ol class="breadcrumb">
+        <li><a th:href="@{/admin}">首页</a></li>
+        <li><a href="javascript:void(0);">redis操作</a></li>
+    </ol>
+
+    <div class="page-header link-redis layui-form">
+        <h3>操作Redis</h3>
+    </div>
+
+    <div class="alert alert-success clear-float" role="alert">
+        <div class="pull-left alert-left">
+            <i class="layui-icon layui-icon-template-1"></i>
+            <span class="label label-success">查看数据</span>
+        </div>
+        <div class="pull-right">
+            <a type="button" class="btn btn-success" href="/admin/redis/view_data">进入</a>
+        </div>
+    </div>
+    <div class="alert alert-warning clear-float" role="alert">
+        <div class="pull-left alert-left">
+            <i class="layui-icon layui-icon-util"></i>
+            <span class="label label-warning">增加数据</span>
+        </div>
+        <div class="pull-right">
+            <a type="button" class="btn btn-warning" href="/admin/redis/opt_data">进入</a>
+        </div>
+    </div>
+
+    <blockquote class="layui-elem-quote">执行redis命令</blockquote>
+    <div style="padding: 20px; background-color: #F2F2F2;">
+        <div class="layui-row layui-col-space15">
+            <div class="layui-col-md12">
+                <div class="layui-card">
+                    <div class="layui-card-header" style="display: flex; justify-content: space-between; align-items: center;">
+                        <div>Terminal</div>
+                        <button type="button" class="btn btn-danger btn-sm" onclick="clearTerminal()">清除Terminal</button>
+                    </div>
+                    <div class="layui-card-body clear-float">
+                        <div class="well">
+                            <div class="wrap">
+                                <span class="pre">>>></span>
+                                <input type="text" class="inp" onkeydown="excuteCmd(event, this)" name="current">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    String.prototype.getCookie = function () {
+        let strArr = this.split(";");
+        let cookieObj = {};
+        for (let str of strArr) {
+            cookieObj[str.split("=")[0]] = str.split("=")[1];
+        }
+        return cookieObj;
+    };
+    let layer = null;
+    $(function () {
+        // nav栏激活状态
+        $(".navbar-right li:eq(0)").addClass("active");
+
+        layui.use(['form', 'layer'], function () {
+            layui.form;
+            layer = layui.layer;
+        });
+    });
+
+    /**
+     * 执行cmd命令
+     */
+    let CURRENTINPUT = null;
+    function excuteCmd(event, self) {
+        let inputDom = $("input[name=current]");
+        // 获取输入的命令
+        let cmd = inputDom.val();
+        if (event.which === 13 && cmd !== "") {
+            CURRENTINPUT = null;
+            // 移除name
+            $(inputDom).removeAttr("name");
+            // 重新设置点击事件
+            inputDom.get(0).onkeydown = function (event) {
+                if (event.which === 13) {
+                    $("input[name=current]").focus();
+                }
+            };
+            if (cmd === "yzw") {
+                $(".well").append(`
+                        <div class="msg">
+                            <div style="color: #AD80DE;">
+                                彩蛋：一直想为Sirvia做一个彩蛋，但是不知道以什么形式，在2019年9月27日晚上22点上厕所的时候突然想到了，
+                                就是在redis命令行里面做这个彩蛋，在输入yzw命令回车后就可以看到这个彩蛋。 <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;在这个彩蛋里面我想说明sirvia这个项目名字的由来，这个名字是我曾经当然也是现在所喜欢的女孩儿的英文名，至于她为什么
+                                起这个名字，怎么读我都不太知道，因为我实在查不到这个单词，我记得当初还因为这个名字的读法跟她有过一些快乐的讨论。<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;为什么我要说曾经喜欢呢？因为我的一些原因，导致我跟她关系闹得很僵，到后来她甚至删掉了我所有的联系方式，我联系不到她，
+                                所以我觉得她是我曾经喜欢的女孩儿。 <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;在写这个项目的时候我是并没有打算起这个名字的，这个项目起初的名字是Java Admin，后来改成了Sirvia，我只是想纪念我跟那个
+                                女孩儿的友情，也想纪念我对那个女孩儿的喜欢。我并不幸运，没能得到爱情，但我仍旧相信它，不以占有为目的的爱，不会因为得不到而伤心，
+                                只会因为爱而快乐。我爱你，但这是我的事，与你无关。<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;如果可以重来，我不会再想着占有你。。。
+                            </div>
+                        </div>
+                        <div class="wrap">
+                            <span class="pre">>>></span>
+                            <input type="text" class="inp" onkeydown="excuteCmd(event, this)" name="current">
+                        </div>
+                    `);
+                $("input[name=current]").focus();
+                return;
+            }
+            // 执行cmd
+            $.ajax({
+                url: "/admin/redis/execute_redis_cmd",
+                type: "post",
+                data: {
+                    cmd,
+                },
+                success(args) {
+                    args = args === "" ? "null" : args;
+                    $(".well").append(`
+                        <div class="msg">${args}</div>
+                        <div class="wrap">
+                            <span class="pre">>>></span>
+                            <input type="text" class="inp" onkeydown="excuteCmd(event, this)" name="current">
+                        </div>
+                    `);
+                    $("input[name=current]").focus();
+                }
+            });
+        } else if (event.which === 38) {
+            // 获取上一个input
+            CURRENTINPUT = CURRENTINPUT == null
+                ? $(self).parents(".wrap").prev().prev().find("input")
+                : $(CURRENTINPUT).parents(".wrap").prev().prev().find("input");
+            $(self).val($(CURRENTINPUT).get(0) === undefined ? $(self).val() : $(CURRENTINPUT).val());
+        } else if (event.which ===  40) {
+            // 获取下一个input
+            CURRENTINPUT = $(CURRENTINPUT).parents(".wrap").next().next().find("input").get(0) == null
+                ? $(self)
+                : $(CURRENTINPUT).parents(".wrap").next().next().find("input");
+            $(self).val($(CURRENTINPUT).val());
+        } else {
+            CURRENTINPUT = null;
+        }
+    }
+
+    /**
+     * 清空terminal
+     */
+    function clearTerminal() {
+        $(".well").empty().append(`
+            <div class="wrap">
+                <span class="pre">>>></span>
+                <input type="text" class="inp" onkeydown="excuteCmd(event, this)" name="current">
+            </div>
+        `);
+        $("input[name=current]").focus();
+    }
+</script>
+</body>
+</html>

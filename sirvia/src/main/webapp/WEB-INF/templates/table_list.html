@@ -33,12 +33,18 @@
                         <h3>修改[[ ${tableName} ]]</h3>
                     </div>
 
-                    <a th:href="@{'/admin/' + ${modelName} + '/' + ${beanName} + '/display'}">
-                        <button type="button" class="btn btn-success">
-                            添加[[ ${tableName} ]] &nbsp;
-                            <i class="glyphicon glyphicon-plus"></i>
+                    <div id="operation-btn">
+                        <a th:href="@{'/admin/' + ${modelName} + '/' + ${beanName} + '/display'}">
+                            <button type="button" class="btn btn-success">
+                                添加[[ ${tableName} ]] &nbsp;
+                                <i class="glyphicon glyphicon-plus"></i>
+                            </button>
+                        </a>
+                        <button type="button" class="btn btn-info" id="batch_create_data">
+                            批量生成测试数据&nbsp;
+                            <i class="glyphicon glyphicon-folder-open"></i>
                         </button>
-                    </a>
+                    </div>
                 </div>
             </div>
             <!-- action操作 -->
@@ -130,6 +136,8 @@
         </div>
     </div>
 </div>
+<input type="hidden" th:value="${modelName}" name="model_name">
+<input type="hidden" th:value="${beanName}" name="bean_name">
 <script>
     // 选中的数组
     let selectArr = [];
@@ -211,5 +219,6 @@
         });
     }
 </script>
+<script th:src="@{/static/js/table_list.js}"></script>
 </body>
 </html>

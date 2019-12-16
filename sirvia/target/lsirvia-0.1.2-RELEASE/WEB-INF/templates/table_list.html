@@ -17,6 +17,12 @@
     <script th:src="@{/static/js/jq/jquery.dataTables.min.js}"></script>
     <link rel="stylesheet" th:href="@{/static/css/dataTable.bootstrap.css}">
     <script th:src="@{/static/js/dataTable.bootstrap.js}"></script>
+
+    <style>
+        .layui-layer-content {
+            padding: 15px;
+        }
+    </style>
 </head>
 <body>
 <div th:replace="header::header"></div>
@@ -42,7 +48,7 @@
                         </a>
                         <button type="button" class="btn btn-info" id="batch_create_data">
                             批量生成测试数据&nbsp;
-                            <i class="glyphicon glyphicon-folder-open"></i>
+                            <i class="layui-icon layui-icon-layouts"></i>
                         </button>
                     </div>
                 </div>

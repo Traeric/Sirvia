@@ -39,4 +39,19 @@ public class TableListController {
     public List<String> getAllField(@PathVariable String modelName, @PathVariable String beanName) {
         return tableListService.getAllField(modelName, beanName);
     }
+
+    /**
+     * 生成数据
+     * @param dataNumbers 要生成的数据条数
+     * @param fieldsList 要生成的字段
+     * @return String
+     */
+    @ResponseBody
+    @PostMapping("/generate_data")
+    public String generateData(@RequestParam("dataNumbers") Integer dataNumbers,
+                               @RequestParam("fieldsList[]") List<String> fieldsList) {
+        System.out.println(dataNumbers);
+        System.out.println(fieldsList);
+        return "hhhjk";
+    }
 }
